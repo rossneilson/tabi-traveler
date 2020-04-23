@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { createUseStyles } from "react-jss";
+import { Link } from "react-router-dom";
+
 import frame from "../frame.png";
 import mainImage from "../mainImage.jpg";
-
-console.log(mainImage);
+import Toggle from "../Toggle";
 
 export default function FrontSection(props) {
   const [offset, setOffset] = useState(0);
@@ -27,7 +28,7 @@ export default function FrontSection(props) {
       background: "url(" + frame + ") bottom right",
       backgroundRepeat: "no-repeat",
       textAlign: "right",
-      minHeight: "119.5vh",
+      minHeight: "100vh",
       height: "auto",
       webkitBackgroundSize: "cover",
       mozBackgroundSize: "cover",
@@ -41,7 +42,7 @@ export default function FrontSection(props) {
       background: "url(" + mainImage + ") bottom right",
       backgroundRepeat: "no-repeat",
       textAlign: "right",
-      minHeight: "119.5vh",
+      minHeight: "100vh",
       height: "auto",
       webkitBackgroundSize: "cover",
       mozBackgroundSize: "cover",
@@ -75,6 +76,7 @@ export default function FrontSection(props) {
       color: "#acb8e4",
       fontSize: "120%",
       textAlign: "right",
+      transition: "1s",
       "&:hover": {
         color: "#5065A3"
       }
@@ -85,33 +87,29 @@ export default function FrontSection(props) {
   return (
     <div>
       <div
-        // src={mainImage}
         className={classes.content}
         style={{ backgroundPositionY: offset / 1.6 }}
       >
         <div className={classes.mainSection}>
           <div className={classes.navigation}>
-            <h1 className={classes.title}>Tabi Traveler</h1>
+            <h1 className={classes.title}>{props.language("main.title")}</h1>
             <h3 className={classes.desc}>
-              Ross & Kona
+              {props.language("main.names")}
               <br />
-              Travel Photographers
+              {props.language("main.desc")}
             </h3>
-            <a href="" className={classes.pageButton}>
-              About
-            </a>
-            <a href="" className={classes.pageButton}>
-              Portfolio
-            </a>
-            <a href="" className={classes.pageButton}>
-              Blog
-            </a>
-            <a href="" className={classes.pageButton}>
-              Shop
-            </a>
-            <a href="" className={classes.pageButton}>
-              Contact
-            </a>
+            <Link to="/portfolio" className={classes.pageButton}>
+              {props.language("main.portfolio")}
+            </Link>
+            <Link to="/blog" className={classes.pageButton}>
+              {props.language("main.blog")}
+            </Link>
+            <Link to="/prints" className={classes.pageButton}>
+              {props.language("main.prints")}
+            </Link>
+            <Link to="/contact" className={classes.pageButton}>
+              {props.language("main.contact")}
+            </Link>
           </div>
         </div>
       </div>

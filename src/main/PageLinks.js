@@ -1,11 +1,12 @@
 import React from "react";
 import { createUseStyles } from "react-jss";
-import portfolioImage from "../DSC_0143-3.jpg";
+import { Link } from "react-router-dom";
+import image1 from "../1.jpg";
+import image2 from "../2.jpg";
+import image3 from "../3.jpg";
 
 const useStyles = createUseStyles({
   flexContainer: {
-    backgroundColor: "#76aed7",
-    zIndex: "998",
     display: "flex",
     flexWrap: "wrap",
     maxWidth: "100%",
@@ -13,20 +14,33 @@ const useStyles = createUseStyles({
     alignItems: "center",
     justifyContent: "center",
     overflow: "hidden",
-    position: "relative",
-    padding: "13px"
+    position: "relative"
   },
   card: {
-    zIndex: "998",
-    width: "400px",
-    height: "25%",
-    margin: "1% 1% 5% 1%",
+    backgroundColor: "black",
+    fontSize: "200%",
+    width: "100%",
+    height: "500px",
+    minWidth: "350px",
     flexGrow: 2,
-    transition:
-      "transform .6s ease,filter .6s ease,-webkit-transform .6s ease,-webkit-filter .6s ease",
-    transitionDelay: "var(--wait,0)",
-    willChange: "transform",
-    backgroundColor: "#ffffffd2"
+    color: "white",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  image: {
+    width: "100%",
+    height: "500px",
+    opacity: 0.7,
+    transition: "1s",
+    "&:hover": {
+      opacity: 1,
+      transform: "scaleY(1.01)"
+    }
+  },
+  content: {
+    opacity: 1,
+    position: "absolute"
   }
 });
 
@@ -34,9 +48,42 @@ export default function PageLinks(props) {
   const classes = useStyles();
   return (
     <div className={classes.flexContainer}>
-      <div className={classes.card}>Test</div>
-      <div className={classes.card}>Test2</div>
-      <div className={classes.card}>Test3</div>
+      <Link style={{ width: "33.333333%" }} to="/portfolio">
+        <div className={classes.card}>
+          <div
+            className={classes.image}
+            style={{
+              background: "url(" + image1 + ") no-repeat Top right",
+              backgroundSize: "cover"
+            }}
+          />
+          <p className={classes.content}>{props.language("main.portfolio")}</p>
+        </div>
+      </Link>
+      <Link style={{ width: "33.333333%" }} to="/blog">
+        <div className={classes.card}>
+          <div
+            className={classes.image}
+            style={{
+              background: "url(" + image2 + ") no-repeat Bottom right",
+              backgroundSize: "cover"
+            }}
+          />
+          <p className={classes.content}>{props.language("main.blog")}</p>
+        </div>
+      </Link>
+      <Link style={{ width: "33.333333%" }} to="/prints">
+        <div className={classes.card}>
+          <div
+            className={classes.image}
+            style={{
+              background: "url(" + image3 + ") no-repeat top right",
+              backgroundSize: "cover"
+            }}
+          />
+          <p className={classes.content}>{props.language("main.prints")}</p>
+        </div>
+      </Link>
     </div>
   );
 }

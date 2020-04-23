@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 import "./index.css";
@@ -7,7 +7,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 // import "firebase/performance";
 
 // import * as Config from './config.js';
-// import './i18n';
+import "./i18n";
 import Main from "./main/Main";
 
 // firebase.initializeApp(Config.firebaseConfig);
@@ -15,7 +15,9 @@ import Main from "./main/Main";
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route exact path="/" component={Main} />
+      <Suspense fallback={<div style={{ backgroundColor: "white" }} />}>
+        <Route exact path="/" component={Main} />
+      </Suspense>
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")
