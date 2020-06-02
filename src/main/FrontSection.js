@@ -4,12 +4,11 @@ import { Link } from "react-router-dom";
 
 import frame from "../frame.png";
 import mainImage from "../mainImage.jpg";
-import Toggle from "../Toggle";
 
 export default function FrontSection(props) {
   const [offset, setOffset] = useState(0);
 
-  const listener = e => {
+  const listener = (e) => {
     if (!(window.pageYOffset > 900)) {
       setOffset(window.pageYOffset);
     }
@@ -35,7 +34,7 @@ export default function FrontSection(props) {
       oBackgroundSize: "cover",
       backgroundSize: "cover",
       position: "relative",
-      zIndex: 999
+      zIndex: 999,
     },
     content: {
       width: "100%",
@@ -49,25 +48,25 @@ export default function FrontSection(props) {
       oBackgroundSize: "cover",
       backgroundSize: "cover",
       position: "relative",
-      zIndex: 1
+      zIndex: 1,
     },
     navigation: {
       width: "19%",
       display: "flex",
       flexDirection: "column",
       alignItems: "right",
-      justifyContent: "center"
+      justifyContent: "center",
     },
     title: {
       marginTop: "60px",
-      color: "#8698da"
+      color: "#8698da",
     },
     names: {
-      color: "#8698da"
+      color: "#8698da",
     },
     desc: {
       color: "#8698da",
-      marginBottom: "50px"
+      marginBottom: "50px",
     },
     pageButton: {
       marginTop: "10px",
@@ -78,9 +77,9 @@ export default function FrontSection(props) {
       textAlign: "right",
       transition: "1s",
       "&:hover": {
-        color: "#5065A3"
-      }
-    }
+        color: "#5065A3",
+      },
+    },
   });
   const classes = useStyles();
 
