@@ -28,12 +28,15 @@ export default function Portfolio(props) {
   const [filter, setFilter] = useState("best")
   const [selectedImage, setSelectedImage] = useState(null)
   const [filteredImages, setFilteredImages] = useState([])
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 480)
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== `undefined` ? window.innerWidth < 480 : null
+  )
   const [drawerWidth, setDrawerWidth] = useState(isMobile ? 60 : 30)
   const [drawerOpen, setDrawerOpen] = useState(isMobile ? false : true)
 
   const listener = e => {
-    const newSize = window.innerWidth < 480
+    const newSize =
+      typeof window !== `undefined` ? window.innerWidth < 480 : null
     setIsMobile(newSize)
     setDrawerWidth(newSize ? 50 : 30)
   }
