@@ -67,9 +67,6 @@ export default function Grid({
   const thumbnails = []
 
   filteredImages.map((value, index) => {
-    console.log("RE")
-    console.log(value)
-    console.log(value.node.frontmatter.image.absolutePath)
     thumbnails.push(
       <Thumbnail
         onClick={() => {

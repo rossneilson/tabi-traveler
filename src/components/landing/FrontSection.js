@@ -127,7 +127,7 @@ export default function FrontSection({}) {
   })
 
   return (
-    <div>
+    <div style={{ height: "100vh" }}>
       <div
         className={classes.main}
         offset={offset / 1.6}

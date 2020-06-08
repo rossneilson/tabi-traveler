@@ -38,6 +38,7 @@
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",
     "react-jss": "^10.1.1",
+    "react-responsive": "^8.1.0",
     "react-simple-maps": "^2.1.2",
     "react-switch": "^5.0.1",
     "react-typography": "^0.16.19",

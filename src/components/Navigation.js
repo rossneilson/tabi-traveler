@@ -3,16 +3,27 @@ import styled from "styled-components"
 import { FormattedMessage } from "gatsby-plugin-intl"
 import { Link } from "gatsby"
 
-const Bar = styled.section`
+const BarHorizontal = styled.section`
   display: flex;
   align-items: center;
-  width: ${props => (props.vertical ? props.verticalWidth + "%" : "100%")};
-  flex-flow: ${props => (props.vertical ? "column" : "wrap")};
-  justify-content: ${props => (props.vertical ? "none" : "center")};
-  margin-top: ${props => (props.vertical ? "100px" : "none")};
-  position: ${props => (props.vertical ? "fixed" : "relative")};
+  width: 100%;
+  flex-flow: wrap;
+  justify-content: center;
+  margin-top: none;
+  position: relative;
   z-index: 9999;
 `
+const BarVertical = styled.section`
+  display: flex;
+  align-items: center;
+  width: ${props => props.verticalWidth + "%"};
+  flex-flow: column;
+  justify-content: none;
+  margin-top: 100px;
+  position: fixed;
+  z-index: 9999;
+`
+
 const Home = styled(Link)`
   padding: 1% 3% 3% 3%;
   font-size: 200%;
@@ -43,19 +54,37 @@ const PageButton = styled(Link)`
     color: #5065a3;
   }
 `
-
 export default function Navigation({ link1, link2, vertical, verticalWidth }) {
+  console.log("nav")
+  console.log(vertical)
+
   return (
-    <Bar vertical={vertical} verticalWidth={verticalWidth}>
-      <PageButton to={"/" + link1}>
-        <FormattedMessage id={"main." + link1} />
-      </PageButton>
-      <Home to="/">
-        <FormattedMessage id="main.title" />
-      </Home>
-      <PageButton to={"/" + link2}>
-        <FormattedMessage id={"main." + link2} />
-      </PageButton>
-    </Bar>
+    <div>
+      {!vertical ? (
+        <BarHorizontal>
+          <PageButton to={"/" + link1}>
+            <FormattedMessage id={"main." + link1} />
+          </PageButton>
+          <Home to="/">
+            <FormattedMessage id="main.title" />
+          </Home>
+          <PageButton to={"/" + link2}>
+            <FormattedMessage id={"main." + link2} />
+          </PageButton>
+        </BarHorizontal>
+      ) : (
+        <BarVertical verticalWidth={verticalWidth}>
+          <PageButton to={"/" + link1}>
+            <FormattedMessage id={"main." + link1} />
+          </PageButton>
+          <Home to="/">
+            <FormattedMessage id="main.title" />
+          </Home>
+          <PageButton to={"/" + link2}>
+            <FormattedMessage id={"main." + link2} />
+          </PageButton>
+        </BarVertical>
+      )}
+    </div>
   )
 }

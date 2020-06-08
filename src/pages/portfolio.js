@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
+import { useMediaQuery } from "react-responsive"
 import MenuIcon from "@material-ui/icons/Menu"
 
 import "../index.css"
@@ -25,28 +26,30 @@ const BurgerIcon = styled(MenuIcon)`
 
 export default function Portfolio(props) {
   console.log(props)
+  const isMobile = useMediaQuery({ query: "(orientation: portrait)" })
   const [filter, setFilter] = useState("best")
   const [selectedImage, setSelectedImage] = useState(null)
   const [filteredImages, setFilteredImages] = useState([])
-  const [isMobile, setIsMobile] = useState(
-    typeof window !== `undefined` ? window.innerWidth < 480 : null
-  )
+  // const [isMobile, setIsMobile] = useState(
+  //   typeof window !== `undefined` ? window.innerWidth < 480 : null
+  // )
   const [drawerWidth, setDrawerWidth] = useState(isMobile ? 60 : 30)
-  const [drawerOpen, setDrawerOpen] = useState(isMobile ? false : true)
+  const [drawerOpen, setDrawerOpen] = useState(false)
+  console.log(isMobile)
+  console.log(drawerWidth)
+  console.log(drawerOpen)
 
-  const listener = e => {
-    const newSize =
-      typeof window !== `undefined` ? window.innerWidth < 480 : null
-    setIsMobile(newSize)
-    setDrawerWidth(newSize ? 50 : 30)
-  }
+  // const listener = e => {
+  //   const newSize =
+  //     typeof window !== `undefined` ? window.innerWidth < 480 : null
+  //   console.log(newSize)
+  //   setIsMobile(newSize)
+  //   setDrawerWidth(newSize ? 50 : 30)
+  // }
 
   useEffect(() => {
-    window.addEventListener("resize", listener)
-    return () => {
-      window.removeEventListener("resize", listener)
-    }
-  })
+    setDrawerWidth(isMobile ? 50 : 30)
+  }, [isMobile])
 
   return (
     <div>
@@ -109,12 +112,10 @@ export const imageQuery = graphql`
                   ...GatsbyImageSharpFluid
                 }
               }
-              absolutePath
             }
             page
             landscape
           }
-          fileAbsolutePath
         }
       }
     }
