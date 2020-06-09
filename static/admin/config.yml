@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: master
 publish_mode: editorial_workflow
-media_folder: "src/images/uploads"
+media_folder: "src/images"
 collections:
   - name: "portfolio" # Used in routes, e.g., /admin/collections/blog
     label: "Portfolio" # Used in the UI
@@ -11,7 +11,7 @@ collections:
     fields: # The fields for each document, usually in front matter
       - {label: "Page", name: "page", widget: "hidden", default: "portfolio"}
       - {label: "Best", name: "best", widget: "boolean"}
-      - {label: "Landscape", name: "landscape", widget: boolean"}
+      - {label: "Landscape", name: "landscape", widget: "boolean"}
       - {label: "Image", name: "image", widget: "image"}
       - {label: "Location (GBR,JPN, etc)", name: "location", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
