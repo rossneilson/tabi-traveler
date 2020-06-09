@@ -41,9 +41,6 @@ const ModalMain = styled.section`
           1s ease-out 0s 1 ${Keyframes.slideInFromBottom} 
         `
       : "none"};
-  @media (max-width: 450px) {
-    height: 90%;
-  }
 `
 
 const Image = styled(Img)`
