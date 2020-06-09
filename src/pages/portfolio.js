@@ -27,6 +27,9 @@ const BurgerIcon = styled(MenuIcon)`
 export default function Portfolio(props) {
   console.log(props)
   const isMobile = useMediaQuery({ query: "(orientation: portrait)" })
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-device-width: 1224px)",
+  })
   const [filter, setFilter] = useState("best")
   const [selectedImage, setSelectedImage] = useState(null)
   const [filteredImages, setFilteredImages] = useState([])
@@ -34,7 +37,7 @@ export default function Portfolio(props) {
   //   typeof window !== `undefined` ? window.innerWidth < 480 : null
   // )
   const [drawerWidth, setDrawerWidth] = useState(isMobile ? 60 : 30)
-  const [drawerOpen, setDrawerOpen] = useState(false)
+  const [drawerOpen, setDrawerOpen] = useState(isDesktopOrLaptop ? true : false)
   console.log(isMobile)
   console.log(drawerWidth)
   console.log(drawerOpen)
@@ -112,10 +115,12 @@ export const imageQuery = graphql`
                   ...GatsbyImageSharpFluid
                 }
               }
+              absolutePath
             }
             page
             landscape
           }
+          fileAbsolutePath
         }
       }
     }
