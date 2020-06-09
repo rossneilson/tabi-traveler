@@ -3,6 +3,6 @@ page: portfolio
 best: false
 landscape: false
 location: JPN
-image: ../../images/portfolio/./download-10.jpg
+image: ../../img/download-10.jpg
 ---
 Content goes here!

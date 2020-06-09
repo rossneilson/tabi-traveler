@@ -3,6 +3,7 @@ backend:
   branch: master
 publish_mode: editorial_workflow
 media_folder: "src/images/portfolio"
+public_folder: /img
 collections:
   - name: "portfolio" # Used in routes, e.g., /admin/collections/blog
     label: "Portfolio" # Used in the UI
