@@ -1,8 +1,8 @@
 ---
 page: portfolio
-landscape: true
 best: true
+landscape: false
 location: GBR
-image: ./images/download-30.jpg
+image: ./images/download-1.jpg
 ---
 Content goes here!

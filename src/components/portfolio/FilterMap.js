@@ -12,6 +12,7 @@ import {
 import geoUrl from "./geo.json"
 
 // TODO move to json file
+// Create from images
 const highlighted = ["JPN", "GBR"]
 
 export default function FilterMap({ filter, setFilter }) {

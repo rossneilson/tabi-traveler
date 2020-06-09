@@ -11,13 +11,13 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: path.join(__dirname, `src`, `images`),
+        path: path.join(__dirname, `src`, `content`, `images`),
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/markdown`,
+        path: `${__dirname}/src/content`,
       },
     },
     {
