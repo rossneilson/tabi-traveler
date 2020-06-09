@@ -33,22 +33,9 @@ export default function Portfolio(props) {
   const [filter, setFilter] = useState("best")
   const [selectedImage, setSelectedImage] = useState(null)
   const [filteredImages, setFilteredImages] = useState([])
-  // const [isMobile, setIsMobile] = useState(
-  //   typeof window !== `undefined` ? window.innerWidth < 480 : null
-  // )
-  const [drawerWidth, setDrawerWidth] = useState(isMobile ? 60 : 30)
-  const [drawerOpen, setDrawerOpen] = useState(isDesktopOrLaptop ? true : false)
-  console.log(isMobile)
-  console.log(drawerWidth)
-  console.log(drawerOpen)
 
-  // const listener = e => {
-  //   const newSize =
-  //     typeof window !== `undefined` ? window.innerWidth < 480 : null
-  //   console.log(newSize)
-  //   setIsMobile(newSize)
-  //   setDrawerWidth(newSize ? 50 : 30)
-  // }
+  const [drawerWidth, setDrawerWidth] = useState(isMobile ? 60 : 30)
+  const [drawerOpen, setDrawerOpen] = useState(false)
 
   useEffect(() => {
     setDrawerWidth(isMobile ? 50 : 30)
@@ -66,6 +53,7 @@ export default function Portfolio(props) {
         onClick={() => setDrawerOpen(true)}
         show={drawerOpen}
       />
+
       <Navigation
         vertical={drawerOpen}
         verticalWidth={drawerWidth}

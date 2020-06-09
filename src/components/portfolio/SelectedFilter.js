@@ -38,13 +38,14 @@ export default function SelectedFilter({ filter, setFilter }) {
       <div
         style={{
           display: "flex",
+          justifyContent: "space-between",
         }}
       >
         <ResetButton filter={filter} onClick={() => setFilter("best")}>
           {" "}
           Reset{" "}
         </ResetButton>
-        <div>
+        <div style={{ marginRight: "20px" }}>
           <FlagIcon code={filter} width="30" />
           <FlagIcon code={"GB_SCT"} width="30" />
         </div>
@@ -55,7 +56,7 @@ export default function SelectedFilter({ filter, setFilter }) {
       <div
         style={{
           display: "flex",
-          justifyContent: "space-evenly",
+          justifyContent: "space-between",
         }}
       >
         <ResetButton filter={filter} onClick={() => setFilter("best")}>
@@ -63,6 +64,7 @@ export default function SelectedFilter({ filter, setFilter }) {
           Reset{" "}
         </ResetButton>
         <FlagIcon
+          style={{ marginRight: "20px" }}
           code={filter}
           width="30"
           fallback={<FavouriteIcon fontSize="large" />}

@@ -55,9 +55,6 @@ const PageButton = styled(Link)`
   }
 `
 export default function Navigation({ link1, link2, vertical, verticalWidth }) {
-  console.log("nav")
-  console.log(vertical)
-
   return (
     <div>
       {!vertical ? (

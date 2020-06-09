@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import Switch from "react-switch"
 import { changeLocale } from "gatsby-plugin-intl"
@@ -34,8 +34,10 @@ export default function Toggle({ language, position = "fixed" }) {
     setChecked(!checked)
     await new Promise(r => setTimeout(r, 1))
     if (checked) {
+      console.log("chanign to en")
       changeLocale("en")
     } else {
+      console.log("chanign to jp")
       changeLocale("jp")
     }
   }

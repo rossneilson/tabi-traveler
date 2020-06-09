@@ -43,7 +43,7 @@ export default function Filter({
       variant="persistent"
     >
       <DrawerHeader>
-        <Toggle position="relative" langauge={language} />
+        <Toggle position="relative" language={language} />
         <CloseIcon fontSize="large" onClick={() => setOpen(false)} />
       </DrawerHeader>
 
