@@ -4,8 +4,8 @@ import { createUseStyles } from "react-jss"
 import { FormattedMessage } from "gatsby-plugin-intl"
 import { Link } from "gatsby"
 
-import frame from "../../content/images/frame.webp"
-import main from "../../content/images/mainImage.jpg"
+import frame from "../../img/frame.webp"
+import main from "../../img/mainImage.jpg"
 
 import { device, deviceMin } from "../../utils/device"
 

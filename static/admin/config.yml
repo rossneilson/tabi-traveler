@@ -2,14 +2,11 @@ backend:
   name: git-gateway
   branch: master
 publish_mode: editorial_workflow
-media_folder: src/content/images
-public_folder: /img
+media_folder: "src/images/portfolio"
 collections:
   - name: "portfolio" # Used in routes, e.g., /admin/collections/blog
     label: "Portfolio" # Used in the UI
-    folder: "src/content/portfolio" # The path to the folder where the documents are stored
-    media_folder: ''
-    public_folder: ''
+    folder: "src/markdown/portfolio" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     fields: # The fields for each document, usually in front matter
       - {label: "Page", name: "page", widget: "hidden", default: "portfolio"}

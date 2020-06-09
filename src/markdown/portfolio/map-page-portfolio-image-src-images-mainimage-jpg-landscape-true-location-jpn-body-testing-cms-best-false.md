@@ -2,7 +2,7 @@
 page: portfolio
 best: false
 landscape: true
-image: ./mainImage.jpg
+image: ../../images/portfolio/./mainImage.jpg
 location: JPN
 ---
 TESTING CMS

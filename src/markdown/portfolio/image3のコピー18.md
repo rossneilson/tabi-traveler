@@ -2,7 +2,7 @@
 page: portfolio
 best: true
 landscape: false
-image: ../../images/portfolio/mainImage.jpg
-location: GBR
+location: JPN
+image: ../../images/portfolio/./download-21.jpg
 ---
 Content goes here!
