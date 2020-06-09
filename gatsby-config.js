@@ -69,5 +69,12 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
+    {
+      resolve: "gatsby-plugin-webpack-bundle-analyzer",
+      options: {
+        analyzerPort: 3000,
+        production: false,
+      },
+    },
   ],
 }

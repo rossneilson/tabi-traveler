@@ -9,7 +9,8 @@ import {
   Annotation,
 } from "react-simple-maps"
 
-import geoUrl from "./geo.json"
+const geoUrl =
+  "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json"
 
 // TODO move to json file
 // Create from images
