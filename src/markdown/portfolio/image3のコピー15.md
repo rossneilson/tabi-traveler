@@ -1,8 +1,8 @@
 ---
 page: portfolio
+landscape: true
 best: true
 location: JPN
-landscape: false
-image: ../../images/download-20.jpg
+image: ../../images/download-18.jpg
 ---
 Content goes here!
