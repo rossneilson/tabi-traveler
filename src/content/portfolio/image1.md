@@ -2,7 +2,7 @@
 page: portfolio
 best: true
 landscape: false
+image: mainImage.jpg
 location: GBR
-image: ./download-1.jpg
 ---
 Content goes here!
