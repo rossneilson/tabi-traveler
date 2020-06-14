@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import loadable from "@loadable/component"
 import styled from "styled-components"
 
 import Drawer from "@material-ui/core/Drawer"
@@ -8,7 +9,8 @@ import Divider from "@material-ui/core/Divider"
 import Toggle from "../Toggle"
 
 import SelectedFilter from "./SelectedFilter"
-import FilterMap from "./FilterMap"
+
+const FilterMap = loadable(() => import("./FilterMap"))
 
 const StyledDrawer = styled(Drawer)`
   & .MuiDrawer-paper {

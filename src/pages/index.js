@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import styled from "styled-components"
+import loadable from "@loadable/component"
 
 import "../index.css"
 import "typeface-noto-sans"
@@ -12,27 +12,13 @@ import Toggle from "../components/Toggle"
 import FrontSection from "../components/landing/FrontSection"
 import AboutSection from "../components/landing/AboutSection"
 import PageLinks from "../components/landing/PageLinks"
-import Contact from "../components/contact/Contact"
+const Contact = loadable(() => import("../components/contact/Contact"))
 
 export default function Main(props) {
   console.log(props)
 
   return (
     <div>
-      {/* <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-      <script>
-        {() => {
-          if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", user => {
-              if (!user) {
-                window.netlifyIdentity.on("login", () => {
-                  document.location.href = "/admin/"
-                })
-              }
-            })
-          }
-        }}
-      </script> */}
       <SEO
         title={"Tabi Traveler - Photography"}
         description={
