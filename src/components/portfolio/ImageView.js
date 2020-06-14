@@ -78,7 +78,7 @@ const Next = styled(ForwardIcon)`
   margin-left: 95%;
   @media (pointer: coarse) {
     margin-left: 45%;
-    margin-top: 150%;
+    margin-top: 80%;
     transform: rotate(90deg);
     cursor: s-resize;
   }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import MenuIcon from "@material-ui/icons/Menu"
@@ -24,17 +24,12 @@ const BurgerIcon = styled(MenuIcon)`
 
 export default function Portfolio(props) {
   console.log(props)
-  // const isMobile = useMediaQuery({ query: "(orientation: portrait)" })
+
   const [filter, setFilter] = useState("best")
   const [selectedImage, setSelectedImage] = useState(null)
   const [filteredImages, setFilteredImages] = useState([])
 
-  // const [drawerWidth, setDrawerWidth] = useState(isMobile ? 60 : 30)
   const [drawerOpen, setDrawerOpen] = useState(false)
-
-  // useEffect(() => {
-  //   setDrawerWidth(isMobile ? 50 : 30)
-  // }, [isMobile])
 
   return (
     <div>
@@ -49,14 +44,8 @@ export default function Portfolio(props) {
         show={drawerOpen}
       />
 
-      <Navigation
-        vertical={drawerOpen}
-        // verticalWidth={drawerWidth}
-        link1={"prints"}
-        link2={"blog"}
-      />
+      <Navigation vertical={drawerOpen} link1={"prints"} link2={"blog"} />
       <FilterDrawer
-        // drawerWidth={drawerWidth}
         open={drawerOpen}
         setOpen={setDrawerOpen}
         filter={filter}
@@ -64,7 +53,6 @@ export default function Portfolio(props) {
         language={props.pageContext.intl.language}
       />
       <Grid
-        // drawerWidth={drawerWidth}
         drawerOpen={drawerOpen}
         filter={filter}
         images={props.data.images.edges}

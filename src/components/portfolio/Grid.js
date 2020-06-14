@@ -13,9 +13,6 @@ const GridWrap = styled.section`
   transition: all 1s;
   grid-auto-flow: dense;
   margin-left: ${props => (props.drawerOpen ? "30%" : "0%")};
-  ${"" /* @media ${device.mobileM} {
-    grid-auto-rows: 500px;
-  } */}
   @media (pointer: coarse) {
     width: ${props => (props.drawerOpen ? 100 - 50 + "%" : "100%")};
     margin-left: ${props => (props.drawerOpen ? "50%" : "0%")};
