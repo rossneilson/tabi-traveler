@@ -16,12 +16,15 @@ const BarHorizontal = styled.section`
 const BarVertical = styled.section`
   display: flex;
   align-items: center;
-  width: ${props => props.verticalWidth + "%"};
+  width: 30%;
   flex-flow: column;
   justify-content: none;
   margin-top: 100px;
   position: fixed;
   z-index: 9999;
+  @media (pointer: coarse) {
+    width: 50%;
+  }
 `
 
 const Home = styled(Link)`
@@ -70,7 +73,7 @@ export default function Navigation({ link1, link2, vertical, verticalWidth }) {
           </PageButton>
         </BarHorizontal>
       ) : (
-        <BarVertical verticalWidth={verticalWidth}>
+        <BarVertical>
           <PageButton to={"/" + link1}>
             <FormattedMessage id={"main." + link1} />
           </PageButton>

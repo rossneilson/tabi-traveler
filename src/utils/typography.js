@@ -1,7 +1,7 @@
 import Typography from "typography"
 import theme from "typography-theme-fairy-gates"
 
-import "@openfonts/noto-sans-jp_japanese"
+import "typeface-noto-sans"
 
 theme.overrideThemeStyles = () => ({})
 

@@ -14,7 +14,12 @@ const FilterMap = loadable(() => import("./FilterMap"))
 
 const StyledDrawer = styled(Drawer)`
   & .MuiDrawer-paper {
-    width: ${props => props.width + "%"};
+    width: 30%;
+  }
+  @media (pointer: coarse) {
+    & .MuiDrawer-paper {
+      width: 50%;
+    }
   }
 `
 
@@ -29,21 +34,15 @@ const CloseIcon = styled(ChevronLeftIcon)`
   color: #8698da;
 `
 
-export default function Filter({
+export default function FilterDrawer({
   open,
   setOpen,
-  drawerWidth,
   language,
   filter,
   setFilter,
 }) {
   return (
-    <StyledDrawer
-      width={drawerWidth}
-      open={open}
-      anchor="left"
-      variant="persistent"
-    >
+    <StyledDrawer open={open} anchor="left" variant="persistent">
       <DrawerHeader>
         <Toggle position="relative" language={language} />
         <CloseIcon fontSize="large" onClick={() => setOpen(false)} />

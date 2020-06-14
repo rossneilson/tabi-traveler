@@ -192,7 +192,7 @@ export default function Contact(props) {
         <Icons>
           <Link
             target="_blank"
-            rel="canonical"
+            rel="noopener"
             href="https://www.instagram.com/tabitraveler/"
           >
             <InstagramIcon />
@@ -200,7 +200,7 @@ export default function Contact(props) {
 
           <Link
             target="_blank"
-            rel="canonical"
+            rel="noopener"
             href="mailto:ross@tabitraveler.com"
           >
             <EmailIcon />

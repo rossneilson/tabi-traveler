@@ -5,16 +5,20 @@ import Img from "gatsby-image"
 import { device, deviceMin } from "../../utils/device"
 
 const GridWrap = styled.section`
-  width: ${props =>
-    props.drawerOpen ? 100 - props.drawerWidth + "%" : "100%"};
+  width: ${props => (props.drawerOpen ? 100 - 30 + "%" : "100%")};
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-auto-rows: 350px;
   grid-gap: 0px;
   transition: all 1s;
   grid-auto-flow: dense;
-  margin-left: ${props => (props.drawerOpen ? props.drawerWidth + "%" : "0%")};
-  @media ${device.mobileM} {
+  margin-left: ${props => (props.drawerOpen ? "30%" : "0%")};
+  ${"" /* @media ${device.mobileM} {
+    grid-auto-rows: 500px;
+  } */}
+  @media (pointer: coarse) {
+    width: ${props => (props.drawerOpen ? 100 - 50 + "%" : "100%")};
+    margin-left: ${props => (props.drawerOpen ? "50%" : "0%")};
     grid-auto-rows: 500px;
   }
 `
@@ -51,7 +55,6 @@ export default function Grid({
   setSelectedImage,
   filteredImages,
   setFilteredImages,
-  drawerWidth,
   drawerOpen,
 }) {
   useEffect(() => {
@@ -83,9 +86,5 @@ export default function Grid({
     )
   })
 
-  return (
-    <GridWrap drawerWidth={drawerWidth} drawerOpen={drawerOpen}>
-      {thumbnails}
-    </GridWrap>
-  )
+  return <GridWrap drawerOpen={drawerOpen}>{thumbnails}</GridWrap>
 }

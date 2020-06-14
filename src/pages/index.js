@@ -4,7 +4,6 @@ import loadable from "@loadable/component"
 
 import "../index.css"
 import "typeface-noto-sans"
-import "@openfonts/noto-sans-jp_japanese"
 
 import SEO from "../components/seo"
 import Toggle from "../components/Toggle"

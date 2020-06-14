@@ -59,7 +59,7 @@ const Back = styled(BackIcon)`
   position: absolute;
   margin-left: 20px;
   z-index: 999;
-  @media ${deviceMin.mobileL} {
+  @media (pointer: coarse) {
     margin-left: 45%;
     top: 4%;
     transform: rotate(90deg);
@@ -76,7 +76,7 @@ const Next = styled(ForwardIcon)`
   z-index: 999;
   align-self: center;
   margin-left: 95%;
-  @media ${deviceMin.mobileL} {
+  @media (pointer: coarse) {
     margin-left: 45%;
     margin-top: 150%;
     transform: rotate(90deg);
@@ -93,7 +93,7 @@ const Close = styled(CloseIcon)`
   z-index: 999;
   top: 0%;
   margin-left: 95%;
-  @media ${deviceMin.mobileL} {
+  @media (pointer: coarse) {
     margin-left: 90%;
   }
 `
