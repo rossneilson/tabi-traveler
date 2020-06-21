@@ -71,6 +71,7 @@ module.exports = {
     `gatsby-plugin-netlify-cms`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-netlify-cms-paths`,
+    `gatsby-plugin-nprogress`,
     "gatsby-plugin-loadable-components-ssr",
     {
       resolve: "gatsby-plugin-webpack-bundle-analyzer",
