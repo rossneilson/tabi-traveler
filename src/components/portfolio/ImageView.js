@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react"
 import styled, { css } from "styled-components"
+import loadable from "@loadable/component"
 import Img from "gatsby-image"
-import ForwardIcon from "@material-ui/icons/ArrowForwardIos"
-import BackIcon from "@material-ui/icons/ArrowBackIos"
-import CloseIcon from "@material-ui/icons/Close"
 
 import * as Keyframes from "../../utils/keyframes"
-import { deviceMin } from "../../utils/device"
+import { useKeyPress } from "../../utils/hooks"
+
+const ForwardIcon = loadable(() => import("@material-ui/icons/ArrowForwardIos"))
+const BackIcon = loadable(() => import("@material-ui/icons/ArrowBackIos"))
+const CloseIcon = loadable(() => import("@material-ui/icons/Close"))
 
 const Modal = styled.section`
   z-index: 99999;
@@ -103,6 +105,18 @@ export default function ImageView({
   setSelectedImage,
   filteredImages,
 }) {
+  const left = useKeyPress("ArrowLeft")
+  const right = useKeyPress("ArrowRight")
+  useEffect(() => {
+    if (selectedImage !== null) {
+      if (left) {
+        setSelectedImage(selectedImage - 1)
+      }
+      if (right) {
+        setSelectedImage(selectedImage + 1)
+      }
+    }
+  }, [left, right])
   if (filteredImages[selectedImage]) {
     return (
       <Modal

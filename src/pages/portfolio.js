@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
-import MenuIcon from "@material-ui/icons/Menu"
+import loadable from "@loadable/component"
 
 import "../index.css"
 import "typeface-noto-sans"
@@ -12,6 +12,8 @@ import Navigation from "../components/Navigation"
 import FilterDrawer from "../components/portfolio/FilterDrawer"
 import Grid from "../components/portfolio/Grid"
 import ImageView from "../components/portfolio/ImageView"
+
+const MenuIcon = loadable(() => import("@material-ui/icons/Menu"))
 
 const BurgerIcon = styled(MenuIcon)`
   position: fixed;

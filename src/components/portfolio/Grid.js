@@ -56,10 +56,20 @@ export default function Grid({
 }) {
   useEffect(() => {
     if (filter === "best") {
-      setFilteredImages(images.filter(e => e.node.frontmatter.best === true))
+      setFilteredImages(
+        images
+          .filter(e => e.node.frontmatter.best === true)
+          .sort(() => {
+            return 0.5 - Math.random()
+          })
+      )
     } else {
       setFilteredImages(
-        images.filter(e => e.node.frontmatter.location === filter)
+        images
+          .filter(e => e.node.frontmatter.location === filter)
+          .sort(() => {
+            return 0.5 - Math.random()
+          })
       )
     }
   }, filter)
