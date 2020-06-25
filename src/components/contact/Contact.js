@@ -19,7 +19,7 @@ const Wrapper = styled.section`
 
 const ContactCard = styled.section`
   background-color: white;
-  padding: 10px;
+  padding: 40px;
   z-index: 978;
   min-height: 20%;
   width: 50%;

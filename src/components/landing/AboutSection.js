@@ -15,18 +15,8 @@ const Wrap = styled.section`
   background-size: cover;
   @media ${device.laptop} {
     padding: 4% 0% 4% 0%;
-  }
-  @media ${deviceMin.mobileS} {
-    height: 130vh;
-  }
-  @media ${deviceMin.mobileM} {
-    height: 115vh;
-  }
-  @media ${deviceMin.tablet} {
-    height: 90vh;
-  }
-  @media ${deviceMin.laptopL} {
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
   }
 `
 const AboutImage = styled(Img)`
@@ -54,7 +44,8 @@ const About = styled.section`
   z-index: 999;
   @media ${device.tablet} {
     margin: 5%;
-    top: 18%;
+    margin-top: -90px;
+    position: inherit;
   }
 `
 const CTA = styled(Link)`

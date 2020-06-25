@@ -25,8 +25,6 @@ const BurgerIcon = styled(MenuIcon)`
 `
 
 export default function Portfolio(props) {
-  console.log(props)
-
   const [filter, setFilter] = useState("best")
   const [selectedImage, setSelectedImage] = useState(null)
   const [filteredImages, setFilteredImages] = useState([])
@@ -36,7 +34,7 @@ export default function Portfolio(props) {
   return (
     <div>
       <SEO
-        title={"Tabi Traveler - Portfolio"}
+        title={"Portfolio"}
         description={"Portfolio page for the best international travel photos"}
         lang={props.pageContext.intl.language}
       />

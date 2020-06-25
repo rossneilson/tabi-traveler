@@ -14,15 +14,10 @@ import PageLinks from "../components/landing/PageLinks"
 const Contact = loadable(() => import("../components/contact/Contact"))
 
 export default function Main(props) {
-  console.log(props)
-
   return (
     <div>
       <SEO
-        title={"Tabi Traveler - Photography"}
-        description={
-          "Photography website for landing page, portfolio, blog and store"
-        }
+        description={"Travel photographer international couple"}
         lang={props.pageContext.intl.language}
       />
       <Toggle language={props.pageContext.intl.language} />
