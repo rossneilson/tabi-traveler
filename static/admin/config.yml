@@ -30,4 +30,5 @@ collections:
       - {label: "Image", name: "image", widget: "image"}
       - {label: "Path", name: "path", widget: "string", hint: "blog/same-as-title"}
       - {label: "Locale", name: "locale", widget: "select", options: ["en", "jp"]}
-      - {label: "Description", name: "seo", widget: "string"}
+      - {label: "Description", name: "SEO", widget: "string"}
+      - {label: "Content", name: "body", widget: "markdown"}
