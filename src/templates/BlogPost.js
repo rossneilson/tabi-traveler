@@ -11,6 +11,7 @@ import "../index.css"
 import Navigation from "../components/Navigation"
 import Footer from "../components/blog/Footer"
 import Toggle from "../components/Toggle"
+import SEO from "../components/seo"
 
 const ChevronLeftIcon = loadable(() => import("@material-ui/icons/ChevronLeft"))
 
@@ -136,6 +137,11 @@ export default function BlogPost({ data, pageContext }) {
 
   return (
     <div>
+      <SEO
+        title={frontmatter.title + " | Tabi Traveler"}
+        description={frontmatter.SEO}
+        lang={frontmatter.locale}
+      />
       <BackgroundImage fluid={frontmatter.image.childImageSharp.fluid} />
       <Gradient offset={offset} />
       <BackIcon

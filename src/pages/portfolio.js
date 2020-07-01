@@ -38,7 +38,7 @@ export default function Portfolio(props) {
   return (
     <div>
       <SEO
-        title={"Portfolio"}
+        title={"Portfolio | Tabi Traveler"}
         description={"Portfolio page for the best international travel photos"}
         lang={props.pageContext.intl.language}
       />

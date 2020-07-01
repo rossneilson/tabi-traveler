@@ -19,6 +19,7 @@ export default function Main(props) {
   return (
     <div>
       <SEO
+        title={"Tabi Traveler"}
         description={"Travel photographer international couple"}
         lang={props.pageContext.intl.language}
       />

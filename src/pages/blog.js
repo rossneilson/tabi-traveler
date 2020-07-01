@@ -66,7 +66,7 @@ export default function Blog(props) {
   return (
     <div>
       <SEO
-        title={"Blog"}
+        title={"Blog | Tabi Traveler"}
         description={
           "Blog page for articles about international travel locations experiences and accomodation"
         }
