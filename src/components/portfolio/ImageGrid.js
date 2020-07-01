@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from "react"
+import React, { useEffect } from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
-
-import { device, deviceMin } from "../../utils/device"
 
 const GridWrap = styled.section`
   width: ${props => (props.drawerOpen ? 100 - 30 + "%" : "100%")};
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-auto-rows: 350px;
   grid-gap: 0px;
   transition: all 1s;
@@ -72,7 +70,7 @@ export default function Grid({
           })
       )
     }
-  }, filter)
+  }, [filter])
 
   const thumbnails = []
 

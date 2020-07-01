@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import styled from "styled-components"
 import loadable from "@loadable/component"
 import ScotlandFlag from "../../img/gb-sct.svg"

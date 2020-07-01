@@ -9,7 +9,7 @@ const BarHorizontal = styled.section`
   width: 100%;
   flex-flow: wrap;
   justify-content: center;
-  margin-top: none;
+  margin-top: 15px;
   position: relative;
   z-index: 9999;
 `
@@ -30,7 +30,7 @@ const BarVertical = styled.section`
 const Home = styled(Link)`
   padding: 1% 3% 3% 3%;
   font-size: 200%;
-  color: #8698da;
+  color: ${props => (props.colour ? props.colour : "#8698da")};
   background-image: none;
   text-align: center;
   text-shadow: none;
@@ -45,7 +45,7 @@ const Home = styled(Link)`
 
 const PageButton = styled(Link)`
   padding: 1% 3% 3% 3%;
-  color: #acb8e4;
+  color: ${props => (props.colour ? props.colour : "#acb8e4")};
   font-size: 120%;
   transition: 1s;
   background-image: none;
@@ -57,18 +57,24 @@ const PageButton = styled(Link)`
     color: #5065a3;
   }
 `
-export default function Navigation({ link1, link2, vertical, verticalWidth }) {
+export default function Navigation({
+  link1,
+  link2,
+  colour,
+  vertical,
+  verticalWidth,
+}) {
   return (
     <div>
       {!vertical ? (
         <BarHorizontal>
-          <PageButton to={"/" + link1}>
+          <PageButton colour={colour} to={"/" + link1}>
             <FormattedMessage id={"main." + link1} />
           </PageButton>
-          <Home to="/">
+          <Home colour={colour} to="/">
             <FormattedMessage id="main.title" />
           </Home>
-          <PageButton to={"/" + link2}>
+          <PageButton colour={colour} to={"/" + link2}>
             <FormattedMessage id={"main." + link2} />
           </PageButton>
         </BarHorizontal>

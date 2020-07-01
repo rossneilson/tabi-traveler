@@ -10,10 +10,12 @@ import Toggle from "../components/Toggle"
 
 import FrontSection from "../components/landing/FrontSection"
 import AboutSection from "../components/landing/AboutSection"
+import BlogSection from "../components/landing/BlogSection"
 import PageLinks from "../components/landing/PageLinks"
 const Contact = loadable(() => import("../components/contact/Contact"))
 
 export default function Main(props) {
+  console.log(props)
   return (
     <div>
       <SEO
@@ -24,6 +26,7 @@ export default function Main(props) {
 
       <FrontSection />
       <AboutSection fuji={props.data.fujiImage.childImageSharp.fluid} />
+      <BlogSection posts={props.data.blogPosts.edges} />
       <PageLinks
         image1={props.data.image1.childImageSharp.fluid}
         image2={props.data.image2.childImageSharp.fluid}
@@ -35,7 +38,7 @@ export default function Main(props) {
 }
 
 export const imageQuery = graphql`
-  query {
+  query getData($locale: String) {
     fujiImage: file(relativePath: { eq: "fuji.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1800) {
@@ -61,6 +64,35 @@ export const imageQuery = graphql`
       childImageSharp {
         fluid(maxWidth: 640) {
           ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    blogPosts: allMarkdownRemark(
+      filter: {
+        fileAbsolutePath: { regex: "/(/blog/)/" }
+        frontmatter: { locale: { eq: $locale } }
+      }
+      sort: { fields: frontmatter___date, order: ASC }
+      limit: 4
+    ) {
+      edges {
+        node {
+          frontmatter {
+            path
+            locale
+            title
+            location
+            category
+            date
+            SEO
+            image {
+              childImageSharp {
+                fluid(maxWidth: 3000) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
         }
       }
     }

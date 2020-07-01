@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react"
-import { FormattedMessage } from "gatsby-plugin-intl"
+import React from "react"
 import {
   ComposableMap,
   Geographies,

@@ -10,7 +10,7 @@ import SEO from "../components/seo"
 
 import Navigation from "../components/Navigation"
 import FilterDrawer from "../components/portfolio/FilterDrawer"
-import Grid from "../components/portfolio/Grid"
+import Grid from "../components/portfolio/ImageGrid"
 import ImageView from "../components/portfolio/ImageView"
 
 const MenuIcon = loadable(() => import("@material-ui/icons/Menu"))
@@ -20,8 +20,12 @@ const BurgerIcon = styled(MenuIcon)`
   z-index: 99999;
   color: #8698da;
   margin: 2%;
+  margin-top: 1%;
   display: ${props => (!props.show ? "" : "none")};
   cursor: pointer;
+  @media (pointer: coarse) {
+    margin-top: 0;
+  }
 `
 
 export default function Portfolio(props) {
@@ -72,7 +76,10 @@ export default function Portfolio(props) {
 export const imageQuery = graphql`
   query {
     images: allMarkdownRemark(
-      filter: { frontmatter: { page: { eq: "portfolio" } } }
+      filter: {
+        fileAbsolutePath: { regex: "/(/portfolio/)/" }
+        frontmatter: { page: { eq: "portfolio" } }
+      }
     ) {
       edges {
         node {
@@ -86,7 +93,6 @@ export const imageQuery = graphql`
                   ...GatsbyImageSharpFluid
                 }
               }
-              absolutePath
             }
             page
             landscape

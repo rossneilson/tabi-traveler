@@ -1,12 +1,16 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import Switch from "react-switch"
 import { changeLocale } from "gatsby-plugin-intl"
 
 const ToggleWrap = styled.section`
   position: ${props => props.position};
-  z-index: 9998;
+  z-index: 99999;
   margin: 15px;
+  right: ${props => (props.right ? 0 : null)};
+  @media (pointer: coarse) {
+    margin-top: ${props => (props.right ? "20%" : null)};
+  }
 `
 
 const Icon = styled.section`
@@ -19,7 +23,11 @@ const Icon = styled.section`
   padding-right: 2;
 `
 
-export default function Toggle({ language, position = "fixed" }) {
+export default function Toggle({
+  language,
+  position = "fixed",
+  right = false,
+}) {
   const checkLanguage = () => {
     if (language === "jp") {
       return true
@@ -34,15 +42,15 @@ export default function Toggle({ language, position = "fixed" }) {
     setChecked(!checked)
     await new Promise(r => setTimeout(r, 1))
     if (checked) {
-      console.log("chanign to en")
+      console.log("changing to en")
       changeLocale("en")
     } else {
-      console.log("chanign to jp")
+      console.log("changing to jp")
       changeLocale("jp")
     }
   }
   return (
-    <ToggleWrap position={position}>
+    <ToggleWrap position={position} right={right}>
       <label>
         <Switch
           checked={checked}

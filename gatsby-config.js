@@ -17,7 +17,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/markdown`,
+        name: "portfolio",
+        path: `${__dirname}/src/markdown/portfolio`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "blog",
+        path: `${__dirname}/src/markdown/blog`,
       },
     },
     {
@@ -69,7 +77,19 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify-cms`,
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          },
+        ],
+      },
+    },
     `gatsby-plugin-netlify-cms-paths`,
     `gatsby-plugin-nprogress`,
     "gatsby-plugin-loadable-components-ssr",
@@ -77,7 +97,7 @@ module.exports = {
       resolve: "gatsby-plugin-webpack-bundle-analyzer",
       options: {
         analyzerPort: 3000,
-        production: true,
+        production: false,
       },
     },
   ],

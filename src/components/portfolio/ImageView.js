@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useEffect } from "react"
 import styled, { css } from "styled-components"
 import loadable from "@loadable/component"
 import Img from "gatsby-image"

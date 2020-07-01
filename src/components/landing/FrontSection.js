@@ -109,7 +109,7 @@ const PageButton = styled(Link)`
   }
 `
 
-export default function FrontSection({}) {
+export default function FrontSection(props) {
   const classes = useStyles()
   const [offset, setOffset] = useState(0)
 

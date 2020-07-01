@@ -1,7 +1,7 @@
 import Typography from "typography"
-import theme from "typography-theme-fairy-gates"
+import theme from "typography-theme-moraga"
 
-import "typeface-noto-sans"
+// import "typeface-noto-sans"
 
 theme.overrideThemeStyles = () => ({})
 

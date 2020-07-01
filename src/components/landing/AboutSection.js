@@ -4,14 +4,14 @@ import { FormattedMessage } from "gatsby-plugin-intl"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 
-import { device, deviceMin } from "../../utils/device"
+import { device } from "../../utils/device"
 
 const Wrap = styled.section`
   font-family: Noto Sans JP;
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   position: relative;
-  background: #3b3d40;
+  background: #5e6165;
   background-size: cover;
   @media ${device.laptop} {
     padding: 4% 0% 4% 0%;
@@ -35,6 +35,7 @@ const AboutImage = styled(Img)`
 const About = styled.section`
   background: white;
   color: #5065a3;
+  box-shadow: 0px 0px 9px 1px #000000a1;
   text-align: left;
   margin-top: 10%;
   margin-left: 5%;
@@ -52,7 +53,7 @@ const CTA = styled(Link)`
   text-align: center;
   padding: 12px;
   background: #f79a60;
-  color: white;
+  color: white !important;
   margin-top: 120px;
   margin-left: 35%;
   border-radius: 5px;

@@ -20,6 +20,11 @@
     "5": "We are also available for freelance photography work for small businesses",
     "contact": "Contact us now >"
   },
+  "blog": {
+    "back": "Back to Blog",
+    "authorDesc": "We are a young couple exploring the world through our photography and sharing it as we go",
+    "cta": "Find out more"
+  },
   "contact": {
     "title": "Contact Us",
     "name": "Name",

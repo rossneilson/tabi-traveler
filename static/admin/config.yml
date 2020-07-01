@@ -9,10 +9,25 @@ collections:
     label: "Portfolio" # Used in the UI
     folder: "src/markdown/portfolio" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
+    identifier_field: name
     fields: # The fields for each document, usually in front matter
       - {label: "Page", name: "page", widget: "hidden", default: "portfolio"}
       - {label: "Best", name: "best", widget: "boolean"}
       - {label: "Landscape", name: "landscape", widget: "boolean"}
       - {label: "Image", name: "image", widget: "image"}
-      - {label: "Location (GBR,JPN, etc)", name: "location", widget: "string"}
+      - {label: "Location", name: "location", widget: "string", hint: 'GBR,JPN, etc'}
       - {label: "Body", name: "body", widget: "markdown"}
+  - name: "blog"
+    label: "Blog"
+    folder: "src/markdown/blog" 
+    create: true 
+    identifier_field: title
+    fields: 
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Location", name: "location", widget: "string"}
+      - {label: "Category", name: "category", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Path", name: "path", widget: "string", hint: "blog/same-as-title"}
+      - {label: "Locale", name: "locale", widget: "select", options: ["en", "jp"]}
+      - {label: "Description", name: "seo", widget: "string"}
