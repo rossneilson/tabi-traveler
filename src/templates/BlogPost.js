@@ -9,7 +9,7 @@ import { FormattedMessage } from "gatsby-plugin-intl"
 import "../index.css"
 
 import Navigation from "../components/Navigation"
-import Footer from "../components/blog/footer"
+import Footer from "../components/blog/Footer"
 import Toggle from "../components/Toggle"
 
 const ChevronLeftIcon = loadable(() => import("@material-ui/icons/ChevronLeft"))
