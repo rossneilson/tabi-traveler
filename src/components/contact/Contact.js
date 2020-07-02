@@ -13,7 +13,7 @@ const Wrapper = styled.section`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  background: #3b3d40;
+  background: #5e6165;
   background-size: cover;
 `
 

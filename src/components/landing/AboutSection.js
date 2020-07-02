@@ -49,16 +49,17 @@ const About = styled.section`
     position: inherit;
   }
 `
-const CTA = styled(Link)`
+const CTA = styled.button`
   text-align: center;
   padding: 12px;
   background: #f79a60;
   color: white !important;
-  margin-top: 120px;
   margin-left: 35%;
   border-radius: 5px;
   transition: 0.5s;
   text-shadow: none;
+  border-style: none;
+  cursor: pointer;
   z-index: 99999;
   &:hover {
     background: #5065a3;
@@ -98,7 +99,7 @@ export default function AboutSection({ fuji }) {
         <p style={{ marginTop: "30px", marginBottom: "20px" }}>
           <FormattedMessage id="about.5" />
         </p>
-        <CTA to="/contact">
+        <CTA onClick={() => window.scrollTo(0, 99999)}>
           <FormattedMessage id="about.contact" />
         </CTA>
       </About>
