@@ -8,13 +8,17 @@ import { Link } from "gatsby"
 
 import { device, deviceMin } from "../../utils/device"
 import { urlLocaleFormatting } from "../../utils/formatters"
-
-var isSafari =
-  navigator.vendor &&
-  navigator.vendor.indexOf("Apple") > -1 &&
-  navigator.userAgent &&
-  navigator.userAgent.indexOf("CriOS") == -1 &&
-  navigator.userAgent.indexOf("FxiOS") == -1
+var isSafari
+if (typeof window !== "undefined") {
+  isSafari =
+    navigator.vendor &&
+    navigator.vendor.indexOf("Apple") > -1 &&
+    navigator.userAgent &&
+    navigator.userAgent.indexOf("CriOS") == -1 &&
+    navigator.userAgent.indexOf("FxiOS") == -1
+} else {
+  isSafari = true
+}
 
 const useStyles = createUseStyles({
   frame: {
