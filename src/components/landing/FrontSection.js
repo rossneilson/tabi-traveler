@@ -4,16 +4,27 @@ import { createUseStyles } from "react-jss"
 import { FormattedMessage } from "gatsby-plugin-intl"
 import { Link } from "gatsby"
 
-import frame from "../../img/frame.png"
-import main from "../../img/mainImage.jpg"
+// import main from "../../img/mainImage.jpg"
 
 import { device, deviceMin } from "../../utils/device"
 import { urlLocaleFormatting } from "../../utils/formatters"
 
+var isSafari =
+  navigator.vendor &&
+  navigator.vendor.indexOf("Apple") > -1 &&
+  navigator.userAgent &&
+  navigator.userAgent.indexOf("CriOS") == -1 &&
+  navigator.userAgent.indexOf("FxiOS") == -1
+
 const useStyles = createUseStyles({
   frame: {
     width: "auto",
-    background: "url(" + frame + ") bottom left",
+    background:
+      "url(" +
+      (isSafari
+        ? require("../../img/frame.png")
+        : require("../../img/frame.webp")) +
+      ") bottom left",
     backgroundRepeat: "no-repeat",
     textAlign: "right",
     minHeight: "100vh",
@@ -27,7 +38,12 @@ const useStyles = createUseStyles({
   },
   main: {
     width: "100%",
-    background: "url(" + main + ") bottom left",
+    background:
+      "url(" +
+      (isSafari
+        ? require("../../img/mainImage.jpg")
+        : require("../../img/mainImage.webp")) +
+      ") bottom left",
     backgroundRepeat: "no-repeat",
     textAlign: "right",
     minHeight: "100vh",
