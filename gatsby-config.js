@@ -47,7 +47,7 @@ module.exports = {
         path: `${__dirname}/src/intl`,
         languages: [`en`, `jp`],
         defaultLanguage: `en`,
-        redirect: true,
+        redirect: false,
       },
     },
     {
@@ -97,7 +97,7 @@ module.exports = {
       resolve: "gatsby-plugin-webpack-bundle-analyzer",
       options: {
         analyzerPort: 3000,
-        production: false,
+        production: true,
       },
     },
   ],

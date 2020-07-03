@@ -48,7 +48,12 @@ export default function Portfolio(props) {
         show={drawerOpen}
       />
 
-      <Navigation vertical={drawerOpen} link1={"prints"} link2={"blog"} />
+      <Navigation
+        vertical={drawerOpen}
+        link1={"prints"}
+        link2={"blog"}
+        language={props.pageContext.intl.language}
+      />
       <FilterDrawer
         open={drawerOpen}
         setOpen={setDrawerOpen}

@@ -74,7 +74,11 @@ export default function Blog(props) {
       />
 
       <Toggle right language={props.pageContext.intl.language} />
-      <Navigation link1={"prints"} link2={"portfolio"} />
+      <Navigation
+        link1={"prints"}
+        link2={"portfolio"}
+        language={props.pageContext.intl.language}
+      />
       <Tabs
         value={tab}
         onChange={(event, newValue) => {

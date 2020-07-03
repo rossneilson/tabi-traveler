@@ -25,13 +25,14 @@ export default function Main(props) {
       />
       <Toggle language={props.pageContext.intl.language} />
 
-      <FrontSection />
+      <FrontSection language={props.pageContext.intl.language} />
       <AboutSection fuji={props.data.fujiImage.childImageSharp.fluid} />
       <BlogSection posts={props.data.blogPosts.edges} />
       <PageLinks
         image1={props.data.image1.childImageSharp.fluid}
         image2={props.data.image2.childImageSharp.fluid}
         image3={props.data.image3.childImageSharp.fluid}
+        language={props.pageContext.intl.language}
       />
       <Contact />
     </div>

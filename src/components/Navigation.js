@@ -3,6 +3,8 @@ import styled from "styled-components"
 import { FormattedMessage } from "gatsby-plugin-intl"
 import { Link } from "gatsby"
 
+import { urlLocaleFormatting } from "../utils/formatters"
+
 const BarHorizontal = styled.section`
   display: flex;
   align-items: center;
@@ -62,31 +64,37 @@ export default function Navigation({
   link2,
   colour,
   vertical,
-  verticalWidth,
+  language,
 }) {
   return (
     <div>
       {!vertical ? (
         <BarHorizontal>
-          <PageButton colour={colour} to={"/" + link1}>
+          <PageButton
+            colour={colour}
+            to={urlLocaleFormatting(language, "/" + link1)}
+          >
             <FormattedMessage id={"main." + link1} />
           </PageButton>
-          <Home colour={colour} to="/">
+          <Home colour={colour} to={urlLocaleFormatting(language, "/")}>
             <FormattedMessage id="main.title" />
           </Home>
-          <PageButton colour={colour} to={"/" + link2}>
+          <PageButton
+            colour={colour}
+            to={urlLocaleFormatting(language, "/" + link2)}
+          >
             <FormattedMessage id={"main." + link2} />
           </PageButton>
         </BarHorizontal>
       ) : (
         <BarVertical>
-          <PageButton to={"/" + link1}>
+          <PageButton to={urlLocaleFormatting(language, "/" + link1)}>
             <FormattedMessage id={"main." + link1} />
           </PageButton>
-          <Home to="/">
+          <Home to={urlLocaleFormatting(language, "/")}>
             <FormattedMessage id="main.title" />
           </Home>
-          <PageButton to={"/" + link2}>
+          <PageButton to={urlLocaleFormatting(language, "/" + link2)}>
             <FormattedMessage id={"main." + link2} />
           </PageButton>
         </BarVertical>

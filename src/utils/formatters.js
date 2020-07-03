@@ -23,3 +23,7 @@ export function lineToParagraph(...nodes) {
     )
     .reduce((nodes, node) => nodes.concat(node), [])
 }
+
+export function urlLocaleFormatting(language, toUrl) {
+  return language === "en" ? toUrl : language + toUrl
+}

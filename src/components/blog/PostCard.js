@@ -3,7 +3,8 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 import { navigate } from "@reach/router"
 import loadable from "@loadable/component"
-import { withAssetPrefix } from "gatsby"
+
+import { urlLocaleFormatting } from "../../utils/formatters"
 
 const Fab = loadable(() => import("@material-ui/core/Fab"))
 const ChevronRightIcon = loadable(() =>
@@ -88,7 +89,9 @@ export default function PostCard({ post, index, isFullPage, colour }) {
       isFullPage={isFullPage}
       colour={colour}
       onClick={() => {
-        navigate("../" + frontmatter.path)
+        navigate(
+          urlLocaleFormatting(frontmatter.locale, "../../" + frontmatter.path)
+        )
       }}
     >
       <Category>{frontmatter.category}</Category>

@@ -154,7 +154,12 @@ export default function BlogPost({ data, pageContext }) {
       </BackIcon>
 
       <Toggle right language={language} position={"absolute"} />
-      <Nav link1={"prints"} link2={"portfolio"} colour={"white"} />
+      <Nav
+        link1={"prints"}
+        link2={"portfolio"}
+        colour={"white"}
+        language={pageContext.intl.language}
+      />
       <Category>{frontmatter.category}</Category>
       <Title>{frontmatter.title}</Title>
       <Location>{frontmatter.location}</Location>

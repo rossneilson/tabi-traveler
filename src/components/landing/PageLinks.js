@@ -4,6 +4,8 @@ import { FormattedMessage } from "gatsby-plugin-intl"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
 
+import { urlLocaleFormatting } from "../../utils/formatters"
+
 const FlexWrap = styled.section`
   display: flex;
   flex-wrap: wrap;
@@ -34,28 +36,28 @@ const Card = styled.section`
 `
 
 const Image = styled(Img)`
-    width: 100%;
-    height: 500px;
-    opacity: 0.7;
-    transition: 1s;
-    &:hover {
-      opacity: 1;
-      transform: scaleY(1.01);
-    }
-    &:focus {
-      opacity: 1;
-      transform: scaleY(1.01);
-    }
-  `
+  width: 100%;
+  height: 500px;
+  opacity: 0.7;
+  transition: 1s;
+  &:hover {
+    opacity: 1;
+    transform: scaleY(1.01);
+  }
+  &:focus {
+    opacity: 1;
+    transform: scaleY(1.01);
+  }
+`
 
 const Content = styled.section`
   opacity: 1;
 `
 
-export default function PageLinks({ image1, image2, image3 }) {
+export default function PageLinks({ image1, image2, image3, language }) {
   return (
     <FlexWrap>
-      <StyledLink to="/portfolio">
+      <StyledLink to={urlLocaleFormatting(language, "/portfolio")}>
         <Card>
           <Image fluid={image1} />
           <Content style={{ position: "absolute" }}>
@@ -63,7 +65,7 @@ export default function PageLinks({ image1, image2, image3 }) {
           </Content>
         </Card>
       </StyledLink>
-      <StyledLink to="/blog">
+      <StyledLink to={urlLocaleFormatting(language, "/blog")}>
         <Card>
           <Image fluid={image2} />
           <Content style={{ position: "absolute" }}>
@@ -71,7 +73,7 @@ export default function PageLinks({ image1, image2, image3 }) {
           </Content>
         </Card>
       </StyledLink>
-      <StyledLink to="/prints">
+      <StyledLink to={urlLocaleFormatting(language, "/prints")}>
         <Card>
           <Image fluid={image3} />
           <Content style={{ position: "absolute" }}>

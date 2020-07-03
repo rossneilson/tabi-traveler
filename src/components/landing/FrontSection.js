@@ -8,6 +8,7 @@ import frame from "../../img/frame.png"
 import main from "../../img/mainImage.jpg"
 
 import { device, deviceMin } from "../../utils/device"
+import { urlLocaleFormatting } from "../../utils/formatters"
 
 const useStyles = createUseStyles({
   frame: {
@@ -109,7 +110,7 @@ const PageButton = styled(Link)`
   }
 `
 
-export default function FrontSection(props) {
+export default function FrontSection({ language }) {
   const classes = useStyles()
   const [offset, setOffset] = useState(0)
 
@@ -143,16 +144,16 @@ export default function FrontSection(props) {
               <br />
               <FormattedMessage id="main.desc" />
             </Desc>
-            <PageButton to="/portfolio">
+            <PageButton to={urlLocaleFormatting(language, "/portfolio")}>
               <FormattedMessage id="main.portfolio" />
             </PageButton>
-            <PageButton to="/blog">
+            <PageButton to={urlLocaleFormatting(language, "/blog")}>
               <FormattedMessage id="main.blog" />
             </PageButton>
-            <PageButton to="/prints">
+            <PageButton to={urlLocaleFormatting(language, "/prints")}>
               <FormattedMessage id="main.prints" />
             </PageButton>
-            <PageButton to="/contact">
+            <PageButton to={urlLocaleFormatting(language, "/contact")}>
               <FormattedMessage id="main.contact" />
             </PageButton>
           </Navigation>
