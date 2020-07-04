@@ -23,7 +23,7 @@ Bathing culture in Japan is something shocked me but in a very pleasant way. I h
 
 But then there is the peak level of bathing, the onsen. The natural hot springs found all across Japan are well worth a visit and a truly unique experience that I would recommend to everyone traveling to Japan. Certainly, public onsens are worth the experience, but if you have money to spend finding somewhere with a private onsen is even more special and will surely be a special memory as you relax in the mineral-rich natural water, just be careful not to stay in too long and have some cold water by the side. 
 
-![onsen](/static/img_20190104_175707-1-.jpg "onsen")
+![onsen](../../img/img_20190104_175707-1-.jpg "onsen")
 
 ### Cleanliness
 
