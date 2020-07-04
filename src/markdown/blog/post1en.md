@@ -2,7 +2,7 @@
 title: Culture Shock - Japan
 location: Japan
 category: Travel Stories
-date: 2020-07-01T00:00:00.000Z
+date: 2020-07-04T21:33:56.025Z
 image: /static/download-12.jpg
 path: blog/culture-shock-japan
 locale: en
