@@ -12,15 +12,15 @@ const GridWrap = styled.section`
   grid-auto-flow: dense;
   margin-left: ${props => (props.drawerOpen ? "30%" : "0%")};
   @media (pointer: coarse) {
-    width: ${props => (props.drawerOpen ? 100 - 50 + "%" : "100%")};
-    margin-left: ${props => (props.drawerOpen ? "50%" : "0%")};
-    grid-auto-rows: 500px;
+    grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+    grid-auto-rows: auto;
   }
 `
 
 const Thumbnail = styled.section`
   transition: all 1s;
   cursor: pointer;
+  grid-column: ${props => (props.landscape ? "span 2" : "span 1")};
 
   &:hover {
     opacity: 0.7;
@@ -29,7 +29,6 @@ const Thumbnail = styled.section`
     opacity: 0.7;
   }
   @media (min-width: 480px) {
-    grid-column: ${props => (props.landscape ? "span 2" : "span 1")};
     &:first-child {
       grid-area: 1 / 1 / span 2 / span 2;
     }
