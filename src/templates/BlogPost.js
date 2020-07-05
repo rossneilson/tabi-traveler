@@ -192,6 +192,7 @@ export const query = graphql`
         location
         category
         date
+        SEO
         image {
           childImageSharp {
             fluid(maxWidth: 3000) {
