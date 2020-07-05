@@ -117,7 +117,7 @@ export const postsQuery = graphql`
             SEO
             image {
               childImageSharp {
-                fluid(maxWidth: 3000) {
+                fluid(maxWidth: 1000) {
                   ...GatsbyImageSharpFluid
                 }
               }

@@ -20,9 +20,7 @@ const GridWrap = styled.section`
 export default function Blog({ posts }) {
   const postCards = []
   posts.map((value, index) => {
-    postCards.push(
-      <PostCard key={index} post={value} color={"white"} isFullPage={false} />
-    )
+    postCards.push(<PostCard key={index} post={value} isFullPage={false} />)
   })
 
   return <GridWrap>{postCards}</GridWrap>

@@ -16,7 +16,7 @@ const Wrapper = styled.section`
   z-index: 999;
   overflow: hidden;
   transition: all 1s;
-  background-color: ${props => (props.colour ? props.colour : "white")};
+  background-color: white};
   cursor: pointer;
   border-radius: 5px;
   box-shadow: 0px 0px 15px 1px #0000003c;
@@ -71,7 +71,7 @@ const OpenFab = styled(Fab)`
   float: right;
 `
 
-export default function PostCard({ post, index, isFullPage, colour }) {
+export default function PostCard({ post, index, isFullPage }) {
   const { frontmatter } = post.node
   var desc = null
 
@@ -87,7 +87,6 @@ export default function PostCard({ post, index, isFullPage, colour }) {
   return (
     <Wrapper
       isFullPage={isFullPage}
-      colour={colour}
       onClick={() => {
         navigate(
           urlLocaleFormatting(frontmatter.locale, "../../" + frontmatter.path)
