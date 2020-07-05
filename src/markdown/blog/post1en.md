@@ -39,7 +39,7 @@ Safety in Japan is often cited as one of the main benefits of the country, and n
 
 But this simple freedom makes working in cafes so much more enjoyable. Imagine setting everything up ready for a day of hard work and realizing you need the loo. But it's ok, you can just stand up and go find the toilet without a care in the world. Often cafes don't even have a toilet and it may be outside as part of a larger mall, I've even gone to other floors of a building while leaving my precious MacBook sitting on a table in the cafe without a care in the world. 
 
-![cafe](../../img/img_20191206_101727-1-.jpg "cafe")
+![cafe](/../../img/img_20191206_101727-1-.jpg "cafe")
 
 ### School children on the weekend?
 
