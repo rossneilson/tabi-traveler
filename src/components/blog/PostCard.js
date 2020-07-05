@@ -89,10 +89,10 @@ export default function PostCard({ post, index, isFullPage, colour }) {
       isFullPage={isFullPage}
       colour={colour}
       onClick={() => {
-        window.scrollTo(0, 0)
         navigate(
           urlLocaleFormatting(frontmatter.locale, "../../" + frontmatter.path)
         )
+        window.scrollTo(0, 0)
       }}
     >
       <Category>{frontmatter.category}</Category>
