@@ -48,7 +48,6 @@ exports.createPages = ({ graphql, actions }) => {
     `
   ).then(result => {
     if (result.errors) {
-      console.log("errors")
       throw result.errors
     }
 

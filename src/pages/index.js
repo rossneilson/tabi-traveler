@@ -15,7 +15,6 @@ import PageLinks from "../components/landing/PageLinks"
 const Contact = loadable(() => import("../components/contact/Contact"))
 
 export default function Main(props) {
-  console.log(props)
   return (
     <div>
       <SEO

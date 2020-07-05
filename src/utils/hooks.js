@@ -4,7 +4,6 @@ export function useKeyPress(targetKey) {
   const [keyPressed, setKeyPressed] = useState(false)
 
   const downHandler = ({ key }) => {
-    console.log(key)
     if (key === targetKey) {
       setKeyPressed(true)
     }

@@ -79,7 +79,6 @@ export default function Grid({
       <Thumbnail
         key={index}
         onClick={() => {
-          console.log(index)
           setSelectedImage(index)
         }}
         landscape={value.node.frontmatter.landscape}

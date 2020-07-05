@@ -52,7 +52,6 @@ export default function SelectedFilter({ filter, setFilter }) {
       </FlexContainer>
     )
   } else {
-    console.log(Flags[filter])
     FilteredFlags = (
       <FlexContainer>
         <ResetButton filter={filter} onClick={() => setFilter("best")}>
