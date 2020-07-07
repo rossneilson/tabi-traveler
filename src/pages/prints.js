@@ -10,7 +10,6 @@ import PrintsGrid from "../components/store/PrintsGrid"
 import Toggle from "../components/Toggle"
 
 export default function Prints(props) {
-  console.log(props)
   const prints = props.data.allMarkdownRemark.edges
 
   return (

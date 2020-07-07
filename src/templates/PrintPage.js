@@ -1,23 +1,24 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { navigate } from "@reach/router"
 import loadable from "@loadable/component"
-import { FormattedMessage } from "gatsby-plugin-intl"
+import { FormattedMessage } from "react-intl"
 
 import "../index.css"
 
 import Navigation from "../components/Navigation"
 import Footer from "../components/blog/Footer"
 import Toggle from "../components/Toggle"
+import PurchasePanel from "../components/store/PurchasePanel"
 import SEO from "../components/seo"
 
 const ChevronLeftIcon = loadable(() => import("@material-ui/icons/ChevronLeft"))
 
 const BackIcon = styled.section`
   cursor: pointer;
-  color: white !important;
+  color: #8698da !important;
   z-index: 99999999;
   position: absolute;
   padding: 10px;
@@ -25,23 +26,14 @@ const BackIcon = styled.section`
 `
 const BackText = styled.section`
   margin-top: 7px;
+  font-weight: 400;
   @media (pointer: coarse) {
     display: none !important;
   }
 `
 
-const MainImage = styled(Img)`
-  width: 100%;
-  height: 100vh;
-`
-const Nav = styled(Navigation)`
-  color: white !important;
-`
-
 const Title = styled.h1`
-  color: white;
-  margin-left: 25%;
-  margin-right: 25%;
+  margin-left: 10%;
   margin-top: 2%;
   @media (pointer: coarse) {
     margin-left: 10%;
@@ -49,34 +41,31 @@ const Title = styled.h1`
   }
 `
 
-const Location = styled.h2`
-  color: white;
-  margin-left: 25%;
-  margin-right: 25%;
-  @media (pointer: coarse) {
-    margin-left: 10%;
-    margin-right: 10%;
-  }
+const ContentWrapper = styled.section`
+  display: flex;
+  margin: 0% 10% 5% 10%;
 `
 
-const FormattedDate = styled.h4`
-  color: white;
-  margin-left: 25%;
-  margin-right: 25%;
-  @media (pointer: coarse) {
-    margin-left: 10%;
-    margin-right: 10%;
-  }
+const ImageSection = styled.section`
+  display: flex;
+  width: 50%;
+  flex-grow: 2;
 `
 
-const Markdown = styled.section`
-  font-size: medium;
+const MainImage = styled(Img)`
+  width: 100%;
+`
+
+const Markdown = styled.h4`
   line-height: 1.7;
-  padding: 2%;
+  margin-left: 10%;
+`
+const FormattedDate = styled.h4`
+  margin-left: 10%;
+  margin-bottom: 10%;
 `
 
 export default function PrintPage({ data, pageContext }) {
-  console.log(data)
   const { frontmatter, html } = data.print
   const { language } = pageContext
 
@@ -92,20 +81,26 @@ export default function PrintPage({ data, pageContext }) {
       >
         <ChevronLeftIcon fontSize="large" />
         <BackText>
-          <FormattedMessage id="blog.back" />
+          <FormattedMessage id="store.back" />
         </BackText>
       </BackIcon>
 
-      <Toggle right language={language} position={"absolute"} />
-      <Nav
+      <Toggle right language={language} />
+      <Navigation
         link1={"portfolio"}
         link2={"blog"}
-        colour={"white"}
         language={pageContext.intl.language}
       />
-      <MainImage fluid={frontmatter.mainImage.childImageSharp.fluid} />
+
       <Title>{frontmatter.title}</Title>
-      <Location>{frontmatter.printPrice}</Location>
+      <ContentWrapper>
+        <ImageSection>
+          <MainImage fluid={frontmatter.mainImage.childImageSharp.fluid} />
+        </ImageSection>
+
+        <PurchasePanel frontmatter={frontmatter} />
+      </ContentWrapper>
+
       <Markdown dangerouslySetInnerHTML={{ __html: html }} />
       <FormattedDate>
         {new Intl.DateTimeFormat(language === "en" ? "en-GB" : "ja-JP", {
@@ -114,6 +109,7 @@ export default function PrintPage({ data, pageContext }) {
           day: "2-digit",
         }).format(new Date(frontmatter.date))}
       </FormattedDate>
+
       <Footer image={data.image.childImageSharp.fluid} />
     </div>
   )
@@ -133,35 +129,21 @@ export const query = graphql`
         framedPrice
         path
         locale
+        products {
+          sku
+          title
+          price
+          mkup
+        }
+        fullImage
+        images {
+          childImageSharp {
+            fluid(maxWidth: 3000) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         mainImage {
-          childImageSharp {
-            fluid(maxWidth: 3000) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        image2 {
-          childImageSharp {
-            fluid(maxWidth: 3000) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        image3 {
-          childImageSharp {
-            fluid(maxWidth: 3000) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        image4 {
-          childImageSharp {
-            fluid(maxWidth: 3000) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        image5 {
           childImageSharp {
             fluid(maxWidth: 3000) {
               ...GatsbyImageSharpFluid

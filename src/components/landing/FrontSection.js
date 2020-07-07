@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { createUseStyles } from "react-jss"
-import { FormattedMessage } from "gatsby-plugin-intl"
+import { FormattedMessage } from "react-intl"
 import { Link } from "gatsby"
 
 // import main from "../../img/mainImage.jpg"

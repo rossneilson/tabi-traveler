@@ -23,5 +23,5 @@ export default function Blog({ posts }) {
     postCards.push(<PostCard key={index} post={value} isFullPage={false} />)
   })
 
-  return <GridWrap>{postCards}</GridWrap>
+  return <GridWrap>Latest articles{postCards}</GridWrap>
 }

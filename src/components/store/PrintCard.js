@@ -11,7 +11,7 @@ const Wrapper = styled.section`
   z-index: 999;
   overflow: hidden;
   transition: all 1s;
-  background-color: ${props => (props.colour ? props.colour : "white")};
+  background-color: white;
   cursor: pointer;
   border-radius: 5px;
   box-shadow: 0px 0px 15px 1px #0000003c;
@@ -25,14 +25,14 @@ const Wrapper = styled.section`
 `
 
 const Image = styled(Img)`
-  height: 100%;
-  z-index: -1;
+  height: 60%;
   @media (pointer: coarse) {
     height: 35%;
   }
 `
 
 const Description = styled.section`
+  color: black;
   padding: 20px;
 `
 
@@ -50,7 +50,7 @@ export default function PrintCard({ print, index }) {
     >
       <Image fluid={frontmatter.mainImage.childImageSharp.fluid} />
       <Description>
-        <h2>{frontmatter.title}</h2>£{frontmatter.basePrice}-
+        <h2>{frontmatter.title}</h2>£{frontmatter.printPrice}-
         {frontmatter.framedPrice}
       </Description>
     </Wrapper>

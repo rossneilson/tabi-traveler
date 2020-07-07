@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import Switch from "react-switch"
-import { changeLocale } from "gatsby-plugin-intl"
+import { changeLocale } from "react-intl"
 
 const ToggleWrap = styled.section`
   position: ${props => props.position};

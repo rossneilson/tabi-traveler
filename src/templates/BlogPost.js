@@ -4,7 +4,7 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 import { navigate } from "@reach/router"
 import loadable from "@loadable/component"
-import { FormattedMessage } from "gatsby-plugin-intl"
+import { FormattedMessage } from "react-intl"
 
 import "../index.css"
 
