@@ -1,0 +1,214 @@
+{
+  "countries": [
+      {
+          "name": "AUSTRALIA",
+          "isoCode": "AU",
+          "sFrame": 700,
+          "lFrame": 800
+      },
+      {
+          "name": "AUSTRIA",
+          "isoCode": "AT",
+          "sFrame": 1100,
+          "lFrame": 1100
+      },
+      {
+          "name": "BELGIUM",
+          "isoCode": "BE",
+          "sFrame": 800,
+          "lFrame": 1100
+      },
+      {
+          "name": "CANADA",
+          "isoCode": "CA",
+          "sFrame": 3000,
+          "lFrame": 7000
+      },
+      {
+          "name": "CHINA",
+          "isoCode": "CN",
+          "sFrame": 5000,
+          "lFrame": 10000
+      },
+      {
+          "name": "CZECH REPUBLIC",
+          "isoCode": "CZ",
+          "sFrame": 1500,
+          "lFrame": 1500
+      },
+      {
+          "name": "DENMARK",
+          "isoCode": "DK",
+          "sFrame": 1100,
+          "lFrame": 1100
+      },
+      {
+          "name": "ESTONIA",
+          "isoCode": "EE",
+          "sFrame": 1500,
+          "lFrame": 2000
+      },
+      {
+          "name": "FINLAND",
+          "isoCode": "FI",
+          "sFrame": 1500,
+          "lFrame": 200
+      },
+      {
+          "name": "FRANCE",
+          "isoCode": "FR",
+          "sFrame": 1100,
+          "lFrame": 1100
+      },
+      {
+          "name": "GERMANY",
+          "isoCode": "DE",
+          "sFrame": 800,
+          "lFrame": 1000
+      },
+      {
+          "name": "GREECE",
+          "isoCode": "GR",
+          "sFrame": 2500,
+          "lFrame": 2500
+      },
+      {
+          "name": "HONG KONG",
+          "isoCode": "HK",
+          "sFrame": 5000,
+          "lFrame": 10000
+      },
+      {
+          "name": "HUNGARY",
+          "isoCode": "HU",
+          "sFrame": 1000,
+          "lFrame": 1000
+      },
+      {
+          "name": "INDIA",
+          "isoCode": "IN",
+          "sFrame": 3400,
+          "lFrame": 6000
+      },
+      {
+          "name": "INDONESIA",
+          "isoCode": "ID",
+          "sFrame": 3400,
+          "lFrame": 6000
+      },
+      {
+          "name": "IRELAND",
+          "isoCode": "IE",
+          "sFrame": 1195,
+          "lFrame": 1195
+      },
+      {
+          "name": "ITALY",
+          "isoCode": "IT",
+          "sFrame": 1200,
+          "lFrame": 1500
+      },
+      {
+          "name": "JAPAN",
+          "isoCode": "JP",
+          "sFrame": 3200,
+          "lFrame": 6000
+      },
+      {
+          "name": "KOREA REPUBLIC OF",
+          "isoCode": "KR",
+          "sFrame": 3200,
+          "lFrame": 6000
+      },
+      {
+          "name": "NETHERLANDS",
+          "isoCode": "NL",
+          "sFrame": 800,
+          "lFrame": 800
+      },
+      {
+          "name": "NEW ZEALAND",
+          "isoCode": "NZ",
+          "sFrame": 20,
+          "lFrame": 35
+      },
+      {
+          "name": "PHILIPPINES",
+          "isoCode": "PH",
+          "sFrame": 3000,
+          "lFrame": 3500
+      },
+      {
+          "name": "POLAND",
+          "isoCode": "PL",
+          "sFrame": 1100,
+          "lFrame": 1100
+      },
+      {
+          "name": "PORTUGAL",
+          "isoCode": "PT",
+          "sFrame": 1200,
+          "lFrame": 2000
+      },
+      {
+          "name": "ROMANIA",
+          "isoCode": "RO",
+          "sFrame": 2000,
+          "lFrame": 9000
+      },
+      {
+          "name": "SINGAPORE",
+          "isoCode": "SG",
+          "sFrame": 5000,
+          "lFrame": 10995
+      },
+      {
+          "name": "SOUTH AFRICA",
+          "isoCode": "ZA",
+          "sFrame": 2500,
+          "lFrame": 10995
+      },
+      {
+          "name": "SPAIN",
+          "isoCode": "ES",
+          "sFrame": 1200,
+          "lFrame": 1500
+      },
+      {
+          "name": "SWEDEN",
+          "isoCode": "SE",
+          "sFrame": 1500,
+          "lFrame": 1500
+      },
+      {
+          "name": "SWITZERLAND",
+          "isoCode": "CH",
+          "sFrame": 2000,
+          "lFrame": 9000
+      },
+      {
+          "name": "THAILAND",
+          "isoCode": "TH",
+          "sFrame": 5000,
+          "lFrame": 10995
+      },
+      {
+          "name": "UNITED ARAB EMIRATES",
+          "isoCode": "AE",
+          "sFrame": 1000,
+          "lFrame": 1195
+      },
+      {
+          "name": "UNITED KINGDOM",
+          "isoCode": "GB",
+          "sFrame": 995,
+          "lFrame": 995
+      },
+      {
+          "name": "UNITED STATES",
+          "isoCode": "US",
+          "sFrame": 1500,
+          "lFrame": 2200
+      }
+  ]
+}

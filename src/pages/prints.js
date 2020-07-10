@@ -45,10 +45,15 @@ export const printsQuery = graphql`
           frontmatter {
             title
             date
-            printPrice
-            framedPrice
             path
             locale
+            products {
+              sku
+              title
+              type
+              size
+              price
+            }
             mainImage {
               childImageSharp {
                 fluid(maxWidth: 3000) {

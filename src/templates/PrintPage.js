@@ -5,6 +5,7 @@ import Img from "gatsby-image"
 import { navigate } from "@reach/router"
 import loadable from "@loadable/component"
 import { FormattedMessage } from "react-intl"
+import { Grommet } from "grommet"
 
 import "../index.css"
 
@@ -15,6 +16,19 @@ import PurchasePanel from "../components/store/PurchasePanel"
 import SEO from "../components/seo"
 
 const ChevronLeftIcon = loadable(() => import("@material-ui/icons/ChevronLeft"))
+
+const myTheme = {
+  global: {
+    colors: {
+      brand: "#8698da",
+      border: { light: "#f79a60" },
+      focus: "#8698da",
+    },
+  },
+  RadioButton: {
+    margin: "10px",
+  },
+}
 
 const BackIcon = styled.section`
   cursor: pointer;
@@ -66,11 +80,11 @@ const FormattedDate = styled.h4`
 `
 
 export default function PrintPage({ data, pageContext }) {
-  const { frontmatter, html } = data.print
+  const { frontmatter, html, fileAbsolutePath } = data.print
   const { language } = pageContext
 
   return (
-    <div>
+    <Grommet theme={myTheme}>
       <SEO
         title={"Print - " + frontmatter.title + " | Tabi Traveler"}
         description={null}
@@ -98,7 +112,11 @@ export default function PrintPage({ data, pageContext }) {
           <MainImage fluid={frontmatter.mainImage.childImageSharp.fluid} />
         </ImageSection>
 
-        <PurchasePanel frontmatter={frontmatter} />
+        <PurchasePanel
+          language={language}
+          frontmatter={frontmatter}
+          fileAbsolutePath={fileAbsolutePath}
+        />
       </ContentWrapper>
 
       <Markdown dangerouslySetInnerHTML={{ __html: html }} />
@@ -111,7 +129,7 @@ export default function PrintPage({ data, pageContext }) {
       </FormattedDate>
 
       <Footer image={data.image.childImageSharp.fluid} />
-    </div>
+    </Grommet>
   )
 }
 
@@ -122,20 +140,26 @@ export const query = graphql`
       frontmatter: { path: { eq: $slug }, locale: { eq: $locale } }
     ) {
       html
+      fileAbsolutePath
       frontmatter {
         title
         date
-        printPrice
-        framedPrice
         path
         locale
         products {
           sku
           title
+          type
+          size
           price
-          mkup
         }
-        fullImage
+        fullImage {
+          childImageSharp {
+            fluid {
+              originalImg
+            }
+          }
+        }
         images {
           childImageSharp {
             fluid(maxWidth: 3000) {

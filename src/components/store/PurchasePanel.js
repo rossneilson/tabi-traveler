@@ -2,64 +2,67 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import loadable from "@loadable/component"
 import { FormattedMessage } from "react-intl"
-import { loadStripe } from "@stripe/stripe-js"
+import { RadioButton } from "grommet"
 
 import PurchaseTabContent from "./PurchaseTabContent"
+import PurchaseForm from "./PurchaseForm"
 
-const Button = loadable(() => import("@material-ui/core/Button"))
 const Tabs = loadable(() => import("@material-ui/core/Tabs"))
 const Tab = loadable(() => import("@material-ui/core/Tab"))
-const Radio = loadable(() => import("@material-ui/core/Radio"))
-const RadioGroup = loadable(() => import("@material-ui/core/RadioGroup"))
-const FormControlLabel = loadable(() =>
-  import("@material-ui/core/FormControlLabel")
-)
-const FormControl = loadable(() => import("@material-ui/core/FormControl"))
 
 const SelectionSection = styled.section`
-  width: 50%;
+  min-width: 50%;
   border-radius: 10px;
   box-shadow: 0px 0px 9px 1px #0000001c;
 `
-const TotalSection = styled.section`
-  display: flex;
-  justify-content: space-around;
-  margin-top: 50px;
-`
-const BuyButton = styled(Button)`
-  background-color: #f79a60;
-  color: white;
-  &:hover {
-    background-color: #5065a3;
-  }
-  &:focus {
-    background-color: #5065a3;
-  }
-  width: 25%;
+const Radio = styled(RadioButton)`
+  margin-bottom: 10px;
 `
 
-export default function PurchasePanel({ frontmatter }) {
+export default function PurchasePanel({
+  frontmatter,
+  language,
+  fileAbsolutePath,
+}) {
   const [tab, setTab] = useState(0)
-  const [selected, setSelected] = useState("type1")
-  console.log(frontmatter)
+  const [selected, setSelected] = useState(frontmatter.products[0].title)
+  console.log(selected)
 
   const handleSelection = event => {
     setSelected(event.target.value)
   }
 
-  const handleBuy = async event => {
-    console.log("buying")
-    const response = await fetch("/.netlify/functions/purchase", {
-      body: JSON.stringify({ test: true }),
-      method: "POST",
-    })
+  const printOptions = []
+  const frameOptions = []
 
-    const stripe = await loadStripe(
-      "pk_test_51H1z1WLdKK5sOT6pjvjbdqVZVE8gQLdXmZzTwBvhpPCUucRWjejKw6cEmiq5Scw9oenQVGiVVoRGnsmr1B9OAQ6c007lhc3Miz"
-    )
-    const jsonResp = await response.json()
-    stripe.redirectToCheckout({ sessionId: jsonResp.sessionId })
-  }
+  const printProducts = frontmatter.products
+    .filter(product => product.type === "print")
+    .map((value, index) => {
+      printOptions.push(
+        <div style={{ marginBottom: "10px" }}>
+          <RadioButton
+            name="option"
+            checked={selected === value.title}
+            label={value.title}
+            onChange={() => setSelected(value.title)}
+          />
+        </div>
+      )
+      return value
+    })
+  const framedProducts = frontmatter.products
+    .filter(product => product.type === "frame")
+    .map((value, index) => {
+      frameOptions.push(
+        <RadioButton
+          name="option"
+          checked={selected === value.title}
+          label={value.title}
+          onChange={() => setSelected(value.title)}
+        />
+      )
+      return value
+    })
 
   return (
     <SelectionSection>
@@ -67,6 +70,11 @@ export default function PurchasePanel({ frontmatter }) {
         value={tab}
         onChange={(event, newValue) => {
           setTab(newValue)
+          if (newValue === 1) {
+            setSelected(framedProducts[0].title)
+          } else {
+            setSelected(printProducts[0].title)
+          }
         }}
         indicatorColor="primary"
         textColor="primary"
@@ -76,53 +84,33 @@ export default function PurchasePanel({ frontmatter }) {
         <Tab label={"Print"} />
         <Tab label={"Framed"} />
       </Tabs>
-      {/* TODO: make programatic and get prices and skus from md */}
       <PurchaseTabContent value={tab} index={0}>
-        <FormControl component="options">
-          <RadioGroup
-            aria-label="types of prints"
-            name="printType"
-            value={selected}
-            onChange={handleSelection}
-          >
-            <FormControlLabel
-              value={"type1"}
-              control={<Radio color="primary" />}
-              label="Print type 1"
-            />
-            <FormControlLabel
-              value={"type2"}
-              control={<Radio color="primary" />}
-              label="Print type 2"
-            />
-          </RadioGroup>
-        </FormControl>
-        <TotalSection>
-          <h1>Price: £{frontmatter.printPrice}</h1>
-          <BuyButton onClick={handleBuy}>Buy now</BuyButton>
-        </TotalSection>
+        <PurchaseForm
+          frontmatter={frontmatter}
+          itemOptions={printOptions}
+          tab={tab}
+          language={language}
+          fileAbsolutePath={fileAbsolutePath}
+          selected={
+            frontmatter.products.filter(
+              product => product.title === selected
+            )[0]
+          }
+        />
       </PurchaseTabContent>
       <PurchaseTabContent value={tab} index={1}>
-        <FormControl component="options">
-          <RadioGroup
-            aria-label="types of frames"
-            name="frameType"
-            value={selected}
-            onChange={handleSelection}
-          >
-            <FormControlLabel
-              value={"frame1"}
-              control={<Radio color="primary" />}
-              label="Frame type 1"
-            />
-            <FormControlLabel
-              value={"frame2"}
-              control={<Radio color="primary" />}
-              label="Frame type 2"
-            />
-          </RadioGroup>
-        </FormControl>
-        <h1>Price: £{frontmatter.framedPrice}</h1>
+        <PurchaseForm
+          frontmatter={frontmatter}
+          itemOptions={frameOptions}
+          setSelected={handleSelection}
+          language={language}
+          fileAbsolutePath={fileAbsolutePath}
+          selected={
+            frontmatter.products.filter(
+              product => product.title === selected
+            )[0]
+          }
+        />
       </PurchaseTabContent>
     </SelectionSection>
   )

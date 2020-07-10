@@ -27,7 +27,9 @@ export default function Grid({ prints }) {
   return (
     <GridWrap>
       {/* Description / intro to shop international etc */}
+      {/* Make cards float up and increase shadow on hover */}
       {printCards}
+      {/* FAQ */}
     </GridWrap>
   )
 }
