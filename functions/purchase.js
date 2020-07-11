@@ -1,12 +1,60 @@
 var fs = require("fs").promises,
   fm = require("front-matter"),
-  pricing = require("../src/utils/pricing")
+  pricing = require("../src/utils/pricing"),
+  fetch = require("node-fetch")
 exports.handler = async ({ body }) => {
-  const stripe = require("stripe")(
-    "sk_test_51H1z1WLdKK5sOT6pVoXab5kEwslAP9xd1qaNLyYn2u9vm7STDMMPCJw6jJnth9vyHd8uT8ektK0jt0ntUVVIOG2s00ynWGNkCs"
-  )
-
   const data = JSON.parse(body)
+
+  console.log({
+    headers: {
+      "X-Pwinty-MerchantId": process.env.PWINTY_MERCHANT_ID,
+      "X-Pwinty-REST-API-Key": process.env.PWINTY_TEST_API_KEY,
+      "Content-Type": "application/json",
+    },
+    body: {
+      countryCode: data.countryCode,
+      preferredShippingMethod: "Standard",
+    },
+  })
+  const order = await fetch("https://sandbox.pwinty.com/v3.0/orders", {
+    method: "post",
+    headers: {
+      "X-Pwinty-MerchantId": process.env.PWINTY_MERCHANT_ID,
+      "X-Pwinty-REST-API-Key": process.env.PWINTY_TEST_API_KEY,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      countryCode: data.countryCode,
+      preferredShippingMethod: "Standard",
+    }),
+  }).then(res => res.json())
+  console.log("order")
+  console.log(order)
+  const updatedOrder = await fetch(
+    `https://sandbox.pwinty.com/v3.0/orders/${order.data.id}/images`,
+    {
+      method: "post",
+      headers: {
+        "X-Pwinty-MerchantId": process.env.PWINTY_MERCHANT_ID,
+        "X-Pwinty-REST-API-Key": process.env.PWINTY_TEST_API_KEY,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // sku: data.product.sku,
+        // url: data.image,
+        sku: "GLOBAL-PHO-16X16-PRO",
+        url:
+          "https://tabitraveler.com/static/362253496a69079706b035db676ee5bf/a7715/dsc03157.jpg",
+        copies: 1,
+        sizing: "Crop",
+      }),
+    }
+  ).then(res => res.json())
+  console.log("image updated order")
+  console.log(updatedOrder)
+
+  const stripe = require("stripe")(process.env.STRIPE_TEST_SECRET_KEY)
+
   console.log(data.image)
   const file = await fs.readFile(data.fileAbsolutePath, "utf8")
   const content = fm(file)
@@ -19,7 +67,7 @@ exports.handler = async ({ body }) => {
     data.type,
     data.size
   )
-  const total = pricing.calculateTotal(product.price, shippingPrice)
+  // const total = pricing.calculateTotal(product.price, shippingPrice)
 
   const session = await stripe.checkout.sessions.create({
     shipping_address_collection: "required",
@@ -38,14 +86,34 @@ exports.handler = async ({ body }) => {
               "https://tabitraveler.com/static/362253496a69079706b035db676ee5bf/a7715/dsc03157.jpg",
             ],
           },
-          unit_amount: total,
+          unit_amount: product.price,
+        },
+        quantity: 1,
+      },
+      {
+        price_data: {
+          currency: "gbp",
+          product_data: {
+            name: "Shipping",
+          },
+          unit_amount: shippingPrice,
+        },
+        quantity: 1,
+      },
+      {
+        price_data: {
+          currency: "gbp",
+          product_data: {
+            name: "VAT (20%)",
+          },
+          unit_amount: (product.price + shippingPrice) * 0.2,
         },
         quantity: 1,
       },
     ],
     mode: "payment",
-    success_url: "https://localhost:8888/prints",
-    cancel_url: "https://localhost:8888/prints",
+    success_url: "http://localhost:8888/prints",
+    cancel_url: "http://localhost:8888/prints",
   })
   return {
     statusCode: 200,

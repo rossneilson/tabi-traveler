@@ -10,16 +10,11 @@ import { Select } from "grommet"
 import { Shop } from "grommet-icons"
 const Button = loadable(() => import("@material-ui/core/Button"))
 const Pricing = require("../../utils/pricing")
-console.log(process.env)
-console.log(process.env.STRIPE_TEST_PUBLISH_KEY)
+
 const TotalSection = styled.section`
   display: flex;
   justify-content: space-around;
   margin-top: 50px;
-`
-const OptionsForm = styled.section`
-  display: flex;
-  justify-content: space-around;
 `
 
 const BuyButton = styled(Button)`
