@@ -5,17 +5,6 @@ var fs = require("fs").promises,
 exports.handler = async ({ body }) => {
   const data = JSON.parse(body)
 
-  console.log({
-    headers: {
-      "X-Pwinty-MerchantId": process.env.PWINTY_MERCHANT_ID,
-      "X-Pwinty-REST-API-Key": process.env.PWINTY_TEST_API_KEY,
-      "Content-Type": "application/json",
-    },
-    body: {
-      countryCode: data.countryCode,
-      preferredShippingMethod: "Standard",
-    },
-  })
   const order = await fetch("https://sandbox.pwinty.com/v3.0/orders", {
     method: "post",
     headers: {
@@ -28,8 +17,7 @@ exports.handler = async ({ body }) => {
       preferredShippingMethod: "Standard",
     }),
   }).then(res => res.json())
-  console.log("order")
-  console.log(order)
+
   const updatedOrder = await fetch(
     `https://sandbox.pwinty.com/v3.0/orders/${order.data.id}/images`,
     {
@@ -50,12 +38,10 @@ exports.handler = async ({ body }) => {
       }),
     }
   ).then(res => res.json())
-  console.log("image updated order")
-  console.log(updatedOrder)
 
   const stripe = require("stripe")(process.env.STRIPE_TEST_SECRET_KEY)
 
-  console.log(data.image)
+  console.log(data.fileAbsolutePath)
   const file = await fs.readFile(data.fileAbsolutePath, "utf8")
   const content = fm(file)
 
@@ -85,6 +71,9 @@ exports.handler = async ({ body }) => {
             images: [
               "https://tabitraveler.com/static/362253496a69079706b035db676ee5bf/a7715/dsc03157.jpg",
             ],
+            metadata: {
+              pwintyId: order.data.id,
+            },
           },
           unit_amount: product.price,
         },

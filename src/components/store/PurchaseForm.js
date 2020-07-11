@@ -68,7 +68,8 @@ export default function PurchasePanel({
         : null
     )
   }, [selected])
-  console.log(frontmatter)
+
+  console.log(fileAbsolutePath)
   const handleBuy = async event => {
     console.log("buying")
     const response = await fetch("/.netlify/functions/purchase", {
