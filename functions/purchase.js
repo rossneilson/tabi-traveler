@@ -1,7 +1,8 @@
 var fs = require("fs").promises,
   fm = require("front-matter"),
   pricing = require("../src/utils/pricing"),
-  fetch = require("node-fetch")
+  fetch = require("node-fetch"),
+  path = require("path")
 exports.handler = async ({ body }) => {
   const data = JSON.parse(body)
 
@@ -42,7 +43,10 @@ exports.handler = async ({ body }) => {
   const stripe = require("stripe")(process.env.STRIPE_TEST_SECRET_KEY)
 
   console.log(data.fileAbsolutePath)
-  const file = await fs.readFile(data.fileAbsolutePath, "utf8")
+  const file = await fs.readFile(
+    path.join(__dirname, "../src", data.fileAbsolutePath.split("src")[1]),
+    "utf8"
+  )
   const content = fm(file)
 
   const product = content.attributes.products.filter(
