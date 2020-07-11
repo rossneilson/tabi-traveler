@@ -44,7 +44,7 @@ exports.handler = async ({ body }) => {
 
   console.log(data.fileAbsolutePath)
   const file = await fs.readFile(
-    path.join(__dirname, "../src", data.fileAbsolutePath.split("src")[1]),
+    path.join(__dirname, "../", data.fileAbsolutePath.split("src")[1]),
     "utf8"
   )
   const content = fm(file)
