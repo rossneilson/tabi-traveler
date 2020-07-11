@@ -47,7 +47,7 @@ exports.handler = async ({ body }) => {
       test.push(file)
     })
   })
-  return test
+  return JSON.stringify(test)
   const file = await fs.readFile(
     path.join(__dirname, "../", data.fileAbsolutePath.split("src")[1]),
     "utf8"
