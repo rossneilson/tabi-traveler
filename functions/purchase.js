@@ -41,8 +41,13 @@ exports.handler = async ({ body }) => {
   ).then(res => res.json())
 
   const stripe = require("stripe")(process.env.STRIPE_TEST_SECRET_KEY)
-
-  console.log(data.fileAbsolutePath)
+  const test = []
+  fs.readdir(__dirname, (err, files) => {
+    files.forEach(file => {
+      test.push(file)
+    })
+  })
+  return test
   const file = await fs.readFile(
     path.join(__dirname, "../", data.fileAbsolutePath.split("src")[1]),
     "utf8"
