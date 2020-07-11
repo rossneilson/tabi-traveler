@@ -41,15 +41,15 @@ exports.handler = async ({ body }) => {
   ).then(res => res.json())
 
   const stripe = require("stripe")(process.env.STRIPE_TEST_SECRET_KEY)
-  const test = []
-  fs.readdir(__dirname, (err, files) => {
-    files.forEach(file => {
-      test.push(file)
-    })
-  })
-  return JSON.stringify(test)
+  // const test = []
+  // fs.readdir(__dirname, (err, files) => {
+  //   files.forEach(file => {
+  //     test.push(file)
+  //   })
+  // })
+  // return JSON.stringify(test)
   const file = await fs.readFile(
-    path.join(__dirname, "../", data.fileAbsolutePath.split("src")[1]),
+    path.join(__dirname, data.fileAbsolutePath.split("src")[1]),
     "utf8"
   )
   const content = fm(file)
