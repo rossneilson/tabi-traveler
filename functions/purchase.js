@@ -48,10 +48,6 @@ exports.handler = async ({ body }) => {
   //   })
   // })
   // return JSON.stringify(test)
-  const file = await fs.readFile(
-    path.join(__dirname, data.fileAbsolutePath.split("src")[1]),
-    "utf8"
-  )
   const mdFromGithub = await fetch(
     `https://${
       process.env.GITHUB_ACCESS_TOKEN
