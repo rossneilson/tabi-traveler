@@ -52,7 +52,14 @@ exports.handler = async ({ body }) => {
     path.join(__dirname, data.fileAbsolutePath.split("src")[1]),
     "utf8"
   )
-  const content = fm(file)
+  const mdFromGithub = await fetch(
+    `https://${
+      process.env.GITHUB_ACCESS_TOKEN
+    }@raw.githubusercontent.com/rossneilson/tabi-traveler/printsStore/src${
+      data.fileAbsolutePath.split("src")[1]
+    }`
+  ).then(res => res.text())
+  const content = fm(mdFromGithub)
 
   const product = content.attributes.products.filter(
     product => product.sku === data.product.sku
