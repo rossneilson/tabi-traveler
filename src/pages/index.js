@@ -19,25 +19,23 @@ const Contact = loadable(() =>
 export default function Main(props) {
   return (
     <div>
-      <link rel="prefetch">
-        <SEO
-          title={"Tabi Traveler"}
-          description={"Travel photographer international couple"}
-          lang={props.pageContext.intl.language}
-        />
-        <Toggle language={props.pageContext.intl.language} />
+      <SEO
+        title={"Tabi Traveler"}
+        description={"Travel photographer international couple"}
+        lang={props.pageContext.intl.language}
+      />
+      <Toggle language={props.pageContext.intl.language} />
 
-        <FrontSection language={props.pageContext.intl.language} />
-        <AboutSection fuji={props.data.fujiImage.childImageSharp.fluid} />
-        <BlogSection posts={props.data.blogPosts.edges} />
-        <PageLinks
-          image1={props.data.image1.childImageSharp.fluid}
-          image2={props.data.image2.childImageSharp.fluid}
-          image3={props.data.image3.childImageSharp.fluid}
-          language={props.pageContext.intl.language}
-        />
-        <Contact />
-      </link>
+      <FrontSection language={props.pageContext.intl.language} />
+      <AboutSection fuji={props.data.fujiImage.childImageSharp.fluid} />
+      <BlogSection posts={props.data.blogPosts.edges} />
+      <PageLinks
+        image1={props.data.image1.childImageSharp.fluid}
+        image2={props.data.image2.childImageSharp.fluid}
+        image3={props.data.image3.childImageSharp.fluid}
+        language={props.pageContext.intl.language}
+      />
+      <Contact />
     </div>
   )
 }
