@@ -13,7 +13,9 @@ import FilterDrawer from "../components/portfolio/FilterDrawer"
 import Grid from "../components/portfolio/ImageGrid"
 import ImageView from "../components/portfolio/ImageView"
 
-const MenuIcon = loadable(() => import("@material-ui/icons/Menu"))
+const MenuIcon = loadable(() =>
+  import(/* webpackPrefetch: true */ "@material-ui/icons/Menu")
+)
 
 const BurgerIcon = styled(MenuIcon)`
   position: fixed;
@@ -37,43 +39,47 @@ export default function Portfolio(props) {
 
   return (
     <div>
-      <SEO
-        title={"Portfolio | Tabi Traveler"}
-        description={"Portfolio page for the best international travel photos"}
-        lang={props.pageContext.intl.language}
-      />
-      <BurgerIcon
-        fontSize="large"
-        onClick={() => setDrawerOpen(true)}
-        show={drawerOpen}
-      />
+      <link rel="prefetch">
+        <SEO
+          title={"Portfolio | Tabi Traveler"}
+          description={
+            "Portfolio page for the best international travel photos"
+          }
+          lang={props.pageContext.intl.language}
+        />
+        <BurgerIcon
+          fontSize="large"
+          onClick={() => setDrawerOpen(true)}
+          show={drawerOpen}
+        />
 
-      <Navigation
-        vertical={drawerOpen}
-        link1={"prints"}
-        link2={"blog"}
-        language={props.pageContext.intl.language}
-      />
-      <FilterDrawer
-        open={drawerOpen}
-        setOpen={setDrawerOpen}
-        filter={filter}
-        setFilter={setFilter}
-        language={props.pageContext.intl.language}
-      />
-      <Grid
-        drawerOpen={drawerOpen}
-        filter={filter}
-        images={props.data.images.edges}
-        setSelectedImage={setSelectedImage}
-        filteredImages={filteredImages}
-        setFilteredImages={setFilteredImages}
-      />
-      <ImageView
-        filteredImages={filteredImages}
-        selectedImage={selectedImage}
-        setSelectedImage={setSelectedImage}
-      />
+        <Navigation
+          vertical={drawerOpen}
+          link1={"prints"}
+          link2={"blog"}
+          language={props.pageContext.intl.language}
+        />
+        <FilterDrawer
+          open={drawerOpen}
+          setOpen={setDrawerOpen}
+          filter={filter}
+          setFilter={setFilter}
+          language={props.pageContext.intl.language}
+        />
+        <Grid
+          drawerOpen={drawerOpen}
+          filter={filter}
+          images={props.data.images.edges}
+          setSelectedImage={setSelectedImage}
+          filteredImages={filteredImages}
+          setFilteredImages={setFilteredImages}
+        />
+        <ImageView
+          filteredImages={filteredImages}
+          selectedImage={selectedImage}
+          setSelectedImage={setSelectedImage}
+        />
+      </link>
     </div>
   )
 }

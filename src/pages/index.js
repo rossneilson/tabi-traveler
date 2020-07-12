@@ -12,28 +12,32 @@ import FrontSection from "../components/landing/FrontSection"
 import AboutSection from "../components/landing/AboutSection"
 import BlogSection from "../components/landing/BlogSection"
 import PageLinks from "../components/landing/PageLinks"
-const Contact = loadable(() => import("../components/contact/Contact"))
+const Contact = loadable(() =>
+  import(/* webpackPrefetch: true */ "../components/contact/Contact")
+)
 
 export default function Main(props) {
   return (
     <div>
-      <SEO
-        title={"Tabi Traveler"}
-        description={"Travel photographer international couple"}
-        lang={props.pageContext.intl.language}
-      />
-      <Toggle language={props.pageContext.intl.language} />
+      <link rel="prefetch">
+        <SEO
+          title={"Tabi Traveler"}
+          description={"Travel photographer international couple"}
+          lang={props.pageContext.intl.language}
+        />
+        <Toggle language={props.pageContext.intl.language} />
 
-      <FrontSection language={props.pageContext.intl.language} />
-      <AboutSection fuji={props.data.fujiImage.childImageSharp.fluid} />
-      <BlogSection posts={props.data.blogPosts.edges} />
-      <PageLinks
-        image1={props.data.image1.childImageSharp.fluid}
-        image2={props.data.image2.childImageSharp.fluid}
-        image3={props.data.image3.childImageSharp.fluid}
-        language={props.pageContext.intl.language}
-      />
-      <Contact />
+        <FrontSection language={props.pageContext.intl.language} />
+        <AboutSection fuji={props.data.fujiImage.childImageSharp.fluid} />
+        <BlogSection posts={props.data.blogPosts.edges} />
+        <PageLinks
+          image1={props.data.image1.childImageSharp.fluid}
+          image2={props.data.image2.childImageSharp.fluid}
+          image3={props.data.image3.childImageSharp.fluid}
+          language={props.pageContext.intl.language}
+        />
+        <Contact />
+      </link>
     </div>
   )
 }
