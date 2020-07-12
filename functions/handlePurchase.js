@@ -28,9 +28,9 @@ exports.handler = async ({ headers, body }) => {
       state,
       postal_code,
       country,
-    } = order.shipping.address
+    } = session.shipping.address
 
-    const items = order.display_items
+    const items = session.display_items
     console.log("shipping")
     console.log({
       line1,
