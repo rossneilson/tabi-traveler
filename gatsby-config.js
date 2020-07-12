@@ -5,6 +5,7 @@ module.exports = {
     title: `Tabi Traveler`,
     description: `Tabi Traveler photography, portfolio, blog and store`,
     author: `Ross Neilson`,
+    siteUrl: `https://www.tabitraveler.com`,
   },
   plugins: [
     {
@@ -100,6 +101,7 @@ module.exports = {
     `gatsby-plugin-netlify-cms-paths`,
     `gatsby-plugin-nprogress`,
     "gatsby-plugin-loadable-components-ssr",
+    `gatsby-plugin-sitemap`,
     {
       resolve: "gatsby-plugin-webpack-bundle-analyzer",
       options: {

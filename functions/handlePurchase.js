@@ -19,7 +19,6 @@ exports.handler = async ({ headers, body }) => {
   console.log(event)
   if (event.type === "checkout.session.completed") {
     const session = event.data.object
-    console.log("IT LIVES!!!!!!!!")
     console.log(session)
     const {
       line1,
@@ -31,6 +30,7 @@ exports.handler = async ({ headers, body }) => {
     } = session.shipping.address
 
     const items = session.display_items
+
     console.log("shipping")
     console.log({
       line1,
