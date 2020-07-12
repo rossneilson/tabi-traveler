@@ -41,13 +41,7 @@ exports.handler = async ({ body }) => {
   ).then(res => res.json())
 
   const stripe = require("stripe")(process.env.STRIPE_TEST_SECRET_KEY)
-  // const test = []
-  // fs.readdir(__dirname, (err, files) => {
-  //   files.forEach(file => {
-  //     test.push(file)
-  //   })
-  // })
-  // return JSON.stringify(test)
+
   const mdFromGithub = await fetch(
     `https://${
       process.env.GITHUB_ACCESS_TOKEN
@@ -65,7 +59,6 @@ exports.handler = async ({ body }) => {
     data.type,
     data.size
   )
-  // const total = pricing.calculateTotal(product.price, shippingPrice)
 
   const session = await stripe.checkout.sessions.create({
     shipping_address_collection: "required",

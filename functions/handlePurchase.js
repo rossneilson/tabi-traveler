@@ -21,6 +21,27 @@ exports.handler = async ({ headers, body }) => {
     const session = event.data.object
     console.log("IT LIVES!!!!!!!!")
     console.log(session)
+    const {
+      line1,
+      line2,
+      city,
+      state,
+      postal_code,
+      country,
+    } = order.shipping.address
+
+    const items = order.display_items
+    console.log("shipping")
+    console.log({
+      line1,
+      line2,
+      city,
+      state,
+      postal_code,
+      country,
+    })
+    console.log("items")
+    console.log(items)
   }
 
   // Get data from stripe
