@@ -8,6 +8,7 @@ import countriesJson from "../../utils/countries.json"
 
 import { Select } from "grommet"
 import { Shop } from "grommet-icons"
+import CircularProgress from "@material-ui/core/CircularProgress"
 const Button = loadable(() => import("@material-ui/core/Button"))
 const Pricing = require("../../utils/pricing")
 
@@ -47,6 +48,7 @@ export default function PurchasePanel({
   const [countryOptions, setCountryOptions] = useState(countries)
   const [country, setCountry] = useState()
   const [shipping, setShipping] = useState()
+  const [clicked, setClicked] = useState(false)
 
   const getCountryCode = targetCountry => {
     return countriesJson.countries.filter(x => x.name === targetCountry)[0]
@@ -72,6 +74,7 @@ export default function PurchasePanel({
   console.log(fileAbsolutePath)
   const handleBuy = async event => {
     console.log("buying")
+    setClicked(true)
     const response = await fetch("/.netlify/functions/purchase", {
       body: JSON.stringify({
         countryCode: getCountryCode(country),
@@ -136,7 +139,11 @@ export default function PurchasePanel({
 
         <BuyButton disabled={!country} onClick={handleBuy}>
           Buy now
-          <Shop color={country ? "white" : null} />
+          {clicked ? (
+            <CircularProgress color="secondary" />
+          ) : (
+            <Shop color={country ? "white" : null} />
+          )}
         </BuyButton>
       </TotalSection>
     </div>
