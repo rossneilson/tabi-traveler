@@ -1,3 +1,4 @@
+const fetch = require("node-fetch"),
 const stripe = require("stripe")(process.env.STRIPE_TEST_SECRET_KEY)
 exports.handler = async ({ headers, body }) => {
   const sig = headers["stripe-signature"]
