@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { navigate } from "@reach/router"
-import loadable from "@loadable/component"
 import { FormattedMessage } from "react-intl"
 
 import "../index.css"
@@ -13,7 +12,7 @@ import Footer from "../components/blog/Footer"
 import Toggle from "../components/Toggle"
 import SEO from "../components/seo"
 
-const ChevronLeftIcon = loadable(() => import("@material-ui/icons/ChevronLeft"))
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft"
 
 const BackIcon = styled.section`
   cursor: pointer;

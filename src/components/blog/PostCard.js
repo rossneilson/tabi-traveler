@@ -2,14 +2,11 @@ import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { navigate } from "@reach/router"
-import loadable from "@loadable/component"
 
 import { urlLocaleFormatting } from "../../utils/formatters"
 
-const Fab = loadable(() => import("@material-ui/core/Fab"))
-const ChevronRightIcon = loadable(() =>
-  import("@material-ui/icons/ChevronRight")
-)
+import Fab from "@material-ui/core/Fab"
+import ChevronRightIcon from "@material-ui/icons/ChevronRight"
 
 const Wrapper = styled.section`
   width: 100%;
