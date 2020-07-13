@@ -29,7 +29,8 @@ exports.handler = async ({ headers, body }) => {
       country,
     } = session.shipping.address
 
-    const items = session.display_items
+    const lineItems = await stripe.checkout.sessions.listLineItems(session.id)
+    console.log(lineItems)
 
     console.log("shipping")
     console.log({
@@ -40,8 +41,6 @@ exports.handler = async ({ headers, body }) => {
       postal_code,
       country,
     })
-    console.log("items")
-    console.log(items)
   }
 
   // Get data from stripe

@@ -12,9 +12,7 @@ import FrontSection from "../components/landing/FrontSection"
 import AboutSection from "../components/landing/AboutSection"
 import BlogSection from "../components/landing/BlogSection"
 import PageLinks from "../components/landing/PageLinks"
-const Contact = loadable(() =>
-  import(/* webpackPrefetch: true */ "../components/contact/Contact")
-)
+const Contact = loadable(() => import("../components/contact/Contact"))
 
 export default function Main(props) {
   return (
