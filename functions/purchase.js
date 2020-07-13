@@ -105,6 +105,10 @@ exports.handler = async ({ body }) => {
         quantity: 1,
       },
     ],
+    metadata: {
+      pwintyId: order.data.id,
+      name: data.title + " - " + data.product.title,
+    },
     mode: "payment",
     success_url: "http://localhost:8888/prints",
     cancel_url: "http://localhost:8888/prints",
