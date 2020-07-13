@@ -6,9 +6,11 @@ import loadable from "@loadable/component"
 
 import { urlLocaleFormatting } from "../../utils/formatters"
 
-const Fab = loadable(() => import("@material-ui/core/Fab"))
+const Fab = loadable(() =>
+  import(/* webpackPrefetch: true */ "@material-ui/core/Fab")
+)
 const ChevronRightIcon = loadable(() =>
-  import("@material-ui/icons/ChevronRight")
+  import(/* webpackPrefetch: true */ "@material-ui/icons/ChevronRight")
 )
 
 const Wrapper = styled.section`

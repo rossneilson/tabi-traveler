@@ -13,7 +13,9 @@ import FilterDrawer from "../components/portfolio/FilterDrawer"
 import Grid from "../components/portfolio/ImageGrid"
 import ImageView from "../components/portfolio/ImageView"
 
-const MenuIcon = loadable(() => import("@material-ui/icons/Menu"))
+const MenuIcon = loadable(() =>
+  import(/* webpackPrefetch: true */ "@material-ui/icons/Menu")
+)
 
 const BurgerIcon = styled(MenuIcon)`
   position: fixed;
