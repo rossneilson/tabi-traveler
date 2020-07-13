@@ -49,7 +49,28 @@ exports.handler = async ({ headers, body }) => {
           recipientName: session.shipping.name,
         }),
       }
-    ).then(res => res.json())
+    ).then(res => {
+      return fetch(
+        `https://sandbox.pwinty.com/v3.0/orders/${session.id}/SubmissionStatus`
+      ).then(res => {
+        if (res.json().statusCode === 200) {
+          return fetch(
+            `https://sandbox.pwinty.com/v3.0/orders/${session.id}/status`,
+            {
+              method: "post",
+              headers: {
+                "X-Pwinty-MerchantId": process.env.PWINTY_MERCHANT_ID,
+                "X-Pwinty-REST-API-Key": process.env.PWINTY_TEST_API_KEY,
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                status: "Submitted",
+              }),
+            }
+          ).then(res => res.json())
+        }
+      })
+    })
 
     return {
       statusCode: 200,

@@ -15,7 +15,6 @@ exports.onCreatePage = ({ page, actions }) => {
 }
 
 exports.createPages = ({ graphql, actions }) => {
-  console.log("CREATING PRINTS")
   const { createPage } = actions
   const PrintPageTemplate = path.resolve(`src/templates/PrintPage.js`)
   const BlogPostTemplate = path.resolve(`src/templates/BlogPost.js`)
