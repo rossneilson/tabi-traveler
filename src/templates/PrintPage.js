@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { navigate } from "@reach/router"
+import loadable from "@loadable/component"
 import { FormattedMessage } from "react-intl"
 import { Grommet } from "grommet"
 
@@ -14,7 +15,7 @@ import Toggle from "../components/Toggle"
 import PurchasePanel from "../components/store/PurchasePanel"
 import SEO from "../components/seo"
 
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft"
+const ChevronLeftIcon = loadable(() => import("@material-ui/icons/ChevronLeft"))
 
 const myTheme = {
   global: {

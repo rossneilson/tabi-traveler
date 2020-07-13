@@ -1,13 +1,14 @@
 import React, { useState } from "react"
 import styled from "styled-components"
+import loadable from "@loadable/component"
 import { FormattedMessage } from "react-intl"
 import { RadioButton } from "grommet"
 
 import PurchaseTabContent from "./PurchaseTabContent"
 import PurchaseForm from "./PurchaseForm"
 
-import Tabs from "@material-ui/core/Tabs"
-import Tab from "@material-ui/core/Tab"
+const Tabs = loadable(() => import("@material-ui/core/Tabs"))
+const Tab = loadable(() => import("@material-ui/core/Tab"))
 
 const SelectionSection = styled.section`
   min-width: 50%;

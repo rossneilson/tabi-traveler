@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
+import loadable from "@loadable/component"
 import { FormattedMessage } from "react-intl"
 import { loadStripe } from "@stripe/stripe-js"
 import countriesJson from "../../utils/countries.json"
@@ -8,7 +9,7 @@ import countriesJson from "../../utils/countries.json"
 import { Select } from "grommet"
 import { Shop } from "grommet-icons"
 import CircularProgress from "@material-ui/core/CircularProgress"
-import Button from "@material-ui/core/Button"
+const Button = loadable(() => import("@material-ui/core/Button"))
 const Pricing = require("../../utils/pricing")
 
 const TotalSection = styled.section`

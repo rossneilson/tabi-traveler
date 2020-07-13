@@ -1,5 +1,6 @@
 import React from "react"
 import { createGlobalStyle } from "styled-components"
+import loadable from "@loadable/component"
 
 import "../index.css"
 
@@ -8,7 +9,7 @@ import SEO from "../components/seo"
 import Navigation from "../components/Navigation"
 import Toggle from "../components/Toggle"
 
-import Contact from "../components/contact/Contact"
+const Contact = loadable(() => import("../components/contact/Contact"))
 
 const GlobalStyle = createGlobalStyle`
   body {

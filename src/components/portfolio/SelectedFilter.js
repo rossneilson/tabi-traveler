@@ -1,10 +1,11 @@
 import React from "react"
 import styled from "styled-components"
+import loadable from "@loadable/component"
 import ScotlandFlag from "../../img/gb-sct.svg"
 import JapanFlag from "../../img/jp.svg"
 
-import StarIcon from "@material-ui/icons/Star"
-import Button from "@material-ui/core/Button"
+const StarIcon = loadable(() => import("@material-ui/icons/Star"))
+const Button = loadable(() => import("@material-ui/core/Button"))
 
 const Flags = {
   GBR: ScotlandFlag,

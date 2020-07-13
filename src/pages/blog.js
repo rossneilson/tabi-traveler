@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import loadable from "@loadable/component"
 
 import "../index.css"
 
@@ -9,8 +10,8 @@ import Navigation from "../components/Navigation"
 import BlogGrid from "../components/blog/BlogGrid"
 import Toggle from "../components/Toggle"
 
-import Tabs from "@material-ui/core/Tabs"
-import Tab from "@material-ui/core/Tab"
+const Tabs = loadable(() => import("@material-ui/core/Tabs"))
+const Tab = loadable(() => import("@material-ui/core/Tab"))
 
 const createListOfCategories = posts => {
   const categories = []

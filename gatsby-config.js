@@ -100,6 +100,7 @@ module.exports = {
     },
     `gatsby-plugin-netlify-cms-paths`,
     `gatsby-plugin-nprogress`,
+    "gatsby-plugin-loadable-components-ssr",
     `gatsby-plugin-sitemap`,
     {
       resolve: "gatsby-plugin-webpack-bundle-analyzer",

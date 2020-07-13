@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import loadable from "@loadable/component"
 
 import "../index.css"
 import "typeface-noto-sans"
@@ -11,7 +12,7 @@ import FrontSection from "../components/landing/FrontSection"
 import AboutSection from "../components/landing/AboutSection"
 import BlogSection from "../components/landing/BlogSection"
 import PageLinks from "../components/landing/PageLinks"
-import Contact from "../components/contact/Contact"
+const Contact = loadable(() => import("../components/contact/Contact"))
 
 export default function Main(props) {
   return (

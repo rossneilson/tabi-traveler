@@ -1,13 +1,14 @@
 import React, { useEffect } from "react"
 import styled, { css } from "styled-components"
+import loadable from "@loadable/component"
 import Img from "gatsby-image"
 
 import * as Keyframes from "../../utils/keyframes"
 import { useKeyPress } from "../../utils/hooks"
 
-import ForwardIcon from "@material-ui/icons/ArrowForwardIos"
-import BackIcon from "@material-ui/icons/ArrowBackIos"
-import CloseIcon from "@material-ui/icons/Close"
+const ForwardIcon = loadable(() => import("@material-ui/icons/ArrowForwardIos"))
+const BackIcon = loadable(() => import("@material-ui/icons/ArrowBackIos"))
+const CloseIcon = loadable(() => import("@material-ui/icons/Close"))
 
 const Modal = styled.section`
   z-index: 99999;
