@@ -54,7 +54,15 @@ exports.handler = async ({ headers, body }) => {
     console.log(order)
 
     const status = await fetch(
-      `https://sandbox.pwinty.com/v3.0/orders/${session.id}/SubmissionStatus`
+      `https://sandbox.pwinty.com/v3.0/orders/${session.id}/SubmissionStatus`,
+      {
+        method: "get",
+        headers: {
+          "X-Pwinty-MerchantId": process.env.PWINTY_MERCHANT_ID,
+          "X-Pwinty-REST-API-Key": process.env.PWINTY_TEST_API_KEY,
+          "Content-Type": "application/json",
+        },
+      }
     ).then(res => res.json())
     console.log("status")
     console.log(status)
