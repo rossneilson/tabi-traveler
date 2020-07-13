@@ -1,14 +1,13 @@
 import React from "react"
-import loadable from "@loadable/component"
 import styled from "styled-components"
 
 import Toggle from "../Toggle"
 import SelectedFilter from "./SelectedFilter"
 
-const Drawer = loadable(() => import("@material-ui/core/Drawer"))
-const ChevronLeftIcon = loadable(() => import("@material-ui/icons/ChevronLeft"))
-const Divider = loadable(() => import("@material-ui/core/Divider"))
-const FilterMap = loadable(() => import("./FilterMap"))
+import Drawer from "@material-ui/core/Drawer"
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft"
+import Divider from "@material-ui/core/Divider"
+import FilterMap from "./FilterMap"
 
 const StyledDrawer = styled(Drawer)`
   & .MuiDrawer-paper {

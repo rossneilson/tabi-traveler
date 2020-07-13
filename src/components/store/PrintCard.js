@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { navigate } from "@reach/router"
-import loadable from "@loadable/component"
 
 import { urlLocaleFormatting } from "../../utils/formatters"
 
