@@ -1,40 +1,37 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import loadable from "@loadable/component"
-import { FormattedMessage } from "react-intl"
-import { loadStripe } from "@stripe/stripe-js"
+import { useIntl } from "react-intl"
 import countriesJson from "../../utils/countries.json"
-// import Pricing from "../../utils/pricing"
+import { createCheckout } from "../../utils/purchase"
+import Button from "../common/button"
 
-import { Select } from "grommet"
-import { Shop } from "grommet-icons"
-import CircularProgress from "@material-ui/core/CircularProgress"
-const Button = loadable(() => import("@material-ui/core/Button"))
+const CircularProgress = loadable(() =>
+  import("@material-ui/core/CircularProgress")
+)
+
 const Pricing = require("../../utils/pricing")
 
 const TotalSection = styled.section`
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
   margin-top: 50px;
 `
-
-const BuyButton = styled(Button)`
-  background-color: #f79a60;
-  color: white;
-  height: 80px;
-  display: flex;
-  justify-content: space-around;
-  &:hover {
-    background-color: #5065a3;
-  }
-  &:focus {
-    background-color: #5065a3;
-  }
-  width: 30%;
+const Total = styled.section`
+  width: 70%;
+  min-width: 250px;
+  flex-grow: 1;
 `
-const countries = []
+
+const Select = styled.select`
+  margin: 5% 0% 0% 10%;
+  transform: scale(1.3);
+`
+
+const countryOptions = [<option value={null}></option>]
 countriesJson.countries.forEach(country => {
-  countries.push(country.name)
+  countryOptions.push(<option value={country.name}>{country.name}</option>)
 })
 
 export default function PurchasePanel({
@@ -45,14 +42,14 @@ export default function PurchasePanel({
   language,
   fileAbsolutePath,
 }) {
-  const [countryOptions, setCountryOptions] = useState(countries)
+  const intl = useIntl()
   const [country, setCountry] = useState()
   const [shipping, setShipping] = useState()
-  const [clicked, setClicked] = useState(false)
 
   const getCountryCode = targetCountry => {
-    return countriesJson.countries.filter(x => x.name === targetCountry)[0]
-      .isoCode
+    return targetCountry
+      ? countriesJson.countries.filter(x => x.name === targetCountry)[0].isoCode
+      : null
   }
 
   useEffect(() => {
@@ -71,80 +68,73 @@ export default function PurchasePanel({
     )
   }, [selected])
 
-  console.log(fileAbsolutePath)
   const handleBuy = async event => {
-    console.log("buying")
-    setClicked(true)
-    const response = await fetch("/.netlify/functions/purchase", {
-      body: JSON.stringify({
-        countryCode: getCountryCode(country),
-        type: selected.type,
-        size: selected.size,
-        title: frontmatter.title,
-        product: selected,
-        locale: language === "jp" ? "ja" : "auto",
-        fileAbsolutePath: fileAbsolutePath,
-        image:
-          "http://localhost:8888" +
-          frontmatter.fullImage.childImageSharp.fluid.originalImg,
-      }),
-      method: "POST",
-    })
-
-    const stripe = await loadStripe(
-      "pk_test_51H1z1WLdKK5sOT6pjvjbdqVZVE8gQLdXmZzTwBvhpPCUucRWjejKw6cEmiq5Scw9oenQVGiVVoRGnsmr1B9OAQ6c007lhc3Miz"
+    createCheckout(
+      getCountryCode(country),
+      selected,
+      frontmatter,
+      fileAbsolutePath,
+      language
     )
-    const jsonResp = await response.json()
-    stripe.redirectToCheckout({ sessionId: jsonResp.sessionId })
   }
 
   return (
     <div>
-      <div>
-        {itemOptions}
-        <Select
-          value={country}
-          onSearch={searchText => {
-            const regexp = new RegExp(searchText, "i")
-            setCountryOptions(countryOptions.filter(o => o.match(regexp)))
-          }}
-          onChange={event => {
-            setCountryOptions(countries)
-            setCountry(event.value)
-            setShipping(
-              Pricing.calculateShipping(
-                getCountryCode(event.value),
-                selected.type,
-                selected.size
-              )
+      {itemOptions}
+      <Select
+        onChange={event => {
+          setCountry(event.target.value)
+          setShipping(
+            Pricing.calculateShipping(
+              getCountryCode(event.target.value),
+              selected.type,
+              selected.size
             )
-          }}
-          options={countryOptions}
-        />
-      </div>
+          )
+        }}
+      >
+        {countryOptions}
+      </Select>
       <TotalSection>
-        <div>
+        <Total>
           Price: £{selected.price / 100}
           <br />+ Shipping: £ {shipping / 100}
-          <br />
-          + VAT(20%)
           <br />
           <h2>
             {country
               ? "Total: £" +
                 Pricing.calculateTotal(selected.price / 100, shipping / 100)
-              : "Please select a country"}
+              : intl.formatMessage({ id: "store.selectCountry" })}
           </h2>
-        </div>
-
-        <BuyButton disabled={!country} onClick={handleBuy}>
-          Buy now
-          {clicked ? (
-            <CircularProgress color="secondary" />
-          ) : (
-            <Shop color={country ? "white" : null} />
-          )}
-        </BuyButton>
+        </Total>
+        <Button
+          primaryColour={"#f79a60"}
+          secondaryColour={"#5065a3"}
+          handleClick={handleBuy}
+          value={country}
+          loader
+          icon={
+            <svg
+              style={{ paddingTop: "1px" }}
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-shopping-cart"
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke={country ? "white" : "#565351a8"}
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" />
+              <circle cx="9" cy="19" r="2" />
+              <circle cx="17" cy="19" r="2" />
+              <path d="M3 3h2l2 12a3 3 0 0 0 3 2h7a3 3 0 0 0 3 -2l1 -7h-15.2" />
+            </svg>
+          }
+          text={intl.formatMessage({ id: "store.buy" })}
+        />
       </TotalSection>
     </div>
   )

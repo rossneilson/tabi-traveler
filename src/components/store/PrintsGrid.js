@@ -24,12 +24,5 @@ export default function Grid({ prints }) {
     printCards.push(<PrintCard index={index} print={value} isFullPage />)
   })
 
-  return (
-    <GridWrap>
-      {/* Description / intro to shop international etc */}
-      {/* Make cards float up and increase shadow on hover */}
-      {printCards}
-      {/* FAQ */}
-    </GridWrap>
-  )
+  return <GridWrap>{printCards}</GridWrap>
 }

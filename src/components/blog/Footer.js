@@ -12,6 +12,7 @@ const Wrapper = styled.section`
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0px 0px 9px 1px #0000001c;
+  background: white;
   @media (pointer: coarse) {
     width: 70%;
     margin-left: 10%;

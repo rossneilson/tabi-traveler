@@ -37,6 +37,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "general",
+        path: `${__dirname}/src/markdown/general`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Tabi Traveler - Photography`,

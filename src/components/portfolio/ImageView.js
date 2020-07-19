@@ -6,10 +6,6 @@ import Img from "gatsby-image"
 import * as Keyframes from "../../utils/keyframes"
 import { useKeyPress } from "../../utils/hooks"
 
-const ForwardIcon = loadable(() => import("@material-ui/icons/ArrowForwardIos"))
-const BackIcon = loadable(() => import("@material-ui/icons/ArrowBackIos"))
-const CloseIcon = loadable(() => import("@material-ui/icons/Close"))
-
 const Modal = styled.section`
   z-index: 99999;
   position: fixed;
@@ -52,12 +48,11 @@ const Image = styled(Img)`
   margin: auto;
 `
 
-const Back = styled(BackIcon)`
+const Back = styled.section`
   float: left;
   top: 50%;
   transform: translate(0%, -50%);
   cursor: w-resize;
-  color: black;
   position: absolute;
   margin-left: 20px;
   z-index: 999;
@@ -69,10 +64,9 @@ const Back = styled(BackIcon)`
   }
 `
 
-const Next = styled(ForwardIcon)`
+const Next = styled.section`
   float: right;
   cursor: e-resize;
-  color: black;
   position: absolute;
   margin-right: 20px;
   z-index: 999;
@@ -80,23 +74,23 @@ const Next = styled(ForwardIcon)`
   margin-left: 95%;
   @media (pointer: coarse) {
     margin-left: 45%;
-    margin-top: 80%;
+    bottom: 0;
+    margin-bottom: 10px;
     transform: rotate(90deg);
     cursor: s-resize;
   }
 `
 
-const Close = styled(CloseIcon)`
+const Close = styled.section`
   float: right;
   cursor: pointer;
-  color: black;
   position: absolute;
   margin-right: 20px;
   z-index: 999;
-  top: 0%;
-  margin-left: 95%;
+  top: 1%;
+  margin-left: 94%;
   @media (pointer: coarse) {
-    margin-left: 90%;
+    margin-left: 87%;
   }
 `
 
@@ -129,11 +123,26 @@ export default function ImageView({
       >
         <ModalMain show={selectedImage + 1}>
           <Back
-            fontSize="large"
             onClick={() => {
               setSelectedImage(selectedImage - 1)
             }}
-          />
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-chevron-left"
+              width="44"
+              height="44"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="#000000"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" />
+              <polyline points="15 6 9 12 15 18" />
+            </svg>
+          </Back>
           <Image
             imgStyle={{ objectFit: "scale-down" }}
             fluid={
@@ -142,17 +151,47 @@ export default function ImageView({
             }
           />
           <Close
-            fontSize="large"
             onClick={() => {
               setSelectedImage(null)
             }}
-          />
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-arrow-back-up"
+              width="44"
+              height="44"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="#000000"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" />
+              <path d="M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1" />
+            </svg>
+          </Close>
           <Next
-            fontSize="large"
             onClick={() => {
               setSelectedImage(selectedImage + 1)
             }}
-          />
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-chevron-right"
+              width="44"
+              height="44"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="#000000"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" />
+              <polyline points="9 6 15 12 9 18" />
+            </svg>
+          </Next>
         </ModalMain>
       </Modal>
     )

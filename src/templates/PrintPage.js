@@ -1,21 +1,24 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
-import styled from "styled-components"
-import Img from "gatsby-image"
+import styled, { createGlobalStyle } from "styled-components"
 import { navigate } from "@reach/router"
 import loadable from "@loadable/component"
 import { FormattedMessage } from "react-intl"
-import { Grommet } from "grommet"
 
 import "../index.css"
 
-import Navigation from "../components/Navigation"
+import Navigation from "../components/common/Navigation"
 import Footer from "../components/blog/Footer"
-import Toggle from "../components/Toggle"
+import Toggle from "../components/common/Toggle"
 import PurchasePanel from "../components/store/PurchasePanel"
-import SEO from "../components/seo"
+import ProductImages from "../components/store/ProductImages"
+import SEO from "../components/common/Seo"
 
-const ChevronLeftIcon = loadable(() => import("@material-ui/icons/ChevronLeft"))
+const GlobalStyle = createGlobalStyle`
+  body {
+    background: linear-gradient(0deg, rgba(203,213,225,1) 0%, rgba(203,213,225,1) 37%, rgba(255,255,255,1) 70%);
+  }
+`
 
 const myTheme = {
   global: {
@@ -48,7 +51,6 @@ const BackText = styled.section`
 
 const Title = styled.h1`
   margin-left: 10%;
-  margin-top: 2%;
   @media (pointer: coarse) {
     margin-left: 10%;
     margin-right: 10%;
@@ -58,16 +60,15 @@ const Title = styled.h1`
 const ContentWrapper = styled.section`
   display: flex;
   margin: 0% 10% 5% 10%;
+  flex-direction: row;
+  @media (pointer: coarse) {
+    flex-direction: column;
+  }
 `
 
 const ImageSection = styled.section`
   display: flex;
-  width: 50%;
-  flex-grow: 2;
-`
-
-const MainImage = styled(Img)`
-  width: 100%;
+  min-width: 50%;
 `
 
 const Markdown = styled.h4`
@@ -84,16 +85,31 @@ export default function PrintPage({ data, pageContext }) {
   const { language } = pageContext
 
   return (
-    <Grommet theme={myTheme}>
+    <div>
+      <GlobalStyle />
       <SEO
         title={"Print - " + frontmatter.title + " | Tabi Traveler"}
-        description={null}
+        description={frontmatter.desc}
         lang={frontmatter.locale}
       />
       <BackIcon
         onClick={() => navigate("../../" + frontmatter.locale + "/prints")}
       >
-        <ChevronLeftIcon fontSize="large" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon icon-tabler icon-tabler-arrow-back-up"
+          width="36"
+          height="36"
+          viewBox="0 0 24 24"
+          stroke-width="1"
+          stroke="#8698da"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" />
+          <path d="M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1" />
+        </svg>
         <BackText>
           <FormattedMessage id="store.back" />
         </BackText>
@@ -109,7 +125,7 @@ export default function PrintPage({ data, pageContext }) {
       <Title>{frontmatter.title}</Title>
       <ContentWrapper>
         <ImageSection>
-          <MainImage fluid={frontmatter.mainImage.childImageSharp.fluid} />
+          <ProductImages images={frontmatter.images} />
         </ImageSection>
 
         <PurchasePanel
@@ -129,7 +145,7 @@ export default function PrintPage({ data, pageContext }) {
       </FormattedDate>
 
       <Footer image={data.image.childImageSharp.fluid} />
-    </Grommet>
+    </div>
   )
 }
 
@@ -143,6 +159,7 @@ export const query = graphql`
       fileAbsolutePath
       frontmatter {
         title
+        desc
         date
         path
         locale
@@ -162,7 +179,7 @@ export const query = graphql`
         }
         images {
           childImageSharp {
-            fluid(maxWidth: 3000) {
+            fluid(maxWidth: 1000) {
               ...GatsbyImageSharpFluid
             }
           }

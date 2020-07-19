@@ -11,7 +11,7 @@ const Wrap = styled.section`
   width: 100%;
   height: 90vh;
   position: relative;
-  background: #5e6165;
+  ${'' /* background: #5e6165; */}
   background-size: cover;
   @media ${device.laptop} {
     padding: 4% 0% 4% 0%;

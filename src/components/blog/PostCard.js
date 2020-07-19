@@ -7,25 +7,29 @@ import loadable from "@loadable/component"
 import { urlLocaleFormatting } from "../../utils/formatters"
 
 const Fab = loadable(() => import("@material-ui/core/Fab"))
-const ChevronRightIcon = loadable(() =>
-  import("@material-ui/icons/ChevronRight")
-)
 
 const Wrapper = styled.section`
   width: 100%;
   z-index: 999;
+  max-width: ${props => (props.isFullPage ? "null" : "380px")};
   overflow: hidden;
   transition: all 1s;
-  background-color: white};
+  background-color: white;
+  color: #5065a3;
   cursor: pointer;
   border-radius: 5px;
+  margin: 0% 2.5% 0% 2.5%;
   box-shadow: 0px 0px 15px 1px #0000003c;
   &:hover {
     opacity: 0.7;
-    transform: scale(1.05);
+    transform: translateY(-15px);
   }
   &:focus {
     opacity: 0.7;
+  }
+  @media (pointer: coarse) {
+    margin: 0% 2.5% 5% 2.5%;
+    width: auto;
   }
   @media (min-width: 480px) {
     &:first-child {
@@ -35,6 +39,9 @@ const Wrapper = styled.section`
           : "grid-area: 1 / 1 / span 1 / span 1"}
     }
   }
+`
+const Title = styled.h2`
+  color: #5065a3;
 `
 
 const Image = styled(Img)`
@@ -59,6 +66,7 @@ const Category = styled.section`
 
 const Description = styled.section`
   padding: 20px;
+  color: #5065a3;
 `
 
 const Extra = styled.section`
@@ -97,7 +105,7 @@ export default function PostCard({ post, index, isFullPage }) {
       <Category>{frontmatter.category}</Category>
       <Image fluid={frontmatter.image.childImageSharp.fluid} />
       <Description>
-        <h2>{frontmatter.title}</h2>
+        <Title>{frontmatter.title}</Title>
         {desc}
         {new Intl.DateTimeFormat(
           frontmatter.locale === "en" ? "en-GB" : "ja-JP",
@@ -108,7 +116,21 @@ export default function PostCard({ post, index, isFullPage }) {
           }
         ).format(new Date(frontmatter.date))}
         <OpenFab color="primary" aria-label="open">
-          <ChevronRightIcon />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-chevron-right"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="#ffffff"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" />
+            <polyline points="9 6 15 12 9 18" />
+          </svg>
         </OpenFab>
       </Description>
     </Wrapper>

@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import loadable from "@loadable/component"
 import { FormattedMessage } from "react-intl"
-import { RadioButton } from "grommet"
 
 import PurchaseTabContent from "./PurchaseTabContent"
 import PurchaseForm from "./PurchaseForm"
@@ -12,11 +11,20 @@ const Tab = loadable(() => import("@material-ui/core/Tab"))
 
 const SelectionSection = styled.section`
   min-width: 50%;
+  background: white;
   border-radius: 10px;
   box-shadow: 0px 0px 9px 1px #0000001c;
 `
-const Radio = styled(RadioButton)`
+const Radio = styled.label`
+  display: block;
   margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 22px;
+`
+
+const Input = styled.input`
+  transform: scale(1.5);
+  margin-right: 10px;
 `
 
 export default function PurchasePanel({
@@ -39,14 +47,15 @@ export default function PurchasePanel({
     .filter(product => product.type === "print")
     .map((value, index) => {
       printOptions.push(
-        <div style={{ marginBottom: "10px" }}>
-          <RadioButton
-            name="option"
+        <Radio>
+          <Input
+            type="radio"
+            name="printOption"
             checked={selected === value.title}
-            label={value.title}
             onChange={() => setSelected(value.title)}
           />
-        </div>
+          {value.title}
+        </Radio>
       )
       return value
     })
@@ -54,12 +63,15 @@ export default function PurchasePanel({
     .filter(product => product.type === "frame")
     .map((value, index) => {
       frameOptions.push(
-        <RadioButton
-          name="option"
-          checked={selected === value.title}
-          label={value.title}
-          onChange={() => setSelected(value.title)}
-        />
+        <Radio>
+          <Input
+            type="radio"
+            name="frameOption"
+            checked={selected === value.title}
+            onChange={() => setSelected(value.title)}
+          />
+          {value.title}
+        </Radio>
       )
       return value
     })

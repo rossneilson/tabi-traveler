@@ -1,10 +1,9 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import { useIntl } from "react-intl"
+import Img from "gatsby-image"
 import TextField from "@material-ui/core/TextField"
 import Button from "@material-ui/core/Button"
-import InstagramIcon from "@material-ui/icons/Instagram"
-import EmailIcon from "@material-ui/icons/Email"
 
 const Wrapper = styled.section`
   display: flex;
@@ -12,13 +11,13 @@ const Wrapper = styled.section`
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  height: 100%;
-  background: #5e6165;
+  height: 100vh;
   background-size: cover;
 `
 
 const ContactCard = styled.section`
   background-color: white;
+  position: absolute;
   padding: 40px;
   z-index: 978;
   min-height: 20%;
@@ -76,6 +75,11 @@ const Link = styled.a`
     color: #5065a3;
   }
 `
+const Image = styled(Img)`
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+`
 
 const validEmailRegex = RegExp(
   /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
@@ -118,6 +122,7 @@ export default function Contact(props) {
 
   return (
     <Wrapper>
+      <Image fluid={props.footImage1} />
       <ContactCard>
         <Title>{intl.formatMessage({ id: "contact.title" })}</Title>
         <form name="contact" netlify-honeypot="bot-field" hidden>
@@ -195,7 +200,23 @@ export default function Contact(props) {
             rel="noopener"
             href="https://www.instagram.com/tabitraveler/"
           >
-            <InstagramIcon />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-brand-instagram"
+              width="44"
+              height="44"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="#f79a60"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" />
+              <rect x="4" y="4" width="16" height="16" rx="4" />
+              <circle cx="12" cy="12" r="3" />
+              <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
+            </svg>
           </Link>
 
           <Link
@@ -203,7 +224,22 @@ export default function Contact(props) {
             rel="noopener"
             href="mailto:ross@tabitraveler.com"
           >
-            <EmailIcon />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="icon icon-tabler icon-tabler-mail"
+              width="44"
+              height="44"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="#f79a60"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" />
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <polyline points="3 7 12 13 21 7" />
+            </svg>
           </Link>
         </Icons>
       </ContactCard>

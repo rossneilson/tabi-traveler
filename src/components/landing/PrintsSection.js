@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import PostCard from "../blog/PostCard"
+import PrintCard from "../store/PrintCard"
 
 const FlexWrap = styled.section`
   z-index: 99999;
@@ -23,16 +23,16 @@ const Heading = styled.h1`
   margin-left: 4%;
 `
 
-export default function Blog({ posts }) {
-  const postCards = []
-  posts.map((value, index) => {
-    postCards.push(<PostCard key={index} post={value} isFullPage={false} />)
+export default function Blog({ prints }) {
+  const printCards = []
+  prints.map((value, index) => {
+    printCards.push(<PrintCard key={index} print={value} isFullPage={false} />)
   })
 
   return (
-    <div>
-      <Heading>Latest articles</Heading>
-      <FlexWrap>{postCards}</FlexWrap>
-    </div>
+    <dev>
+      <Heading>Featured Prints</Heading>
+      <FlexWrap>{printCards}</FlexWrap>
+    </dev>
   )
 }

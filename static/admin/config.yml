@@ -5,12 +5,12 @@ publish_mode: editorial_workflow
 media_folder: src/img
 public_folder: /static
 collections:
-  - name: "portfolio" # Used in routes, e.g., /admin/collections/blog
-    label: "Portfolio" # Used in the UI
-    folder: "src/markdown/portfolio" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
+  - name: "portfolio"
+    label: "Portfolio"
+    folder: "src/markdown/portfolio"
+    create: true
     identifier_field: name
-    fields: # The fields for each document, usually in front matter
+    fields:
       - {label: "Page", name: "page", widget: "hidden", default: "portfolio"}
       - {label: "Best", name: "best", widget: "boolean"}
       - {label: "Landscape", name: "landscape", widget: "boolean"}
@@ -31,4 +31,47 @@ collections:
       - {label: "Path", name: "path", widget: "string", hint: "blog/same-as-title"}
       - {label: "Locale", name: "locale", widget: "select", options: ["en", "jp"]}
       - {label: "Description", name: "SEO", widget: "string"}
+      - {label: "Content", name: "body", widget: "markdown"}
+  - name: "store"
+    label: "Store"
+    folder: "src/markdown/store" 
+    create: true 
+    identifier_field: title
+    fields: 
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "desc", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Main image", name: "main", widget: "image"}
+      - label: "Images"
+        name: "images"
+        widget: "list"
+        summary: '{{fields.image}}'
+        field: {label: Image, name: image, widget: image}
+      - label: "Products"
+        name: "products"
+        widget: "list"
+        summary: '{{fields.product.title}}'
+        fields: 
+          - label: "Product"
+            name: "product"
+            widget: "object"
+            fields: 
+              - {label: "SKU", name: "sku", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Type", name: "type", widget: "string"}
+              - {label: "Size", name: "size", widget: "string"}
+              - {label: "Price", name: "price", widget: "number"}
+      - {label: "Full image", name: "fullImage", widget: "image"}
+      - {label: "Path", name: "path", widget: "string", hint: "prints/same-as-title"}
+      - {label: "Locale", name: "locale", widget: "select", options: ["en", "jp"]}
+      - {label: "Content", name: "body", widget: "markdown"}
+  - name: "general"
+    label: "General"
+    folder: "src/markdown/general" 
+    create: true 
+    identifier_field: page
+    fields: 
+      - {label: "Page", name: "page", widget: "string"}
+      - {label: "Type", name: "type", widget: "string"}
+      - {label: "Locale", name: "locale", widget: "select", options: ["en", "jp"]}
       - {label: "Content", name: "body", widget: "markdown"}

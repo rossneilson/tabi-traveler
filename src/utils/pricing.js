@@ -5,18 +5,15 @@ var calculateShipping = function (countryCode, productType, size) {
     return 1000
   } else {
     const country = json.countries.filter(x => x.isoCode === countryCode)[0]
-    console.log(country)
     if (size === "s") {
-      return country.sFrame
+      return country.sFrame * 1.2
     } else if (size === "l") {
-      return country.lFrame
+      return country.lFrame * 1.2
     }
   }
 }
 var calculateTotal = function (base, shipping) {
-  console.log(base)
-  console.log(shipping)
-  return (base + shipping) * 1.2
+  return base + shipping
 }
 
 module.exports = { calculateShipping, calculateTotal }

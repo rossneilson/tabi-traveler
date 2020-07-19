@@ -110,7 +110,7 @@ exports.handler = async ({ body }) => {
       name: data.title + " - " + data.product.title,
     },
     mode: "payment",
-    success_url: "https://printsstore--tabi-traveler.netlify.app/prints",
+    success_url: "https://printsstore--tabi-traveler.netlify.app/success",
     cancel_url: "https://printsstore--tabi-traveler.netlify.app/prints",
   })
   return {

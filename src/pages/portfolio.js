@@ -6,16 +6,14 @@ import loadable from "@loadable/component"
 import "../index.css"
 import "typeface-noto-sans"
 
-import SEO from "../components/seo"
+import SEO from "../components/common/Seo"
 
-import Navigation from "../components/Navigation"
+import Navigation from "../components/common/Navigation"
 import FilterDrawer from "../components/portfolio/FilterDrawer"
 import Grid from "../components/portfolio/ImageGrid"
 import ImageView from "../components/portfolio/ImageView"
 
-const MenuIcon = loadable(() => import("@material-ui/icons/Menu"))
-
-const BurgerIcon = styled(MenuIcon)`
+const BurgerIcon = styled.section`
   position: fixed;
   z-index: 99999;
   color: #8698da;
@@ -42,11 +40,24 @@ export default function Portfolio(props) {
         description={"Portfolio page for the best international travel photos"}
         lang={props.pageContext.intl.language}
       />
-      <BurgerIcon
-        fontSize="large"
-        onClick={() => setDrawerOpen(true)}
-        show={drawerOpen}
-      />
+      <BurgerIcon onClick={() => setDrawerOpen(true)} show={drawerOpen}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon icon-tabler icon-tabler-menu"
+          width="44"
+          height="44"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="#8698da"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" />
+          <line x1="4" y1="8" x2="20" y2="8" />
+          <line x1="4" y1="16" x2="20" y2="16" />
+        </svg>
+      </BurgerIcon>
 
       <Navigation
         vertical={drawerOpen}
