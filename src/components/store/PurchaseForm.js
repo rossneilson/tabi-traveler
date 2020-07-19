@@ -4,7 +4,7 @@ import loadable from "@loadable/component"
 import { useIntl } from "react-intl"
 import countriesJson from "../../utils/countries.json"
 import { createCheckout } from "../../utils/purchase"
-import Button from "../common/button"
+import Button from "../common/Button"
 
 const CircularProgress = loadable(() =>
   import("@material-ui/core/CircularProgress")
