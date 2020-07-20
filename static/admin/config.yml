@@ -52,15 +52,11 @@ collections:
         widget: "list"
         summary: '{{fields.product.title}}'
         fields: 
-          - label: "Product"
-            name: "product"
-            widget: "object"
-            fields: 
-              - {label: "SKU", name: "sku", widget: "string"}
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Type", name: "type", widget: "string"}
-              - {label: "Size", name: "size", widget: "string"}
-              - {label: "Price", name: "price", widget: "number"}
+          - {label: "SKU", name: "sku", widget: "string"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Type", name: "type", widget: "string"}
+          - {label: "Size", name: "size", widget: "string"}
+          - {label: "Price", name: "price", widget: "number"}
       - {label: "Full image", name: "fullImage", widget: "image"}
       - {label: "Path", name: "path", widget: "string", hint: "prints/same-as-title"}
       - {label: "Locale", name: "locale", widget: "select", options: ["en", "jp", "off"]}
