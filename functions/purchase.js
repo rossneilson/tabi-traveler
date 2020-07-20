@@ -29,11 +29,11 @@ exports.handler = async ({ body }) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        // sku: data.product.sku,
-        // url: data.image,
-        sku: "GLOBAL-PHO-16X16-PRO",
-        url:
-          "https://tabitraveler.com/static/362253496a69079706b035db676ee5bf/a7715/dsc03157.jpg",
+        sku: data.product.sku,
+        url: data.image,
+        // sku: "GLOBAL-PHO-16X16-PRO",
+        // url:
+        //   "https://tabitraveler.com/static/362253496a69079706b035db676ee5bf/a7715/dsc03157.jpg",
         copies: 1,
         sizing: "Crop",
       }),
@@ -73,9 +73,7 @@ exports.handler = async ({ body }) => {
           currency: "gbp",
           product_data: {
             name: data.title + " - " + data.product.title,
-            images: [
-              "https://tabitraveler.com/static/362253496a69079706b035db676ee5bf/a7715/dsc03157.jpg",
-            ],
+            images: [data.image],
             metadata: {
               pwintyId: order.data.id,
             },
@@ -110,8 +108,8 @@ exports.handler = async ({ body }) => {
       name: data.title + " - " + data.product.title,
     },
     mode: "payment",
-    success_url: "https://printsstore--tabi-traveler.netlify.app/success",
-    cancel_url: "https://printsstore--tabi-traveler.netlify.app/prints",
+    success_url: "https://tabitraveler.com/success",
+    cancel_url: "https://tabitraveler.com/prints",
   })
   return {
     statusCode: 200,
