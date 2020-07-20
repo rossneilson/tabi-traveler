@@ -12,6 +12,12 @@ products:
       type: print
       size: s
       price: 5000
+  - product:
+      title: test2
+      sku: skrrr
+      type: frame
+      size: l
+      price: 23
 fullImage: /static/download-10.jpg
 path: prints/cms-test
 locale: en
