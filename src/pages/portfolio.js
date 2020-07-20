@@ -43,15 +43,15 @@ export default function Portfolio(props) {
       <BurgerIcon onClick={() => setDrawerOpen(true)} show={drawerOpen}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="icon icon-tabler icon-tabler-menu"
+          className="icon icon-tabler icon-tabler-menu"
           width="44"
           height="44"
           viewBox="0 0 24 24"
-          stroke-width="2"
+          strokeWidth="2"
           stroke="#8698da"
           fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
           <path stroke="none" d="M0 0h24v24H0z" />
           <line x1="4" y1="8" x2="20" y2="8" />

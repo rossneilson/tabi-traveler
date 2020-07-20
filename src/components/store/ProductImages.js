@@ -41,8 +41,8 @@ export default function ProductImages({ images }) {
     if (!(image === selectedImage)) {
       otherImages.push(
         <Wrap
+          key={index}
           onClick={() => {
-            console.log("REE")
             setSelectedImage(images[index])
           }}
         >
@@ -50,7 +50,6 @@ export default function ProductImages({ images }) {
             key={index}
             fluid={image.childImageSharp.fluid}
             onClick={() => {
-              console.log("REE")
               setSelectedImage(images[index])
             }}
           />
@@ -58,7 +57,6 @@ export default function ProductImages({ images }) {
       )
     }
   })
-  console.log(otherImages)
 
   return (
     <Wrapper>

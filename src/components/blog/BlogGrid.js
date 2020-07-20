@@ -21,7 +21,7 @@ export default function Grid({ posts }) {
   const postCards = []
 
   posts.map((value, index) => {
-    postCards.push(<PostCard index={index} post={value} isFullPage />)
+    postCards.push(<PostCard index={index} post={value} isfullpage />)
   })
 
   return <GridWrap>{postCards}</GridWrap>

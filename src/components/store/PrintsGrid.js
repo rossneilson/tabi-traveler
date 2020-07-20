@@ -21,7 +21,7 @@ export default function Grid({ prints }) {
   const printCards = []
 
   prints.map((value, index) => {
-    printCards.push(<PrintCard index={index} print={value} isFullPage />)
+    printCards.push(<PrintCard key={index} print={value} isfullpage />)
   })
 
   return <GridWrap>{printCards}</GridWrap>

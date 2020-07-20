@@ -34,7 +34,6 @@ export default function PurchasePanel({
 }) {
   const [tab, setTab] = useState(0)
   const [selected, setSelected] = useState(frontmatter.products[0].title)
-  console.log(selected)
 
   const handleSelection = event => {
     setSelected(event.target.value)
@@ -47,14 +46,16 @@ export default function PurchasePanel({
     .filter(product => product.type === "print")
     .map((value, index) => {
       printOptions.push(
-        <Radio>
+        <Radio key={index}>
           <Input
+            id={"print" + index}
             type="radio"
-            name="printOption"
+            name={value.title}
+            value={value.title}
             checked={selected === value.title}
             onChange={() => setSelected(value.title)}
           />
-          {value.title}
+          <label htmlFor={"print" + index}>{value.title}</label>
         </Radio>
       )
       return value
@@ -63,14 +64,16 @@ export default function PurchasePanel({
     .filter(product => product.type === "frame")
     .map((value, index) => {
       frameOptions.push(
-        <Radio>
+        <Radio key={index}>
           <Input
+            id={"frame" + index}
             type="radio"
             name="frameOption"
+            value={value.title}
             checked={selected === value.title}
             onChange={() => setSelected(value.title)}
           />
-          {value.title}
+          <label htmlFor={"frame" + index}>{value.title}</label>
         </Radio>
       )
       return value

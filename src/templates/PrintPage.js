@@ -35,10 +35,10 @@ const myTheme = {
 
 const BackIcon = styled.section`
   cursor: pointer;
-  color: #8698da !important;
+  color: #8698da;
   z-index: 99999999;
   position: absolute;
-  padding: 10px;
+  padding-left: 10px;
   display: flex;
 `
 const BackText = styled.section`
@@ -51,6 +51,8 @@ const BackText = styled.section`
 
 const Title = styled.h1`
   margin-left: 10%;
+  margin-top: 2%;
+  color: #8698da;
   @media (pointer: coarse) {
     margin-left: 10%;
     margin-right: 10%;
@@ -97,15 +99,15 @@ export default function PrintPage({ data, pageContext }) {
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="icon icon-tabler icon-tabler-arrow-back-up"
+          className="icon icon-tabler icon-tabler-arrow-back-up"
           width="36"
           height="36"
           viewBox="0 0 24 24"
-          stroke-width="1"
+          strokeWidth="1"
           stroke="#8698da"
           fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
           <path stroke="none" d="M0 0h24v24H0z" />
           <path d="M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1" />
@@ -115,7 +117,7 @@ export default function PrintPage({ data, pageContext }) {
         </BackText>
       </BackIcon>
 
-      <Toggle right language={language} />
+      <Toggle right language={language} position={"absolute"} />
       <Navigation
         link1={"portfolio"}
         link2={"blog"}

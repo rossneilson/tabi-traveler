@@ -29,9 +29,15 @@ const Select = styled.select`
   transform: scale(1.3);
 `
 
-const countryOptions = [<option value={null}></option>]
+const countryOptions = [
+  <option id={"empty"} key={"empty"} value={null}></option>,
+]
 countriesJson.countries.forEach(country => {
-  countryOptions.push(<option value={country.name}>{country.name}</option>)
+  countryOptions.push(
+    <option key={country.isoCode} id={country.isoCode} value={country.name}>
+      {country.name}
+    </option>
+  )
 })
 
 export default function PurchasePanel({
@@ -81,7 +87,11 @@ export default function PurchasePanel({
   return (
     <div>
       {itemOptions}
+      <label htmlFor="select country">Country:</label>
       <Select
+        name="country"
+        id="select country"
+        aria-label="select country"
         onChange={event => {
           setCountry(event.target.value)
           setShipping(
@@ -117,15 +127,15 @@ export default function PurchasePanel({
             <svg
               style={{ paddingTop: "1px" }}
               xmlns="http://www.w3.org/2000/svg"
-              class="icon icon-tabler icon-tabler-shopping-cart"
+              className="icon icon-tabler icon-tabler-shopping-cart"
               width="30"
               height="30"
               viewBox="0 0 24 24"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke={country ? "white" : "#565351a8"}
               fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
               <path stroke="none" d="M0 0h24v24H0z" />
               <circle cx="9" cy="19" r="2" />

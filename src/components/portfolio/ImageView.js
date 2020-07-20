@@ -129,15 +129,15 @@ export default function ImageView({
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="icon icon-tabler icon-tabler-chevron-left"
+              className="icon icon-tabler icon-tabler-chevron-left"
               width="44"
               height="44"
               viewBox="0 0 24 24"
-              stroke-width="2"
+              strokeWidth="2"
               stroke="#000000"
               fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
               <path stroke="none" d="M0 0h24v24H0z" />
               <polyline points="15 6 9 12 15 18" />
@@ -157,15 +157,15 @@ export default function ImageView({
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="icon icon-tabler icon-tabler-arrow-back-up"
+              className="icon icon-tabler icon-tabler-arrow-back-up"
               width="44"
               height="44"
               viewBox="0 0 24 24"
-              stroke-width="2"
+              strokeWidth="2"
               stroke="#000000"
               fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
               <path stroke="none" d="M0 0h24v24H0z" />
               <path d="M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1" />
@@ -178,15 +178,15 @@ export default function ImageView({
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="icon icon-tabler icon-tabler-chevron-right"
+              className="icon icon-tabler icon-tabler-chevron-right"
               width="44"
               height="44"
               viewBox="0 0 24 24"
-              stroke-width="2"
+              strokeWidth="2"
               stroke="#000000"
               fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
               <path stroke="none" d="M0 0h24v24H0z" />
               <polyline points="9 6 15 12 9 18" />

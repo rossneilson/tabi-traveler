@@ -11,7 +11,7 @@ const Fab = loadable(() => import("@material-ui/core/Fab"))
 const Wrapper = styled(Link)`
   width: 100%;
   z-index: 999;
-  max-width: ${props => (props.isFullPage ? "null" : "380px")};
+  max-width: ${props => (props.isfullpage ? "null" : "380px")};
   overflow: hidden;
   transition: all 1s;
   background-color: white;
@@ -34,7 +34,7 @@ const Wrapper = styled(Link)`
   @media (min-width: 480px) {
     &:first-child {
       ${props =>
-        props.isFullPage
+        props.isfullpage
           ? "grid-area: 1 / 1 / span 2 / span 2"
           : "grid-area: 1 / 1 / span 1 / span 1"}
     }
@@ -79,11 +79,11 @@ const OpenFab = styled(Fab)`
   float: right;
 `
 
-export default function PostCard({ post, index, isFullPage }) {
+export default function PostCard({ post, index, isfullpage }) {
   const { frontmatter } = post.node
   var desc = null
 
-  if (index === 0 && isFullPage) {
+  if (index === 0 && isfullpage) {
     desc = (
       <Extra>
         <h3>{frontmatter.location}</h3>
@@ -94,7 +94,7 @@ export default function PostCard({ post, index, isFullPage }) {
 
   return (
     <Wrapper
-      isFullPage={isFullPage}
+      isfullpage={isfullpage}
       to={urlLocaleFormatting(frontmatter.locale, "../../" + frontmatter.path)}
       onClick={() => {
         window.scrollTo(0, 0)
@@ -116,15 +116,15 @@ export default function PostCard({ post, index, isFullPage }) {
         <OpenFab color="primary" aria-label="open">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-chevron-right"
+            className="icon icon-tabler icon-tabler-chevron-right"
             width="32"
             height="32"
             viewBox="0 0 24 24"
-            stroke-width="1.5"
+            strokeWidth="1.5"
             stroke="#ffffff"
             fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
             <path stroke="none" d="M0 0h24v24H0z" />
             <polyline points="9 6 15 12 9 18" />

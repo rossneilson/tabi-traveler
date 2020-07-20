@@ -28,11 +28,11 @@ const Heading = styled.h1`
 export default function Blog({ prints, language }) {
   const printCards = []
   prints.map((value, index) => {
-    printCards.push(<PrintCard key={index} print={value} isFullPage={false} />)
+    printCards.push(<PrintCard key={index} print={value} isfullpage={false} />)
   })
 
   return (
-    <dev>
+    <div>
       <Link
         to={urlLocaleFormatting(language, "/prints")}
         onClick={() => {
@@ -43,15 +43,15 @@ export default function Blog({ prints, language }) {
           <svg
             style={{ transform: "translateY(6px)" }}
             xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-building-store"
+            className="icon icon-tabler icon-tabler-building-store"
             width="48"
             height="48"
             viewBox="0 0 24 24"
-            stroke-width="2"
+            strokeWidth="2"
             stroke="#6f81b3"
             fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
             <path stroke="none" d="M0 0h24v24H0z" />
             <line x1="3" y1="21" x2="21" y2="21" />
@@ -64,6 +64,6 @@ export default function Blog({ prints, language }) {
         </Heading>
       </Link>
       <FlexWrap>{printCards}</FlexWrap>
-    </dev>
+    </div>
   )
 }

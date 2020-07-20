@@ -50,7 +50,6 @@ const GlobalStyle = createGlobalStyle`
 `
 
 export default function Prints(props) {
-  console.log(props)
   const prints = props.data.prints.edges
 
   return (

@@ -28,7 +28,7 @@ const Heading = styled.h1`
 export default function Blog({ posts, language }) {
   const postCards = []
   posts.map((value, index) => {
-    postCards.push(<PostCard key={index} post={value} isFullPage={false} />)
+    postCards.push(<PostCard key={index} post={value} isfullpage={false} />)
   })
 
   return (
@@ -43,15 +43,15 @@ export default function Blog({ posts, language }) {
           <svg
             style={{ transform: "translateY(6px)" }}
             xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-notebook"
+            className="icon icon-tabler icon-tabler-notebook"
             width="48"
             height="48"
             viewBox="0 0 24 24"
-            stroke-width="2"
+            strokeWidth="2"
             stroke="#6f81b3"
             fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           >
             <path stroke="none" d="M0 0h24v24H0z" />
             <path d="M6 4h11a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-11a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1m3 0v18" />
