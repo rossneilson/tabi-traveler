@@ -63,7 +63,10 @@ export default function Blog({ prints, language }) {
           Featured Prints
         </Heading>
       </Link>
-      <FlexWrap>{printCards}</FlexWrap>
+      <FlexWrap>
+        <h1>Sorry, no prints yet, come back soon</h1>
+        {/* {printCards} */}
+      </FlexWrap>
     </div>
   )
 }

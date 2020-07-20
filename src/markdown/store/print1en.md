@@ -27,6 +27,6 @@ products:
   price: 15000
 fullImage: /static/download-12.jpg
 path: prints/print-test
-locale: off
+locale: en
 ---
 Small description about the photo

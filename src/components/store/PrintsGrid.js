@@ -24,5 +24,10 @@ export default function Grid({ prints }) {
     printCards.push(<PrintCard key={index} print={value} isfullpage />)
   })
 
-  return <GridWrap>{printCards}</GridWrap>
+  return (
+    <GridWrap>
+      {/* {printCards} */}
+      <h1>Sorry, no prints yet, come back soon :)</h1>
+    </GridWrap>
+  )
 }
