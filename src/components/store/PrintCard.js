@@ -1,11 +1,11 @@
 import React, { useEffect } from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
-import { navigate } from "@reach/router"
+import { Link } from "gatsby"
 
 import { urlLocaleFormatting } from "../../utils/formatters"
 
-const Wrapper = styled.section`
+const Wrapper = styled(Link)`
   width: 100%;
   max-width: 380px;
   z-index: 999;
@@ -54,10 +54,8 @@ export default function PrintCard({ print, index }) {
 
   return (
     <Wrapper
+      to={urlLocaleFormatting(frontmatter.locale, "../../" + frontmatter.path)}
       onClick={() => {
-        navigate(
-          urlLocaleFormatting(frontmatter.locale, "../../" + frontmatter.path)
-        )
         window.scrollTo(0, 0)
       }}
     >

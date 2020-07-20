@@ -34,8 +34,14 @@ export default function Main(props) {
 
       <FrontSection language={props.pageContext.intl.language} />
       <AboutSection fuji={props.data.fujiImage.childImageSharp.fluid} />
-      <PrintsSection prints={props.data.prints.edges} />
-      <BlogSection posts={props.data.blogPosts.edges} />
+      <PrintsSection
+        prints={props.data.prints.edges}
+        language={props.pageContext.intl.language}
+      />
+      <BlogSection
+        posts={props.data.blogPosts.edges}
+        language={props.pageContext.intl.language}
+      />
       <Contact footImage1={props.data.footImage1.childImageSharp.fluid} />
     </div>
   )

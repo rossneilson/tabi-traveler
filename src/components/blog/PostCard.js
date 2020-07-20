@@ -1,14 +1,14 @@
 import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
-import { navigate } from "@reach/router"
+import { Link } from "gatsby"
 import loadable from "@loadable/component"
 
 import { urlLocaleFormatting } from "../../utils/formatters"
 
 const Fab = loadable(() => import("@material-ui/core/Fab"))
 
-const Wrapper = styled.section`
+const Wrapper = styled(Link)`
   width: 100%;
   z-index: 999;
   max-width: ${props => (props.isFullPage ? "null" : "380px")};
@@ -52,9 +52,9 @@ const Image = styled(Img)`
   }
 `
 
-const Category = styled.section`
+const Category = styled.h6`
   background-color: #ffffffb0;
-  padding: 2px;
+  padding: 4px;
   justify-content: center;
   display: flex;
   border-radius: 10px;
@@ -95,10 +95,8 @@ export default function PostCard({ post, index, isFullPage }) {
   return (
     <Wrapper
       isFullPage={isFullPage}
+      to={urlLocaleFormatting(frontmatter.locale, "../../" + frontmatter.path)}
       onClick={() => {
-        navigate(
-          urlLocaleFormatting(frontmatter.locale, "../../" + frontmatter.path)
-        )
         window.scrollTo(0, 0)
       }}
     >
