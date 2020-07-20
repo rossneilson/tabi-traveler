@@ -9,7 +9,8 @@ const ToggleWrap = styled.section`
   margin: 15px;
   right: ${props => (props.right ? 0 : null)};
   @media (pointer: coarse) {
-    margin-top: ${props => (props.right ? "20%" : null)};
+    transform: ${props => (props.right ? "rotate(90deg)" : null)};
+    margin-right: ${props => (props.right ? "-20px" : null)};
   }
 `
 

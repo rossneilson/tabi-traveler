@@ -2,7 +2,7 @@ import React from "react"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import { FormattedMessage } from "gatsby-plugin-intl"
+import { FormattedMessage } from "react-intl"
 
 const Wrapper = styled.section`
   width: 50%;
@@ -12,6 +12,7 @@ const Wrapper = styled.section`
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0px 0px 9px 1px #0000001c;
+  background: white;
   @media (pointer: coarse) {
     width: 70%;
     margin-left: 10%;

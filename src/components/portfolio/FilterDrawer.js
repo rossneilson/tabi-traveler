@@ -2,11 +2,10 @@ import React from "react"
 import loadable from "@loadable/component"
 import styled from "styled-components"
 
-import Toggle from "../Toggle"
+import Toggle from "../common/Toggle"
 import SelectedFilter from "./SelectedFilter"
 
 const Drawer = loadable(() => import("@material-ui/core/Drawer"))
-const ChevronLeftIcon = loadable(() => import("@material-ui/icons/ChevronLeft"))
 const Divider = loadable(() => import("@material-ui/core/Divider"))
 const FilterMap = loadable(() => import("./FilterMap"))
 
@@ -26,10 +25,9 @@ const DrawerHeader = styled.section`
   justify-content: space-between;
 `
 
-const CloseIcon = styled(ChevronLeftIcon)`
+const CloseIcon = styled.section`
   cursor: pointer;
-  margin: 5px;
-  color: #8698da;
+  margin: 10px;
 `
 
 export default function FilterDrawer({
@@ -43,7 +41,23 @@ export default function FilterDrawer({
     <StyledDrawer open={open} anchor="left" variant="persistent">
       <DrawerHeader>
         <Toggle position="relative" language={language} />
-        <CloseIcon fontSize="large" onClick={() => setOpen(false)} />
+        <CloseIcon onClick={() => setOpen(false)}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="icon icon-tabler icon-tabler-chevron-left"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="#8698da"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" />
+            <polyline points="15 6 9 12 15 18" />
+          </svg>
+        </CloseIcon>
       </DrawerHeader>
 
       <Divider style={{ marginBottom: "250px" }} />

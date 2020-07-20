@@ -25,6 +25,13 @@
     "authorDesc": "私たちはスコットランド人と日本人の学生カップルです。 旅先で新たな場所と文化に写真を撮っています。",
     "cta": "もっと見る"
   },
+  "store": {
+    "back": "全部プリントに戻る",
+    "buy": "買う",
+    "selectCountry": "国を選んでください",
+    "successMessage": "Thank you so much for helping a young couple chase our photography dream. We hope you enjoy your print. You should receive a receipt via email shortly.",
+    "contactUs": "If you have anything you want to ask us about or issues with your order please use the form below."
+  },
   "contact": {
     "title": "連絡先",
     "name": "名前",

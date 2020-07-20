@@ -4,16 +4,14 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 import { navigate } from "@reach/router"
 import loadable from "@loadable/component"
-import { FormattedMessage } from "gatsby-plugin-intl"
+import { FormattedMessage } from "react-intl"
 
 import "../index.css"
 
-import Navigation from "../components/Navigation"
+import Navigation from "../components/common/Navigation"
 import Footer from "../components/blog/Footer"
-import Toggle from "../components/Toggle"
-import SEO from "../components/seo"
-
-const ChevronLeftIcon = loadable(() => import("@material-ui/icons/ChevronLeft"))
+import Toggle from "../components/common/Toggle"
+import SEO from "../components/common/Seo"
 
 const BackIcon = styled.section`
   cursor: pointer;
@@ -149,7 +147,21 @@ export default function BlogPost({ data, pageContext }) {
       <BackIcon
         onClick={() => navigate("../../" + frontmatter.locale + "/blog")}
       >
-        <ChevronLeftIcon fontSize="large" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="icon icon-tabler icon-tabler-arrow-back-up"
+          width="36"
+          height="36"
+          viewBox="0 0 24 24"
+          strokeWidth="1"
+          stroke="#ffffff"
+          fill="none"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" />
+          <path d="M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1" />
+        </svg>
         <BackText>
           <FormattedMessage id="blog.back" />
         </BackText>

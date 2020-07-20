@@ -25,6 +25,13 @@
     "authorDesc": "We are a young couple exploring the world through our photography and sharing it as we go",
     "cta": "Find out more"
   },
+  "store": {
+    "back": "Back to All Prints",
+    "buy": "BUY NOW",
+    "selectCountry": "Please select a country",
+    "successMessage": "Thank you so much for helping a young couple chase our photography dream. We hope you enjoy your print. You should receive a receipt via email shortly.",
+    "contactUs": "If you have anything you want to ask us about or issues with your order please use the form below."
+  },
   "contact": {
     "title": "Contact Us",
     "name": "Name",

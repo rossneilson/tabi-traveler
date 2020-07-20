@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-import { FormattedMessage } from "gatsby-plugin-intl"
+import { FormattedMessage } from "react-intl"
 import { Link } from "gatsby"
 
-import { urlLocaleFormatting } from "../utils/formatters"
+import { urlLocaleFormatting } from "../../utils/formatters"
 
 const BarHorizontal = styled.section`
   display: flex;

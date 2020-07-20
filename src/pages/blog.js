@@ -4,11 +4,11 @@ import loadable from "@loadable/component"
 
 import "../index.css"
 
-import SEO from "../components/seo"
+import SEO from "../components/common/Seo"
 
-import Navigation from "../components/Navigation"
+import Navigation from "../components/common/Navigation"
 import BlogGrid from "../components/blog/BlogGrid"
-import Toggle from "../components/Toggle"
+import Toggle from "../components/common/Toggle"
 
 const Tabs = loadable(() => import("@material-ui/core/Tabs"))
 const Tab = loadable(() => import("@material-ui/core/Tab"))
@@ -117,7 +117,7 @@ export const postsQuery = graphql`
             SEO
             image {
               childImageSharp {
-                fluid(maxWidth: 3000) {
+                fluid(maxWidth: 1000) {
                   ...GatsbyImageSharpFluid
                 }
               }

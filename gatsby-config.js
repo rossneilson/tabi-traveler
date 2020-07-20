@@ -5,6 +5,7 @@ module.exports = {
     title: `Tabi Traveler`,
     description: `Tabi Traveler photography, portfolio, blog and store`,
     author: `Ross Neilson`,
+    siteUrl: `https://www.tabitraveler.com`,
   },
   plugins: [
     {
@@ -26,6 +27,20 @@ module.exports = {
       options: {
         name: "blog",
         path: `${__dirname}/src/markdown/blog`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "store",
+        path: `${__dirname}/src/markdown/store`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: "general",
+        path: `${__dirname}/src/markdown/general`,
       },
     },
     {
@@ -93,6 +108,7 @@ module.exports = {
     `gatsby-plugin-netlify-cms-paths`,
     `gatsby-plugin-nprogress`,
     "gatsby-plugin-loadable-components-ssr",
+    `gatsby-plugin-sitemap`,
     {
       resolve: "gatsby-plugin-webpack-bundle-analyzer",
       options: {

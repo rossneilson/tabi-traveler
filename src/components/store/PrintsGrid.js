@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import PostCard from "./PostCard"
+import PrintCard from "./PrintCard"
 
 const GridWrap = styled.section`
   margin: auto;
@@ -17,12 +17,17 @@ const GridWrap = styled.section`
   grid-auto-flow: dense;
 `
 
-export default function Grid({ posts }) {
-  const postCards = []
+export default function Grid({ prints }) {
+  const printCards = []
 
-  posts.map((value, index) => {
-    postCards.push(<PostCard index={index} post={value} isfullpage />)
+  prints.map((value, index) => {
+    printCards.push(<PrintCard key={index} print={value} isfullpage />)
   })
 
-  return <GridWrap>{postCards}</GridWrap>
+  return (
+    <GridWrap>
+      {/* {printCards} */}
+      <h1>Sorry, no prints yet, come back soon :)</h1>
+    </GridWrap>
+  )
 }
