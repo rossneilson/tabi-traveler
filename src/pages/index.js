@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import loadable from "@loadable/component"
 import { createGlobalStyle } from "styled-components"
+import * as Sentry from "@sentry/react"
 
 import "../index.css"
 import "typeface-noto-sans"
@@ -21,8 +22,13 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
+Sentry.init({
+  dsn:
+    "https://f0279aa7884e4437aeb34ca96e582e22@o425302.ingest.sentry.io/5359601",
+})
+
 export default function Main(props) {
-  console.log("Sentry")
+  console.log(Sentry)
   return (
     <div>
       <GlobalStyle />
