@@ -1,6 +1,6 @@
 ---
 title: A Fuji Sunset from Enoshima
-desc: Desciption
+desc: High qaulity photographic travel prints and frames of a sunset with mount fuji in japan. Worldwide shipping
 date: 2018-12-19
 mainImage: /static/exampleFrame.jpg
 images: [/static/exampleFrame.jpg, /static/fuji.jpg, /static/dsc03161.jpg, /static/download-16.jpg]
