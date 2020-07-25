@@ -10,6 +10,7 @@ const Wrap = styled.section`
   height: 90vh;
   position: relative;
   background-size: cover;
+  font-size: 110%;
   @media ${device.laptop} {
     padding: 4% 0% 4% 0%;
     min-height: 100vh;

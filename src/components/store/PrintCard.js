@@ -49,7 +49,6 @@ const Description = styled.section`
 export default function PrintCard({ print, index }) {
   const { frontmatter } = print.node
   const arrayOfPrices = frontmatter.products.map(product => product.price)
-  const max = Math.max(...arrayOfPrices)
   const min = Math.min(...arrayOfPrices)
 
   return (
@@ -61,7 +60,7 @@ export default function PrintCard({ print, index }) {
     >
       <Image fluid={frontmatter.mainImage.childImageSharp.fluid} />
       <Description>
-        <Title>{frontmatter.title}</Title>£{min / 100}-{max / 100}
+        <Title>{frontmatter.title}</Title>From £{min / 100}
       </Description>
     </Wrapper>
   )

@@ -62,6 +62,7 @@ const ImageSection = styled.section`
 const Markdown = styled.h4`
   line-height: 1.7;
   margin-left: 10%;
+  margin-right: 10%;
 `
 const FormattedDate = styled.h4`
   margin-left: 10%;
@@ -69,6 +70,7 @@ const FormattedDate = styled.h4`
 `
 
 export default function PrintPage({ data, pageContext }) {
+  console.log(data)
   const { frontmatter, html, fileAbsolutePath } = data.print
   const { language } = pageContext
 
@@ -125,6 +127,7 @@ export default function PrintPage({ data, pageContext }) {
 
       <Markdown dangerouslySetInnerHTML={{ __html: html }} />
       <FormattedDate>
+        <FormattedMessage id="store.date" />
         {new Intl.DateTimeFormat(language === "en" ? "en-GB" : "ja-JP", {
           year: "numeric",
           month: "long",

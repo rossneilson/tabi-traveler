@@ -21,13 +21,13 @@
       {
           "name": "CANADA",
           "isoCode": "CA",
-          "sFrame": 3000,
+          "sFrame": 4000,
           "lFrame": 7000
       },
       {
           "name": "CHINA",
           "isoCode": "CN",
-          "sFrame": 5000,
+          "sFrame": 4000,
           "lFrame": 10000
       },
       {
