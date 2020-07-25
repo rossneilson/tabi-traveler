@@ -20,8 +20,8 @@ const GlobalStyle = createGlobalStyle`
     background: linear-gradient(0deg, rgba(203,213,225,1) 0%, rgba(203,213,225,1) 37%, rgba(255,255,255,1) 70%);
   }
 `
+
 export default function Main(props) {
-  console.log(process.env.NODE_ENV)
   return (
     <div>
       <GlobalStyle />
@@ -31,7 +31,7 @@ export default function Main(props) {
         lang={props.pageContext.intl.language}
       />
       <Toggle language={props.pageContext.intl.language} />
-
+      <button onClick={() => props.props.props}>Break the world</button>;
       <FrontSection language={props.pageContext.intl.language} />
       <AboutSection fuji={props.data.fujiImage.childImageSharp.fluid} />
       <PrintsSection
