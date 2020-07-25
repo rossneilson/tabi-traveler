@@ -95,16 +95,6 @@ exports.handler = async ({ body }) => {
           },
           quantity: 1,
         },
-        {
-          price_data: {
-            currency: "gbp",
-            product_data: {
-              name: "VAT (20%)",
-            },
-            unit_amount: (product.price + shippingPrice) * 0.2,
-          },
-          quantity: 1,
-        },
       ],
       metadata: {
         pwintyId: order.data.id,
