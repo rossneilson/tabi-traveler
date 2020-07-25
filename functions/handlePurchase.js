@@ -42,8 +42,8 @@ exports.handler = async ({ headers, body }) => {
         body: JSON.stringify({
           address1: line1,
           address2: line2,
-          addressTownOrCity: city ? city : line2,
-          stateOrCounty: state ? state : line2,
+          addressTownOrCity: city ? city : line2 ? line2 : line1,
+          stateOrCounty: state ? state : line2 ? line2 : line1,
           countryCode: country,
           postalOrZipCode: postal_code,
           recipientName: session.shipping.name,

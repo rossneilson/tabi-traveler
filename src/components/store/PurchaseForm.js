@@ -6,10 +6,6 @@ import countriesJson from "../../utils/countries.json"
 import { createCheckout } from "../../utils/purchase"
 import Button from "../common/Button"
 
-const CircularProgress = loadable(() =>
-  import("@material-ui/core/CircularProgress")
-)
-
 const Pricing = require("../../utils/pricing")
 
 const TotalSection = styled.section`

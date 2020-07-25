@@ -1,8 +1,7 @@
-import React, { useState } from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import styled, { createGlobalStyle } from "styled-components"
 import { navigate } from "@reach/router"
-import loadable from "@loadable/component"
 import { FormattedMessage } from "react-intl"
 
 import "../index.css"
@@ -19,19 +18,6 @@ const GlobalStyle = createGlobalStyle`
     background: linear-gradient(0deg, rgba(203,213,225,1) 0%, rgba(203,213,225,1) 37%, rgba(255,255,255,1) 70%);
   }
 `
-
-const myTheme = {
-  global: {
-    colors: {
-      brand: "#8698da",
-      border: { light: "#f79a60" },
-      focus: "#8698da",
-    },
-  },
-  RadioButton: {
-    margin: "10px",
-  },
-}
 
 const BackIcon = styled.section`
   cursor: pointer;

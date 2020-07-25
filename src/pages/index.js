@@ -21,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 export default function Main(props) {
+  console.log(process.env.NODE_ENV)
   return (
     <div>
       <GlobalStyle />

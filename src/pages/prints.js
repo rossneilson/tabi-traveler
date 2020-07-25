@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import styled, { createGlobalStyle } from "styled-components"
 import loadable from "@loadable/component"
-import Anime, { anime } from "react-anime"
+// import Anime, { anime } from "react-anime"
 
 import "../index.css"
 

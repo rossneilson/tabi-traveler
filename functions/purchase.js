@@ -1,8 +1,6 @@
-var fs = require("fs").promises,
-  fm = require("front-matter"),
+var fm = require("front-matter"),
   pricing = require("../src/utils/pricing"),
-  fetch = require("node-fetch"),
-  path = require("path")
+  fetch = require("node-fetch")
 exports.handler = async ({ body }) => {
   const data = JSON.parse(body)
 
@@ -19,7 +17,7 @@ exports.handler = async ({ body }) => {
     }),
   }).then(res => res.json())
 
-  const updatedOrder = await fetch(
+  await fetch(
     `https://sandbox.pwinty.com/v3.0/orders/${order.data.id}/images`,
     {
       method: "post",
@@ -61,7 +59,6 @@ exports.handler = async ({ body }) => {
   )
 
   const session = await stripe.checkout.sessions.create({
-    shipping_address_collection: "required",
     payment_method_types: ["card"],
     locale: data.locale,
     shipping_address_collection: {

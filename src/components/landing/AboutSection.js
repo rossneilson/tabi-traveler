@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { FormattedMessage } from "react-intl"
-import { Link } from "gatsby"
 import Img from "gatsby-image"
 
 import { device } from "../../utils/device"
@@ -11,7 +10,7 @@ const Wrap = styled.section`
   width: 100%;
   height: 90vh;
   position: relative;
-  ${'' /* background: #5e6165; */}
+  ${"" /* background: #5e6165; */}
   background-size: cover;
   @media ${device.laptop} {
     padding: 4% 0% 4% 0%;

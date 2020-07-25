@@ -50,7 +50,7 @@ collections:
       - label: "Products"
         name: "products"
         widget: "list"
-        summary: '{{fields.product.title}}'
+        summary: '{{fields.title}}'
         fields: 
           - {label: "SKU", name: "sku", widget: "string"}
           - {label: "Title", name: "title", widget: "string"}
@@ -59,7 +59,7 @@ collections:
           - {label: "Price", name: "price", widget: "number"}
       - {label: "Full image", name: "fullImage", widget: "image"}
       - {label: "Path", name: "path", widget: "string", hint: "prints/same-as-title"}
-      - {label: "Locale", name: "locale", widget: "select", options: ["en", "jp", "off"]}
+      - {label: "Locale", name: "locale", widget: "select", options: ["en", "jp"]}
       - {label: "Content", name: "body", widget: "markdown"}
   - name: "general"
     label: "General"

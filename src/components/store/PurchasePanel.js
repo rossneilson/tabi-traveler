@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import loadable from "@loadable/component"
-import { FormattedMessage } from "react-intl"
 
 import PurchaseTabContent from "./PurchaseTabContent"
 import PurchaseForm from "./PurchaseForm"

@@ -116,5 +116,15 @@ module.exports = {
         production: true,
       },
     },
+    {
+      resolve: "gatsby-plugin-sentry",
+      options: {
+        dsn:
+          "https://f0279aa7884e4437aeb34ca96e582e22@o425302.ingest.sentry.io/5359601",
+        environment: process.env.NODE_ENV,
+        enabled: (() =>
+          ["production", "stage"].indexOf(process.env.NODE_ENV) !== -1)(),
+      },
+    },
   ],
 }
