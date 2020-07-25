@@ -22,6 +22,7 @@ const GlobalStyle = createGlobalStyle`
 `
 
 export default function Main(props) {
+  console.log("Sentry")
   return (
     <div>
       <GlobalStyle />

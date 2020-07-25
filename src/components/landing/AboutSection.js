@@ -6,11 +6,9 @@ import Img from "gatsby-image"
 import { device } from "../../utils/device"
 
 const Wrap = styled.section`
-  font-family: Noto Sans JP;
   width: 100%;
   height: 90vh;
   position: relative;
-  ${"" /* background: #5e6165; */}
   background-size: cover;
   @media ${device.laptop} {
     padding: 4% 0% 4% 0%;
