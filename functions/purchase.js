@@ -1,7 +1,12 @@
 var fm = require("front-matter"),
   pricing = require("../src/utils/pricing"),
-  fetch = require("node-fetch")
+  fetch = require("node-fetch"),
+  Sentry = require("@sentry/node")
 exports.handler = async ({ body }) => {
+  Sentry.init({
+    dsn:
+      "https://e074bf79a96e4160bb0b71b697d631d1@o425302.ingest.sentry.io/5360471",
+  })
   const data = JSON.parse(body)
 
   const order = await fetch("https://sandbox.pwinty.com/v3.0/orders", {

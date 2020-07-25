@@ -1,6 +1,11 @@
 const fetch = require("node-fetch")
 const stripe = require("stripe")(process.env.STRIPE_TEST_SECRET_KEY)
+const Sentry = require("@sentry/node")
 exports.handler = async ({ headers, body }) => {
+  Sentry.init({
+    dsn:
+      "https://e074bf79a96e4160bb0b71b697d631d1@o425302.ingest.sentry.io/5360471",
+  })
   const sig = headers["stripe-signature"]
   let event
   try {
