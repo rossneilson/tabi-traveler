@@ -11,7 +11,7 @@ import Toggle from "../components/common/Toggle"
 const Contact = loadable(() => import("../components/contact/Contact"))
 
 const About = styled.section`
-  color: white;
+  color: black;
   margin: auto;
   max-width: 580px;
   padding: 40px;
@@ -22,7 +22,7 @@ const About = styled.section`
 
 const GlobalStyle = createGlobalStyle`
   body {
-    background: #5e6165;
+    background: linear-gradient(0deg, rgba(203,213,225,1) 0%, rgba(203,213,225,1) 37%, rgba(255,255,255,1) 100%);
   }
 `
 

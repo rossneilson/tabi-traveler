@@ -36,6 +36,12 @@ exports.handler = async ({ headers, body }) => {
         country,
       } = session.shipping.address
 
+      console.log(city)
+      console.log(state)
+      console.log(line2)
+      console.log(line1)
+      console.log(state ? state : line2 ? line2 : line1)
+
       const order = await fetch(
         `https://sandbox.pwinty.com/v3.0/orders/${session.metadata.pwintyId}`,
         {
