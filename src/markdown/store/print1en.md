@@ -25,7 +25,7 @@ products:
   type: "frame"
   size: "s"
   price: 15500
-fullImage: /static/fuji.jpg
+fullImage: /static/fujiSunsetEnoshima.jpg
 path: prints/fuji-sunset-from-enoshima
 locale: en
 ---
