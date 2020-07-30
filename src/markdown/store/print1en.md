@@ -14,7 +14,7 @@ products:
   title: "A2 (16.5x23.4\")"
   type: "print"
   size: "s"
-  price: 8500
+  price: 1219
 - sku: "GLOBAL-CFPM-A3"
   title: "Standard Black Mounted Frame A3 (11.7x16.5\")"
   type: "frame"
