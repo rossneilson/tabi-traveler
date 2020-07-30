@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { navigate } from "@reach/router"
-import loadable from "@loadable/component"
 import { FormattedMessage } from "react-intl"
 
 import "../index.css"
@@ -103,6 +102,7 @@ const FormattedDate = styled.h4`
 
 const Markdown = styled.section`
   font-size: medium;
+  color: black;
   line-height: 1.7;
   background-color: white;
   padding: 2%;

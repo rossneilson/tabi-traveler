@@ -1,8 +1,7 @@
-import React, { useState } from "react"
+import React from "react"
 import { graphql } from "gatsby"
 import styled, { createGlobalStyle } from "styled-components"
 import { navigate } from "@reach/router"
-import loadable from "@loadable/component"
 import { FormattedMessage } from "react-intl"
 
 import "../index.css"
@@ -19,19 +18,6 @@ const GlobalStyle = createGlobalStyle`
     background: linear-gradient(0deg, rgba(203,213,225,1) 0%, rgba(203,213,225,1) 37%, rgba(255,255,255,1) 70%);
   }
 `
-
-const myTheme = {
-  global: {
-    colors: {
-      brand: "#8698da",
-      border: { light: "#f79a60" },
-      focus: "#8698da",
-    },
-  },
-  RadioButton: {
-    margin: "10px",
-  },
-}
 
 const BackIcon = styled.section`
   cursor: pointer;
@@ -76,6 +62,7 @@ const ImageSection = styled.section`
 const Markdown = styled.h4`
   line-height: 1.7;
   margin-left: 10%;
+  margin-right: 10%;
 `
 const FormattedDate = styled.h4`
   margin-left: 10%;
@@ -83,6 +70,7 @@ const FormattedDate = styled.h4`
 `
 
 export default function PrintPage({ data, pageContext }) {
+  console.log(data)
   const { frontmatter, html, fileAbsolutePath } = data.print
   const { language } = pageContext
 
@@ -139,6 +127,7 @@ export default function PrintPage({ data, pageContext }) {
 
       <Markdown dangerouslySetInnerHTML={{ __html: html }} />
       <FormattedDate>
+        <FormattedMessage id="store.date" />
         {new Intl.DateTimeFormat(language === "en" ? "en-GB" : "ja-JP", {
           year: "numeric",
           month: "long",

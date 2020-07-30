@@ -20,15 +20,25 @@ All framed and canvas prints are wrapped in a protective sleeve with individual 
 
 On those rare occasions when incidents do happen we strive to ensure that your collection and replacement are organised immediately and shipped back out on a priority service without any fuss.
 
-## Printing
-### What paper do you use?
-We usually have an option between Hahnemühle paper and C-type silver halide paper for unframed prints. Standard framed prints use high quality enhanced matt art paper.
-### What is the difference between papers?
-Our C-type silver halide paper is a special process very similar to film that uses silver halide crystals, light and chemicals to make images. This results in super high quality prints, fantastic realistic colours, smooth tones while being long lasting. This process uses a fujifilm crystal archive paper.
 
-On the other hand the Hahnemühle paper is a more standard Giclée print using ink. Despite this the paper is still of incredibly high quality as this paper manufacturer has been creating high quality paper out of Germany for hundreds of years. 
+## Products
+### How do I hang up a print?
+Choosing a print is a much more cost effective method of purchasing our photography and is far more popular. There are many ways of displaying a print. The best method would be to purchase a frame or repurpose an old one that you like the design of and simply mount the print into this frame. Generally the best reults will come from a frame with a white mount around the image to make it stand out. If you want something a little more special the print could be taken to a local framer who will professionally mount the print into a frame of your choosing. 
+### What kind of frame are the framed prints using?
+If you decide you would like a framed print from us please be aware shipping is slightly more expensive depending on your location in the world, but should not be too high in any one locaiton thanks to our fulfilment network around the world. All frames listed on the site are a classic proffesionally mounted black frame. The image is printed on enhanced matte art paper which is a heavy weight premium museum quality paper. 
 ### Is it possible to change size or frame type?
 Please contact me if you are interested in different sizes or different styles of frame.
+
+## Paper
+### What paper do you use?
+Before we list a print for sale it is specialy edited to have perfect colours for the paper that we choose. We then order a number of different types of paper to determine which works best for the specific print. We mostly use paper from Hahnemühle, a trusted german paper manufacturer. These papers are cotton rag papers known for their textural properties that make the image appear 3D as well as having excellant archival properties. We may occasionally also use c-type crystal halide paper if the print better suits that.
+### What is the difference between papers?
+Hahnemühle paper is a standard Giclée print using ink. The paper is of incredibly high quality as this paper manufacturer has been creating high quality paper out of Germany for hundreds of years. 
+The Hahnemühle photo rag is a go to for many of the best photographers in the world as it has brilliant colours, deep blacks, striking contrasts and perfect reproduction of detail. The cotton rag it is made from gives the paper a texture that makes it feel real and almost 3D.
+We also use Hahnemühle german etching paper which is an even more textured version of the photo rag paper and almost makes the print feel more like a physical painting that a photograph. 
+These papers are all ISO 9706 conform / museum quality for highest age resistance.
+
+The C-type silver halide paper is a special process very similar to film that uses silver halide crystals, light and chemicals to make images. This results in super high quality prints, fantastic realistic colours, smooth tones while being long lasting. This process uses a fujifilm crystal archive paper.
 
 ## Environment
 Climate change is the greatest issue facing man kind and so anything we can do to help we will gladly do. Shipping makes up 2% of global emmissions and so is an obvious area to improve in. For this reason we are using a global network of fulfilment centres in multiple countries accross the globe to ensure the product is printed as close to it's delivery destination as possible. 

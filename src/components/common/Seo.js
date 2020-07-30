@@ -1,6 +1,7 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import * as Sentry from "@sentry/react"
 
 function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
@@ -18,6 +19,11 @@ function SEO({ description, lang, meta, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
+
+  Sentry.init({
+    dsn:
+      "https://f0279aa7884e4437aeb34ca96e582e22@o425302.ingest.sentry.io/5359601",
+  })
 
   return (
     <Helmet

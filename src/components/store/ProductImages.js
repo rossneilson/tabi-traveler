@@ -38,7 +38,7 @@ export default function ProductImages({ images }) {
   const [selectedImage, setSelectedImage] = useState(images[0])
   const otherImages = []
   images.map((image, index) => {
-    if (!(image === selectedImage)) {
+    if (image !== selectedImage) {
       otherImages.push(
         <Wrap
           key={index}

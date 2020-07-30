@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
-import loadable from "@loadable/component"
 
 import "../index.css"
 import "typeface-noto-sans"

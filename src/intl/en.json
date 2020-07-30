@@ -27,6 +27,7 @@
   },
   "store": {
     "back": "Back to All Prints",
+    "date": "Shot on: ",
     "buy": "BUY NOW",
     "selectCountry": "Please select a country",
     "successMessage": "Thank you so much for helping a young couple chase our photography dream. We hope you enjoy your print. You should receive a receipt via email shortly.",

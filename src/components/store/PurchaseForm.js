@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
-import loadable from "@loadable/component"
 import { useIntl } from "react-intl"
 import countriesJson from "../../utils/countries.json"
 import { createCheckout } from "../../utils/purchase"
 import Button from "../common/Button"
-
-const CircularProgress = loadable(() =>
-  import("@material-ui/core/CircularProgress")
-)
 
 const Pricing = require("../../utils/pricing")
 

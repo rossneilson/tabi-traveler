@@ -27,6 +27,7 @@
   },
   "store": {
     "back": "全部プリントに戻る",
+    "date": "取りました日: ",
     "buy": "買う",
     "selectCountry": "国を選んでください",
     "successMessage": "Thank you so much for helping a young couple chase our photography dream. We hope you enjoy your print. You should receive a receipt via email shortly.",

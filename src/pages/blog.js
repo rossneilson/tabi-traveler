@@ -53,7 +53,6 @@ export default function Blog(props) {
   const posts = props.data.allMarkdownRemark.edges
 
   const tabsArray = []
-  var filteredPosts = posts
 
   const categories = createListOfCategories(posts)
 
@@ -61,7 +60,7 @@ export default function Blog(props) {
     tabsArray.push(<Tab label={cat} key={index} />)
   })
 
-  filteredPosts = setFilteredPosts(tab, posts, categories)
+  const filteredPosts = setFilteredPosts(tab, posts, categories)
 
   return (
     <div>

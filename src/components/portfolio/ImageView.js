@@ -1,6 +1,5 @@
 import React, { useEffect } from "react"
 import styled, { css } from "styled-components"
-import loadable from "@loadable/component"
 import Img from "gatsby-image"
 
 import * as Keyframes from "../../utils/keyframes"
