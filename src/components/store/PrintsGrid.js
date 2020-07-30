@@ -26,8 +26,8 @@ export default function Grid({ prints }) {
 
   return (
     <GridWrap>
-      {printCards}
-      {/* <h1>Sorry, no prints yet, come back soon :)</h1> */}
+      {/* {printCards} */}
+      <h1>Sorry, no prints yet, come back soon :)</h1>
     </GridWrap>
   )
 }

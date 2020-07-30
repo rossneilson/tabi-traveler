@@ -35,9 +35,6 @@ exports.handler = async ({ body }) => {
         body: JSON.stringify({
           sku: data.product.sku,
           url: data.image,
-          // sku: "GLOBAL-PHO-16X16-PRO",
-          // url:
-          //   "https://tabitraveler.com/static/362253496a69079706b035db676ee5bf/a7715/dsc03157.jpg",
           copies: 1,
           sizing: "Crop",
         }),

@@ -102,6 +102,7 @@ const FormattedDate = styled.h4`
 
 const Markdown = styled.section`
   font-size: medium;
+  color: black;
   line-height: 1.7;
   background-color: white;
   padding: 2%;

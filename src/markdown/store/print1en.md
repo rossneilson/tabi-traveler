@@ -1,6 +1,6 @@
 ---
 title: A Fuji Sunset from Enoshima
-desc: High qaulity photographic travel prints and frames of a sunset with mount fuji in japan. Worldwide shipping
+desc: High qaulity photographic travel landscape prints and frames of a sunset with mount fuji in japan. Worldwide shipping
 date: 2018-12-19
 mainImage: /static/exampleFrame.jpg
 images: [/static/exampleFrame.jpg, /static/fuji.jpg, /static/dsc03161.jpg, /static/download-16.jpg]
@@ -25,8 +25,10 @@ products:
   type: "frame"
   size: "s"
   price: 15500
-fullImage: /static/fujiPrint1.jpg
+fullImage: /static/fujiSunsetEnoshima.jpg
 path: prints/fuji-sunset-from-enoshima
 locale: en
 ---
 Enoshima is a really important location for us. It is a small little island in the Shonan region of Kanagawa with fantastic views along the coast towards mount Fuji. It is a particularly romantic location and there is something truly other worldly as the sun sets below the horizon with the iconic Mount Fuji defining the scene. I hope this image brings you joy, relaxation and wonder in the same way that day made us feel.
+Prints are printed on Hahnemühle photo rag paper, go to FAQ for more informtation about this paper.
+This was shot on a Nikon D5200 with a 35mm lens.
