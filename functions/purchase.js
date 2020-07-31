@@ -48,7 +48,7 @@ exports.handler = async ({ body }) => {
       }),
     }).then(res => res.json())
 
-    const stripe = require("stripe")(process.env.STRIPE_TEST_SECRET_KEY)
+    const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
 
     const product = content.attributes.products.filter(
       product => product.sku === data.product.sku
