@@ -14,7 +14,7 @@ products:
   title: "A2 (16.5x23.4\")"
   type: "print"
   size: "s"
-  price: 1219
+  price: 1514
 - sku: "GLOBAL-CFPM-A3"
   title: "Standard Black Mounted Frame A3 (11.7x16.5\")"
   type: "frame"
@@ -25,7 +25,7 @@ products:
   type: "frame"
   size: "s"
   price: 15500
-fullImage: https://drive.google.com/uc?export=view&id=1UNl8twG9mhNDJg_0eBjvPSVk96MWWRcG
+fullImage: https://drive.google.com/uc?id=1UNl8twG9mhNDJg_0eBjvPSVk96MWWRcG
 path: prints/fuji-sunset-from-enoshima
 locale: en
 ---
