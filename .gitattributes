@@ -1,2 +1,0 @@
-src/img/fujiSunsetEnoshima.jpg filter=lfs diff=lfs merge=lfs -text
-src/img/woodlandPath.jpg filter=lfs diff=lfs merge=lfs -text

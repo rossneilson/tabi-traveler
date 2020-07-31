@@ -161,13 +161,6 @@ export const query = graphql`
           size
           price
         }
-        fullImage {
-          childImageSharp {
-            fluid {
-              originalImg
-            }
-          }
-        }
         images {
           childImageSharp {
             fluid(maxWidth: 1000) {

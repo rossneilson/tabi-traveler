@@ -2,6 +2,7 @@ var fm = require("front-matter"),
   pricing = require("../src/utils/pricing"),
   fetch = require("node-fetch"),
   Sentry = require("@sentry/node")
+
 exports.handler = async ({ body }) => {
   Sentry.init({
     dsn:
@@ -23,6 +24,15 @@ exports.handler = async ({ body }) => {
       }),
     }).then(res => res.json())
 
+    const mdFromGithub = await fetch(
+      `https://${
+        process.env.GITHUB_ACCESS_TOKEN
+      }@raw.githubusercontent.com/rossneilson/tabi-traveler/printsStore/src${
+        data.fileAbsolutePath.split("src")[1]
+      }`
+    ).then(res => res.text())
+    const content = fm(mdFromGithub)
+
     await fetch(
       `https://sandbox.pwinty.com/v3.0/orders/${order.data.id}/images`,
       {
@@ -34,7 +44,7 @@ exports.handler = async ({ body }) => {
         },
         body: JSON.stringify({
           sku: data.product.sku,
-          url: data.image,
+          url: content.attributes.fullImage,
           copies: 1,
           sizing: "Crop",
         }),
@@ -42,15 +52,6 @@ exports.handler = async ({ body }) => {
     ).then(res => res.json())
 
     const stripe = require("stripe")(process.env.STRIPE_TEST_SECRET_KEY)
-
-    const mdFromGithub = await fetch(
-      `https://${
-        process.env.GITHUB_ACCESS_TOKEN
-      }@raw.githubusercontent.com/rossneilson/tabi-traveler/printsStore/src${
-        data.fileAbsolutePath.split("src")[1]
-      }`
-    ).then(res => res.text())
-    const content = fm(mdFromGithub)
 
     const product = content.attributes.products.filter(
       product => product.sku === data.product.sku
@@ -73,7 +74,7 @@ exports.handler = async ({ body }) => {
             currency: "gbp",
             product_data: {
               name: data.title + " - " + data.product.title,
-              images: [data.image],
+              images: [content.attributes.fullImage],
               metadata: {
                 pwintyId: order.data.id,
               },

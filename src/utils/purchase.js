@@ -16,9 +16,6 @@ export const createCheckout = async (
       product: selected,
       locale: language === "jp" ? "ja" : "auto",
       fileAbsolutePath: fileAbsolutePath,
-      image:
-        "https://tabitraveler.com" +
-        frontmatter.fullImage.childImageSharp.fluid.originalImg,
     }),
     method: "POST",
   })
