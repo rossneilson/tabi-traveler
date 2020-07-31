@@ -77,7 +77,7 @@ exports.handler = async ({ headers, body }) => {
       if (status.statusCode === 200) {
         console.log("it worked")
         finalOrder = await fetch(
-          `https://api.pwinty.com/v3.0/v3.0/orders/${session.metadata.pwintyId}/status`,
+          `https://api.pwinty.com/v3.0/orders/${session.metadata.pwintyId}/status`,
           {
             method: "post",
             headers: {
