@@ -14,7 +14,7 @@ products:
   title: "A2 (16.5x23.4\")"
   type: "print"
   size: "s"
-  price: 1514
+  price: 8500
 - sku: "GLOBAL-CFPM-A3"
   title: "Standard Black Mounted Frame A3 (11.7x16.5\")"
   type: "frame"
@@ -30,5 +30,5 @@ path: prints/fuji-sunset-from-enoshima
 locale: en
 ---
 Enoshima is a really important location for us. It is a small little island in the Shonan region of Kanagawa with fantastic views along the coast towards mount Fuji. It is a particularly romantic location and there is something truly other worldly as the sun sets below the horizon with the iconic Mount Fuji defining the scene. I hope this image brings you joy, relaxation and wonder in the same way that day made us feel.
-Prints are printed on Hahnemühle photo rag paper, go to FAQ for more informtation about this paper.
+Prints are printed on Hahnemühle photo rag paper, go to FAQ for more information about this paper.
 This was shot on a Nikon D5200 with a 35mm lens.
