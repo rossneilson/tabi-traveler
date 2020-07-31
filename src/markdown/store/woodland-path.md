@@ -12,7 +12,7 @@ products:
     title: 12x12" / 30x30cm
     type: print
     size: s
-    price: 260
+    price: 7000
   - sku: GLOBAL-HPR-16X16
     title: 16x16" / 40x40cm
     type: print
@@ -36,4 +36,4 @@ On a drizzly wet day in Scotland I was walking through a forest a this simple wo
 
 Prints are printed on Hahnemühle photo rag paper, go to FAQ for more information about this paper.
 
-This was shot on a Mamiya C220 with a 250mm lens on Fuji Pro 800Z film.
+This was shot on a Mamiya C220 with a 180mm lens on Fuji Pro 800Z film.
