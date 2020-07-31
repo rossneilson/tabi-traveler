@@ -27,7 +27,7 @@ exports.handler = async ({ body }) => {
     const mdFromGithub = await fetch(
       `https://${
         process.env.GITHUB_ACCESS_TOKEN
-      }@raw.githubusercontent.com/rossneilson/tabi-traveler/printsStore/src${
+      }@raw.githubusercontent.com/rossneilson/tabi-traveler/master/src${
         data.fileAbsolutePath.split("src")[1]
       }`
     ).then(res => res.text())
