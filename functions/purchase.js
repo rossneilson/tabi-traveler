@@ -11,7 +11,7 @@ exports.handler = async ({ body }) => {
   try {
     const data = JSON.parse(body)
 
-    const order = await fetch("https://sandbox.pwinty.com/v3.0/orders", {
+    const order = await fetch("https://api.pwinty.com/v3.0/orders", {
       method: "post",
       headers: {
         "X-Pwinty-MerchantId": process.env.PWINTY_MERCHANT_ID,
@@ -33,23 +33,20 @@ exports.handler = async ({ body }) => {
     ).then(res => res.text())
     const content = fm(mdFromGithub)
 
-    await fetch(
-      `https://sandbox.pwinty.com/v3.0/orders/${order.data.id}/images`,
-      {
-        method: "post",
-        headers: {
-          "X-Pwinty-MerchantId": process.env.PWINTY_MERCHANT_ID,
-          "X-Pwinty-REST-API-Key": process.env.PWINTY_API_KEY,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          sku: data.product.sku,
-          url: content.attributes.fullImage,
-          copies: 1,
-          sizing: "Crop",
-        }),
-      }
-    ).then(res => res.json())
+    await fetch(`https://api.pwinty.com/v3.0/orders/${order.data.id}/images`, {
+      method: "post",
+      headers: {
+        "X-Pwinty-MerchantId": process.env.PWINTY_MERCHANT_ID,
+        "X-Pwinty-REST-API-Key": process.env.PWINTY_API_KEY,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        sku: data.product.sku,
+        url: content.attributes.fullImage,
+        copies: 1,
+        sizing: "Crop",
+      }),
+    }).then(res => res.json())
 
     const stripe = require("stripe")(process.env.STRIPE_TEST_SECRET_KEY)
 

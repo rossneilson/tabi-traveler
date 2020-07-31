@@ -37,7 +37,7 @@ exports.handler = async ({ headers, body }) => {
       } = session.shipping.address
 
       const order = await fetch(
-        `https://sandbox.pwinty.com/v3.0/orders/${session.metadata.pwintyId}`,
+        `https://api.pwinty.com/v3.0/orders/${session.metadata.pwintyId}`,
         {
           method: "put",
           headers: {
@@ -60,7 +60,7 @@ exports.handler = async ({ headers, body }) => {
       console.log(order)
 
       const status = await fetch(
-        `https://sandbox.pwinty.com/v3.0/orders/${session.metadata.pwintyId}/SubmissionStatus`,
+        `https://api.pwinty.com/v3.0/orders/${session.metadata.pwintyId}/SubmissionStatus`,
         {
           method: "GET",
           headers: {
@@ -77,7 +77,7 @@ exports.handler = async ({ headers, body }) => {
       if (status.statusCode === 200) {
         console.log("it worked")
         finalOrder = await fetch(
-          `https://sandbox.pwinty.com/v3.0/orders/${session.metadata.pwintyId}/status`,
+          `https://api.pwinty.com/v3.0/v3.0/orders/${session.metadata.pwintyId}/status`,
           {
             method: "post",
             headers: {
