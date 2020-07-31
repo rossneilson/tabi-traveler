@@ -21,7 +21,7 @@ export const createCheckout = async (
   })
 
   const stripe = await loadStripe(
-    "pk_test_51H1z1WLdKK5sOT6pjvjbdqVZVE8gQLdXmZzTwBvhpPCUucRWjejKw6cEmiq5Scw9oenQVGiVVoRGnsmr1B9OAQ6c007lhc3Miz"
+    "pk_live_51H1z1WLdKK5sOT6p62etDF1PlnJxBIEt4lBQcuAyHntN8dOHM0qguI6nrDR5ntfXt7eEJX8aPim4ZkMFLsBY3WaP006De31oe4"
   )
   const jsonResp = await response.json()
   stripe.redirectToCheckout({ sessionId: jsonResp.sessionId })

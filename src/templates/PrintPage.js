@@ -70,7 +70,6 @@ const FormattedDate = styled.h4`
 `
 
 export default function PrintPage({ data, pageContext }) {
-  console.log(data)
   const { frontmatter, html, fileAbsolutePath } = data.print
   const { language } = pageContext
 

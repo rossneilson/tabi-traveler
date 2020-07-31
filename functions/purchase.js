@@ -15,7 +15,7 @@ exports.handler = async ({ body }) => {
       method: "post",
       headers: {
         "X-Pwinty-MerchantId": process.env.PWINTY_MERCHANT_ID,
-        "X-Pwinty-REST-API-Key": process.env.PWINTY_TEST_API_KEY,
+        "X-Pwinty-REST-API-Key": process.env.PWINTY_API_KEY,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
@@ -39,7 +39,7 @@ exports.handler = async ({ body }) => {
         method: "post",
         headers: {
           "X-Pwinty-MerchantId": process.env.PWINTY_MERCHANT_ID,
-          "X-Pwinty-REST-API-Key": process.env.PWINTY_TEST_API_KEY,
+          "X-Pwinty-REST-API-Key": process.env.PWINTY_API_KEY,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({

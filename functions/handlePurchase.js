@@ -1,5 +1,5 @@
 const fetch = require("node-fetch")
-const stripe = require("stripe")(process.env.STRIPE_TEST_SECRET_KEY)
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
 const Sentry = require("@sentry/node")
 exports.handler = async ({ headers, body }) => {
   Sentry.init({
@@ -42,7 +42,7 @@ exports.handler = async ({ headers, body }) => {
           method: "put",
           headers: {
             "X-Pwinty-MerchantId": process.env.PWINTY_MERCHANT_ID,
-            "X-Pwinty-REST-API-Key": process.env.PWINTY_TEST_API_KEY,
+            "X-Pwinty-REST-API-Key": process.env.PWINTY_API_KEY,
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
@@ -65,7 +65,7 @@ exports.handler = async ({ headers, body }) => {
           method: "GET",
           headers: {
             "X-Pwinty-MerchantId": process.env.PWINTY_MERCHANT_ID,
-            "X-Pwinty-REST-API-Key": process.env.PWINTY_TEST_API_KEY,
+            "X-Pwinty-REST-API-Key": process.env.PWINTY_API_KEY,
             "Content-Type": "application/json",
           },
         }
@@ -82,7 +82,7 @@ exports.handler = async ({ headers, body }) => {
             method: "post",
             headers: {
               "X-Pwinty-MerchantId": process.env.PWINTY_MERCHANT_ID,
-              "X-Pwinty-REST-API-Key": process.env.PWINTY_TEST_API_KEY,
+              "X-Pwinty-REST-API-Key": process.env.PWINTY_API_KEY,
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
