@@ -12,7 +12,7 @@ products:
     title: 12x12" / 30x30cm
     type: print
     size: s
-    price: 7000
+    price: 260
   - sku: GLOBAL-HPR-16X16
     title: 16x16" / 40x40cm
     type: print
