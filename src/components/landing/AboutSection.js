@@ -7,7 +7,7 @@ import { device } from "../../utils/device"
 
 const Wrap = styled.section`
   width: 100%;
-  height: 100vh;
+  height: 105vh;
   position: relative;
   background-size: cover;
   font-size: 110%;
