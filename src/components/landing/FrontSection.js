@@ -103,10 +103,9 @@ const Desc = styled.h3`
     margin-top: 10px;
   }
 `
+
 const PageButton = styled(Link)`
-  margin-top: 10px;
   padding: 20px;
-  margin-bottom: 10px;
   color: #acb8e4;
   font-size: 120%;
   text-align: right;
@@ -118,18 +117,6 @@ const PageButton = styled(Link)`
   }
   &:focus {
     color: #5065a3;
-  }
-  @media ${deviceMin.laptop} {
-    margin: 5px;
-  }
-  @media ${deviceMin.mobileS} {
-    padding: 5px;
-  }
-  @media ${deviceMin.mobileM} {
-    padding: 15px;
-  }
-  @media ${deviceMin.mobileL} {
-    padding: 30px;
   }
 `
 

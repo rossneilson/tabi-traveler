@@ -35,8 +35,8 @@ const About = styled.section`
   color: #5065a3;
   box-shadow: 0px 0px 9px 1px #000000a1;
   text-align: left;
-  margin-top: 10%;
-  margin-left: 5%;
+  margin-top: 5%;
+  margin-left: 8%;
   max-width: 580px;
   position: absolute;
   padding: 40px;
