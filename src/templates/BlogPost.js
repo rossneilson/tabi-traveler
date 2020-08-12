@@ -113,6 +113,7 @@ const Markdown = styled.section`
   @media (pointer: coarse) {
     margin-left: 10%;
     margin-right: 10%;
+    padding: 5%;
   }
 `
 
@@ -167,7 +168,12 @@ export default function BlogPost({ data, pageContext }) {
         </BackText>
       </BackIcon>
 
-      <Toggle right language={language} position={"absolute"} />
+      <Toggle
+        right
+        language={language}
+        position={"absolute"}
+        colour={"#ffffff"}
+      />
       <Nav
         link1={"prints"}
         link2={"portfolio"}

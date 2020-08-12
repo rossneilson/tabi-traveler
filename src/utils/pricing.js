@@ -2,7 +2,7 @@ var json = require("./countries.json")
 
 var calculateShipping = function (countryCode, productType, size) {
   if (productType === "print") {
-    return 1000
+    return 0
   } else {
     const country = json.countries.filter(x => x.isoCode === countryCode)[0]
     if (size === "s") {

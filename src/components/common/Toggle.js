@@ -1,73 +1,96 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import Switch from "react-switch"
 import { changeLocale } from "gatsby-plugin-intl"
 
-const ToggleWrap = styled.section`
+const Wrap = styled.section`
   position: ${props => props.position};
-  z-index: 99999;
-  margin: 15px;
+  width: 100px;
+  z-index: 999999999;
+  margin: 10px;
+  margin-right: 0px;
   right: ${props => (props.right ? 0 : null)};
   @media (pointer: coarse) {
-    transform: ${props => (props.right ? "rotate(90deg)" : null)};
-    margin-right: ${props => (props.right ? "-20px" : null)};
+    margin-right: ${props => (props.right ? "-50px" : null)};
   }
 `
 
-const Icon = styled.section`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  font-size: 10px;
-  color: white;
-  padding-right: 2;
+const SubMenu = styled.ul`
+  position: absolute;
+  list-style: none;
+  margin-left: 0.5rem;
+  @media (pointer: coarse) {
+    background-color: #8698da;
+    margin-left: 0.1rem;
+  }
+`
+
+const MenuItem = styled.li`
+  cursor: pointer;
+  color: ${props => (props.colour ? props.colour : "#8698da")};
+  padding: 5px;
+  @media (pointer: coarse) {
+    color: white;
+  }
 `
 
 export default function Toggle({
   language,
   position = "fixed",
   right = false,
+  colour = "#8698da",
 }) {
-  const checkLanguage = () => {
-    if (language === "jp") {
-      return true
-    } else if (language === "en") {
-      return false
-    }
-  }
+  const [showLanguages, setShowLanguages] = useState(false)
 
-  const [checked, setChecked] = useState(checkLanguage())
-
-  const changeLanguage = async e => {
-    setChecked(!checked)
-    await new Promise(r => setTimeout(r, 1))
-    if (checked) {
-      console.log("changing to en")
-      changeLocale("en")
-    } else {
-      console.log("changing to jp")
-      changeLocale("jp")
-    }
-  }
   return (
-    <ToggleWrap position={position} right={right}>
-      <label>
-        <Switch
-          checked={checked}
-          onChange={changeLanguage}
-          height={30}
-          width={80}
-          offColor="#8698da"
-          onColor="#8698da"
-          aria-label="language switch"
-          role="button"
-          id="language switch"
-          aria-pressed={checked}
-          uncheckedIcon={<Icon>English</Icon>}
-          checkedIcon={<Icon>日本語</Icon>}
-        />
-      </label>
-    </ToggleWrap>
+    <Wrap
+      position={position}
+      right={right}
+      onClick={() => {
+        setShowLanguages(true)
+      }}
+      onMouseEnter={() => {
+        setShowLanguages(true)
+      }}
+      onMouseLeave={() => {
+        setShowLanguages(false)
+      }}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="icon icon-tabler icon-tabler-language"
+        width="48"
+        height="48"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke={colour}
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" />
+        <path d="M5 7h7m-2 -2v2a5 8 0 0 1 -5 8m1 -4a7 4 0 0 0 6.7 4" />
+        <path d="M11 19l4 -9l4 9m-.9 -2h-6.2" />
+      </svg>
+      {showLanguages && (
+        <SubMenu>
+          <MenuItem
+            colour={colour}
+            onClick={() => {
+              changeLocale("en")
+            }}
+          >
+            <a>English</a>
+          </MenuItem>
+          <MenuItem
+            colour={colour}
+            onClick={() => {
+              changeLocale("jp")
+            }}
+          >
+            <a>日本語</a>
+          </MenuItem>
+        </SubMenu>
+      )}
+    </Wrap>
   )
 }
