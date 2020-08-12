@@ -80,7 +80,7 @@ exports.handler = async ({ body }) => {
           },
           quantity: 1,
         },
-        {
+        ...(shippingPrice !== 0 && {
           price_data: {
             currency: "gbp",
             product_data: {
@@ -89,7 +89,7 @@ exports.handler = async ({ body }) => {
             unit_amount: shippingPrice,
           },
           quantity: 1,
-        },
+        }),
       ],
       metadata: {
         pwintyId: order.data.id,

@@ -17,6 +17,7 @@ const Wrap = styled.section`
 const SubMenu = styled.ul`
   position: absolute;
   list-style: none;
+  z-index: 999999999;
   margin-left: 0.5rem;
   @media (pointer: coarse) {
     background-color: #8698da;
@@ -26,6 +27,7 @@ const SubMenu = styled.ul`
 
 const MenuItem = styled.li`
   cursor: pointer;
+  z-index: 999999999;
   color: ${props => (props.colour ? props.colour : "#8698da")};
   padding: 5px;
   @media (pointer: coarse) {
