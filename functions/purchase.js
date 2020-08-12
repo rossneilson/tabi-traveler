@@ -80,7 +80,7 @@ exports.handler = async ({ body }) => {
           },
           quantity: 1,
         },
-        ...(shippingPrice !== 0 && {
+        ...(shippingPrice && {
           price_data: {
             currency: "gbp",
             product_data: {
