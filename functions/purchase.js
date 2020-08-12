@@ -60,11 +60,38 @@ exports.handler = async ({ body }) => {
     )
     console.log("shippingPrice")
     console.log(shippingPrice)
-    console.log(
-      ...(shippingPrice && {
-        price_data: true,
-      })
-    )
+
+    const lineItems = [
+      {
+        price_data: {
+          currency: "gbp",
+          product_data: {
+            name: data.title + " - " + data.product.title,
+            images: [content.attributes.fullImage],
+            metadata: {
+              pwintyId: order.data.id,
+            },
+          },
+          unit_amount: product.price,
+        },
+        quantity: 1,
+      },
+    ]
+
+    if (shippingPrice) {
+      lineItems[1] = {
+        price_data: {
+          currency: "gbp",
+          product_data: {
+            name: "Shipping",
+          },
+          unit_amount: shippingPrice,
+        },
+        quantity: 1,
+      }
+    }
+
+    console.log(lineItems)
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
@@ -72,32 +99,7 @@ exports.handler = async ({ body }) => {
       shipping_address_collection: {
         allowed_countries: [data.countryCode],
       },
-      line_items: [
-        {
-          price_data: {
-            currency: "gbp",
-            product_data: {
-              name: data.title + " - " + data.product.title,
-              images: [content.attributes.fullImage],
-              metadata: {
-                pwintyId: order.data.id,
-              },
-            },
-            unit_amount: product.price,
-          },
-          quantity: 1,
-        },
-        ...(shippingPrice && {
-          price_data: {
-            currency: "gbp",
-            product_data: {
-              name: "Shipping",
-            },
-            unit_amount: shippingPrice,
-          },
-          quantity: 1,
-        }),
-      ],
+      line_items: lineItems,
       metadata: {
         pwintyId: order.data.id,
         name: data.title + " - " + data.product.title,
