@@ -4,21 +4,17 @@ import { changeLocale } from "gatsby-plugin-intl"
 
 const Wrap = styled.section`
   position: ${props => props.position};
-  width: 100px;
   z-index: 999999999;
   margin: 10px;
-  margin-right: 0px;
+  margin-right: 10px;
   right: ${props => (props.right ? 0 : null)};
-  @media (pointer: coarse) {
-    margin-right: ${props => (props.right ? "-50px" : null)};
-  }
 `
 
 const SubMenu = styled.ul`
   position: absolute;
   list-style: none;
   z-index: 999999999;
-  margin-left: 0.5rem;
+  margin-left: -0.5rem;
   @media (pointer: coarse) {
     background-color: #8698da;
     margin-left: 0.1rem;

@@ -58,8 +58,6 @@ exports.handler = async ({ body }) => {
       data.type,
       data.size
     )
-    console.log("shippingPrice")
-    console.log(shippingPrice)
 
     const lineItems = [
       {
@@ -90,8 +88,6 @@ exports.handler = async ({ body }) => {
         quantity: 1,
       }
     }
-
-    console.log(lineItems)
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
