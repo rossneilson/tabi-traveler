@@ -1,6 +1,6 @@
 {
   "title": {
-    "tab": "旅トラベラ"
+    "tab": "旅トラベラー"
   },
   "main": {
     "title": "旅traveler",
@@ -9,7 +9,7 @@
     "portfolio": "ポートフォリオ",
     "blog": "ブログ",
     "prints": "プリント",
-    "contact": "コンタクト"
+    "contact": "連絡先"
   },
   "about": {
     "title": "私たちについて",
@@ -22,16 +22,16 @@
   },
   "blog": {
     "back": "ブログに戻る",
-    "authorDesc": "私たちはスコットランド人と日本人の学生カップルです。 旅先で新たな場所と文化に写真を撮っています。",
+    "authorDesc": "私たちはスコットランド人と日本人の学生カップルです。 旅先での新たな景色と文化を写真を通してシェアしています。",
     "cta": "もっと見る"
   },
   "store": {
-    "back": "全部プリントに戻る",
-    "date": "取りました日: ",
-    "buy": "買う",
-    "selectCountry": "国を選んでください",
-    "successMessage": "Thank you so much for helping a young couple chase our photography dream. We hope you enjoy your print. You should receive a receipt via email shortly.",
-    "contactUs": "If you have anything you want to ask us about or issues with your order please use the form below."
+    "back": "全ての写真一覧に戻る",
+    "date": "撮影日: ",
+    "buy": "購入",
+    "selectCountry": "国を選択してください",
+    "successMessage": "ご購入誠にありがとうございます。私たちの強い励みになります。この商品を楽しんでいただけることを祈っております。メールが届きますのでご確認をお願いいたします。",
+    "contactUs": "なにか問題がございましたら、下記のフォームまたはメールでご連絡をよろしくお願いします。"
   },
   "contact": {
     "title": "連絡先",
