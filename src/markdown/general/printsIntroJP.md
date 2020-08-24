@@ -3,6 +3,6 @@ page: prints
 type: intro
 locale: jp
 ---
-These are a selection of our favourite images throughout the year that decided to make into prints.
-Using high quality paper and proffesionally crafted frames to display our photography as it was intended in physical form.
-Please consider supporting a young couple's photography
+今まで旅をしながら撮影してきた写真の中から私たちのお気に入りの写真を選びました。上質な紙とフレームで提供いたします。
+
+写真ご購入は私たちの活動の支援に繋がります。どうぞよろしくお願いします。
