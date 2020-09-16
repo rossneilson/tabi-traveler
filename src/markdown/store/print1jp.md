@@ -4,12 +4,8 @@ title: 江ノ島からの夕焼け富士山
 desc: High qaulity photographic travel prints and frames of a sunset with mount
   fuji in japan. Worldwide shipping
 date: 2018-12-19T00:00:00.000Z
-main: /static/4-1-.jpg
-images:
-  - /static/exampleFrame.jpg
-  - /static/fuji.jpg
-  - /static/dsc03161.jpg
-  - /static/download-16.jpg
+mainImage: /static/DSC03313.jpg
+images: [/static/DSC03313.jpg, /static/DSC03301.jpg, /static/DSC03307.jpg, /static/DSC03310.jpg]
 products:
   - sku: GLOBAL-HPR-A3
     title: A3 (11.7x16.5")
