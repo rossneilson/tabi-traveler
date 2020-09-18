@@ -9,6 +9,8 @@ import { Link } from "gatsby"
 import { device, deviceMin } from "../../utils/device"
 import { urlLocaleFormatting } from "../../utils/formatters"
 var isSafari
+var image = require("../../img/frame.webp")
+
 if (typeof window !== "undefined") {
   isSafari =
     navigator.vendor &&
@@ -23,12 +25,7 @@ if (typeof window !== "undefined") {
 const useStyles = createUseStyles({
   frame: {
     width: "auto",
-    background:
-      "url(" +
-      (isSafari
-        ? require("../../img/frame.png")
-        : require("../../img/frame.png")) +
-      ") bottom left",
+    background: "url(" + image + ") bottom left",
     backgroundRepeat: "no-repeat",
     textAlign: "right",
     minHeight: "100vh",
