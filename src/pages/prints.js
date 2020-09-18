@@ -14,7 +14,6 @@ import Toggle from "../components/common/Toggle"
 
 const Contact = loadable(() => import("../components/contact/Contact"))
 
-// Make card?
 const Intro = styled.section`
   font-size: medium;
   line-height: 1.7;

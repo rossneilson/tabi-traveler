@@ -10,7 +10,7 @@ const GridWrap = styled.section`
   width: 80%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-auto-rows: 350px;
+  grid-auto-rows: 400px;
   column-gap: 5%;
   row-gap: 50px;
   transition: all 1s;
@@ -26,8 +26,8 @@ export default function Grid({ prints }) {
 
   return (
     <GridWrap>
-      {/* {printCards} */}
-      <h1>Sorry, no prints yet, come back soon :)</h1>
+      {printCards}
+      {/* <h1>Sorry, no prints yet, come back soon :)</h1> */}
     </GridWrap>
   )
 }

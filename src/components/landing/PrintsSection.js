@@ -11,7 +11,7 @@ const FlexWrap = styled.section`
   margin-bottom: 50px;
   display: flex;
   justify-content: space-evenly;
-  height: 350px;
+  height: 400px;
   width: 100%;
   padding: 10px;
   @media (pointer: coarse) {
@@ -64,8 +64,8 @@ export default function Blog({ prints, language }) {
         </Heading>
       </Link>
       <FlexWrap>
-        <h1>Sorry, no prints yet, come back soon</h1>
-        {/* {printCards} */}
+        {/* <h1>Sorry, no prints yet, come back soon</h1> */}
+        {printCards}
       </FlexWrap>
     </div>
   )
