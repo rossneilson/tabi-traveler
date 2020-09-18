@@ -27,7 +27,7 @@ const useStyles = createUseStyles({
       "url(" +
       (isSafari
         ? require("../../img/frame.png")
-        : require("../../img/frame.webp")) +
+        : require("../../img/frame.png")) +
       ") bottom left",
     backgroundRepeat: "no-repeat",
     textAlign: "right",
@@ -46,7 +46,7 @@ const useStyles = createUseStyles({
       "url(" +
       (isSafari
         ? require("../../img/mainImage.jpg")
-        : require("../../img/mainImage.webp")) +
+        : require("../../img/mainImage.jpg")) +
       ") bottom left",
     backgroundRepeat: "no-repeat",
     textAlign: "right",
