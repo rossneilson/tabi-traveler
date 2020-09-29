@@ -32,7 +32,6 @@ const MenuItem = styled.li`
 `
 
 export default function Toggle({
-  language,
   position = "fixed",
   right = false,
   colour = "#8698da",

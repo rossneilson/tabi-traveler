@@ -47,6 +47,11 @@ const About = styled.section`
     position: inherit;
   }
 `
+
+const Title = styled.p`
+  padding-bottom: 10px;
+  margin: 0px;
+`
 const CTA = styled.button`
   text-align: center;
   padding: 12px;
@@ -72,14 +77,37 @@ export default function AboutSection({ fuji }) {
     <Wrap>
       <AboutImage fluid={fuji} />
       <About>
-        <p style={{ fontSize: "200%" }}>
+        <Title style={{ fontSize: "200%" }}>
+          <svg
+            style={{ transform: "translateY(10px)", marginRight: "4px" }}
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-movie"
+            width="48"
+            height="48"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="#5065a3"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <rect x="4" y="4" width="16" height="16" rx="2" />
+            <line x1="8" y1="4" x2="8" y2="20" />
+            <line x1="16" y1="4" x2="16" y2="20" />
+            <line x1="4" y1="8" x2="8" y2="8" />
+            <line x1="4" y1="16" x2="8" y2="16" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="16" y1="8" x2="20" y2="8" />
+            <line x1="16" y1="16" x2="20" y2="16" />
+          </svg>
           <FormattedMessage id="about.title" />
-        </p>
+        </Title>
         <div
           style={{
             borderTop: "1px solid #5065A3",
-            width: "100px",
-            marginBottom: "4  0px",
+            width: "200px",
+            marginBottom: "30px",
           }}
         />
         <p>
