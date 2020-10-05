@@ -111,8 +111,8 @@ const Markdown = styled.section`
   margin-right: 20%;
   margin-top: 5%;
   @media (pointer: coarse) {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
     padding: 5%;
   }
 `

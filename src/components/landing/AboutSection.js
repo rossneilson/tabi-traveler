@@ -81,7 +81,7 @@ export default function AboutSection({ fuji }) {
           <svg
             style={{ transform: "translateY(10px)", marginRight: "4px" }}
             xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-movie"
+            className="icon icon-tabler icon-tabler-movie"
             width="48"
             height="48"
             viewBox="0 0 24 24"

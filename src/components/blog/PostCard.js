@@ -75,8 +75,19 @@ const Extra = styled.section`
   }
 `
 
-const OpenFab = styled(Fab)`
+const OpenFab = styled.section`
   float: right;
+  background-color: #699bbf;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 8px 20px -6px #000000ab;
+  @media (pointer: coarse) {
+    margin-bottom: 15px;
+  }
 `
 
 export default function PostCard({ post, index, isfullpage }) {
