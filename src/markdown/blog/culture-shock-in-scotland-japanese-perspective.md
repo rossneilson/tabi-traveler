@@ -66,15 +66,23 @@ I love exploring other country's supermarkets. Just wandering around is so much 
 * Tiny fish section
 * Cake section
 
+![supermarket](../../static/asda.jpg "supermarket")
+
 Cashless payment was common everywhere we went, but in the supermarket, there was something even more than just contactless payments. Instead of lining up at a register for someone to scan every item at the end, you do it as you go. Before you put an item int he trolley you just scan the barcode on a small device and it gets added. Then at the end, it's as simple as paying the total. I wish we had something that simple and quick to use in Japan.
+
+![scan](../../img/scan.jpg "scan")
 
 Also using eco bags was just the normal option in Scotland, everyone just brought their own bag. This is something just starting in Japan so I was surprised to see so many people using the system here.
 
 In the supermarket, there was a separate section just for products that were specifically made in Scotland. There were, of course, lots of items and produce made in Scotland but this area was dedicated to just that. Scottish people seem to be very proud of their nationality and I loved browsing these sections.
 
+![produce](../../static/produce.jpg "produce")
+
 The fish corner was such a tiny wee section, it was just a small corner in the supermarket. I knew that fish was not as popular here as in Japan, but this tiny fish area really surprised me. Also, it was quite expensive. I ate some really tasty fish in Scotland when we travelled so it made me wonder why fish is not eaten more regularly in daily life.
 
 Most of the cakes in Japan are topped using fresh cream and so need to be stored in cold areas of department stores or supermarkets. So I was very surprised to see all the cakes next to the sweets aisle. it turns out they are made using icing instead of cream and so they can be stored at room temperature. Despite this, they had so many cute designs and characters on them. When I tried a cake like this it was completely different from Japanese cakes, and I think I preferred the fresh cream versions more.
+
+![cake](../../static/cake.jpg "cakes")
 
 ### Summary
 
