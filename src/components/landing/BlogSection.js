@@ -30,6 +30,7 @@ export default function Blog({ posts, language }) {
   posts.map((value, index) => {
     postCards.push(<PostCard key={index} post={value} isfullpage={false} />)
   })
+  postCards.reverse()
 
   return (
     <div>

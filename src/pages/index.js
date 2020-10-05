@@ -96,7 +96,7 @@ export const imageQuery = graphql`
         fileAbsolutePath: { regex: "/(/store/)/" }
         frontmatter: { locale: { eq: $locale } }
       }
-      sort: { fields: frontmatter___date, order: ASC }
+      sort: { fields: frontmatter___date, order: DESC }
       limit: 3
     ) {
       edges {
