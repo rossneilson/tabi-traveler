@@ -1,9 +1,9 @@
 ---
 title: Culture shock in - Scotland (Japanese perspective)
 location: Scotland
-category: Travel stories
+category: Travel Stories
 date: 2020-10-05T08:13:01.352Z
-image: /static/download-12.jpg
+image: /static/storr.jpg
 path: blog/culture-shock-scotland
 locale: en
 SEO: Thoughts about cultural differences between Japan and Scotland UK from the
