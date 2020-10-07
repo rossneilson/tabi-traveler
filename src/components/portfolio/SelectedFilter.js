@@ -3,12 +3,14 @@ import styled from "styled-components"
 import loadable from "@loadable/component"
 import ScotlandFlag from "../../img/gb-sct.svg"
 import JapanFlag from "../../img/jp.svg"
+import ItalyFlag from "../../img/it.svg"
 
 const Button = loadable(() => import("@material-ui/core/Button"))
 
 const Flags = {
   GBR: ScotlandFlag,
   JPN: JapanFlag,
+  ITA: ItalyFlag,
 }
 
 const FlexContainer = styled.section`

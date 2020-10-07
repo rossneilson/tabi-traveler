@@ -13,7 +13,7 @@ const geoUrl =
 
 // TODO move to json file
 // Create from images
-const highlighted = ["JPN", "GBR"]
+const highlighted = ["JPN", "GBR", "ITA"]
 
 export default function FilterMap({ filter, setFilter }) {
   return (
