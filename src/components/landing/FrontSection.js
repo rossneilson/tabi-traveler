@@ -43,8 +43,7 @@ const useStyles = createUseStyles({
   },
   main: {
     width: "100%",
-    background:
-      "url(" + main ") bottom left",
+    background: "url(" + main + ") bottom left",
     backgroundRepeat: "no-repeat",
     textAlign: "right",
     minHeight: "100vh",
