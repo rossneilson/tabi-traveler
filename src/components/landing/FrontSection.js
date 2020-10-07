@@ -9,7 +9,7 @@ import { Link } from "gatsby"
 import { device, deviceMin } from "../../utils/device"
 import { urlLocaleFormatting } from "../../utils/formatters"
 var isSafari
-var image = require("../../img/frame.webp")
+// var image = require("../../img/frame.png")
 
 if (typeof window !== "undefined") {
   isSafari =
@@ -25,7 +25,12 @@ if (typeof window !== "undefined") {
 const useStyles = createUseStyles({
   frame: {
     width: "auto",
-    background: "url(" + image + ") bottom left",
+    background:
+      "url(" +
+      (isSafari
+        ? require("../../img/frame.png")
+        : require("../../img/frame.webp")) +
+      ") bottom left",
     backgroundRepeat: "no-repeat",
     textAlign: "right",
     minHeight: "100vh",
@@ -69,7 +74,7 @@ const Navigation = styled.section`
     width: 38%;
   }
   @media ${deviceMin.mobileM} {
-    width: 42%;
+    width: 40%;
   }
   @media ${deviceMin.mobileL} {
     width: 40%;
