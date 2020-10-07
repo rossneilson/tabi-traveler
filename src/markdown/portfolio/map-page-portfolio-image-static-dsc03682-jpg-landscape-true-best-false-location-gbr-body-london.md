@@ -2,7 +2,7 @@
 page: portfolio
 best: false
 landscape: true
+image: /static/dsc03682.jpg
 location: GBR
-image: ../../img/download-6.jpg
 ---
-Content goes here!
+london

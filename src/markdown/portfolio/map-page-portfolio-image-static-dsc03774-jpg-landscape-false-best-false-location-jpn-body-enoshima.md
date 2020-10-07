@@ -2,7 +2,7 @@
 page: portfolio
 best: false
 landscape: false
-image: ../../img/download-20.jpg
+image: /static/dsc03774.jpg
 location: JPN
 ---
-Content goes here!
+enoshima
