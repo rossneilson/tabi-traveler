@@ -34,7 +34,7 @@ const Wrapper = styled(Link)`
 const Image = styled(Img)`
   height: 60%;
   @media (pointer: coarse) {
-    height: 70%;
+    height: 60%;
   }
 `
 
