@@ -27,7 +27,7 @@ const Wrapper = styled(Link)`
   @media (pointer: coarse) {
     height: 400px;
     width: auto;
-    max-width: null;
+    max-width: 100%;
     margin: 0% 2.5% 5% 2.5%;
   }
 `

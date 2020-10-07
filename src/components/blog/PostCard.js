@@ -29,7 +29,7 @@ const Wrapper = styled(Link)`
   }
   @media (pointer: coarse) {
     margin: 0% 2.5% 5% 2.5%;
-    max-width: null;
+    max-width: 100%;
     width: auto;
   }
   @media (min-width: 480px) {

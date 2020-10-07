@@ -4,12 +4,11 @@ import { createUseStyles } from "react-jss"
 import { FormattedMessage } from "react-intl"
 import { Link } from "gatsby"
 
-// import main from "../../img/mainImage.jpg"
+import main from "../../img/mainImage.jpg"
 
 import { device, deviceMin } from "../../utils/device"
 import { urlLocaleFormatting } from "../../utils/formatters"
 var isSafari
-// var image = require("../../img/frame.png")
 
 if (typeof window !== "undefined") {
   isSafari =
@@ -45,11 +44,7 @@ const useStyles = createUseStyles({
   main: {
     width: "100%",
     background:
-      "url(" +
-      (isSafari
-        ? require("../../img/mainImage.jpg")
-        : require("../../img/mainImage.jpg")) +
-      ") bottom left",
+      "url(" + main ") bottom left",
     backgroundRepeat: "no-repeat",
     textAlign: "right",
     minHeight: "100vh",
