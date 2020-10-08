@@ -95,7 +95,7 @@ const Navigation = styled.section`
     width: 38%;
   }
   @media (min-height: 800px) {
-    width: 45%;
+    width: 48%;
   }
   @media ${deviceMin.tablet} {
     width: 30%;
