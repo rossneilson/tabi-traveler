@@ -64,7 +64,7 @@ const Navigation = styled.section`
   justify-content: center;
   position: absolute;
   z-index: 9999;
-  @media ${deviceMin.mobileS} {
+  ${"" /* @media ${deviceMin.mobileS} {
     width: 38%;
   }
   @media ${deviceMin.mobileM} {
@@ -72,6 +72,30 @@ const Navigation = styled.section`
   }
   @media ${deviceMin.mobileL} {
     width: 40%;
+  }
+  @media ${deviceMin.tablet} {
+    width: 30%;
+  }
+  @media ${deviceMin.laptop} {
+    width: 20%;
+  }
+  @media ${deviceMin.laptopL} {
+    width: 19%;
+  } */}
+  @media (min-height: 400px) {
+    width: 35%;
+  }
+  @media (min-height: 500px) {
+    width: 35%;
+  }
+  @media (min-height: 600px) {
+    width: 36%;
+  }
+  @media (min-height: 700px) {
+    width: 38%;
+  }
+  @media (min-height: 800px) {
+    width: 45%;
   }
   @media ${deviceMin.tablet} {
     width: 30%;
