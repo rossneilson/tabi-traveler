@@ -141,6 +141,7 @@ function CustomForm({ status, message, onValidated, language }) {
 
 export default function SignUp({ language }) {
   const url = process.env.MAILCHIMP_URL
+  console.log(url)
 
   return (
     <MailchimpSubscribe
