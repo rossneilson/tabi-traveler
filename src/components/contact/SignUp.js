@@ -140,8 +140,8 @@ function CustomForm({ status, message, onValidated, language }) {
 }
 
 export default function SignUp({ language }) {
-  const url = process.env.MAILCHIMP_URL
-  console.log(url)
+  const url =
+    "https://tabitraveler.us2.list-manage.com/subscribe/post?u=ec0ef14f775282cd407b2dff5&amp;id=eb2930ef2d"
 
   return (
     <MailchimpSubscribe
