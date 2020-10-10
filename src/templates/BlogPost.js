@@ -11,6 +11,7 @@ import Navigation from "../components/common/Navigation"
 import Footer from "../components/blog/Footer"
 import Toggle from "../components/common/Toggle"
 import SEO from "../components/common/Seo"
+import SignUp from "../components/contact/SignUp"
 
 const BackIcon = styled.section`
   cursor: pointer;
@@ -191,6 +192,7 @@ export default function BlogPost({ data, pageContext }) {
         }).format(new Date(frontmatter.date))}
       </FormattedDate>
       <Markdown dangerouslySetInnerHTML={{ __html: html }} />
+      <SignUp language={pageContext.intl.language} />
       <Footer image={data.image.childImageSharp.fluid} />
     </div>
   )

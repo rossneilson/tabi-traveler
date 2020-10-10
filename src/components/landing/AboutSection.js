@@ -56,6 +56,7 @@ const CTA = styled.button`
   text-align: center;
   padding: 12px;
   background: #f79a60;
+  font-weight: 500;
   color: white !important;
   margin-left: 35%;
   border-radius: 5px;

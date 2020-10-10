@@ -7,6 +7,7 @@ import "../index.css"
 
 import Navigation from "../components/common/Navigation"
 import Toggle from "../components/common/Toggle"
+import SignUp from "../components/contact/SignUp"
 
 const Contact = loadable(() => import("../components/contact/Contact"))
 
@@ -30,7 +31,6 @@ export default function ContactPage(props) {
   return (
     <div>
       <GlobalStyle />
-
       <Toggle right language={props.pageContext.intl.language} />
       <Navigation
         language={props.pageContext.intl.language}
@@ -42,7 +42,20 @@ export default function ContactPage(props) {
         <br />
         <FormattedMessage id="store.contactUs" />
       </About>
-      <Contact />
+      <SignUp language={props.pageContext.intl.language} />
+      <Contact footImage1={props.data.footImage1.childImageSharp.fluid} />
     </div>
   )
 }
+
+export const imageQuery = graphql`
+  query getSuccessImage {
+    footImage1: file(relativePath: { eq: "download-5-edit.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1800) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`

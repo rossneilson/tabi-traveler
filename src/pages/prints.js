@@ -11,6 +11,7 @@ import SEO from "../components/common/Seo"
 import Navigation from "../components/common/Navigation"
 import PrintsGrid from "../components/store/PrintsGrid"
 import Toggle from "../components/common/Toggle"
+import SignUp from "../components/contact/SignUp"
 
 const Contact = loadable(() => import("../components/contact/Contact"))
 
@@ -73,6 +74,7 @@ export default function Prints(props) {
       <Intro dangerouslySetInnerHTML={{ __html: props.data.intro.html }} />
       <PrintsGrid prints={prints} />
       <FAQ dangerouslySetInnerHTML={{ __html: props.data.faq.html }} />
+      <SignUp language={props.pageContext.intl.language} />
       <Contact footImage1={props.data.footImage1.childImageSharp.fluid} />
     </div>
   )

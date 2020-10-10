@@ -9,6 +9,7 @@ import SEO from "../components/common/Seo"
 import Navigation from "../components/common/Navigation"
 import BlogGrid from "../components/blog/BlogGrid"
 import Toggle from "../components/common/Toggle"
+import SignUp from "../components/contact/SignUp"
 
 const Tabs = loadable(() => import("@material-ui/core/Tabs"))
 const Tab = loadable(() => import("@material-ui/core/Tab"))
@@ -91,6 +92,7 @@ export default function Blog(props) {
         {tabsArray}
       </Tabs>
       <BlogGrid posts={filteredPosts} />
+      <SignUp language={props.pageContext.intl.language} />
     </div>
   )
 }

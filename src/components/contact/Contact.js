@@ -2,8 +2,6 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import { useIntl } from "react-intl"
 import Img from "gatsby-image"
-import TextField from "@material-ui/core/TextField"
-import Button from "@material-ui/core/Button"
 
 const Wrapper = styled.section`
   display: flex;
@@ -18,7 +16,7 @@ const Wrapper = styled.section`
 const ContactCard = styled.section`
   background-color: white;
   position: absolute;
-  padding: 40px;
+  padding: 5%;
   z-index: 978;
   min-height: 20%;
   width: 50%;
@@ -31,6 +29,7 @@ const ContactCard = styled.section`
 
 const Title = styled.h2`
   margin: auto;
+  margin-bottom: 20px;
   color: #5065a3;
 `
 
@@ -39,28 +38,25 @@ const Form = styled.form`
   flex-direction: column;
   margin: auto;
   max-width: 75%;
-  margin-right: 16%;
 `
-const FormField = styled(TextField)`
-  color: #5065a3;
-  margin: 20px;
-`
-const SubmitButton = styled(Button)`
-  background-color: #f79a60;
-  color: white;
-  &:hover {
-    background-color: #5065a3;
-  }
-  &:focus {
-    background-color: #5065a3;
-  }
-  margin: auto;
-  width: 25%;
-  padding: 5px;
+
+const StyledInput = styled.input`
+  height: 38px;
+  padding: 8px 12px;
+  margin: 5% 0%;
+  font-size: 18px;
+  line-height: 1.42857143;
+  font-weight: 500;
+  width: 100%;
+  border-style: none;
+  border-width: 1px 1px 4px;
+  border-color: #000 #000 #6f81b3;
+  border-radius: 10px;
+  background-color: ${props => (props.error ? "#ff7777" : "#d4e0ef")};
+  color: black;
 `
 
 const Icons = styled.section`
-  margin-right: 7%;
   margin-top: 25px;
 `
 
@@ -81,6 +77,27 @@ const Image = styled(Img)`
   opacity: 0.8;
 `
 
+const StyledButton = styled.button`
+  transition: 0.2s;
+  background-color: #f79a60;
+  color: white;
+  height: 40px;
+  justify-content: space-around;
+  font-size: large;
+  font-weight: 500;
+  min-width: 30%;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: auto;
+  &:hover {
+    background-color: #5065a3;
+  }
+  &:focus {
+    background-color: #5065a3;
+  }
+`
+
 const validEmailRegex = RegExp(
   /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
 )
@@ -97,6 +114,7 @@ export default function Contact(props) {
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
   const [emailError, setEmailError] = useState(false)
+  const [success, setSuccess] = useState(false)
   const [submitAttempt, setSubmitAttempt] = useState(0)
 
   const handleSubmit = e => {
@@ -115,7 +133,7 @@ export default function Contact(props) {
           ...{ name, email, message },
         }),
       })
-        .then(() => alert("Success!"))
+        .then(() => setSuccess(true))
         .catch(error => alert(error))
     }
   }
@@ -140,28 +158,22 @@ export default function Contact(props) {
         >
           <input type="hidden" name="form-name" value="contact" />
           <label>
-            <FormField
+            <StyledInput
               aria-label="Name input"
-              label={intl.formatMessage({ id: "contact.name" })}
+              placeholder={intl.formatMessage({ id: "contact.name" })}
               id="name"
               name="name"
-              fullWidth
               onChange={e => setName(e.target.value)}
             />
           </label>
           <label>
-            <FormField
-              aria-label="Email input"
-              label={intl.formatMessage({ id: "contact.email" })}
+            <StyledInput
+              aria-label="email input"
+              placeholder={intl.formatMessage({ id: "contact.email" })}
               id="email"
               name="email"
-              fullWidth
+              onChange={e => setEmail(e.target.value)}
               error={emailError}
-              helperText={
-                emailError
-                  ? intl.formatMessage({ id: "contact.invalidEmail" })
-                  : null
-              }
               onChange={e => {
                 const value = e.target.value
                 if (!validEmailRegex.test(value) && submitAttempt > 0) {
@@ -174,25 +186,23 @@ export default function Contact(props) {
             />
           </label>
           <label>
-            <FormField
+            <StyledInput
               aria-label="Message input"
-              label={intl.formatMessage({ id: "contact.message" })}
+              placeholder={intl.formatMessage({ id: "contact.message" })}
               id="message"
               name="message"
-              multiline
-              fullWidth
               onChange={e => setMessage(e.target.value)}
             />
           </label>
 
-          <SubmitButton
-            type="submit"
-            aria-label="Submit button"
-            variant="contained"
-            disabled={emailError}
-          >
+          <StyledButton type="submit" aria-label="Submit button">
             {intl.formatMessage({ id: "contact.submit" })}
-          </SubmitButton>
+          </StyledButton>
+          {emailError
+            ? intl.formatMessage({ id: "contact.invalidEmail" })
+            : success
+            ? intl.formatMessage({ id: "contact.success" })
+            : null}
         </Form>
         <Icons>
           <Link

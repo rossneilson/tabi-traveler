@@ -13,6 +13,7 @@ import FrontSection from "../components/landing/FrontSection"
 import AboutSection from "../components/landing/AboutSection"
 import BlogSection from "../components/landing/BlogSection"
 import PrintsSection from "../components/landing/PrintsSection"
+import SignUp from "../components/contact/SignUp"
 const Contact = loadable(() => import("../components/contact/Contact"))
 
 const GlobalStyle = createGlobalStyle`
@@ -33,6 +34,7 @@ export default function Main(props) {
       <Toggle language={props.pageContext.intl.language} />
       <FrontSection language={props.pageContext.intl.language} />
       <AboutSection fuji={props.data.fujiImage.childImageSharp.fluid} />
+      <SignUp language={props.pageContext.intl.language} />
       <PrintsSection
         prints={props.data.prints.edges}
         language={props.pageContext.intl.language}

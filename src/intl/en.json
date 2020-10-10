@@ -33,11 +33,16 @@
     "successMessage": "Thank you so much for helping a young couple chase our photography dream. We hope you enjoy your print. You should receive a receipt via email shortly.",
     "contactUs": "If you have anything you want to ask us about or issues with your order please use the form below."
   },
+  "signup": {
+    "subscribe": "Subscribe",
+    "title": "Sign up to our monthly newsletter for updates, new products and articles"
+  },
   "contact": {
     "title": "Contact Us",
     "name": "Name",
     "email": "Email",
     "invalidEmail": "Invalid Email",
+    "success": "Sent, thank you",
     "message": "Message",
     "submit": "Submit"
   },

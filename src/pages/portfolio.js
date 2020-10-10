@@ -11,6 +11,7 @@ import Navigation from "../components/common/Navigation"
 import FilterDrawer from "../components/portfolio/FilterDrawer"
 import Grid from "../components/portfolio/ImageGrid"
 import ImageView from "../components/portfolio/ImageView"
+import SignUp from "../components/contact/SignUp"
 
 const BurgerIcon = styled.section`
   position: fixed;
@@ -84,6 +85,7 @@ export default function Portfolio(props) {
         selectedImage={selectedImage}
         setSelectedImage={setSelectedImage}
       />
+      <SignUp language={props.pageContext.intl.language} />
     </div>
   )
 }

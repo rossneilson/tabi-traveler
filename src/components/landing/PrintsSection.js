@@ -32,7 +32,11 @@ export default function Blog({ prints, language }) {
   })
 
   return (
-    <div>
+    <div
+      style={{
+        marginTop: "10%",
+      }}
+    >
       <Link
         to={urlLocaleFormatting(language, "/prints")}
         onClick={() => {
