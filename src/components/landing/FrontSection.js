@@ -64,24 +64,6 @@ const Navigation = styled.section`
   justify-content: center;
   position: absolute;
   z-index: 9999;
-  ${"" /* @media ${deviceMin.mobileS} {
-    width: 38%;
-  }
-  @media ${deviceMin.mobileM} {
-    width: 40%;
-  }
-  @media ${deviceMin.mobileL} {
-    width: 40%;
-  }
-  @media ${deviceMin.tablet} {
-    width: 30%;
-  }
-  @media ${deviceMin.laptop} {
-    width: 20%;
-  }
-  @media ${deviceMin.laptopL} {
-    width: 19%;
-  } */}
   @media (min-height: 400px) {
     width: 35%;
   }

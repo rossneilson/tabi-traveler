@@ -36,8 +36,16 @@ export default function Portfolio(props) {
   return (
     <div>
       <SEO
-        title={"Portfolio | Tabi Traveler"}
-        description={"Portfolio page for the best international travel photos"}
+        title={
+          props.data.site.siteMetadata.portfolio[
+            props.pageContext.intl.language
+          ].title
+        }
+        description={
+          props.data.site.siteMetadata.portfolio[
+            props.pageContext.intl.language
+          ].description
+        }
         lang={props.pageContext.intl.language}
       />
       <BurgerIcon onClick={() => setDrawerOpen(true)} show={drawerOpen}>
@@ -118,10 +126,18 @@ export const imageQuery = graphql`
         }
       }
     }
-
     site {
       siteMetadata {
-        title
+        portfolio {
+          en {
+            title
+            description
+          }
+          jp {
+            title
+            description
+          }
+        }
       }
     }
   }

@@ -66,9 +66,13 @@ export default function Blog(props) {
   return (
     <div>
       <SEO
-        title={"Blog | Tabi Traveler"}
+        title={
+          props.data.site.siteMetadata.blog[props.pageContext.intl.language]
+            .title
+        }
         description={
-          "Blog page for articles about international travel locations experiences and accomodation"
+          props.data.site.siteMetadata.blog[props.pageContext.intl.language]
+            .description
         }
         lang={props.pageContext.intl.language}
       />
@@ -123,6 +127,20 @@ export const postsQuery = graphql`
                 }
               }
             }
+          }
+        }
+      }
+    }
+    site {
+      siteMetadata {
+        blog {
+          en {
+            title
+            description
+          }
+          jp {
+            title
+            description
           }
         }
       }

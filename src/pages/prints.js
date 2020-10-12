@@ -56,8 +56,14 @@ export default function Prints(props) {
     <div>
       <GlobalStyle />
       <SEO
-        title={"Print Store | Tabi Traveler"}
-        description={"Print store for high quality travel photography prints"}
+        title={
+          props.data.site.siteMetadata.prints[props.pageContext.intl.language]
+            .title
+        }
+        description={
+          props.data.site.siteMetadata.prints[props.pageContext.intl.language]
+            .description
+        }
         lang={props.pageContext.intl.language}
       />
 
@@ -148,6 +154,20 @@ export const printsQuery = graphql`
       childImageSharp {
         fluid(maxWidth: 1000) {
           ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    site {
+      siteMetadata {
+        prints {
+          en {
+            title
+            description
+          }
+          jp {
+            title
+            description
+          }
         }
       }
     }

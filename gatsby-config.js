@@ -2,6 +2,44 @@ const path = require(`path`)
 
 module.exports = {
   siteMetadata: {
+    en: {
+      title: `Tabi Traveler`,
+      description: `Tabi Traveler photography, portfolio, blog and store`,
+    },
+    jp: {
+      title: `旅Traveler`,
+      description: `旅Traveler 国際カップル写真家、 ポートフォリオ、ブログ、 プリント`,
+    },
+    blog: {
+      en: {
+        title: `Blog | Tabi Traveler`,
+        description: `Tabi Traveler photography blog about international travel, photography`,
+      },
+      jp: {
+        title: `ブログ　旅Traveler`,
+        description: `旅Traveler 国際カップル写真家 ブログ、外国、内国、旅行、写真`,
+      },
+    },
+    portfolio: {
+      en: {
+        title: `Portfolio | Tabi Traveler`,
+        description: `Tabi Traveler portfolio of best photography from across the world`,
+      },
+      jp: {
+        title: `ポートフォリオ　旅Traveler`,
+        description: `旅Traveler 国際カップル写真家 ポートフォリオ`,
+      },
+    },
+    prints: {
+      en: {
+        title: `Prints | Tabi Traveler`,
+        description: `High qaulity photographic travel prints and frames, Free Worldwide shipping`,
+      },
+      jp: {
+        title: `プリント　旅Traveler`,
+        description: `旅Traveler 国際カップル写真家 高い質プリント店　無料国際発送`,
+      },
+    },
     title: `Tabi Traveler`,
     description: `Tabi Traveler photography, portfolio, blog and store`,
     author: `Ross Neilson`,
@@ -109,12 +147,5 @@ module.exports = {
     `gatsby-plugin-nprogress`,
     "gatsby-plugin-loadable-components-ssr",
     `gatsby-plugin-sitemap`,
-    {
-      resolve: "gatsby-plugin-webpack-bundle-analyzer",
-      options: {
-        analyzerPort: 3000,
-        production: true,
-      },
-    },
   ],
 }

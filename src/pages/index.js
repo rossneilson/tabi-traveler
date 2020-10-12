@@ -27,8 +27,13 @@ export default function Main(props) {
     <div>
       <GlobalStyle />
       <SEO
-        title={"Tabi Traveler"}
-        description={"Travel photographer international couple"}
+        title={
+          props.data.site.siteMetadata[props.pageContext.intl.language].title
+        }
+        description={
+          props.data.site.siteMetadata[props.pageContext.intl.language]
+            .description
+        }
         lang={props.pageContext.intl.language}
       />
       <Toggle language={props.pageContext.intl.language} />
@@ -128,7 +133,14 @@ export const imageQuery = graphql`
     }
     site {
       siteMetadata {
-        title
+        en {
+          title
+          description
+        }
+        jp {
+          title
+          description
+        }
       }
     }
   }
