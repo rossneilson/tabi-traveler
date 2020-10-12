@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import * as Sentry from "@sentry/react"
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang, meta, title, slug = "" }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -67,7 +67,23 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <link
+        rel="alternate"
+        hreflang="en"
+        href={"https://tabitraveler.com/en" + slug}
+      />
+      <link
+        rel="alternate"
+        hreflang="ja"
+        href={"https://tabitraveler.com/jp" + slug}
+      />
+      <link
+        rel="alternate"
+        hreflang="x-default"
+        href={"https://tabitraveler.com" + slug}
+      />
+    </Helmet>
   )
 }
 

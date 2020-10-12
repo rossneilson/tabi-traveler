@@ -65,6 +65,7 @@ export default function Prints(props) {
             .description
         }
         lang={props.pageContext.intl.language}
+        slug={"prints"}
       />
 
       <Toggle

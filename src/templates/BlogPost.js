@@ -143,6 +143,7 @@ export default function BlogPost({ data, pageContext }) {
         title={frontmatter.title + " | Tabi Traveler"}
         description={frontmatter.SEO}
         lang={frontmatter.locale}
+        slug={"/" + frontmatter.path}
       />
       <BackgroundImage fluid={frontmatter.image.childImageSharp.fluid} />
       <Gradient offset={offset} />

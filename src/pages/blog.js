@@ -75,6 +75,7 @@ export default function Blog(props) {
             .description
         }
         lang={props.pageContext.intl.language}
+        slug={"/blog"}
       />
 
       <Toggle right language={props.pageContext.intl.language} />

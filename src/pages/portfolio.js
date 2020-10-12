@@ -47,6 +47,7 @@ export default function Portfolio(props) {
           ].description
         }
         lang={props.pageContext.intl.language}
+        slug={"portfolio"}
       />
       <BurgerIcon onClick={() => setDrawerOpen(true)} show={drawerOpen}>
         <svg

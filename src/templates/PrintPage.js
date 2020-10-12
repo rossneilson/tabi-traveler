@@ -80,6 +80,7 @@ export default function PrintPage({ data, pageContext }) {
         title={"Print - " + frontmatter.title + " | Tabi Traveler"}
         description={frontmatter.desc}
         lang={frontmatter.locale}
+        slug={"/" + frontmatter.path}
       />
       <BackIcon
         onClick={() => navigate("../../" + frontmatter.locale + "/prints")}
