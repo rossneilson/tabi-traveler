@@ -1,6 +1,5 @@
 import React from "react"
 import { createGlobalStyle } from "styled-components"
-import loadable from "@loadable/component"
 
 import "../index.css"
 
@@ -9,8 +8,7 @@ import SEO from "../components/common/Seo"
 import Navigation from "../components/common/Navigation"
 import Toggle from "../components/common/Toggle"
 import SignUp from "../components/contact/SignUp"
-
-const Contact = loadable(() => import("../components/contact/Contact"))
+import Contact from "../components/contact/Contact"
 
 const GlobalStyle = createGlobalStyle`
 body {
@@ -43,10 +41,10 @@ export default function ContactPage(props) {
 
 export const imageQuery = graphql`
   query getContactImage {
-    footImage1: file(relativePath: { eq: "download-5-edit.png" }) {
+    footImage1: file(relativePath: { eq: "footImage.png" }) {
       childImageSharp {
-        fluid(maxWidth: 1800) {
-          ...GatsbyImageSharpFluid
+        fluid(maxWidth: 1800, quality: 80) {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

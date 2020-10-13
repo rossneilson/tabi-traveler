@@ -50,10 +50,10 @@ export default function ContactPage(props) {
 
 export const imageQuery = graphql`
   query getSuccessImage {
-    footImage1: file(relativePath: { eq: "download-5-edit.png" }) {
+    footImage1: file(relativePath: { eq: "footImage.png" }) {
       childImageSharp {
-        fluid(maxWidth: 1800) {
-          ...GatsbyImageSharpFluid
+        fluid(maxWidth: 1800, quality: 80) {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
