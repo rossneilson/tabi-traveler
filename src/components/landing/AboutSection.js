@@ -17,7 +17,7 @@ const Wrap = styled.section`
     height: auto;
   }
 `
-const AboutImage = styled(Img)`
+const FujiImage = styled(Img)`
   width: 70%;
   height: 70%;
   float: right;
@@ -28,6 +28,13 @@ const AboutImage = styled(Img)`
     height: 40%;
     float: none;
     margin-top: none;
+  }
+`
+const ProfileImage = styled(Img)`
+  float: right;
+  width: 150px !important;
+  @media (pointer: coarse) {
+    width: 100px !important;
   }
 `
 const About = styled.section`
@@ -73,10 +80,10 @@ const CTA = styled.button`
   }
 `
 
-export default function AboutSection({ fuji }) {
+export default function AboutSection({ fuji, aboutImage }) {
   return (
     <Wrap>
-      <AboutImage fluid={fuji} />
+      <FujiImage fluid={fuji} />
       <About>
         <Title style={{ fontSize: "200%" }}>
           <svg
@@ -111,6 +118,7 @@ export default function AboutSection({ fuji }) {
             marginBottom: "30px",
           }}
         />
+        <ProfileImage fluid={aboutImage} />
         <p>
           <FormattedMessage id="about.1" />
         </p>

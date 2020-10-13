@@ -38,7 +38,10 @@ export default function Main(props) {
       />
       <Toggle language={props.pageContext.intl.language} />
       <FrontSection language={props.pageContext.intl.language} />
-      <AboutSection fuji={props.data.fujiImage.childImageSharp.fluid} />
+      <AboutSection
+        fuji={props.data.fujiImage.childImageSharp.fluid}
+        aboutImage={props.data.aboutImage.childImageSharp.fluid}
+      />
       <SignUp language={props.pageContext.intl.language} />
       <PrintsSection
         prints={props.data.prints.edges}
@@ -65,6 +68,13 @@ export const imageQuery = graphql`
     footImage1: file(relativePath: { eq: "footImage.png" }) {
       childImageSharp {
         fluid(maxWidth: 1800, quality: 80) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    aboutImage: file(relativePath: { eq: "footerImage.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
           ...GatsbyImageSharpFluid_withWebp
         }
       }
