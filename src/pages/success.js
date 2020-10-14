@@ -1,6 +1,5 @@
 import React from "react"
 import styled, { createGlobalStyle } from "styled-components"
-import loadable from "@loadable/component"
 import { FormattedMessage } from "react-intl"
 
 import "../index.css"
@@ -8,8 +7,8 @@ import "../index.css"
 import Navigation from "../components/common/Navigation"
 import Toggle from "../components/common/Toggle"
 import SignUp from "../components/contact/SignUp"
-
-const Contact = loadable(() => import("../components/contact/Contact"))
+import Contact from "../components/contact/Contact"
+import Welcome from "../img/welcome.svg"
 
 const About = styled.section`
   color: black;
@@ -19,6 +18,13 @@ const About = styled.section`
   font-size: 150%;
   text-align: center;
   line-height: 2;
+`
+const Image = styled.img`
+  max-height: 50vh;
+`
+const Container = styled.section`
+  display: flex;
+  justify-content: center;
 `
 
 const GlobalStyle = createGlobalStyle`
@@ -37,12 +43,15 @@ export default function ContactPage(props) {
         link1={"portfolio"}
         link2={"blog"}
       />
+      <SignUp language={props.pageContext.intl.language} />
       <About>
         <FormattedMessage id="store.successMessage" />
         <br />
         <FormattedMessage id="store.contactUs" />
       </About>
-      <SignUp language={props.pageContext.intl.language} />
+      <Container>
+        <Image src={Welcome} />
+      </Container>
       <Contact footImage1={props.data.footImage1.childImageSharp.fluid} />
     </div>
   )

@@ -3,17 +3,27 @@ import MailchimpSubscribe from "react-mailchimp-subscribe"
 import styled from "styled-components"
 import { useIntl } from "react-intl"
 
+import Illustration from "../../img/relax sleep.svg"
+
 const Container = styled.section`
   display: flex;
   align-items: center;
   background-color: #ffcd73d1;
-  padding: 4% 5% 2% 5%;
+  padding: 4% 2% 2% 2%;
   flex-flow: wrap;
   justify-content: center;
 `
 
+const Img = styled.img`
+  width: 20%;
+  @media (pointer: coarse) {
+    height: 200px;
+    width: auto;
+  }
+`
+
 const Title = styled.h2`
-  width: 60%;
+  width: 40%;
   min-width: 300px;
   color: #6f81b3;
   font-weight: 900;
@@ -91,6 +101,7 @@ function CustomForm({ status, message, onValidated, language }) {
 
   return (
     <Container>
+      <Img src={Illustration} />
       <Title>{intl.formatMessage({ id: "signup.title" })}</Title>
       <FormContainer>
         <Form name="signup" method="post" onSubmit={submit}>
