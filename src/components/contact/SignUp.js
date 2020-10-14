@@ -9,7 +9,7 @@ const Container = styled.section`
   display: flex;
   align-items: center;
   background-color: #ffcd73d1;
-  padding: 4% 2% 2% 2%;
+  padding: 2%;
   flex-flow: wrap;
   justify-content: center;
 `
