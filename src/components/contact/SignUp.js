@@ -93,18 +93,18 @@ function CustomForm({ status, message, onValidated, language }) {
 
   const submit = e => {
     e.preventDefault()
-    recaptchaRef.current.execute() &&
-      email &&
+    recaptchaRef.current.execute()
+  }
+  const onChange = value => {
+    console.log("Captcha value:", value)
+    console.log("yay")
+    email &&
       email.indexOf("@") > -1 &&
       onValidated({
         EMAIL: email,
         NAME: name,
         LANGUAGE: language,
       })
-  }
-  const onChange = value => {
-    console.log("Captcha value:", value)
-    console.log("yay")
   }
 
   return (
