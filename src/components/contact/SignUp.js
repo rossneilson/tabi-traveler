@@ -93,8 +93,8 @@ function CustomForm({ status, message, onValidated, language }) {
 
   const submit = e => {
     e.preventDefault()
-    recaptchaRef.current.execute()
-    email &&
+    recaptchaRef.current.execute() &&
+      email &&
       email.indexOf("@") > -1 &&
       onValidated({
         EMAIL: email,
