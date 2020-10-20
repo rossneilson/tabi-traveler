@@ -86,6 +86,10 @@ const StyledButton = styled.button`
   }
 `
 
+const StyledCaptcha = styled(ReCAPTCHA)`
+  display: none;
+`
+
 function CustomForm({ status, message, onValidated, language }) {
   const intl = useIntl()
   const [name, setName] = useState("")
@@ -113,12 +117,6 @@ function CustomForm({ status, message, onValidated, language }) {
       <Title>{intl.formatMessage({ id: "signup.title" })}</Title>
       <FormContainer>
         <Form name="signup" method="post" onSubmit={submit}>
-          <ReCAPTCHA
-            ref={recaptchaRef}
-            size="invisible"
-            sitekey="6LcMidkZAAAAAD44pvU5sAEDBs25vi2tTTy-92_p"
-            onChange={onChange}
-          />
           <div
             style={{ position: "absolute", left: "-5000px" }}
             aria-hidden="true"
@@ -141,6 +139,13 @@ function CustomForm({ status, message, onValidated, language }) {
             name="email"
             placeholder={intl.formatMessage({ id: "contact.email" })}
             onChange={e => setEmail(e.target.value)}
+          />
+          <StyledCaptcha
+            ref={recaptchaRef}
+            size="invisible"
+            sitekey="6LcMidkZAAAAAD44pvU5sAEDBs25vi2tTTy-92_p"
+            onChange={onChange}
+            badge={"inline"}
           />
           <StyledButton onClick={submit}>
             {intl.formatMessage({ id: "signup.subscribe" })}
