@@ -2,8 +2,11 @@ import React, { useState } from "react"
 import MailchimpSubscribe from "react-mailchimp-subscribe"
 import styled from "styled-components"
 import { useIntl } from "react-intl"
+import ReCAPTCHA from "react-google-recaptcha"
 
 import Illustration from "../../img/relax sleep.svg"
+
+const recaptchaRef = React.createRef()
 
 const Container = styled.section`
   display: flex;
@@ -90,6 +93,7 @@ function CustomForm({ status, message, onValidated, language }) {
 
   const submit = e => {
     e.preventDefault()
+    recaptchaRef.current.execute()
     email &&
       email.indexOf("@") > -1 &&
       onValidated({
@@ -98,6 +102,9 @@ function CustomForm({ status, message, onValidated, language }) {
         LANGUAGE: language,
       })
   }
+  const onChange = value => {
+    console.log("Captcha value:", value)
+  }
 
   return (
     <Container>
@@ -105,6 +112,12 @@ function CustomForm({ status, message, onValidated, language }) {
       <Title>{intl.formatMessage({ id: "signup.title" })}</Title>
       <FormContainer>
         <Form name="signup" method="post" onSubmit={submit}>
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            size="invisible"
+            sitekey="6LcMidkZAAAAAD44pvU5sAEDBs25vi2tTTy-92_p"
+            onChange={onChange}
+          />
           <div
             style={{ position: "absolute", left: "-5000px" }}
             aria-hidden="true"
