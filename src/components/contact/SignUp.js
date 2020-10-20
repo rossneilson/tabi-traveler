@@ -104,6 +104,7 @@ function CustomForm({ status, message, onValidated, language }) {
   }
   const onChange = value => {
     console.log("Captcha value:", value)
+    console.log("yay")
   }
 
   return (
