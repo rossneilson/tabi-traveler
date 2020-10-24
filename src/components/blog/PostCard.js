@@ -2,11 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
-import loadable from "@loadable/component"
 
 import { urlLocaleFormatting } from "../../utils/formatters"
-
-const Fab = loadable(() => import("@material-ui/core/Fab"))
 
 const Wrapper = styled(Link)`
   width: 100%;

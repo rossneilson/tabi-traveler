@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-import loadable from "@loadable/component"
 import { createGlobalStyle } from "styled-components"
 
 import "../index.css"
@@ -14,7 +13,7 @@ import AboutSection from "../components/landing/AboutSection"
 import BlogSection from "../components/landing/BlogSection"
 import PrintsSection from "../components/landing/PrintsSection"
 import SignUp from "../components/contact/SignUp"
-const Contact = loadable(() => import("../components/contact/Contact"))
+import Contact from "../components/contact/Contact"
 
 const GlobalStyle = createGlobalStyle`
   body {

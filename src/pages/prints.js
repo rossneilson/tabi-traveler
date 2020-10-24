@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
 import styled, { createGlobalStyle } from "styled-components"
-import loadable from "@loadable/component"
 // import Anime, { anime } from "react-anime"
 
 import "../index.css"
@@ -12,8 +11,7 @@ import Navigation from "../components/common/Navigation"
 import PrintsGrid from "../components/store/PrintsGrid"
 import Toggle from "../components/common/Toggle"
 import SignUp from "../components/contact/SignUp"
-
-const Contact = loadable(() => import("../components/contact/Contact"))
+import Contact from "../components/contact/Contact"
 
 const Intro = styled.section`
   font-size: medium;

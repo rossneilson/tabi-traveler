@@ -6,7 +6,7 @@ import loadable from "@loadable/component"
 
 import Illustration from "../../img/relax sleep.svg"
 
-const ReCAPTCHA = loadable(() => import("react-google-recaptcha"))
+var ReCAPTCHA = null
 
 const recaptchaRef = React.createRef()
 
@@ -88,10 +88,6 @@ const StyledButton = styled.button`
   }
 `
 
-const StyledCaptcha = styled(ReCAPTCHA)`
-  display: none;
-`
-
 function CustomForm({ status, message, onValidated, language }) {
   const intl = useIntl()
   const [name, setName] = useState("")
@@ -122,7 +118,10 @@ function CustomForm({ status, message, onValidated, language }) {
             id="name"
             name="name"
             placeholder={intl.formatMessage({ id: "contact.name" })}
-            onChange={e => setName(e.target.value)}
+            onChange={e => {
+              ReCAPTCHA = loadable(() => import("react-google-recaptcha"))
+              setName(e.target.value)
+            }}
           />
           <StyledInput
             id="email"
@@ -130,13 +129,18 @@ function CustomForm({ status, message, onValidated, language }) {
             placeholder={intl.formatMessage({ id: "contact.email" })}
             onChange={e => setEmail(e.target.value)}
           />
-          <StyledCaptcha
-            ref={recaptchaRef}
-            size="invisible"
-            sitekey="6LcMidkZAAAAAD44pvU5sAEDBs25vi2tTTy-92_p"
-            onChange={onChange}
-            badge={"inline"}
-          />
+          {ReCAPTCHA ? (
+            <ReCAPTCHA
+              ref={recaptchaRef}
+              size="invisible"
+              sitekey="6LcMidkZAAAAAD44pvU5sAEDBs25vi2tTTy-92_p"
+              onChange={onChange}
+              badge={"inline"}
+              style={{ display: "none" }}
+            />
+          ) : (
+            <h1>null</h1>
+          )}
           <StyledButton onClick={submit}>
             {intl.formatMessage({ id: "signup.subscribe" })}
           </StyledButton>
