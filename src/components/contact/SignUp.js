@@ -7,6 +7,7 @@ import loadable from "@loadable/component"
 import Illustration from "../../img/relax sleep.svg"
 
 var ReCAPTCHA = null
+var StyledCaptcha = null
 
 const recaptchaRef = React.createRef()
 
@@ -120,6 +121,9 @@ function CustomForm({ status, message, onValidated, language }) {
             placeholder={intl.formatMessage({ id: "contact.name" })}
             onChange={e => {
               ReCAPTCHA = loadable(() => import("react-google-recaptcha"))
+              StyledCaptcha = styled(ReCAPTCHA)`
+                display: none;
+              `
               setName(e.target.value)
             }}
           />
@@ -130,16 +134,15 @@ function CustomForm({ status, message, onValidated, language }) {
             onChange={e => setEmail(e.target.value)}
           />
           {ReCAPTCHA ? (
-            <ReCAPTCHA
+            <StyledCaptcha
               ref={recaptchaRef}
               size="invisible"
               sitekey="6LcMidkZAAAAAD44pvU5sAEDBs25vi2tTTy-92_p"
               onChange={onChange}
               badge={"inline"}
-              style={{ display: "none" }}
             />
           ) : (
-            <h1>null</h1>
+            <div style={{ display: "none" }} />
           )}
           <StyledButton onClick={submit}>
             {intl.formatMessage({ id: "signup.subscribe" })}
