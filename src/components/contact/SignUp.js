@@ -70,7 +70,7 @@ const StyledInput = styled.input`
 
 const StyledButton = styled.button`
   transition: 0.2s;
-  background-color: #6f81b3;
+  background-color: #425faf;
   color: white;
   height: 40px;
   justify-content: space-around;
@@ -111,28 +111,33 @@ function CustomForm({ status, message, onValidated, language }) {
 
   return (
     <Container>
-      <Img src={Illustration} />
+      <Img src={Illustration} alt={"newsletter illustration"} />
       <Title>{intl.formatMessage({ id: "signup.title" })}</Title>
       <FormContainer>
         <Form name="signup" method="post" onSubmit={submit}>
-          <StyledInput
-            id="name"
-            name="name"
-            placeholder={intl.formatMessage({ id: "contact.name" })}
-            onChange={e => {
-              ReCAPTCHA = loadable(() => import("react-google-recaptcha"))
-              StyledCaptcha = styled(ReCAPTCHA)`
-                display: none;
-              `
-              setName(e.target.value)
-            }}
-          />
-          <StyledInput
-            id="email"
-            name="email"
-            placeholder={intl.formatMessage({ id: "contact.email" })}
-            onChange={e => setEmail(e.target.value)}
-          />
+          <label>
+            <StyledInput
+              id="name"
+              name="name"
+              placeholder={intl.formatMessage({ id: "contact.name" })}
+              onChange={e => {
+                ReCAPTCHA = loadable(() => import("react-google-recaptcha"))
+                StyledCaptcha = styled(ReCAPTCHA)`
+                  display: none;
+                `
+                setName(e.target.value)
+              }}
+            />
+          </label>
+
+          <label>
+            <StyledInput
+              id="email"
+              name="email"
+              placeholder={intl.formatMessage({ id: "contact.email" })}
+              onChange={e => setEmail(e.target.value)}
+            />
+          </label>
           {ReCAPTCHA ? (
             <StyledCaptcha
               ref={recaptchaRef}
