@@ -80,6 +80,7 @@ export default function Blog(props) {
           setTab(newValue)
         }}
         current={tab}
+        scrollable={false}
       />
       <BlogGrid posts={filteredPosts} />
       <SignUp language={props.pageContext.intl.language} />

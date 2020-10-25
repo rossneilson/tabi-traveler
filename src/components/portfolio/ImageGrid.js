@@ -13,6 +13,7 @@ const GridWrap = styled.section`
   grid-auto-flow: dense;
   margin-left: ${props => (props.drawerOpen ? "30%" : "0%")};
   @media (pointer: coarse) {
+    margin-left: ${props => (props.drawerOpen ? "50%" : "0%")};
     grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
     grid-auto-rows: auto;
   }
