@@ -14,6 +14,9 @@ const BarHorizontal = styled.section`
   margin-top: 15px;
   position: relative;
   z-index: 9999;
+  @media (pointer: coarse) {
+    margin-bottom: 15px;
+  }
 `
 const BarVertical = styled.section`
   display: flex;

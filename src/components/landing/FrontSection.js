@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
-import { createUseStyles } from "react-jss"
 import { FormattedMessage } from "react-intl"
 import { Link } from "gatsby"
 
@@ -21,40 +20,28 @@ if (typeof window !== "undefined") {
   isSafari = true
 }
 
-const useStyles = createUseStyles({
-  frame: {
-    width: "auto",
-    background:
-      "url(" +
-      (isSafari
-        ? require("../../img/frame.png")
-        : require("../../img/frame.webp")) +
-      ") bottom left",
-    backgroundRepeat: "no-repeat",
-    textAlign: "right",
-    minHeight: "100vh",
-    height: "auto",
-    webkitBackgroundSize: "cover",
-    mozBackgroundSize: "cover",
-    oBackgroundSize: "cover",
-    backgroundSize: "cover",
-    position: "relative",
-    zIndex: 999,
-  },
-  main: {
-    width: "100%",
-    background: "url(" + main + ") bottom left",
-    backgroundRepeat: "no-repeat",
-    textAlign: "right",
-    minHeight: "100vh",
-    height: "auto",
-    webkitBackgroundSize: "cover",
-    mozBackgroundSize: "cover",
-    oBackgroundSize: "cover",
-    backgroundSize: "cover",
-    position: "relative",
-  },
-})
+const Main = styled.div`
+  width: 100%;
+  background: ${props => "url(" + props.main + ") bottom left"};
+  background-repeat: no-repeat;
+  text-align: right;
+  min-height: 100vh;
+  height: auto;
+  background-size: cover;
+  position: relative;
+`
+
+const Frame = styled.div`
+  width: auto;
+  background: ${props => "url(" + props.frame + ") bottom left"};
+  background-repeat: no-repeat;
+  text-align: right;
+  min-height: 100vh;
+  height: auto;
+  background-size: cover;
+  position: relative;
+  z-index: 999;
+`
 
 const Navigation = styled.section`
   width: 19%;
@@ -123,7 +110,6 @@ const PageButton = styled(Link)`
 `
 
 export default function FrontSection({ language }) {
-  const classes = useStyles()
   const [offset, setOffset] = useState(0)
 
   const listener = e => {
@@ -141,12 +127,14 @@ export default function FrontSection({ language }) {
 
   return (
     <div style={{ height: "100vh" }}>
-      <div
-        className={classes.main}
-        offset={offset / 1.6}
-        style={{ backgroundPositionY: offset / 1.6 }}
-      >
-        <div className={classes.frame}>
+      <Main main={main} style={{ backgroundPositionY: offset / 1.6 }}>
+        <Frame
+          frame={
+            isSafari
+              ? require("../../img/frame.png")
+              : require("../../img/frame.webp")
+          }
+        >
           <Navigation>
             <Title>
               <FormattedMessage id="main.title" />
@@ -169,8 +157,8 @@ export default function FrontSection({ language }) {
               <FormattedMessage id="main.contact" />
             </PageButton>
           </Navigation>
-        </div>
-      </div>
+        </Frame>
+      </Main>
     </div>
   )
 }

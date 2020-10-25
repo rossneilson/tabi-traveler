@@ -1,10 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import loadable from "@loadable/component"
 
-const CircularProgress = loadable(() =>
-  import("@material-ui/core/CircularProgress")
-)
+import Anime, { anime } from "react-anime"
 
 const StyledButton = styled.button`
   background-color: ${props => props.primaryColour};
@@ -23,12 +20,39 @@ const StyledButton = styled.button`
   &:hover {
     background-color: ${props =>
       props.disabled ? props.primaryColour : props.secondaryColour};
-  
+  }
   &:focus {
     background-color: ${props =>
       props.disabled ? props.primaryColour : props.secondaryColour};
   }
 `
+
+const StyledBox = styled.section`
+  position: relative;
+  width: 6px;
+  height: 6px;
+  margin: 1px;
+  display: inline-block;
+  background-color: white;
+`
+
+const animeProperties = {
+  translateY: [
+    { value: 20, duration: 500 },
+    { value: 0, duration: 800 },
+  ],
+  rotate: {
+    value: "1turn",
+  },
+  borderRadius: 50,
+  direction: "alternate",
+  easing: "easeInOutQuad",
+  delay: () => {
+    return anime.random(0, 1000)
+  },
+  loop: true,
+  elasticity: 200,
+}
 
 export default function Button({
   handleClick,
@@ -53,7 +77,16 @@ export default function Button({
     >
       <div style={{ display: "flex", justifyContent: "center" }}>
         {text}
-        {clicked && loader ? <CircularProgress color="secondary" /> : icon}
+        {clicked && loader ? (
+          <Anime {...animeProperties}>
+            <StyledBox />
+            <StyledBox />
+            <StyledBox />
+            <StyledBox />
+          </Anime>
+        ) : (
+          icon
+        )}
       </div>
     </StyledButton>
   )

@@ -47,7 +47,7 @@ const Title = styled.h1`
 
 const ContentWrapper = styled.section`
   display: flex;
-  margin: 0% 10% 5% 10%;
+  margin: 0% 5% 5% 5%;
   flex-direction: row;
   @media (pointer: coarse) {
     flex-direction: column;

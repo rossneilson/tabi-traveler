@@ -115,7 +115,7 @@ function CustomForm({ status, message, onValidated, language }) {
       <Title>{intl.formatMessage({ id: "signup.title" })}</Title>
       <FormContainer>
         <Form name="signup" method="post" onSubmit={submit}>
-          <label>
+          <label for={"name"}>
             <StyledInput
               id="name"
               name="name"
@@ -130,7 +130,7 @@ function CustomForm({ status, message, onValidated, language }) {
             />
           </label>
 
-          <label>
+          <label for={"email"}>
             <StyledInput
               id="email"
               name="email"

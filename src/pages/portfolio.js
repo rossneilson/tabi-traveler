@@ -26,6 +26,10 @@ const BurgerIcon = styled.section`
   }
 `
 
+const Wrapper = styled.section`
+  display: flex;
+`
+
 export default function Portfolio(props) {
   const [filter, setFilter] = useState("best")
   const [selectedImage, setSelectedImage] = useState(null)
@@ -74,21 +78,23 @@ export default function Portfolio(props) {
         link2={"blog"}
         language={props.pageContext.intl.language}
       />
-      <FilterDrawer
-        open={drawerOpen}
-        setOpen={setDrawerOpen}
-        filter={filter}
-        setFilter={setFilter}
-        language={props.pageContext.intl.language}
-      />
-      <Grid
-        drawerOpen={drawerOpen}
-        filter={filter}
-        images={props.data.images.edges}
-        setSelectedImage={setSelectedImage}
-        filteredImages={filteredImages}
-        setFilteredImages={setFilteredImages}
-      />
+      <Wrapper>
+        <FilterDrawer
+          open={drawerOpen}
+          setOpen={setDrawerOpen}
+          filter={filter}
+          setFilter={setFilter}
+          language={props.pageContext.intl.language}
+        />
+        <Grid
+          drawerOpen={drawerOpen}
+          filter={filter}
+          images={props.data.images.edges}
+          setSelectedImage={setSelectedImage}
+          filteredImages={filteredImages}
+          setFilteredImages={setFilteredImages}
+        />
+      </Wrapper>
       <ImageView
         filteredImages={filteredImages}
         selectedImage={selectedImage}
