@@ -30,7 +30,6 @@ const createListOfCategories = posts => {
 }
 
 const setFilteredPosts = (tab, posts, categories) => {
-  console.log(tab)
   var filteredPosts = []
   if (tab === 0) {
     filteredPosts = posts
