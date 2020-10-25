@@ -139,12 +139,5 @@ module.exports = {
     `gatsby-plugin-nprogress`,
     "gatsby-plugin-loadable-components-ssr",
     `gatsby-plugin-sitemap`,
-    {
-      resolve: "gatsby-plugin-webpack-bundle-analyzer",
-      options: {
-        analyzerPort: 3000,
-        production: true,
-      },
-    },
   ],
 }

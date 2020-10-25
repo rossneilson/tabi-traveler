@@ -38,7 +38,6 @@
     "gatsby-plugin-sitemap": "^2.4.11",
     "gatsby-plugin-styled-components": "^3.3.2",
     "gatsby-plugin-typography": "^2.5.0",
-    "gatsby-plugin-webpack-bundle-analyzer": "^1.0.5",
     "gatsby-remark-images": "^3.3.13",
     "gatsby-remark-relative-images": "^0.3.0",
     "gatsby-source-filesystem": "^2.3.0",
@@ -67,8 +66,7 @@
   },
   "resolutions": {
     "@formatjs/intl-pluralrules": "3.3.1",
-    "@formatjs/intl-relativetimeformat": "7.1.1",
-    "react-intl": "4.7.6"
+    "@formatjs/intl-relativetimeformat": "7.1.1"
   },
   "repository": {
     "type": "git",
