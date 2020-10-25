@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 import { createGlobalStyle } from "styled-components"
 
 import "../index.css"
