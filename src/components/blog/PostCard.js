@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
-import { Link } from "gatsby"
+import { Link } from "gatsby-plugin-intl"
 
 import { urlLocaleFormatting } from "../../utils/formatters"
 
@@ -104,7 +104,7 @@ export default function PostCard({ post, index, isfullpage }) {
   return (
     <Wrapper
       isfullpage={isfullpage}
-      to={urlLocaleFormatting(frontmatter.locale, "../../" + frontmatter.path)}
+      to={urlLocaleFormatting(frontmatter.locale, "/" + frontmatter.path)}
       onClick={() => {
         window.scrollTo(0, 0)
       }}

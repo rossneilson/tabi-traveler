@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
+import { Link } from "gatsby-plugin-intl"
 
 import PostCard from "../blog/PostCard"
 import { urlLocaleFormatting } from "../../utils/formatters"

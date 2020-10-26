@@ -20,7 +20,6 @@ const GlobalStyle = createGlobalStyle`
     background: linear-gradient(0deg, rgba(203,213,225,1) 0%, rgba(203,213,225,1) 37%, rgba(255,255,255,1) 70%);
   }
 `
-
 export default function Main(props) {
   return (
     <div>

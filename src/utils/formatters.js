@@ -25,5 +25,5 @@ export function lineToParagraph(...nodes) {
 }
 
 export function urlLocaleFormatting(language, toUrl) {
-  return language === "en" ? toUrl : language + toUrl
+  return toUrl
 }

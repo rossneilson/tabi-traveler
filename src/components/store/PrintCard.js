@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
-import { Link } from "gatsby"
+import { Link } from "gatsby-plugin-intl"
 
 import { urlLocaleFormatting } from "../../utils/formatters"
 
@@ -54,7 +54,7 @@ export default function PrintCard({ print, index }) {
 
   return (
     <Wrapper
-      to={urlLocaleFormatting(frontmatter.locale, "../../" + frontmatter.path)}
+      to={urlLocaleFormatting(frontmatter.locale, "/" + frontmatter.path)}
       onClick={() => {
         window.scrollTo(0, 0)
       }}
