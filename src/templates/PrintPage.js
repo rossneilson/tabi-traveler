@@ -59,12 +59,14 @@ const ImageSection = styled.section`
   min-width: 50%;
 `
 
-const Markdown = styled.h4`
+const Markdown = styled.p`
   line-height: 1.7;
   margin-left: 10%;
   margin-right: 10%;
+  font-size: 1rem;
+  line-height: 2;
 `
-const FormattedDate = styled.h4`
+const FormattedDate = styled.p`
   margin-left: 10%;
   margin-bottom: 10%;
 `

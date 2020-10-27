@@ -80,7 +80,7 @@ const Image = styled(Img)`
 const StyledButton = styled.button`
   transition: 0.2s;
   background-color: #f79a60;
-  color: white;
+  color: #01658;
   height: 40px;
   justify-content: space-around;
   font-size: large;
@@ -208,6 +208,7 @@ export default function Contact(props) {
           <Link
             target="_blank"
             rel="noopener"
+            aria-label="Instagram"
             href="https://www.instagram.com/tabitraveler/"
           >
             <svg
@@ -232,6 +233,7 @@ export default function Contact(props) {
           <Link
             target="_blank"
             rel="noopener"
+            aria-label="Email"
             href="mailto:ross@tabitraveler.com"
           >
             <svg

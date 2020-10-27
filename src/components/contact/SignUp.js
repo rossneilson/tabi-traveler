@@ -31,7 +31,7 @@ const Img = styled.img`
 const Title = styled.h2`
   width: 40%;
   min-width: 300px;
-  color: #6f81b3;
+  color: #687aad;
   font-weight: 900;
   @media (pointer: coarse) {
     text-align: center;
@@ -64,7 +64,7 @@ const StyledInput = styled.input`
   border-color: #000 #000 #6f81b3;
   border-radius: 10px;
   background-color: #fff;
-  color: #ff6200;
+  color: black;
   margin: 10px;
 `
 
@@ -115,10 +115,11 @@ function CustomForm({ status, message, onValidated, language }) {
       <Title>{intl.formatMessage({ id: "signup.title" })}</Title>
       <FormContainer>
         <Form name="signup" method="post" onSubmit={submit}>
-          <label for={"name"}>
+          <label>
             <StyledInput
-              id="name"
+              id="fullName"
               name="name"
+              aria-label="name input"
               placeholder={intl.formatMessage({ id: "contact.name" })}
               onChange={e => {
                 ReCAPTCHA = loadable(() => import("react-google-recaptcha"))
@@ -130,10 +131,11 @@ function CustomForm({ status, message, onValidated, language }) {
             />
           </label>
 
-          <label for={"email"}>
+          <label>
             <StyledInput
-              id="email"
+              id="emailAddress"
               name="email"
+              aria-label="email input"
               placeholder={intl.formatMessage({ id: "contact.email" })}
               onChange={e => setEmail(e.target.value)}
             />

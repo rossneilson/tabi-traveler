@@ -50,7 +50,7 @@ const Image = styled(Img)`
   }
 `
 
-const Category = styled.h6`
+const Category = styled.p`
   background-color: #ffffffb0;
   padding: 4px;
   justify-content: center;
@@ -60,6 +60,8 @@ const Category = styled.h6`
   color: black;
   position: absolute;
   margin: 10px;
+  font-size: 0.75966rem;
+  line-height: 1.1;
 `
 
 const Description = styled.section`

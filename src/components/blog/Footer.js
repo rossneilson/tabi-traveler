@@ -38,7 +38,7 @@ const Image = styled(Img)`
 `
 const CTA = styled(Link)`
   text-align: center;
-  color: white !important;
+  color: black !important;
   padding: 12px;
   background: #f79a60;
   border-radius: 5px;

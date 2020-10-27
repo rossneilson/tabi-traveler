@@ -62,7 +62,7 @@ const Navigation = styled.section`
     width: 35%;
   }
   @media (min-height: 600px) {
-    width: 36%;
+    width: 38%;
   }
   @media (min-height: 700px) {
     width: 38%;
@@ -89,7 +89,7 @@ const Title = styled.h1`
   }
 `
 
-const Desc = styled.h3`
+const Desc = styled.h2`
   font-size: 130%;
   color: #8698da;
   @media ${device.mobileS} {

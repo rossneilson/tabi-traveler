@@ -91,10 +91,11 @@ const Location = styled.h2`
   }
 `
 
-const FormattedDate = styled.h4`
+const FormattedDate = styled.h3`
   color: white;
   margin-left: 25%;
   margin-right: 25%;
+  font-size: 1rem;
   @media (pointer: coarse) {
     margin-left: 10%;
     margin-right: 10%;
