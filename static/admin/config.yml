@@ -82,8 +82,8 @@ collections:
         label: "en"
         name: "en"
         fields:
-          - label: 'main'
-            name: 'main'
+          - label: 'title'
+            name: 'title'
             widget: 'object'
             fields:
                 - { label: 'tab', name: 'tab', widget: 'string' }
@@ -115,7 +115,7 @@ collections:
             fields:
                 - { label: 'back', name: 'back', widget: 'string' }
                 - { label: 'authorDesc', name: 'authorDesc', widget: 'string' }
-                - { label: 'cat', name: 'cta', widget: 'string' }
+                - { label: 'cta', name: 'cta', widget: 'string' }
           - label: 'store'
             name: 'store'
             widget: 'object'
@@ -147,8 +147,8 @@ collections:
         label: "jp"
         name: "jp"
         fields:
-          - label: 'main'
-            name: 'main'
+          - label: 'title'
+            name: 'title'
             widget: 'object'
             fields:
                 - { label: 'tab', name: 'tab', widget: 'string' }
