@@ -86,7 +86,7 @@ collections:
             name: 'title'
             widget: 'object'
             fields:
-                - { label: 'tab', name: 'Tab', widget: 'string' }
+                - { label: 'tab', name: 'tab', widget: 'string' }
       - file: "src/intl/jp.json"
         label: "jp"
         name: "jp"
