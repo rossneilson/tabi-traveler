@@ -6,7 +6,6 @@ import { navigate } from "@reach/router"
 import { FormattedMessage } from "gatsby-plugin-intl"
 
 import "../index.css"
-import "fontsource-source-sans-pro/300.css"
 
 import Navigation from "../components/common/Navigation"
 import Footer from "../components/blog/Footer"
@@ -218,7 +217,7 @@ export const query = graphql`
         image {
           childImageSharp {
             fluid(maxWidth: 3000) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
@@ -227,7 +226,7 @@ export const query = graphql`
     image: file(relativePath: { eq: "footerImage.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

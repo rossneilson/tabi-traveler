@@ -19,6 +19,9 @@ if (typeof window !== "undefined") {
 } else {
   isSafari = true
 }
+const frameImage = isSafari
+  ? require("../../img/frame.png")
+  : require("../../img/frame.webp")
 
 const Main = styled.div`
   width: 100%;
@@ -33,7 +36,7 @@ const Main = styled.div`
 
 const Frame = styled.div`
   width: auto;
-  background: ${props => "url(" + props.frame + ") bottom left"};
+  background: ${props => "url(" + frameImage + ") bottom left"};
   background-repeat: no-repeat;
   text-align: right;
   min-height: 100vh;
@@ -128,13 +131,7 @@ export default function FrontSection({ language }) {
   return (
     <div style={{ height: "100vh" }}>
       <Main main={main} style={{ backgroundPositionY: offset / 1.6 }}>
-        <Frame
-          frame={
-            isSafari
-              ? require("../../img/frame.png")
-              : require("../../img/frame.webp")
-          }
-        >
+        <Frame>
           <Navigation>
             <Title>
               <FormattedMessage id="main.title" />
