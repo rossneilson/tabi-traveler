@@ -82,7 +82,11 @@ collections:
         label: "en"
         name: "en"
         fields:
-          - { name: body, label: Body, widget: code }
+          - label: 'Title'
+            name: 'title'
+            widget: 'object'
+            fields:
+                - { label: 'tab', name: 'Tab', widget: 'string' }
       - file: "src/intl/jp.json"
         label: "jp"
         name: "jp"
