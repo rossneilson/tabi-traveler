@@ -1,6 +1,7 @@
 {
   "title": {
-    "tab": "Tabi Traveler"
+    "tab": "Tabi Traveler",
+    "Tab": "test"
   },
   "main": {
     "title": "Tabi Traveler",
@@ -12,12 +13,12 @@
     "contact": "Contact"
   },
   "about": {
-    "title": "About us",
     "1": "We are a young couple from Scotland and Japan and due to being so far apart we need to travel, a lot",
     "2": "... and we have fallen in love with it. We both had a passion for photography beforehand.",
     "3": "But now being able to travel has allowed us to explore new places and culture's through our photography.",
     "4": "And this is something that we would love to share with everyone.",
     "5": "We are also available for freelance photography work for small businesses",
+    "title": "About us",
     "contact": "Contact us"
   },
   "blog": {
