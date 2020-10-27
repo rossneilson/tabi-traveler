@@ -71,3 +71,9 @@ collections:
       - {label: "Type", name: "type", widget: "string"}
       - {label: "Locale", name: "locale", widget: "select", options: ["en", "jp"]}
       - {label: "Content", name: "body", widget: "markdown"}
+  - name: "en"
+    label: "en"
+    folder: "src/intl"
+    extension: "json"
+    format: "json"
+    create: false 
