@@ -96,7 +96,7 @@ const Desc = styled.h3`
 const PageButton = styled(Link)`
   padding: 20px;
   color: #acb8e4;
-  font-size: 120%;
+  font-size: 130%;
   text-align: right;
   transition: 1s;
   background-image: none;

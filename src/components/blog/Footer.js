@@ -61,7 +61,7 @@ const CTA = styled(Link)`
 export default function Footer(props) {
   return (
     <Wrapper>
-      <Image fluid={props.image} />
+      <Image loading="eager" fluid={props.image} />
       <Description>
         <h3>
           <FormattedMessage id="main.names" />

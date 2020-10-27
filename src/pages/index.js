@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 import { createGlobalStyle } from "styled-components"
 
 import "../index.css"
-import "typeface-noto-sans"
 
 import SEO from "../components/common/Seo"
 import Toggle from "../components/common/Toggle"
@@ -59,21 +58,21 @@ export const imageQuery = graphql`
     fujiImage: file(relativePath: { eq: "fuji.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1800, quality: 80) {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
     footImage1: file(relativePath: { eq: "footImage.png" }) {
       childImageSharp {
         fluid(maxWidth: 1800, quality: 80) {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
     aboutImage: file(relativePath: { eq: "footerImage.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }
@@ -98,7 +97,7 @@ export const imageQuery = graphql`
             image {
               childImageSharp {
                 fluid(maxWidth: 3000) {
-                  ...GatsbyImageSharpFluid_withWebp
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
                 }
               }
             }
@@ -131,7 +130,7 @@ export const imageQuery = graphql`
             mainImage {
               childImageSharp {
                 fluid(maxHeight: 500) {
-                  ...GatsbyImageSharpFluid_withWebp
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
                 }
               }
             }

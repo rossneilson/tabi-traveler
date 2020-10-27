@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 import styled from "styled-components"
 
 import "../index.css"
-import "typeface-noto-sans"
 
 import SEO from "../components/common/Seo"
 

@@ -50,7 +50,7 @@ const Home = styled(Link)`
 const PageButton = styled(Link)`
   padding: 1% 3% 3% 3%;
   color: ${props => (props.colour ? props.colour : "#506acc")};
-  font-size: 120%;
+  font-size: 130%;
   transition: 1s;
   background-image: none;
   text-shadow: none;
