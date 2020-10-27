@@ -85,7 +85,7 @@ const CTA = styled.button`
 export default function AboutSection({ fuji, aboutImage }) {
   return (
     <Wrap>
-      <FujiImage fluid={fuji} />
+      <FujiImage loading="eager" fluid={fuji} />
       <About>
         <Title style={{ fontSize: "200%" }}>
           <svg
@@ -120,7 +120,7 @@ export default function AboutSection({ fuji, aboutImage }) {
             marginBottom: "30px",
           }}
         />
-        <ProfileImage fluid={aboutImage} />
+        <ProfileImage draggable={false} loading="eager" fluid={aboutImage} />
         <p>
           <FormattedMessage id="about.1" />
         </p>

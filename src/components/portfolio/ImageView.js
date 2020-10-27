@@ -144,6 +144,7 @@ export default function ImageView({
           </Back>
           <Image
             imgStyle={{ objectFit: "scale-down" }}
+            loading="eager"
             fluid={
               filteredImages[selectedImage].node.frontmatter.image
                 .childImageSharp.fluid

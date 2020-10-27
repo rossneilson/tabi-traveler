@@ -140,7 +140,7 @@ export default function Contact(props) {
 
   return (
     <Wrapper>
-      <Image fluid={props.footImage1} />
+      <Image loading="eager" fluid={props.footImage1} />
       <ContactCard>
         <Title>{intl.formatMessage({ id: "contact.title" })}</Title>
         <form name="contact" netlify-honeypot="bot-field" hidden>

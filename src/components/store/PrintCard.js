@@ -59,7 +59,10 @@ export default function PrintCard({ print, index }) {
         window.scrollTo(0, 0)
       }}
     >
-      <Image fluid={frontmatter.mainImage.childImageSharp.fluid} />
+      <Image
+        loading="eager"
+        fluid={frontmatter.mainImage.childImageSharp.fluid}
+      />
       <Description>
         <Title>{frontmatter.title}</Title>From £{min / 100}
       </Description>

@@ -4,6 +4,6 @@ import "fontsource-source-sans-pro"
 
 theme.overrideThemeStyles = () => ({})
 
-const typography = new Typography(theme, { googleFonts: [{}] })
+const typography = new Typography(theme)
 
 export default typography

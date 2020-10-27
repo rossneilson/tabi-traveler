@@ -19,6 +19,7 @@ if (typeof window !== "undefined") {
 } else {
   isSafari = true
 }
+console.log(isSafari)
 const frameImage = isSafari
   ? require("../../img/frame.png")
   : require("../../img/frame.webp")

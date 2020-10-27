@@ -85,6 +85,7 @@ export default function Grid({
         landscape={value.node.frontmatter.landscape}
       >
         <ThumbnailImage
+          loading="eager"
           fluid={value.node.frontmatter.image.childImageSharp.fluid}
         />
       </Thumbnail>

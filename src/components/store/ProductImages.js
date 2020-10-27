@@ -48,6 +48,7 @@ export default function ProductImages({ images }) {
         >
           <SmallImage
             key={index}
+            loading="eager"
             fluid={image.childImageSharp.fluid}
             onClick={() => {
               setSelectedImage(images[index])
@@ -61,6 +62,7 @@ export default function ProductImages({ images }) {
   return (
     <Wrapper>
       <MainImage
+        loading="eager"
         fluid={selectedImage.childImageSharp.fluid}
         imgStyle={{ objectFit: "contain" }}
       />

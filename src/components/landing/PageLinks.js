@@ -59,7 +59,7 @@ export default function PageLinks({ image1, image2, image3, language }) {
     <FlexWrap>
       <StyledLink to={urlLocaleFormatting(language, "/portfolio")}>
         <Card>
-          <Image fluid={image1} />
+          <Image loading="eager" fluid={image1} />
           <Content style={{ position: "absolute" }}>
             <FormattedMessage id="main.portfolio" />
           </Content>
@@ -67,7 +67,7 @@ export default function PageLinks({ image1, image2, image3, language }) {
       </StyledLink>
       <StyledLink to={urlLocaleFormatting(language, "/blog")}>
         <Card>
-          <Image fluid={image2} />
+          <Image loading="eager" fluid={image2} />
           <Content style={{ position: "absolute" }}>
             <FormattedMessage id="main.blog" />
           </Content>
@@ -75,7 +75,7 @@ export default function PageLinks({ image1, image2, image3, language }) {
       </StyledLink>
       <StyledLink to={urlLocaleFormatting(language, "/prints")}>
         <Card>
-          <Image fluid={image3} />
+          <Image loading="eager" fluid={image3} />
           <Content style={{ position: "absolute" }}>
             <FormattedMessage id="main.prints" />
           </Content>
