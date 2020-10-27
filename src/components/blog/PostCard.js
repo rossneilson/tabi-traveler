@@ -40,6 +40,7 @@ const Wrapper = styled(Link)`
 `
 const Title = styled.h2`
   color: #5065a3;
+  margin-bottom: 5px;
 `
 
 const Image = styled(Img)`

@@ -8,7 +8,7 @@ import main from "../../img/mainImage.jpg"
 import { device, deviceMin } from "../../utils/device"
 import { urlLocaleFormatting } from "../../utils/formatters"
 var isSafari
-
+// Loadable?
 if (typeof window !== "undefined") {
   isSafari =
     navigator.vendor &&
