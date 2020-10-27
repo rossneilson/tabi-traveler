@@ -4,29 +4,14 @@ import { FormattedMessage } from "gatsby-plugin-intl"
 import { Link } from "gatsby-plugin-intl"
 
 import main from "../../img/mainImage.jpg"
+import frame from "../../img/frame.png"
 
 import { device, deviceMin } from "../../utils/device"
 import { urlLocaleFormatting } from "../../utils/formatters"
-var isSafari
-// Loadable?
-if (typeof window !== "undefined") {
-  isSafari =
-    navigator.vendor &&
-    navigator.vendor.indexOf("Apple") > -1 &&
-    navigator.userAgent &&
-    navigator.userAgent.indexOf("CriOS") == -1 &&
-    navigator.userAgent.indexOf("FxiOS") == -1
-} else {
-  isSafari = true
-}
-console.log(isSafari)
-const frameImage = isSafari
-  ? require("../../img/frame.png")
-  : require("../../img/frame.webp")
 
 const Main = styled.div`
   width: 100%;
-  background: ${props => "url(" + props.main + ") bottom left"};
+  background: ${props => "url(" + main + ") bottom left"};
   background-repeat: no-repeat;
   text-align: right;
   min-height: 100vh;
@@ -37,7 +22,7 @@ const Main = styled.div`
 
 const Frame = styled.div`
   width: auto;
-  background: ${props => "url(" + frameImage + ") bottom left"};
+  background: ${props => "url(" + frame + ") bottom left"};
   background-repeat: no-repeat;
   text-align: right;
   min-height: 100vh;
@@ -131,7 +116,7 @@ export default function FrontSection({ language }) {
 
   return (
     <div style={{ height: "100vh" }}>
-      <Main main={main} style={{ backgroundPositionY: offset / 1.6 }}>
+      <Main style={{ backgroundPositionY: offset / 1.6 }}>
         <Frame>
           <Navigation>
             <Title>
