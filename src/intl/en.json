@@ -17,7 +17,8 @@
     "contactUs": "If you have anything you want to ask us about or issues with your order please use the form below."
   },
   "body": {
-    "code": "test"
+    "code": "  \"contact\": {\n    \"title\": \"Contact Us\",\n    \"name\": \"Name\",\n    \"email\": \"Email\",\n    \"invalidEmail\": \"Invalid Email\",\n    \"success\": \"Sent, thank you\",\n    \"message\": \"Message\",\n    \"submit\": \"Submit\"\n  }",
+    "lang": "json"
   },
   "blog": {
     "back": "Back to Blog",
