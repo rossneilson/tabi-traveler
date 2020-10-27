@@ -172,7 +172,6 @@ export default function Contact(props) {
               placeholder={intl.formatMessage({ id: "contact.email" })}
               id="email"
               name="email"
-              onChange={e => setEmail(e.target.value)}
               error={emailError}
               onChange={e => {
                 const value = e.target.value

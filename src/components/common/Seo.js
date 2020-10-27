@@ -70,17 +70,17 @@ function SEO({ description, lang, meta, title, slug = "" }) {
     >
       <link
         rel="alternate"
-        hreflang="en"
+        hrefLang="en"
         href={"https://tabitraveler.com/en" + slug}
       />
       <link
         rel="alternate"
-        hreflang="ja"
+        hrefLang="ja"
         href={"https://tabitraveler.com/jp" + slug}
       />
       <link
         rel="alternate"
-        hreflang="x-default"
+        hrefLang="x-default"
         href={"https://tabitraveler.com" + slug}
       />
     </Helmet>
