@@ -82,11 +82,17 @@ collections:
         label: "en"
         name: "en"
         fields:
-          - label: 'Title'
-            name: 'title'
+          - label: 'main'
+            name: 'main'
             widget: 'object'
             fields:
-                - { label: 'tab', name: 'tab', widget: 'string' }
+                - { label: 'title', name: 'title', widget: 'string' }
+                - { label: 'names', name: 'names', widget: 'string' }
+                - { label: 'desc', name: 'desc', widget: 'string' }
+                - { label: 'portfolio', name: 'portfolio', widget: 'string' }
+                - { label: 'blog', name: 'blog', widget: 'string' }
+                - { label: 'prints', name: 'prints', widget: 'string' }
+                - { label: 'contact', name: 'contact', widget: 'string' }
       - file: "src/intl/jp.json"
         label: "jp"
         name: "jp"
