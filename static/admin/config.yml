@@ -71,17 +71,22 @@ collections:
       - {label: "Type", name: "type", widget: "string"}
       - {label: "Locale", name: "locale", widget: "select", options: ["en", "jp"]}
       - {label: "Content", name: "body", widget: "markdown"}
+
   - name: "intl"
     label: "intl"
     extension: "json"
     editor:
       preview: false
-
     files:
       - file: "src/intl/en.json"
         label: "en"
         name: "en"
         fields:
+          - label: 'main'
+            name: 'main'
+            widget: 'object'
+            fields:
+                - { label: 'tab', name: 'tab', widget: 'string' }
           - label: 'main'
             name: 'main'
             widget: 'object'
@@ -93,8 +98,113 @@ collections:
                 - { label: 'blog', name: 'blog', widget: 'string' }
                 - { label: 'prints', name: 'prints', widget: 'string' }
                 - { label: 'contact', name: 'contact', widget: 'string' }
+          - label: 'about'
+            name: 'about'
+            widget: 'object'
+            fields:
+                - { label: 'title', name: 'title', widget: 'string' }
+                - { label: '1', name: '1', widget: 'string' }
+                - { label: '2', name: '2', widget: 'string' }
+                - { label: '3', name: '3', widget: 'string' }
+                - { label: '4', name: '4', widget: 'string' }
+                - { label: '5', name: '5', widget: 'string' }
+                - { label: 'contact', name: 'contact', widget: 'string' }
+          - label: 'blog'
+            name: 'blog'
+            widget: 'object'
+            fields:
+                - { label: 'back', name: 'back', widget: 'string' }
+                - { label: 'authorDesc', name: 'authorDesc', widget: 'string' }
+                - { label: 'cat', name: 'cta', widget: 'string' }
+          - label: 'store'
+            name: 'store'
+            widget: 'object'
+            fields:
+                - { label: 'back', name: 'back', widget: 'string' }
+                - { label: 'date', name: 'date', widget: 'string' }
+                - { label: 'buy', name: 'buy', widget: 'string' }
+                - { label: 'selectCountry', name: 'selectCountry', widget: 'string' }
+                - { label: 'successMessage', name: 'successMessage', widget: 'string' }
+                - { label: 'contactUs', name: 'contactUs', widget: 'string' }
+          - label: 'signup'
+            name: 'signup'
+            widget: 'object'
+            fields:
+                - { label: 'subscribe', name: 'subscribe', widget: 'string' }
+                - { label: 'title', name: 'title', widget: 'string' }
+          - label: 'contact'
+            name: 'contact'
+            widget: 'object'
+            fields:
+                - { label: 'title', name: 'title', widget: 'string' }
+                - { label: 'name', name: 'name', widget: 'string' }
+                - { label: 'email', name: 'email', widget: 'string' }
+                - { label: 'invalidEmail', name: 'invalidEmail', widget: 'string' }
+                - { label: 'success', name: 'success', widget: 'string' }
+                - { label: 'message', name: 'message', widget: 'string' }
+                - { label: 'submit', name: 'submit', widget: 'string' }
       - file: "src/intl/jp.json"
         label: "jp"
         name: "jp"
         fields:
-          - { name: body, label: Body, widget: code }
+          - label: 'main'
+            name: 'main'
+            widget: 'object'
+            fields:
+                - { label: 'tab', name: 'tab', widget: 'string' }
+          - label: 'main'
+            name: 'main'
+            widget: 'object'
+            fields:
+                - { label: 'title', name: 'title', widget: 'string' }
+                - { label: 'names', name: 'names', widget: 'string' }
+                - { label: 'desc', name: 'desc', widget: 'string' }
+                - { label: 'portfolio', name: 'portfolio', widget: 'string' }
+                - { label: 'blog', name: 'blog', widget: 'string' }
+                - { label: 'prints', name: 'prints', widget: 'string' }
+                - { label: 'contact', name: 'contact', widget: 'string' }
+          - label: 'about'
+            name: 'about'
+            widget: 'object'
+            fields:
+                - { label: 'title', name: 'title', widget: 'string' }
+                - { label: '1', name: '1', widget: 'string' }
+                - { label: '2', name: '2', widget: 'string' }
+                - { label: '3', name: '3', widget: 'string' }
+                - { label: '4', name: '4', widget: 'string' }
+                - { label: '5', name: '5', widget: 'string' }
+                - { label: 'contact', name: 'contact', widget: 'string' }
+          - label: 'blog'
+            name: 'blog'
+            widget: 'object'
+            fields:
+                - { label: 'back', name: 'back', widget: 'string' }
+                - { label: 'authorDesc', name: 'authorDesc', widget: 'string' }
+                - { label: 'cat', name: 'cta', widget: 'string' }
+          - label: 'store'
+            name: 'store'
+            widget: 'object'
+            fields:
+                - { label: 'back', name: 'back', widget: 'string' }
+                - { label: 'date', name: 'date', widget: 'string' }
+                - { label: 'buy', name: 'buy', widget: 'string' }
+                - { label: 'selectCountry', name: 'selectCountry', widget: 'string' }
+                - { label: 'successMessage', name: 'successMessage', widget: 'string' }
+                - { label: 'contactUs', name: 'contactUs', widget: 'string' }
+          - label: 'signup'
+            name: 'signup'
+            widget: 'object'
+            fields:
+                - { label: 'subscribe', name: 'subscribe', widget: 'string' }
+                - { label: 'title', name: 'title', widget: 'string' }
+          - label: 'contact'
+            name: 'contact'
+            widget: 'object'
+            fields:
+                - { label: 'title', name: 'title', widget: 'string' }
+                - { label: 'name', name: 'name', widget: 'string' }
+                - { label: 'email', name: 'email', widget: 'string' }
+                - { label: 'invalidEmail', name: 'invalidEmail', widget: 'string' }
+                - { label: 'success', name: 'success', widget: 'string' }
+                - { label: 'message', name: 'message', widget: 'string' }
+                - { label: 'submit', name: 'submit', widget: 'string' }
