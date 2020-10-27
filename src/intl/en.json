@@ -1,4 +1,43 @@
 {
+  "contact": {
+    "title": "Contact Us",
+    "name": "Name",
+    "email": "Email",
+    "invalidEmail": "Invalid Email",
+    "success": "Sent, thank you",
+    "message": "Message",
+    "submit": "Submit"
+  },
+  "store": {
+    "back": "Back to All Prints",
+    "date": "Shot on: ",
+    "buy": "BUY NOW",
+    "selectCountry": "Please select a country",
+    "successMessage": "Thank you so much for helping a young couple chase our photography dream. We hope you enjoy your print. You should receive a receipt via email shortly.",
+    "contactUs": "If you have anything you want to ask us about or issues with your order please use the form below."
+  },
+  "body": {
+    "code": "test"
+  },
+  "blog": {
+    "back": "Back to Blog",
+    "authorDesc": "We are a young couple exploring the world through our photography and sharing it as we go",
+    "cta": "Find out more"
+  },
+  "about": {
+    "1": "We are a young couple from Scotland and Japan and due to being so far apart we need to travel, a lot",
+    "2": "... and we have fallen in love with it. We both had a passion for photography beforehand.",
+    "3": "But now being able to travel has allowed us to explore new places and culture's through our photography.",
+    "4": "And this is something that we would love to share with everyone.",
+    "5": "We are also available for freelance photography work for small businesses",
+    "title": "About us",
+    "contact": "Contact us"
+  },
+  "lang": "en",
+  "signup": {
+    "subscribe": "Subscribe",
+    "title": "Sign up to our monthly newsletter for updates, new products and articles"
+  },
   "title": {
     "tab": "Tabi Traveler"
   },
@@ -10,41 +49,5 @@
     "blog": "Blog",
     "prints": "Prints",
     "contact": "Contact"
-  },
-  "about": {
-    "title": "About us",
-    "1": "We are a young couple from Scotland and Japan and due to being so far apart we need to travel, a lot",
-    "2": "... and we have fallen in love with it. We both had a passion for photography beforehand.",
-    "3": "But now being able to travel has allowed us to explore new places and culture's through our photography.",
-    "4": "And this is something that we would love to share with everyone.",
-    "5": "We are also available for freelance photography work for small businesses",
-    "contact": "Contact us"
-  },
-  "blog": {
-    "back": "Back to Blog",
-    "authorDesc": "We are a young couple exploring the world through our photography and sharing it as we go",
-    "cta": "Find out more"
-  },
-  "store": {
-    "back": "Back to All Prints",
-    "date": "Shot on: ",
-    "buy": "BUY NOW",
-    "selectCountry": "Please select a country",
-    "successMessage": "Thank you so much for helping a young couple chase our photography dream. We hope you enjoy your print. You should receive a receipt via email shortly.",
-    "contactUs": "If you have anything you want to ask us about or issues with your order please use the form below."
-  },
-  "signup": {
-    "subscribe": "Subscribe",
-    "title": "Sign up to our monthly newsletter for updates, new products and articles"
-  },
-  "contact": {
-    "title": "Contact Us",
-    "name": "Name",
-    "email": "Email",
-    "invalidEmail": "Invalid Email",
-    "success": "Sent, thank you",
-    "message": "Message",
-    "submit": "Submit"
-  },
-  "lang": "en"
+  }
 }
