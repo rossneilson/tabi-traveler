@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
-import { useIntl } from "react-intl"
+import { useIntl } from "gatsby-plugin-intl"
 import countriesJson from "../../utils/countries.json"
 import { createCheckout } from "../../utils/purchase"
 import Button from "../common/Button"

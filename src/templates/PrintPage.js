@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 import styled, { createGlobalStyle } from "styled-components"
 import { navigate } from "@reach/router"
-import { FormattedMessage } from "react-intl"
+import { FormattedMessage } from "gatsby-plugin-intl"
 
 import "../index.css"
 

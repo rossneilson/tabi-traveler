@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { navigate } from "@reach/router"
-import { FormattedMessage } from "react-intl"
+import { FormattedMessage } from "gatsby-plugin-intl"
 
 import "../index.css"
 

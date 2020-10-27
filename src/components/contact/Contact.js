@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import { useIntl } from "react-intl"
+import { useIntl } from "gatsby-plugin-intl"
 import Img from "gatsby-image"
 
 const Wrapper = styled.section`

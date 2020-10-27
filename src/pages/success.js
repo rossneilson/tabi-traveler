@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import styled, { createGlobalStyle } from "styled-components"
-import { FormattedMessage } from "react-intl"
+import { FormattedMessage } from "gatsby-plugin-intl"
 
 import "../index.css"
 

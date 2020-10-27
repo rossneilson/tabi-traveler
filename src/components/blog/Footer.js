@@ -1,8 +1,7 @@
 import React from "react"
 import Img from "gatsby-image"
-import { Link } from "gatsby-plugin-intl"
+import { Link, FormattedMessage } from "gatsby-plugin-intl"
 import styled from "styled-components"
-import { FormattedMessage } from "react-intl"
 
 const Wrapper = styled.section`
   width: 50%;
