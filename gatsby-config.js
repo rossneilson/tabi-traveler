@@ -110,17 +110,23 @@ module.exports = {
         omitGoogleFont: true,
       },
     },
+    // {
+    //   resolve: `gatsby-plugin-google-gtag`,
+    //   options: {
+    //     trackingIds: ["G-FV6TYS2541"],
+    //   },
+    //   gtagConfig: {
+    //     anonymize_ip: false,
+    //     cookie_expires: 0,
+    //   },
+    //   pluginConfig: {
+    //     head: false,
+    //   },
+    // },
     {
-      resolve: `gatsby-plugin-google-gtag`,
+      resolve: "gatsby-plugin-google-tagmanager",
       options: {
-        trackingIds: ["G-FV6TYS2541"],
-      },
-      gtagConfig: {
-        anonymize_ip: false,
-        cookie_expires: 0,
-      },
-      pluginConfig: {
-        head: false,
+        id: "GTM-PKW4KNK",
       },
     },
     {
