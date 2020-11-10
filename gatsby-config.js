@@ -118,10 +118,9 @@ module.exports = {
       gtagConfig: {
         anonymize_ip: false,
         cookie_expires: 0,
-        send_page_view: true,
       },
       pluginConfig: {
-        head: true,
+        head: false,
       },
     },
     {

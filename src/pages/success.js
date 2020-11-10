@@ -38,6 +38,7 @@ export default function ContactPage(props) {
   return (
     <div>
       <GlobalStyle />
+      {/* Set title pls */}
       <Toggle right language={props.pageContext.intl.language} />
       <Navigation
         language={props.pageContext.intl.language}
