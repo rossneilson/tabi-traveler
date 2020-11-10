@@ -115,6 +115,14 @@ module.exports = {
       options: {
         trackingIds: ["G-FV6TYS2541"],
       },
+      gtagConfig: {
+        anonymize_ip: false,
+        cookie_expires: 0,
+        send_page_view: true,
+      },
+      pluginConfig: {
+        head: true,
+      },
     },
     {
       resolve: `gatsby-plugin-styled-components`,
