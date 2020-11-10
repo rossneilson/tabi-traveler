@@ -61,7 +61,7 @@ const Category = styled.p`
   color: black;
   position: absolute;
   margin: 10px;
-  font-size: 0.75966rem;
+  font-size: 0.6rem;
   line-height: 1.1;
 `
 

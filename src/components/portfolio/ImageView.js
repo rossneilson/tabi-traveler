@@ -1,6 +1,7 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import styled, { css } from "styled-components"
 import Img from "gatsby-image"
+import { CSSTransition } from "react-transition-group"
 
 import * as Keyframes from "../../utils/keyframes"
 import { useKeyPress } from "../../utils/hooks"
@@ -45,6 +46,7 @@ const Image = styled(Img)`
   height: 90%;
   width: 90%;
   margin: auto;
+  transition: 1s;
 `
 
 const Back = styled.section`
@@ -98,6 +100,7 @@ export default function ImageView({
   setSelectedImage,
   filteredImages,
 }) {
+  const [inProp, setInProp] = useState(false)
   const left = useKeyPress("ArrowLeft")
   const right = useKeyPress("ArrowRight")
   useEffect(() => {
@@ -142,14 +145,16 @@ export default function ImageView({
               <polyline points="15 6 9 12 15 18" />
             </svg>
           </Back>
-          <Image
-            imgStyle={{ objectFit: "scale-down" }}
-            loading="eager"
-            fluid={
-              filteredImages[selectedImage].node.frontmatter.image
-                .childImageSharp.fluid
-            }
-          />
+          <CSSTransition in={inProp} timeout={200}>
+            <Image
+              imgStyle={{ objectFit: "scale-down" }}
+              loading="eager"
+              fluid={
+                filteredImages[selectedImage].node.frontmatter.image
+                  .childImageSharp.fluid
+              }
+            />
+          </CSSTransition>
           <Close
             onClick={() => {
               setSelectedImage(null)
@@ -174,6 +179,7 @@ export default function ImageView({
           <Next
             onClick={() => {
               setSelectedImage(selectedImage + 1)
+              setInProp(true)
             }}
           >
             <svg
