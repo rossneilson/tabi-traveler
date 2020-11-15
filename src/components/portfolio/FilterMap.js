@@ -8,12 +8,12 @@ import {
   Annotation,
 } from "react-simple-maps"
 
+import countries from "../../map/mapCountries.json"
+
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json"
 
-// TODO move to json file
-// Create from images
-const highlighted = ["JPN", "GBR", "ITA"]
+const highlighted = countries.highlighted
 
 export default function FilterMap({ filter, setFilter }) {
   return (

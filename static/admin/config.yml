@@ -72,6 +72,18 @@ collections:
       - {label: "Locale", name: "locale", widget: "select", options: ["en", "jp"]}
       - {label: "Content", name: "body", widget: "markdown"}
 
+  - name: "map"
+    label: "map"
+    extension: "json"
+    editor:
+      preview: false
+    files:
+      - file: "src/map/mapCountries.json"
+        label: "mapCountries"
+        name: "mapCountries"
+        fields:
+          - { label: 'highlighted', name: 'highlighted', widget: 'list' }
+
   - name: "intl"
     label: "intl"
     extension: "json"
