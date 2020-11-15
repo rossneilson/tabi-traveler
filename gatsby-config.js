@@ -136,7 +136,7 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-netlify-cms-paths`,
+    // `gatsby-plugin-netlify-cms-paths`,
     `gatsby-plugin-nprogress`,
     "gatsby-plugin-loadable-components-ssr",
     `gatsby-plugin-sitemap`,
