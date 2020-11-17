@@ -166,14 +166,14 @@ export const query = graphql`
         images {
           childImageSharp {
             fluid(maxWidth: 3000) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              ...GatsbyImageSharpFluid
             }
           }
         }
         mainImage {
           childImageSharp {
             fluid(maxWidth: 3000) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              ...GatsbyImageSharpFluid
             }
           }
         }
