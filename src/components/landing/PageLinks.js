@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { FormattedMessage } from "gatsby-plugin-intl"
 import { Link } from "gatsby-plugin-intl"
-import Img from "gatsby-image"
+import { GatsbyImage as Img } from "gatsby-plugin-image/compat"
 
 import { urlLocaleFormatting } from "../../utils/formatters"
 
