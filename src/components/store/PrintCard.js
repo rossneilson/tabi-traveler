@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import Img from "gatsby-image"
+import { GatsbyImage as Img } from "gatsby-plugin-image/compat"
 import { Link } from "gatsby-plugin-intl"
 
 import { urlLocaleFormatting } from "../../utils/formatters"
