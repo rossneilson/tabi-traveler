@@ -10,26 +10,27 @@ products:
     title: A3 (11.7x16.5")
     type: print
     size: s
-    price: 7500
+    price: 6500
   - sku: GLOBAL-HPR-A2
     title: A2 (16.5x23.4")
     type: print
     size: s
-    price: 8500
+    price: 7500
   - sku: GLOBAL-CFPM-A3
     title: Standard Black Mounted Frame A3 (11.7x16.5")
     type: frame
     size: s
-    price: 13500
+    price: 12500
   - sku: GLOBAL-CFPM-A2
     title: Standard Black Mounted Frame A2 (16.5x23.4")
     type: frame
     size: s
-    price: 15500
+    price: 14500
 fullImage: https://drive.google.com/uc?id=1UNl8twG9mhNDJg_0eBjvPSVk96MWWRcG
 path: prints/fuji-sunset-from-enoshima
 locale: jp
 ---
+セール：£10 off
 江ノ島は私たちにとってとても大切な場所です。富士山と夕焼けは見事な組み合わせで、海と富士山の境目はこの写真の重要なポイントになっています。この写真を通して、joy, relaxation そしてwonderを皆さんとシェアしたいです。
 
 この写真はHahnemühle photo ragという上質な紙に印刷してお届けいたします。紙の詳細についてはFAQをご参照ください。
