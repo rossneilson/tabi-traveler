@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import { useIntl } from "gatsby-plugin-intl"
-import Img from "gatsby-image"
+import { GatsbyImage as Img } from "gatsby-plugin-image/compat"
 
 const Wrapper = styled.section`
   display: flex;
