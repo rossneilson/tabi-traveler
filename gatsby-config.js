@@ -119,8 +119,6 @@ module.exports = {
     {
       resolve: `gatsby-plugin-styled-components`,
     },
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify-cms`,
     {
@@ -140,5 +138,8 @@ module.exports = {
     `gatsby-plugin-nprogress`,
     "gatsby-plugin-loadable-components-ssr",
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
   ],
 }

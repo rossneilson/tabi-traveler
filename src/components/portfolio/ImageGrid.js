@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import styled from "styled-components"
-import Img from "gatsby-image"
+import { GatsbyImage as Img } from "gatsby-plugin-image/compat"
 
 const GridWrap = styled.section`
   width: ${props => (props.drawerOpen ? 100 - 30 + "%" : "100%")};
