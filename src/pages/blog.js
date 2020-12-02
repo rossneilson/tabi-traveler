@@ -109,7 +109,7 @@ export const postsQuery = graphql`
             image {
               childImageSharp {
                 fluid(maxWidth: 1000) {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }

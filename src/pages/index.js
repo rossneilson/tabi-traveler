@@ -58,21 +58,21 @@ export const imageQuery = graphql`
     fujiImage: file(relativePath: { eq: "fuji.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1800, quality: 80) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     footImage1: file(relativePath: { eq: "footImage.png" }) {
       childImageSharp {
         fluid(maxWidth: 1800, quality: 80) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
     aboutImage: file(relativePath: { eq: "footerImage.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
@@ -97,7 +97,7 @@ export const imageQuery = graphql`
             image {
               childImageSharp {
                 fluid(maxWidth: 3000) {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }
@@ -130,7 +130,7 @@ export const imageQuery = graphql`
             mainImage {
               childImageSharp {
                 fluid(maxHeight: 500) {
-                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                  ...GatsbyImageSharpFluid_withWebp
                 }
               }
             }

@@ -152,7 +152,7 @@ export const printsQuery = graphql`
     footImage1: file(relativePath: { eq: "footImage.png" }) {
       childImageSharp {
         fluid(maxWidth: 1000, quality: 80) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

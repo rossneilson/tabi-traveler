@@ -166,14 +166,14 @@ export const query = graphql`
         images {
           childImageSharp {
             fluid(maxWidth: 3000) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
         mainImage {
           childImageSharp {
             fluid(maxWidth: 3000) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
@@ -182,7 +182,7 @@ export const query = graphql`
     image: file(relativePath: { eq: "footerImage.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
