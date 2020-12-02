@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import styled, { css } from "styled-components"
-import Img from "gatsby-image"
+import { GatsbyImage as Img } from "gatsby-plugin-image/compat"
 import { CSSTransition } from "react-transition-group"
 
 import * as Keyframes from "../../utils/keyframes"

@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import Img from "gatsby-image"
+import { GatsbyImage as Img } from "gatsby-plugin-image/compat"
 
 const Wrapper = styled.section`
   width: 100%;
