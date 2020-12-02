@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
-import Img from "gatsby-image"
+import { GatsbyImage as Img } from "gatsby-plugin-image/compat"
 import { navigate } from "@reach/router"
 import { FormattedMessage } from "gatsby-plugin-intl"
 
