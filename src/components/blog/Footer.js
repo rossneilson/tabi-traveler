@@ -1,5 +1,5 @@
 import React from "react"
-import { GatsbyImage as Img } from "gatsby-plugin-image/compat"
+import Img from "gatsby-image"
 import { Link, FormattedMessage } from "gatsby-plugin-intl"
 import styled from "styled-components"
 
