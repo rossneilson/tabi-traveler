@@ -165,16 +165,20 @@ export const query = graphql`
         }
         images {
           childImageSharp {
-            fluid(maxWidth: 3000) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
+            gatsbyImageData(
+              maxWidth: 3000
+              layout: CONSTRAINED
+              placeholder: BLURRED
+            )
           }
         }
         mainImage {
           childImageSharp {
-            fluid(maxWidth: 3000) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
+            gatsbyImageData(
+              maxWidth: 3000
+              layout: CONSTRAINED
+              placeholder: BLURRED
+            )
           }
         }
       }

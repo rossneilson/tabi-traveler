@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import { GatsbyImage as Img } from "gatsby-plugin-image/compat"
+import { GatsbyImage as Img, getImage } from "gatsby-plugin-image"
 
 const Wrapper = styled.section`
   width: 100%;
@@ -35,23 +35,24 @@ const OtherImages = styled.section`
 `
 
 export default function ProductImages({ images }) {
-  const [selectedImage, setSelectedImage] = useState(images[0])
+  const [selectedImage, setSelectedImage] = useState(getImage(images[0]))
   const otherImages = []
   images.map((image, index) => {
-    if (image !== selectedImage) {
+    var imageData = getImage(image)
+    if (imageData !== selectedImage) {
       otherImages.push(
         <Wrap
           key={index}
           onClick={() => {
-            setSelectedImage(images[index])
+            setSelectedImage(getImage(images[index]))
           }}
         >
           <SmallImage
             key={index}
-            loading="eager"
-            fluid={image.childImageSharp.fluid}
+            // fluid={image.childImageSharp.fluid}
+            image={imageData}
             onClick={() => {
-              setSelectedImage(images[index])
+              setSelectedImage(getImage(images[index]))
             }}
           />
         </Wrap>
@@ -62,8 +63,8 @@ export default function ProductImages({ images }) {
   return (
     <Wrapper>
       <MainImage
-        loading="eager"
-        fluid={selectedImage.childImageSharp.fluid}
+        // fluid={selectedImage.childImageSharp.fluid}
+        image={selectedImage}
         imgStyle={{ objectFit: "contain" }}
       />
       <OtherImages>{otherImages}</OtherImages>

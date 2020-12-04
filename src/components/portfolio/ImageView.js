@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import styled, { css } from "styled-components"
-import { GatsbyImage as Img } from "gatsby-plugin-image/compat"
+import { GatsbyImage as Img, getImage } from "gatsby-plugin-image"
 import { CSSTransition } from "react-transition-group"
 
 import * as Keyframes from "../../utils/keyframes"
@@ -43,8 +43,8 @@ const ModalMain = styled.section`
 `
 
 const Image = styled(Img)`
-  height: 90%;
-  width: 90%;
+  max-height: 80%;
+  max-width: 90%;
   margin: auto;
   transition: 1s;
 `
@@ -59,7 +59,7 @@ const Back = styled.section`
   z-index: 999;
   @media (pointer: coarse) {
     margin-left: 45%;
-    top: 4%;
+    top: 3%;
     transform: rotate(90deg);
     cursor: n-resize;
   }
@@ -148,11 +148,9 @@ export default function ImageView({
           <CSSTransition in={inProp} timeout={200}>
             <Image
               imgStyle={{ objectFit: "scale-down" }}
-              loading="eager"
-              fluid={
+              image={getImage(
                 filteredImages[selectedImage].node.frontmatter.image
-                  .childImageSharp.fluid
-              }
+              )}
             />
           </CSSTransition>
           <Close

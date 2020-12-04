@@ -120,9 +120,12 @@ export const imageQuery = graphql`
             location
             image {
               childImageSharp {
-                fluid(maxWidth: 1000) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(
+                  maxWidth: 1000
+                  quality: 90
+                  layout: CONSTRAINED
+                  placeholder: BLURRED
+                )
               }
             }
             page

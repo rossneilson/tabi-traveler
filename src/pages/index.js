@@ -36,7 +36,7 @@ export default function Main(props) {
       <Toggle language={props.pageContext.intl.language} />
       <FrontSection language={props.pageContext.intl.language} />
       <AboutSection
-        fuji={props.data.fujiImage.childImageSharp.fluid}
+        fuji={props.data.fujiImage}
         aboutImage={props.data.aboutImage.childImageSharp.fluid}
       />
       <SignUp language={props.pageContext.intl.language} />
@@ -57,9 +57,12 @@ export const imageQuery = graphql`
   query getData($locale: String) {
     fujiImage: file(relativePath: { eq: "fuji.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1800, quality: 80) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(
+          maxWidth: 1800
+          quality: 80
+          layout: CONSTRAINED
+          placeholder: BLURRED
+        )
       }
     }
     footImage1: file(relativePath: { eq: "footImage.png" }) {
@@ -96,7 +99,7 @@ export const imageQuery = graphql`
             SEO
             image {
               childImageSharp {
-                fluid(maxWidth: 3000) {
+                fluid(maxWidth: 1000) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }

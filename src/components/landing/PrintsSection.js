@@ -64,7 +64,7 @@ export default function Blog({ prints, language }) {
             <path d="M19 21v-10.15" />
             <path d="M9 21v-4a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v4" />
           </svg>
-          Featured Prints
+          Featured Prints - Sale £10 off
         </Heading>
       </Link>
       <FlexWrap>

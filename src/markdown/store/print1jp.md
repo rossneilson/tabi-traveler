@@ -1,5 +1,5 @@
 ---
-title: 江ノ島からの夕焼け富士山
+title: 江ノ島からの夕焼け富士山 - £10引き
 desc: High qaulity photographic travel prints and frames of a sunset with mount
   fuji in japan. Worldwide shipping
 date: 2018-12-19T00:00:00.000Z

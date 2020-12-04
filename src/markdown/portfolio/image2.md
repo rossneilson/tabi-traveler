@@ -1,6 +1,6 @@
 ---
 page: portfolio
-best: true
+best: false
 landscape: false
 location: GBR
 image: ../../img/download-2.jpg

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import styled from "styled-components"
-import { GatsbyImage as Img } from "gatsby-plugin-image/compat"
+import { GatsbyImage as Img, getImage } from "gatsby-plugin-image"
 
 const GridWrap = styled.section`
   width: ${props => (props.drawerOpen ? 100 - 30 + "%" : "100%")};
@@ -76,6 +76,7 @@ export default function Grid({
   const thumbnails = []
 
   filteredImages.map((value, index) => {
+    const imageData = getImage(value.node.frontmatter.image)
     thumbnails.push(
       <Thumbnail
         key={index}
@@ -84,10 +85,7 @@ export default function Grid({
         }}
         landscape={value.node.frontmatter.landscape}
       >
-        <ThumbnailImage
-          loading="eager"
-          fluid={value.node.frontmatter.image.childImageSharp.fluid}
-        />
+        <ThumbnailImage image={imageData} />
       </Thumbnail>
     )
   })

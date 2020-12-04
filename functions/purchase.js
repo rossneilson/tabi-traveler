@@ -99,6 +99,7 @@ exports.handler = async ({ body }) => {
       metadata: {
         pwintyId: order.data.id,
         name: data.title + " - " + data.product.title,
+        finalPrice: lineItems[0].price_data.unit_amount,
       },
       mode: "payment",
       success_url: "https://tabitraveler.com/success",

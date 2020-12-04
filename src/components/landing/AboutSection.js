@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { FormattedMessage } from "gatsby-plugin-intl"
 import { GatsbyImage as Img } from "gatsby-plugin-image/compat"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import { device } from "../../utils/device"
 
@@ -17,7 +18,7 @@ const Wrap = styled.section`
     height: auto;
   }
 `
-const FujiImage = styled(Img)`
+const FujiImage = styled(GatsbyImage)`
   width: 70%;
   height: 70%;
   float: right;
@@ -83,9 +84,10 @@ const CTA = styled.button`
 `
 
 export default function AboutSection({ fuji, aboutImage }) {
+  const fujiImage = getImage(fuji)
   return (
     <Wrap>
-      <FujiImage loading="eager" fluid={fuji} />
+      <FujiImage image={fujiImage} />
       <About>
         <Title style={{ fontSize: "200%" }}>
           <svg

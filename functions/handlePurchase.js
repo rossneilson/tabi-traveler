@@ -53,6 +53,8 @@ exports.handler = async ({ headers, body }) => {
             countryCode: country,
             postalOrZipCode: postal_code,
             recipientName: session.shipping.name,
+            priceToUser: session.metadata.finalPrice,
+            email: session.customer_email,
           }),
         }
       ).then(res => res.json())

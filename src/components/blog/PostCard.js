@@ -48,6 +48,7 @@ const Image = styled(Img)`
   z-index: -1;
   @media (pointer: coarse) {
     height: 35%;
+    max-height: ${props => (props.isfullpage ? "35%" : "200px")};
   }
 `
 
@@ -113,7 +114,11 @@ export default function PostCard({ post, index, isfullpage }) {
       }}
     >
       <Category>{frontmatter.category}</Category>
-      <Image loading="eager" fluid={frontmatter.image.childImageSharp.fluid} />
+      <Image
+        isfullpage={isfullpage}
+        loading="eager"
+        fluid={frontmatter.image.childImageSharp.fluid}
+      />
       <Description>
         <Title>{frontmatter.title}</Title>
         {desc}
