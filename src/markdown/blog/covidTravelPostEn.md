@@ -25,6 +25,8 @@ So we had a fun few calls trying to organize a covid PCR test with a quick turn 
 
 The flight over was actually very pleasant, it was relatively quite and so Kona got an entire row to herself with lots of social distancing. She even received a covid safety kit with masks, hand sanitizer and everything you could need. Along with the safe knowledge that everyone on board had tested negative it made for a decently relaxing, but long, flight.
 
+![covid kit](../../img/kit.jpg "covid kit")
+
 Unfortunately she forgot to take a photo of the emirates flight attendants in full covid costume. 
 
 Where Narita aiport in Japan was silent with all shops closed and only a select handful of flights a day, Dubai international airport felt almost normal. Most of the shops were open and travelers from all around were going about their business. A very strange feeling compared to Japan.
