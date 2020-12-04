@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { GatsbyImage as Img } from "gatsby-plugin-image/compat"
+import { GatsbyImage as Img, getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby-plugin-intl"
 
 import { urlLocaleFormatting } from "../../utils/formatters"
@@ -95,6 +95,7 @@ const OpenFab = styled.section`
 export default function PostCard({ post, index, isfullpage }) {
   const { frontmatter } = post.node
   var desc = null
+  const imageData = getImage(frontmatter.image)
 
   if (index === 0 && isfullpage) {
     desc = (
@@ -114,11 +115,7 @@ export default function PostCard({ post, index, isfullpage }) {
       }}
     >
       <Category>{frontmatter.category}</Category>
-      <Image
-        isfullpage={isfullpage}
-        loading="eager"
-        fluid={frontmatter.image.childImageSharp.fluid}
-      />
+      <Image isfullpage={isfullpage} image={imageData} />
       <Description>
         <Title>{frontmatter.title}</Title>
         {desc}

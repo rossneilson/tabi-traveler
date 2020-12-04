@@ -1,5 +1,5 @@
 ---
-title: Our international travel during covid
+title: Our International Travel during Covid
 location: Europe
 category: Travel Stories
 date: 2020-12-04T14:56:59.267Z

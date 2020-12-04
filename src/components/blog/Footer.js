@@ -1,5 +1,5 @@
 import React from "react"
-import { GatsbyImage as Img } from "gatsby-plugin-image/compat"
+import { GatsbyImage as Img, getImage } from "gatsby-plugin-image"
 import { Link, FormattedMessage } from "gatsby-plugin-intl"
 import styled from "styled-components"
 
@@ -59,9 +59,10 @@ const CTA = styled(Link)`
 `
 
 export default function Footer(props) {
+  const imageData = getImage(props.image)
   return (
     <Wrapper>
-      <Image loading="eager" fluid={props.image} />
+      <Image image={imageData} />
       <Description>
         <h3>
           <FormattedMessage id="main.names" />

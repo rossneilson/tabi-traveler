@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
-import { GatsbyImage as Img } from "gatsby-plugin-image/compat"
+import { GatsbyImage as Img, getImage } from "gatsby-plugin-image"
 import { navigate } from "@reach/router"
 import { FormattedMessage } from "gatsby-plugin-intl"
 
@@ -143,6 +143,7 @@ export default function BlogPost({ data, pageContext }) {
 
   const { frontmatter, html } = data.posts
   const { language } = pageContext
+  const imageData = getImage(frontmatter.image)
 
   return (
     <div>
@@ -152,10 +153,7 @@ export default function BlogPost({ data, pageContext }) {
         lang={frontmatter.locale}
         slug={"/" + frontmatter.path}
       />
-      <BackgroundImage
-        loading="eager"
-        fluid={frontmatter.image.childImageSharp.fluid}
-      />
+      <BackgroundImage image={imageData} />
       <Gradient offset={offset} />
       <BackIcon
         onClick={() => navigate("../../" + frontmatter.locale + "/blog")}
@@ -204,7 +202,7 @@ export default function BlogPost({ data, pageContext }) {
       </FormattedDate>
       <Markdown dangerouslySetInnerHTML={{ __html: html }} />
       <SignUp language={pageContext.intl.language} />
-      <Footer image={data.image.childImageSharp.fluid} />
+      <Footer image={data.image} />
     </div>
   )
 }
@@ -226,18 +224,14 @@ export const query = graphql`
         SEO
         image {
           childImageSharp {
-            fluid(maxWidth: 3000) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
+            gatsbyImageData(maxWidth: 3000, layout: FLUID, placeholder: BLURRED)
           }
         }
       }
     }
     image: file(relativePath: { eq: "footerImage.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(maxWidth: 300, layout: FLUID, placeholder: BLURRED)
       }
     }
   }

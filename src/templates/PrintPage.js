@@ -137,7 +137,7 @@ export default function PrintPage({ data, pageContext }) {
         }).format(new Date(frontmatter.date))}
       </FormattedDate>
 
-      <Footer image={data.image.childImageSharp.fluid} />
+      <Footer image={data.image} />
     </div>
   )
 }
@@ -185,9 +185,7 @@ export const query = graphql`
     }
     image: file(relativePath: { eq: "footerImage.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(maxWidth: 1000, layout: FLUID, placeholder: BLURRED)
       }
     }
   }

@@ -80,7 +80,7 @@ export default function Prints(props) {
       <PrintsGrid prints={prints} />
       <FAQ dangerouslySetInnerHTML={{ __html: props.data.faq.html }} />
       <SignUp language={props.pageContext.intl.language} />
-      <Contact footImage1={props.data.footImage1.childImageSharp.fluid} />
+      <Contact footImage1={props.data.footImage1} />
     </div>
   )
 }
@@ -110,9 +110,11 @@ export const printsQuery = graphql`
             }
             mainImage {
               childImageSharp {
-                fluid(maxHeight: 500) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(
+                  maxWidth: 500
+                  layout: FLUID
+                  placeholder: BLURRED
+                )
               }
             }
           }
@@ -151,9 +153,12 @@ export const printsQuery = graphql`
     }
     footImage1: file(relativePath: { eq: "footImage.png" }) {
       childImageSharp {
-        fluid(maxWidth: 1000, quality: 80) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(
+          maxWidth: 1800
+          quality: 80
+          layout: FLUID
+          placeholder: BLURRED
+        )
       }
     }
     site {

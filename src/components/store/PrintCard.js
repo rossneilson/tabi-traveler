@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { GatsbyImage as Img } from "gatsby-plugin-image/compat"
+import { GatsbyImage as Img, getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby-plugin-intl"
 
 import { urlLocaleFormatting } from "../../utils/formatters"
@@ -51,7 +51,7 @@ export default function PrintCard({ print, index }) {
   const { frontmatter } = print.node
   const arrayOfPrices = frontmatter.products.map(product => product.price)
   const min = Math.min(...arrayOfPrices)
-
+  const imageData = getImage(frontmatter.mainImage)
   return (
     <Wrapper
       to={urlLocaleFormatting(frontmatter.locale, "/" + frontmatter.path)}
@@ -59,10 +59,7 @@ export default function PrintCard({ print, index }) {
         window.scrollTo(0, 0)
       }}
     >
-      <Image
-        loading="eager"
-        fluid={frontmatter.mainImage.childImageSharp.fluid}
-      />
+      <Image image={imageData} />
       <Description>
         <Title>{frontmatter.title}</Title>From £{min / 100}
       </Description>

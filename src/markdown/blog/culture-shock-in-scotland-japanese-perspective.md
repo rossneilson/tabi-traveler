@@ -1,5 +1,5 @@
 ---
-title: Culture shock in - Scotland
+title: Culture Shock in - Scotland
 location: Scotland
 category: Travel Stories
 date: 2020-10-05T08:13:01.352Z

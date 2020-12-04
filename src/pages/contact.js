@@ -35,7 +35,7 @@ export default function ContactPage(props) {
       />
       <br />
       <SignUp />
-      <Contact footImage1={props.data.footImage1.childImageSharp.fluid} />
+      <Contact footImage1={props.data.footImage1} />
     </div>
   )
 }
@@ -44,9 +44,12 @@ export const imageQuery = graphql`
   query getContactImage {
     footImage1: file(relativePath: { eq: "footImage.png" }) {
       childImageSharp {
-        fluid(maxWidth: 1800, quality: 80) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(
+          maxWidth: 1800
+          quality: 80
+          layout: FLUID
+          placeholder: BLURRED
+        )
       }
     }
   }

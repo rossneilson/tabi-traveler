@@ -85,6 +85,7 @@ const CTA = styled.button`
 
 export default function AboutSection({ fuji, aboutImage }) {
   const fujiImage = getImage(fuji)
+  const aboutImageData = getImage(aboutImage)
   return (
     <Wrap>
       <FujiImage image={fujiImage} />
@@ -122,7 +123,7 @@ export default function AboutSection({ fuji, aboutImage }) {
             marginBottom: "30px",
           }}
         />
-        <ProfileImage draggable={false} loading="eager" fluid={aboutImage} />
+        <ProfileImage image={aboutImageData} />
         <p>
           <FormattedMessage id="about.1" />
         </p>

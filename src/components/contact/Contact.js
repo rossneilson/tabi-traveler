@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import { useIntl } from "gatsby-plugin-intl"
-import { GatsbyImage as Img } from "gatsby-plugin-image/compat"
+import { GatsbyImage as Img, getImage } from "gatsby-plugin-image"
 
 const Wrapper = styled.section`
   display: flex;
@@ -137,10 +137,11 @@ export default function Contact(props) {
         .catch(error => alert(error))
     }
   }
+  const imageData = getImage(props.footImage1)
 
   return (
     <Wrapper>
-      <Image loading="eager" fluid={props.footImage1} />
+      <Image image={imageData} />
       <ContactCard>
         <Title>{intl.formatMessage({ id: "contact.title" })}</Title>
         <form name="contact" netlify-honeypot="bot-field" hidden>

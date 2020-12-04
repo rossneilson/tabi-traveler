@@ -37,7 +37,7 @@ export default function Main(props) {
       <FrontSection language={props.pageContext.intl.language} />
       <AboutSection
         fuji={props.data.fujiImage}
-        aboutImage={props.data.aboutImage.childImageSharp.fluid}
+        aboutImage={props.data.aboutImage}
       />
       <SignUp language={props.pageContext.intl.language} />
       <PrintsSection
@@ -48,7 +48,7 @@ export default function Main(props) {
         posts={props.data.blogPosts.edges}
         language={props.pageContext.intl.language}
       />
-      <Contact footImage1={props.data.footImage1.childImageSharp.fluid} />
+      <Contact footImage1={props.data.footImage1} />
     </div>
   )
 }
@@ -67,16 +67,17 @@ export const imageQuery = graphql`
     }
     footImage1: file(relativePath: { eq: "footImage.png" }) {
       childImageSharp {
-        fluid(maxWidth: 1800, quality: 80) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(
+          maxWidth: 1800
+          quality: 80
+          layout: FLUID
+          placeholder: BLURRED
+        )
       }
     }
     aboutImage: file(relativePath: { eq: "footerImage.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid_withWebp
-        }
+        gatsbyImageData(maxWidth: 300, layout: FLUID, placeholder: BLURRED)
       }
     }
     blogPosts: allMarkdownRemark(
@@ -99,9 +100,11 @@ export const imageQuery = graphql`
             SEO
             image {
               childImageSharp {
-                fluid(maxWidth: 1000) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
+                gatsbyImageData(
+                  maxWidth: 1000
+                  layout: FLUID
+                  placeholder: BLURRED
+                )
               }
             }
           }
@@ -132,9 +135,11 @@ export const imageQuery = graphql`
             }
             mainImage {
               childImageSharp {
-                fluid(maxHeight: 500) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
+                gatsbyImageData(
+                  maxWidth: 500
+                  layout: FLUID
+                  placeholder: BLURRED
+                )
               }
             }
           }
