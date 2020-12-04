@@ -1,6 +1,6 @@
 ---
 title: コロナ下での海外旅行
-location: Europe
+location: 欧州
 category: Travel Stories
 date: 2020-12-04T14:56:59.267Z
 image: /static/2020map.jpg

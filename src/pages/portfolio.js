@@ -121,7 +121,7 @@ export const imageQuery = graphql`
             image {
               childImageSharp {
                 gatsbyImageData(
-                  maxWidth: 1000
+                  maxHeight: 600
                   quality: 90
                   layout: CONSTRAINED
                   placeholder: BLURRED
