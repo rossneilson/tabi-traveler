@@ -6,7 +6,7 @@ date: 2020-12-04T14:56:59.267Z
 image: /static/2020map.jpg
 path: blog/covid-travel
 locale: jp
-SEO: Our experiences traveling internationally as a long distance couple from Japan to Scotland to Italy for leisure during the covid pandemic
+SEO: スコットランドと日本の遠距カップルのコロナ下でのイタリア旅行
 ---
 このブログのはじめに免責事項を書かせていただきます。私たちは新型コロナウイルスのパンデミックが起こるずっと前、およそ2019年10月頃にこの旅行の予定を立て、フライトを予約し、宿泊先を確保していました。そして、パンデミックが起こり世界は一変しました。しかし、政府のガイドラインに従い、手指消毒、マスク、人との距離を徹底し、この旅行を決行しました。今回は、コロナ下でどのような手続きで、どのように旅をしたのか皆さんとシェアしようと思います。
 

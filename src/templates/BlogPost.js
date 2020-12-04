@@ -29,17 +29,19 @@ const BackText = styled.section`
 `
 
 const BackgroundImage = styled(Img)`
+  -webkit-transform: translate3d(0, 0, 0);
   position: absolute !important;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: -2;
+  z-index: -999 !important;
   height: 100vh;
 `
 const Nav = styled(Navigation)`
   color: white !important;
 `
 const Gradient = styled.section`
+  -webkit-transform: translate3d(0, 0, 0);
   background: rgb(0, 0, 0);
   background: ${props =>
     "linear-gradient( 0deg,rgb(255 255 255) 0%,rgb(255 255 255 / " +
@@ -75,6 +77,7 @@ const Title = styled.h1`
   margin-left: 25%;
   margin-right: 25%;
   margin-top: 2%;
+  z-index: 999999999 !important;
   @media (pointer: coarse) {
     margin-left: 10%;
     margin-right: 10%;
@@ -85,6 +88,7 @@ const Location = styled.h2`
   color: white;
   margin-left: 25%;
   margin-right: 25%;
+  z-index: 999999999 !important;
   @media (pointer: coarse) {
     margin-left: 10%;
     margin-right: 10%;
@@ -92,6 +96,7 @@ const Location = styled.h2`
 `
 
 const FormattedDate = styled.h3`
+  z-index: 999999999 !important;
   color: white;
   margin-left: 25%;
   margin-right: 25%;
@@ -103,6 +108,7 @@ const FormattedDate = styled.h3`
 `
 
 const Markdown = styled.section`
+  z-index: 999999999 !important;
   font-size: medium;
   color: black;
   line-height: 1.7;
