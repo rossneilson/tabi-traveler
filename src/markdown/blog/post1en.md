@@ -9,6 +9,14 @@ locale: en
 SEO: A reflection on travelling to Japan for the first few times and living with
   a Japanese family
 ---
+
+###### Table of Contents
+```toc
+# This code block gets replaced with the TOC
+```
+
+---
+
 Since my first trip to Japan in 2018 I have been to Japan a total of 5 times now and as a result, have picked up a lot on the cultural differences between a western country like the UK and Japan. There are a million articles about somewhat obvious stuff in Japan so I will try my best to avoid these. For a little context around my experiences; my trips have been a mix of tourism as well as staying with Kona and her family and so may differ from the normal touristy trip to Tokyo, in addition, I also speak Japanese at a conversational/business level (N2) which has definitely helped me understand a lot about the culture. I have gotten used to a lot of these cultural differences spending time in Japan and so it was actually quite difficult to remember them all. Anyways, on with the article.
 
 ### Extra-small

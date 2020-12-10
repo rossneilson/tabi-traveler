@@ -19,3 +19,20 @@ a {
 a:hover {
   text-decoration: none;
 }
+
+.table-of-contents {
+  margin-bottom: 10px;
+  list-style: none;
+color: #808483;
+}
+.table-of-contents ul {
+  background-color: #f7f9f9;
+  list-style: none;
+  max-width: 500px;
+  padding: 50px 10%;
+  margin: 0px;
+  border-radius: 4px;
+}
+.table-of-contents li {
+  border-bottom: 1px solid #8080802e;
+}

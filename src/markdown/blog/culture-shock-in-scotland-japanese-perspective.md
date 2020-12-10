@@ -9,6 +9,14 @@ locale: en
 SEO: Thoughts about cultural differences between Japan and Scotland UK from the
   perspective of a Japanese traveler
 ---
+
+###### Table of Contents
+```toc
+# This code block gets replaced with the TOC
+```
+
+---
+
 This was translated from the original Japanese written from the perspective of Konatsu (my girlfriend) with a few comments added from my perspective (Ross, the translator). Now on with the article.
 
 My second and third times leaving Japan were on a trip by myself to Scotland. There I spent a month with each time with my partner (Ross) and his family, so this article is about the cultural differences I found between the two countries.

@@ -8,7 +8,15 @@ path: blog/covid-travel
 locale: en
 SEO: Our experiences traveling internationally as a long distance couple from Japan to Scotland to Italy for leisure during the covid pandemic
 ---
-I feel like there is a need for a quick disclaimer before this article. Yes in the middle of a pandemic we went on holiday, however the entire time we followed government guidlines and wore masks everywhere we went. Also this trip was booked well before anyone knew corona as anything other than beer and so with nothing cancelled this is how we got on traveling during covid-19.
+
+###### Table of Contents
+```toc
+# This code block gets replaced with the TOC
+```
+
+---
+
+I feel like there is a need for a quick disclaimer before this article. Yes in the middle of a pandemic we went on holiday, however the entire time we followed government guidelines and wore masks everywhere we went. Also this trip was booked well before anyone knew corona as anything other than beer and so with nothing cancelled this is how we got on traveling during covid-19.
 
 Also for reference Kona lives in Japan while I live in Scotland so this was an important trip for us.
 
@@ -23,7 +31,7 @@ Right before Kona was about to fly over from Tokyo to Glasgow through the UAE (U
 
 So we had a fun few calls trying to organize a covid PCR test with a quick turn around, which trust me was not cheap. Fortunately we finally managed to get one and it was negative, phew. On with the journey. 
 
-The flight over was actually very pleasant, it was relatively quite and so Kona got an entire row to herself with lots of social distancing. She even received a covid safety kit with masks, hand sanitizer and everything you could need. Along with the safe knowledge that everyone on board had tested negative it made for a decently relaxing, but long, flight.
+The flight over was actually very pleasant, it was relatively quiet and so Kona got an entire row to herself with lots of social distancing. She even received a covid safety kit with masks, hand sanitizer and everything you could need. Along with the safe knowledge that everyone on board had tested negative it made for a decently relaxing, but long, flight.
 
 ![covid kit](../../img/kit.jpg "covid kit")
 
@@ -57,7 +65,7 @@ Unfortunately this high standard would not last long as the remainder of our fli
 ![bags](../../img/bags.jpg "bags")
 
 ### Italy travel
-If Kona had coem directly from Japan to Italty she would have had to quarantine for 2 weeks but she had already been in the UK for almost a month at this point and so no quarantine was needed, we could enjoy our holiday.
+If Kona had come directly from Japan to Italy she would have had to quarantine for 2 weeks but she had already been in the UK for almost a month at this point and so no quarantine was needed, we could enjoy our holiday.
 
 At the beginning of the pandemic we saw all the photos from Italy of the deserted tourist attractions and were wondering if that would still be the case during the summer, and fortunately for us at least, it was. Although not deserted, there were certainly fewer tourists around Rome than usual. For example, we did not even have to queue to get inside the colosseum and then when we visited the Vatican we were never peeking over crowds to see any amazing pieces of art. Another particularly strange thing we noticed was the types of tourists that there were around, they were all European. I am used to seeing large tour groups from Asia or distinctly American tourists, but nope, not a single one in sight. Actually I think Kona was one of the very few non-European people around. 
 
@@ -75,7 +83,7 @@ The pasta in Rome was almost other worldly and we had such a great time explorin
 
 Naples was certainly other worldly but maybe not in a good way. We felt as though we were launched into some crazy alternative reality with small children and entire families speeding past on motorbikes through tiny side streets. We had heard Naples was a tad grittier than Rome but that was certainly an understatement. Even our airbnb hosts suggested that Kona remove her necklace before leaving the apartment. Crossing the road felt like Russian roulette as there appeared to be no rules and graffiti everywhere. And with how busy it was I wasn't sure news of the coronavirus had made it to Naples. So we trekked through the concrete wild jungle for pizza since it was one of the few reasons we were stopping for a night, and wow, it truly was amazing, as a pizza lover it was worth it. Just maybe not again. 
 
-But after we eventually made it to Syracuse in Sicily, we felty like we had finally escaped the crazy chaos of Naples and found a slice of heaven in the small Island of Ortigia. It felt so completely different to the rest of Italy. Again there were certainly tourists around but nowhere near as many as there would usually be which made getting restaurants a lot easier. Ortigia had, I think, the pefect atmosphere and I am glad we had a good amount of time here. Although there was not a lot to explore it was lovely to relax and take our time as well as exploring the culinary world of Sicily. The focus on seafood was perfect for Kona and I and we tried so many amazing dishes and wines, dinner was always a pleasant surprise. We stayed in a beautiful ancient stone airbnb right in the middle of the old town that was so lovely, we even had 2 cats that patrolled the area and greeted us every time we left or came home. 
+But after we eventually made it to Syracuse in Sicily, we felt like we had finally escaped the crazy chaos of Naples and found a slice of heaven in the small Island of Ortigia. It felt so completely different to the rest of Italy. Again there were certainly tourists around but nowhere near as many as there would usually be which made getting restaurants a lot easier. Ortigia had, I think, the perfect atmosphere and I am glad we had a good amount of time here. Although there was not a lot to explore it was lovely to relax and take our time as well as exploring the culinary world of Sicily. The focus on seafood was perfect for Kona and I and we tried so many amazing dishes and wines, dinner was always a pleasant surprise. We stayed in a beautiful ancient stone airbnb right in the middle of the old town that was so lovely, we even had 2 cats that patrolled the area and greeted us every time we left or came home. 
 
 ![cats](../../img/cats.jpg "cats")
 

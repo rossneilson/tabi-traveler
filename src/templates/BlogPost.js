@@ -27,6 +27,12 @@ const BackText = styled.section`
     display: none !important;
   }
 `
+const ToTop = styled.section`
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  cursor: pointer;
+`
 
 const BackgroundImage = styled(Img)`
   -webkit-transform: translate3d(0, 0, 0);
@@ -190,6 +196,30 @@ export default function BlogPost({ data, pageContext }) {
         colour={"white"}
         language={pageContext.intl.language}
       />
+      <ToTop
+        onClick={() => {
+          window.scrollTo(0, 0)
+        }}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon icon-tabler icon-tabler-arrow-up-circle"
+          width="40"
+          height="40"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="#8698da"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <circle cx="12" cy="12" r="9" />
+          <line x1="12" y1="8" x2="8" y2="12" />
+          <line x1="12" y1="8" x2="12" y2="16" />
+          <line x1="16" y1="12" x2="12" y2="8" />
+        </svg>
+      </ToTop>
       <Category>{frontmatter.category}</Category>
       <Title>{frontmatter.title}</Title>
       <Location>{frontmatter.location}</Location>
