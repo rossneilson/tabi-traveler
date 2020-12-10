@@ -20,6 +20,9 @@ const BackIcon = styled.section`
   position: absolute;
   padding: 10px;
   display: flex;
+  @media (pointer: coarse) {
+    margin-top: 5%;
+  }
 `
 const BackText = styled.section`
   margin-top: 7px;

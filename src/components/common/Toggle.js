@@ -8,6 +8,9 @@ const Wrap = styled.section`
   margin: 10px;
   margin-right: 10px;
   right: ${props => (props.right ? 0 : null)};
+  @media (pointer: coarse) {
+    margin-top: ${props => (props.right ? "5%" : null)};
+  }
 `
 
 const SubMenu = styled.ul`
