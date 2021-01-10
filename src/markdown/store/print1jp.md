@@ -17,12 +17,12 @@ products:
     size: s
     price: 7500
   - sku: GLOBAL-CFPM-A3
-    title: Standard Black Mounted Frame A3 (11.7x16.5")
+    title: プリントと黒い額縁 A3 (11.7x16.5")
     type: frame
     size: s
     price: 12500
   - sku: GLOBAL-CFPM-A2
-    title: Standard Black Mounted Frame A2 (16.5x23.4")
+    title: プリントと黒い額縁 A2 (16.5x23.4")
     type: frame
     size: s
     price: 14500

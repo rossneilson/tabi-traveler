@@ -26,7 +26,11 @@ const SingularTab = styled.button`
   margin: 5px 0px;
   border-bottom: ${props => (props.active ? "1px solid #516bcc" : "none")};
   transition: 1s;
-  padding: 10px 50px;
+  padding: 10px 40px;
+  @media (pointer: coarse) {
+    display: ${props => (props.scrollable ? "block" : "flex")};
+    padding: 10px 15px;
+  }
 `
 
 export default function Tabs({

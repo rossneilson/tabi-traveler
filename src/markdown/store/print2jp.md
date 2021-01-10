@@ -21,7 +21,7 @@ products:
     size: s
     price: 8000
   - sku: GLOBAL-CFPM-16X16
-    title: Standard Black Mounted Frame 16x16 / 40x40cm
+    title: プリントと黒い額縁 16x16 / 40x40cm
     type: frame
     size: s
     price: 12500
