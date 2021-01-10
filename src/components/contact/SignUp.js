@@ -30,7 +30,7 @@ const Img = styled.img`
 
 const Title = styled.h2`
   width: 40%;
-  min-width: 300px;
+  min-width: 350px;
   color: #687aad;
   font-weight: 900;
   @media (pointer: coarse) {

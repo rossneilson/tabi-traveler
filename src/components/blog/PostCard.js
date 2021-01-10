@@ -132,7 +132,7 @@ export default function PostCard({ post, index, isfullpage }) {
         <OpenFab
           color="primary"
           aria-label="open"
-          titleLength={isfullpage ? 29 : frontmatter.title.length}
+          titleLength={isfullpage ? 25 : frontmatter.title.length}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
