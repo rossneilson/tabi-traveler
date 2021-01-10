@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { graphql } from "gatsby"
 
 import "../index.css"
@@ -51,6 +51,10 @@ export default function Blog(props) {
   const categories = createListOfCategories(posts)
 
   const filteredPosts = setFilteredPosts(tab, posts, categories)
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <div>

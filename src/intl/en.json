@@ -42,7 +42,7 @@
     "name": "Name",
     "email": "Email",
     "invalidEmail": "Invalid Email",
-    "success": "Sent, thank you",
+    "success": "Your information was sent perfectly, thank you",
     "message": "Message",
     "submit": "Submit"
   },

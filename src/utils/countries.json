@@ -13,10 +13,22 @@
           "lFrame": 1100
       },
       {
+          "name": "BELARUS",
+          "isoCode": "BY",
+          "sFrame": 4000,
+          "lFrame": 12000
+      },
+      {
           "name": "BELGIUM",
           "isoCode": "BE",
           "sFrame": 800,
           "lFrame": 1100
+      },
+      {
+          "name": "BRAZIL",
+          "isoCode": "BR",
+          "sFrame": 4500,
+          "lFrame": 12000
       },
       {
           "name": "CANADA",
@@ -85,6 +97,12 @@
           "lFrame": 1000
       },
       {
+          "name": "ICELAND",
+          "isoCode": "IS",
+          "sFrame": 3400,
+          "lFrame": 6000
+      },
+      {
           "name": "INDIA",
           "isoCode": "IN",
           "sFrame": 3400,
@@ -111,14 +129,56 @@
       {
           "name": "JAPAN",
           "isoCode": "JP",
-          "sFrame": 3200,
+          "sFrame": 3000,
           "lFrame": 6000
+      },
+      {
+          "name": "KAZAKHSTAN",
+          "isoCode": "KZ",
+          "sFrame": 4000,
+          "lFrame": 10000
       },
       {
           "name": "KOREA REPUBLIC OF",
           "isoCode": "KR",
           "sFrame": 3200,
           "lFrame": 6000
+      },
+      {
+          "name": "MACEDONIA",
+          "isoCode": "MK",
+          "sFrame": 3500,
+          "lFrame": 6000
+      },
+      {
+          "name": "MALAYSIA",
+          "isoCode": "MA",
+          "sFrame": 3400,
+          "lFrame": 9400
+      },
+      {
+          "name": "MEXICO",
+          "isoCode": "MX",
+          "sFrame": 3000,
+          "lFrame": 9000
+      },
+      {
+          "name": "MOLDOVA",
+          "isoCode": "MD",
+          "sFrame": 3000,
+          "lFrame": 9000
+      },
+      {
+          "name": "MOROCCO",
+          "isoCode": "MA",
+          "sFrame": 3400,
+          "lFrame": 9500
+      },
+      {
+          "name": "NEPAL",
+          "isoCode": "NP",
+          "sFrame": 3400,
+          "lFrame": 12000
       },
       {
           "name": "NETHERLANDS",
@@ -131,6 +191,24 @@
           "isoCode": "NZ",
           "sFrame": 20,
           "lFrame": 35
+      },
+      {
+          "name": "NORWAY",
+          "isoCode": "NO",
+          "sFrame": 1500,
+          "lFrame": 1500
+      },
+      {
+          "name": "PAKISTAN",
+          "isoCode": "PK",
+          "sFrame": 3400,
+          "lFrame": 12000
+      },
+      {
+          "name": "PANAMA",
+          "isoCode": "PA",
+          "sFrame": 4500,
+          "lFrame": 14000
       },
       {
           "name": "PHILIPPINES",
@@ -154,6 +232,12 @@
           "name": "ROMANIA",
           "isoCode": "RO",
           "sFrame": 2000,
+          "lFrame": 9000
+      },
+      {
+          "name": "RUSSIA",
+          "isoCode": "RU",
+          "sFrame": 3500,
           "lFrame": 9000
       },
       {
@@ -187,10 +271,22 @@
           "lFrame": 9000
       },
       {
+          "name": "TAIWAN",
+          "isoCode": "TW",
+          "sFrame": 3000,
+          "lFrame": 6000
+      },
+      {
           "name": "THAILAND",
           "isoCode": "TH",
           "sFrame": 5000,
           "lFrame": 10995
+      },
+      {
+          "name": "UKRAINE",
+          "isoCode": "UA",
+          "sFrame": 3000,
+          "lFrame": 6000
       },
       {
           "name": "UNITED ARAB EMIRATES",
@@ -207,8 +303,14 @@
       {
           "name": "UNITED STATES",
           "isoCode": "US",
-          "sFrame": 1500,
-          "lFrame": 2200
+          "sFrame": 2500,
+          "lFrame": 4000
+      },
+      {
+          "name": "VIETNAM",
+          "isoCode": "VN",
+          "sFrame": 3000,
+          "lFrame": 6000
       }
   ]
 }

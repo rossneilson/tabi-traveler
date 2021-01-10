@@ -87,7 +87,9 @@ const OpenFab = styled.section`
   align-items: center;
   justify-content: center;
   box-shadow: 0px 8px 20px -6px #000000ab;
+  margin-top: ${props => (props.titleLength > 30 ? "-35px" : "0px")};
   @media (pointer: coarse) {
+    margin-top: 0px;
     margin-bottom: 15px;
   }
 `
@@ -127,7 +129,11 @@ export default function PostCard({ post, index, isfullpage }) {
             day: "2-digit",
           }
         ).format(new Date(frontmatter.date))}
-        <OpenFab color="primary" aria-label="open">
+        <OpenFab
+          color="primary"
+          aria-label="open"
+          titleLength={isfullpage ? 29 : frontmatter.title.length}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="icon icon-tabler icon-tabler-chevron-right"

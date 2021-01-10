@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { FormattedMessage } from "gatsby-plugin-intl"
-import { GatsbyImage as Img } from "gatsby-plugin-image/compat"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import { device } from "../../utils/device"
@@ -31,7 +30,7 @@ const FujiImage = styled(GatsbyImage)`
     margin-top: none;
   }
 `
-const ProfileImage = styled(Img)`
+const ProfileImage = styled(GatsbyImage)`
   float: right;
   width: 150px !important;
   @media (pointer: coarse) {

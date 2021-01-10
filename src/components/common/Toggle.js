@@ -9,7 +9,7 @@ const Wrap = styled.section`
   margin-right: 10px;
   right: ${props => (props.right ? 0 : null)};
   @media (pointer: coarse) {
-    margin-top: ${props => (props.right ? "5%" : null)};
+    margin-top: ${props => (props.right ? "0%" : null)};
   }
 `
 

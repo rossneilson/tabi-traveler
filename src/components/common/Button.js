@@ -38,7 +38,7 @@ const StyledBox = styled.section`
 
 const animeProperties = {
   translateY: [
-    { value: 20, duration: 500 },
+    { value: 15, duration: 500 },
     { value: 0, duration: 800 },
   ],
   rotate: {

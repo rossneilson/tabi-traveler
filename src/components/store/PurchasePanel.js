@@ -5,8 +5,12 @@ import PurchaseTabContent from "./PurchaseTabContent"
 import PurchaseForm from "./PurchaseForm"
 import Tabs from "../common/Tabs"
 
+import stripeBadge from "../../img/stripe.svg"
+
 const SelectionSection = styled.section`
-  min-width: 50%;
+  width: 40%;
+  min-width: 300px;
+  flex-grow: 1;
   background: white;
   border-radius: 10px;
   box-shadow: 0px 0px 9px 1px #0000001c;
@@ -21,6 +25,12 @@ const Radio = styled.label`
 const Input = styled.input`
   transform: scale(1.5);
   margin-right: 10px;
+`
+
+const Stripe = styled.img`
+  width: 100px;
+  float: right;
+  margin-right: 10%;
 `
 
 export default function PurchasePanel({
@@ -118,6 +128,9 @@ export default function PurchasePanel({
           }
         />
       </PurchaseTabContent>
+      <a href="https://www.stripe.com" target="_blank" rel="noopener">
+        <Stripe src={stripeBadge} />
+      </a>
     </SelectionSection>
   )
 }

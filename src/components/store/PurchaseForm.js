@@ -20,7 +20,7 @@ const Total = styled.section`
 `
 
 const Select = styled.select`
-  margin: 5% 0% 0% 10%;
+  margin: 10% 0% 0% 10%;
   transform: scale(1.3);
 `
 

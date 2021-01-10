@@ -34,7 +34,7 @@ export default function Blog({ prints, language }) {
   return (
     <div
       style={{
-        marginTop: "10%",
+        marginTop: "5%",
       }}
     >
       <Link
@@ -64,13 +64,10 @@ export default function Blog({ prints, language }) {
             <path d="M19 21v-10.15" />
             <path d="M9 21v-4a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v4" />
           </svg>
-          Featured Prints - Sale £10 off
+          Featured Prints
         </Heading>
       </Link>
-      <FlexWrap>
-        {/* <h1>Sorry, no prints yet, come back soon</h1> */}
-        {printCards}
-      </FlexWrap>
+      <FlexWrap>{printCards}</FlexWrap>
     </div>
   )
 }

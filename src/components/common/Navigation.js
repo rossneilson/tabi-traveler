@@ -32,13 +32,16 @@ const BarVertical = styled.section`
 `
 
 const Home = styled(Link)`
-  padding: 1% 3% 3% 3%;
+  padding: 1% 3% 1% 3%;
   font-size: 200%;
   color: ${props => (props.colour ? props.colour : "#506acc")};
   background-image: none;
   text-align: center;
   text-shadow: none;
   transition: 1s;
+  border-color: #8597da;
+  border-left: 1px solid;
+  border-right: 1px solid;
   &:hover {
     color: #98aae0;
   }
@@ -48,9 +51,9 @@ const Home = styled(Link)`
 `
 
 const PageButton = styled(Link)`
-  padding: 1% 3% 3% 3%;
+  padding: 1% 3% 1% 3%;
   color: ${props => (props.colour ? props.colour : "#506acc")};
-  font-size: 130%;
+  font-size: 110%;
   transition: 1s;
   background-image: none;
   text-shadow: none;

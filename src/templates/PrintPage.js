@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { graphql } from "gatsby"
 import styled, { createGlobalStyle } from "styled-components"
 import { navigate } from "@reach/router"
@@ -26,6 +26,9 @@ const BackIcon = styled.section`
   position: absolute;
   padding-left: 10px;
   display: flex;
+  @media (pointer: coarse) {
+    margin-top: 0%;
+  }
 `
 const BackText = styled.section`
   margin-top: 7px;
@@ -37,11 +40,12 @@ const BackText = styled.section`
 
 const Title = styled.h1`
   margin-left: 10%;
-  margin-top: 2%;
+  margin-top: 3%;
   color: #8698da;
   @media (pointer: coarse) {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 0%;
+    margin-top: 5%;
+    text-align: center;
   }
 `
 
@@ -49,14 +53,14 @@ const ContentWrapper = styled.section`
   display: flex;
   margin: 0% 5% 5% 5%;
   flex-direction: row;
-  @media (pointer: coarse) {
-    flex-direction: column;
-  }
+  flex-wrap: wrap;
 `
 
 const ImageSection = styled.section`
   display: flex;
-  min-width: 50%;
+  width: 60%;
+  min-width: 300px;
+  flex-grow: 1;
 `
 
 const Markdown = styled.p`
@@ -74,6 +78,10 @@ const FormattedDate = styled.p`
 export default function PrintPage({ data, pageContext }) {
   const { frontmatter, html, fileAbsolutePath } = data.print
   const { language } = pageContext
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <div>

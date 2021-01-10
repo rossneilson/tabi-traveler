@@ -5,6 +5,16 @@ locale: en
 ---
 # Frequently Asked Questions
 
+## Checkout
+
+### Is it secure?
+
+We use stripe to process payments and so all payment details are handled by a reputable 3rd party. Stripe is used by millions of businesses large and small around the world and is fully PCI certified. We also use SSL as you can see by the green padlock at the top of your browser.
+
+### What payment methods are available?
+
+Our checkout service, stripe, accepts many many payment options such as; Visa, mastercard, amex. We also support payment through google pay and apple pay for easy checkout. 
+
 ## Shipping
 
 ### Do you ship internationally?

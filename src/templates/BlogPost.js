@@ -18,10 +18,10 @@ const BackIcon = styled.section`
   color: white !important;
   z-index: 99999999;
   position: absolute;
-  padding: 10px;
+  padding-left: 10px;
   display: flex;
   @media (pointer: coarse) {
-    margin-top: 5%;
+    margin-top: 0%;
   }
 `
 const BackText = styled.section`
@@ -149,6 +149,10 @@ export default function BlogPost({ data, pageContext }) {
       window.removeEventListener("scroll", listener)
     }
   })
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   const { frontmatter, html } = data.posts
   const { language } = pageContext

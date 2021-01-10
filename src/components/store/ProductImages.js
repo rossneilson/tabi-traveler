@@ -10,7 +10,6 @@ const Wrapper = styled.section`
 
 const MainImage = styled(Img)`
   width: 100%;
-  height: auto;
 `
 
 const SmallImage = styled(Img)`
@@ -22,13 +21,13 @@ const SmallImage = styled(Img)`
 
 const Wrap = styled.section`
   width: 100%;
+  height: 20%;
   cursor: pointer;
   z-index: 9999;
   margin: 5px;
 `
 
 const OtherImages = styled.section`
-  height: 20%;
   display: flex;
   width: 100%;
   overflow: auto;
@@ -49,7 +48,6 @@ export default function ProductImages({ images }) {
         >
           <SmallImage
             key={index}
-            // fluid={image.childImageSharp.fluid}
             image={imageData}
             onClick={() => {
               setSelectedImage(getImage(images[index]))
@@ -62,11 +60,7 @@ export default function ProductImages({ images }) {
 
   return (
     <Wrapper>
-      <MainImage
-        // fluid={selectedImage.childImageSharp.fluid}
-        image={selectedImage}
-        imgStyle={{ objectFit: "contain" }}
-      />
+      <MainImage image={selectedImage} imgStyle={{ objectFit: "contain" }} />
       <OtherImages>{otherImages}</OtherImages>
     </Wrapper>
   )
