@@ -6,7 +6,7 @@ date: 2021-01-11T14:56:59.267Z
 image: /static/nikonos/DSC01411.jpg
 path: blog/nikonos-adventure-camera
 locale: en
-SEO: Our experiences traveling internationally as a long distance couple from Japan to Scotland to Italy for leisure during the covid pandemic
+SEO: My first year using the Nikonos V as an adventure travel camera throughout Japan. Including thoughts, tips and some of my favourite photos.
 ---
 
 ###### Table of Contents
