@@ -27,8 +27,14 @@ const SubMenu = styled.ul`
 const MenuItem = styled.li`
   cursor: pointer;
   z-index: 999999999;
-  color: ${props => (props.colour ? props.colour : "#8698da")};
   padding: 5px;
+  @media (pointer: coarse) {
+    color: white;
+  }
+`
+
+const LanguageText = styled.a`
+  color: ${props => (props.colour ? props.colour : "#8698da")};
   @media (pointer: coarse) {
     color: white;
   }
@@ -79,7 +85,7 @@ export default function Toggle({
               changeLocale("en")
             }}
           >
-            <a>English</a>
+            <LanguageText colour={colour}>English</LanguageText>
           </MenuItem>
           <MenuItem
             colour={colour}
@@ -87,7 +93,7 @@ export default function Toggle({
               changeLocale("jp")
             }}
           >
-            <a>日本語</a>
+            <LanguageText colour={colour}>日本語</LanguageText>
           </MenuItem>
         </SubMenu>
       )}
