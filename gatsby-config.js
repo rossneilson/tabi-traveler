@@ -100,7 +100,7 @@ module.exports = {
         path: `${__dirname}/src/intl`,
         languages: [`en`, `jp`],
         defaultLanguage: `en`,
-        redirect: false,
+        redirect: true,
       },
     },
     {
