@@ -72,6 +72,13 @@ const Title = styled.h1`
     margin-top: 50px;
     font-size: 180% !important;
   }
+  @media (min-height: 500px) {
+    margin-top: 50px;
+    font-size: 280%;
+  }
+  @media (min-height: 600px) {
+    font-size: 350%;
+  }
 `
 
 const Desc = styled.h2`
