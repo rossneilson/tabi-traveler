@@ -77,7 +77,7 @@ const Title = styled.h1`
     font-size: 280%;
   }
   @media (min-height: 600px) {
-    font-size: 330%;
+    font-size: 320%;
   }
 `
 
