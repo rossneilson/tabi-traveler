@@ -29,7 +29,7 @@ collections:
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Image", name: "image", widget: "image"}
       - {label: "Path", name: "path", widget: "string", hint: "blog/same-as-title"}
-      - {label: "Locale", name: "locale", widget: "select", options: ["en", "jp"]}
+      - {label: "Locale", name: "locale", widget: "select", options: ["en", "ja"]}
       - {label: "Description", name: "SEO", widget: "string"}
       - {label: "Content", name: "body", widget: "markdown"}
   - name: "store"
@@ -59,7 +59,7 @@ collections:
           - {label: "Price", name: "price", widget: "number"}
       - {label: "Full image", name: "fullImage", widget: "string", hint: "https://drive.google.com/uc?id=<DRIVE_LINK_IMAGE_ID>"}
       - {label: "Path", name: "path", widget: "string", hint: "prints/same-as-title"}
-      - {label: "Locale", name: "locale", widget: "select", options: ["en", "jp"]}
+      - {label: "Locale", name: "locale", widget: "select", options: ["en", "ja"]}
       - {label: "Content", name: "body", widget: "markdown"}
   - name: "general"
     label: "General"
@@ -69,7 +69,7 @@ collections:
     fields: 
       - {label: "Page", name: "page", widget: "string"}
       - {label: "Type", name: "type", widget: "string"}
-      - {label: "Locale", name: "locale", widget: "select", options: ["en", "jp"]}
+      - {label: "Locale", name: "locale", widget: "select", options: ["en", "ja"]}
       - {label: "Content", name: "body", widget: "markdown"}
 
   - name: "map"
@@ -155,9 +155,9 @@ collections:
                 - { label: 'success', name: 'success', widget: 'string' }
                 - { label: 'message', name: 'message', widget: 'string' }
                 - { label: 'submit', name: 'submit', widget: 'string' }
-      - file: "src/intl/jp.json"
-        label: "jp"
-        name: "jp"
+      - file: "src/intl/ja.json"
+        label: "ja"
+        name: "ja"
         fields:
           - label: 'title'
             name: 'title'

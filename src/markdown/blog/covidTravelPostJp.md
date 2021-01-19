@@ -5,7 +5,7 @@ category: Travel Stories
 date: 2020-12-04T14:56:59.267Z
 image: /static/2020map.jpg
 path: blog/covid-travel
-locale: jp
+locale: ja
 SEO: スコットランドと日本の遠距カップルのコロナ下でのイタリア旅行
 ---
 

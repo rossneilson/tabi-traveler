@@ -27,7 +27,7 @@ products:
     price: 12500
 fullImage: https://drive.google.com/uc?id=1ByrUGIqzn2RpF72nmCOtqNwgIqH2-lWY
 path: prints/woodland-path
-locale: jp
+locale: ja
 ---
 ## 商品について
 

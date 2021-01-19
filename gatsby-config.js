@@ -6,7 +6,7 @@ module.exports = {
       title: `Tabi Traveler`,
       description: `Tabi Traveler photography, portfolio, blog and store`,
     },
-    jp: {
+    ja: {
       title: `旅Traveler`,
       description: `旅Traveler 国際カップル写真家、 ポートフォリオ、ブログ、 プリント`,
     },
@@ -15,7 +15,7 @@ module.exports = {
         title: `Blog | Tabi Traveler`,
         description: `Tabi Traveler photography blog about international travel, photography`,
       },
-      jp: {
+      ja: {
         title: `ブログ　旅Traveler`,
         description: `旅Traveler 国際カップル写真家 ブログ、外国、内国、旅行、写真`,
       },
@@ -25,7 +25,7 @@ module.exports = {
         title: `Portfolio | Tabi Traveler`,
         description: `Tabi Traveler portfolio of best photography from across the world`,
       },
-      jp: {
+      ja: {
         title: `ポートフォリオ　旅Traveler`,
         description: `旅Traveler 国際カップル写真家 ポートフォリオ`,
       },
@@ -35,7 +35,7 @@ module.exports = {
         title: `Prints | Tabi Traveler`,
         description: `High qaulity photographic travel prints and frames, Free Worldwide shipping`,
       },
-      jp: {
+      ja: {
         title: `プリント　旅Traveler`,
         description: `旅Traveler 国際カップル写真家 高い質プリント店　無料国際発送`,
       },
@@ -98,7 +98,7 @@ module.exports = {
       resolve: `gatsby-plugin-intl`,
       options: {
         path: `${__dirname}/src/intl`,
-        languages: [`en`, `jp`],
+        languages: [`en`, `ja`],
         defaultLanguage: `en`,
         redirect: true,
       },

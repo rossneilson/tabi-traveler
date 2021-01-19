@@ -152,7 +152,7 @@ export const imageQuery = graphql`
           title
           description
         }
-        jp {
+        ja {
           title
           description
         }

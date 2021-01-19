@@ -14,7 +14,7 @@ export const createCheckout = async (
       size: selected.size,
       title: frontmatter.title,
       product: selected,
-      locale: language === "jp" ? "ja" : "auto",
+      locale: language === "ja" ? "ja" : "auto",
       fileAbsolutePath: fileAbsolutePath,
     }),
     method: "POST",

@@ -1,7 +1,7 @@
 ---
 page: prints
 type: faq
-locale: jp
+locale: ja
 ---
 ## FAQ
 

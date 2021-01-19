@@ -5,7 +5,7 @@ category: カメラ
 date: 2021-01-11T14:56:59.267Z
 image: /static/nikonos/DSC01411.jpg
 path: blog/nikonos-adventure-camera
-locale: jp
+locale: ja
 SEO: ニコノスV水中フィルムカメラレビュー。フィルムとアナログの再来新時代に冒険と旅行カメラを撮影するの記事。
 ---
 

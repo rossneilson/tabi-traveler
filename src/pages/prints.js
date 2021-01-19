@@ -168,7 +168,7 @@ export const printsQuery = graphql`
             title
             description
           }
-          jp {
+          ja {
             title
             description
           }

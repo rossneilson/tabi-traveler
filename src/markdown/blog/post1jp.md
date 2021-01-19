@@ -5,7 +5,7 @@ category: Travel Stories
 date: 2020-08-17T14:56:40.193Z
 image: /static/download-12.jpg
 path: blog/culture-shock-japan
-locale: jp
+locale: ja
 SEO: 初めての日本旅行と日本人家族と生活することについての記事
 ---
 

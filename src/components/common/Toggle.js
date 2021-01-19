@@ -90,7 +90,7 @@ export default function Toggle({
           <MenuItem
             colour={colour}
             onClick={() => {
-              changeLocale("jp")
+              changeLocale("ja")
             }}
           >
             <LanguageText colour={colour}>日本語</LanguageText>

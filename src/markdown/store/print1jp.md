@@ -28,7 +28,7 @@ products:
     price: 14500
 fullImage: https://drive.google.com/uc?id=1UNl8twG9mhNDJg_0eBjvPSVk96MWWRcG
 path: prints/fuji-sunset-from-enoshima
-locale: jp
+locale: ja
 ---
 江ノ島は私たちにとってとても大切な場所です。富士山と夕焼けは見事な組み合わせで、海と富士山の境目はこの写真の重要なポイントになっています。この写真を通して、joy, relaxation そしてwonderを皆さんとシェアしたいです。
 

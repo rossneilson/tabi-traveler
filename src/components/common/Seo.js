@@ -76,7 +76,7 @@ function SEO({ description, lang, meta, title, slug = "" }) {
       <link
         rel="alternate"
         hrefLang="ja"
-        href={"https://tabitraveler.com/jp" + slug}
+        href={"https://tabitraveler.com/a" + slug}
       />
       <link
         rel="alternate"

@@ -130,7 +130,7 @@ export const postsQuery = graphql`
             title
             description
           }
-          jp {
+          ja {
             title
             description
           }
