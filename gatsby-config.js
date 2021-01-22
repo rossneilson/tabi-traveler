@@ -33,7 +33,7 @@ module.exports = {
     prints: {
       en: {
         title: `Prints | Tabi Traveler`,
-        description: `High qaulity photographic travel prints and frames, Free Worldwide shipping`,
+        description: `Tabi Traveler High qaulity photographic travel prints and frames, Free Worldwide shipping`,
       },
       ja: {
         title: `プリント　旅Traveler`,

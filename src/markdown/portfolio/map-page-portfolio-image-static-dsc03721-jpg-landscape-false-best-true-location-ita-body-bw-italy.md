@@ -1,6 +1,6 @@
 ---
 page: portfolio
-best: true
+best: false
 landscape: false
 image: /static/dsc03721.jpg
 location: ITA

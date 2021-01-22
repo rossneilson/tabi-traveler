@@ -34,7 +34,7 @@ On a drizzly wet day in Scotland I was walking through a forest and this simple 
 
 This was one of my favourite images from 2020. It works perfectly in the square format as the path leads your eye deeper into the forest. Thank you for supporting my photography.
 
-Prints are printed on Hahnemühle photo rag paper, go to FAQ for more information about this paper.
+Prints are printed on Hahnemühle photo rag paper, go to [FAQ](https://tabitraveler.com/en/prints#faq) for more information about this product, paper, shipping and the environment.
 
 If you have any questions please [contact us](https://tabitraveler.com/contact) 
 

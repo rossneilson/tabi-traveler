@@ -2,7 +2,7 @@
 page: portfolio
 best: false
 landscape: false
-location: JPN
-image: ../../img/download-24.jpg
+image: /static/DSC04182.jpg
+location: GBR
 ---
 Content goes here!

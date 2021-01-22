@@ -35,6 +35,6 @@ locale: ja
 
 10年間以上古いフィルムを使ったから上の角に特異な色をつけている。
 
-この写真はHahnemühle photo ragという上質な紙に印刷してお届けいたします。紙の詳細についてはFAQをご参照ください。
+この写真はHahnemühle photo ragという上質な紙に印刷してお届けいたします。発送と紙の詳細については[FAQ](https://tabitraveler.com/ja/prints#faq)をご参照ください。
 
 撮影機材：マミヤC220、180mmレンズ、富士フィルムプロ800Z

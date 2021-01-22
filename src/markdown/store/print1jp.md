@@ -32,6 +32,6 @@ locale: ja
 ---
 江ノ島は私たちにとってとても大切な場所です。富士山と夕焼けは見事な組み合わせで、海と富士山の境目はこの写真の重要なポイントになっています。この写真を通して、joy, relaxation そしてwonderを皆さんとシェアしたいです。
 
-この写真はHahnemühle photo ragという上質な紙に印刷してお届けいたします。紙の詳細についてはFAQをご参照ください。
+この写真はHahnemühle photo ragという上質な紙に印刷してお届けいたします。紙の詳細については[FAQ](https://tabitraveler.com/ja/prints#faq)をご参照ください。
 
 撮影機材：Nikon D5200、35mmレンズ

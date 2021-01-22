@@ -17,8 +17,7 @@ const FlexContainer = styled.section`
 
 const Image = styled.img`
   width: 80px;
-  border-style: solid;
-  border-width: thin;
+  height: 50px;
 `
 
 const FavouriteIcon = styled.svg`
