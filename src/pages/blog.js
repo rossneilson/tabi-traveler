@@ -1,7 +1,6 @@
 import React, { useEffect } from "react"
 import { graphql } from "gatsby"
 
-import "../index.css"
 import SEO from "../components/common/Seo"
 import Navigation from "../components/common/Navigation"
 import BlogGrid from "../components/blog/BlogGrid"
@@ -113,8 +112,8 @@ export const postsQuery = graphql`
             image {
               childImageSharp {
                 gatsbyImageData(
-                  maxWidth: 1000
-                  layout: FLUID
+                  width: 1000
+                  layout: CONSTRAINED
                   placeholder: BLURRED
                 )
               }

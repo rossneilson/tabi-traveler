@@ -33,35 +33,34 @@ const BarVertical = styled.section`
 
 const Home = styled(Link)`
   padding: 1% 3% 1% 3%;
-  font-size: 200%;
-  color: ${props => (props.colour ? props.colour : "#506acc")};
+  font-size: ${props => props.theme.fontSizes.l};
+  color: ${props => (props.colour ? props.colour : props.theme.colors.primary)};
   background-image: none;
   text-align: center;
   text-shadow: none;
   transition: 1s;
-  border-color: #8597da;
   border-left: 1px solid;
   border-right: 1px solid;
   &:hover {
-    color: #98aae0;
+    color: ${props => props.theme.colors.primary500};
   }
   &:focus {
-    color: #98aae0;
+    color: ${props => props.theme.colors.primary500};
   }
 `
 
 const PageButton = styled(Link)`
   padding: 1% 3% 1% 3%;
-  color: ${props => (props.colour ? props.colour : "#506acc")};
-  font-size: 110%;
+  color: ${props => (props.colour ? props.colour : props.theme.colors.primary)};
+  font-size: ${props => props.theme.fontSizes.r};
   transition: 1s;
   background-image: none;
   text-shadow: none;
   &:hover {
-    color: #98aae0;
+    color: ${props => props.theme.colors.primary500};
   }
   &:focus {
-    color: #98aae0;
+    color: ${props => props.theme.colors.primary500};
   }
 `
 export default function Navigation({

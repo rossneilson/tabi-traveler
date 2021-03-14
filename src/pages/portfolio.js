@@ -2,8 +2,6 @@ import React, { useState } from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 
-import "../index.css"
-
 import SEO from "../components/common/Seo"
 
 import Navigation from "../components/common/Navigation"
@@ -15,7 +13,6 @@ import SignUp from "../components/contact/SignUp"
 const BurgerIcon = styled.section`
   position: fixed;
   z-index: 99999;
-  color: #8698da;
   margin: 2%;
   margin-top: 1%;
   display: ${props => (!props.show ? "" : "none")};
@@ -121,7 +118,7 @@ export const imageQuery = graphql`
             image {
               childImageSharp {
                 gatsbyImageData(
-                  maxHeight: 600
+                  height: 600
                   quality: 90
                   layout: CONSTRAINED
                   placeholder: BLURRED

@@ -4,8 +4,6 @@ import styled, { createGlobalStyle } from "styled-components"
 import { navigate } from "@reach/router"
 import { FormattedMessage } from "gatsby-plugin-intl"
 
-import "../index.css"
-
 import Navigation from "../components/common/Navigation"
 import Footer from "../components/blog/Footer"
 import Toggle from "../components/common/Toggle"
@@ -21,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
 
 const BackIcon = styled.section`
   cursor: pointer;
-  color: #8698da;
+  color: ${props => props.theme.colors.primary600};
   z-index: 99999999;
   position: absolute;
   padding-left: 10px;
@@ -41,7 +39,7 @@ const BackText = styled.section`
 const Title = styled.h1`
   margin-left: 10%;
   margin-top: 3%;
-  color: #8698da;
+  color: ${props => props.theme.colors.primary};
   @media (pointer: coarse) {
     margin-left: 0%;
     margin-top: 5%;
@@ -67,7 +65,7 @@ const Markdown = styled.p`
   line-height: 1.7;
   margin-left: 10%;
   margin-right: 10%;
-  font-size: 1rem;
+  font-size: ${props => props.theme.fontSizes.m};
   line-height: 2;
 `
 const FormattedDate = styled.p`
@@ -174,7 +172,7 @@ export const query = graphql`
         images {
           childImageSharp {
             gatsbyImageData(
-              maxWidth: 3000
+              width: 3000
               layout: CONSTRAINED
               placeholder: BLURRED
             )
@@ -183,7 +181,7 @@ export const query = graphql`
         mainImage {
           childImageSharp {
             gatsbyImageData(
-              maxWidth: 3000
+              width: 3000
               layout: CONSTRAINED
               placeholder: BLURRED
             )
@@ -193,7 +191,7 @@ export const query = graphql`
     }
     image: file(relativePath: { eq: "footerImage.jpg" }) {
       childImageSharp {
-        gatsbyImageData(maxWidth: 1000, layout: FLUID, placeholder: BLURRED)
+        gatsbyImageData(width: 1000, layout: CONSTRAINED, placeholder: BLURRED)
       }
     }
   }

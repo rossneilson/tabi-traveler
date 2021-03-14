@@ -26,13 +26,13 @@ const FavouriteIcon = styled.svg`
 
 const ResetButton = styled.button`
   transition: 0.2s;
-  background-color: #f79a60;
+  background-color: ${props => props.theme.colors.secondary};
   display: ${props => (props.filter === "best" ? "none" : "flex")};
   align-self: flex-start;
   color: white;
   height: 40px;
   justify-content: space-around;
-  font-size: large;
+  font-size: ${props => props.theme.fontSizes.m};
   font-weight: 500;
   min-width: 15%;
   border: none;
@@ -40,10 +40,10 @@ const ResetButton = styled.button`
   border-radius: 5px;
   margin: 4px;
   &:hover {
-    background-color: #5065a3;
+    background-color: ${props => props.theme.colors.primary};
   }
   &:focus {
-    background-color: #5065a3;
+    background-color: ${props => props.theme.colors.primary};
   }
 `
 

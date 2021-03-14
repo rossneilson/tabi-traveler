@@ -16,10 +16,10 @@ const Wrapper = styled.section`
 const SingularTab = styled.button`
   transition: 0.2s;
   background-color: white;
-  color: ${props => (props.active ? "#516bcc" : "#0000008a")};
+  color: ${props => (props.active ? props.theme.colors.primary : "#0000008a")};
   display: flex;
   justify-content: space-around;
-  font-size: large;
+  font-size: ${props => props.theme.fontSizes.r};
   font-weight: 500;
   border: none;
   cursor: pointer;

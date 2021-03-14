@@ -10,19 +10,20 @@ const Wrapper = styled(Link)`
   max-width: 380px;
   z-index: 999;
   overflow: hidden;
-  transition: all 1s;
+  transition: all 0.3s;
   background-color: white;
-  color: #5065a3;
+  color: ${props => props.theme.colors.primary600};
   cursor: pointer;
   border-radius: 5px;
   margin: 0% 2.5% 0% 2.5%;
   box-shadow: 0px 0px 15px 1px #0000003c;
   &:hover {
-    opacity: 0.9;
-    transform: translateY(-15px);
+    box-shadow: 0px 0px 20px 9px #0000003c;
+    transform: translateY(-5px);
   }
   &:focus {
-    opacity: 0.7;
+    box-shadow: 0px 0px 20px 9px #0000003c;
+    transform: translateY(-5px);
   }
   @media (pointer: coarse) {
     height: 400px;
@@ -40,7 +41,7 @@ const Image = styled(Img)`
 `
 
 const Title = styled.h2`
-  color: #5065a3;
+  color: ${props => props.theme.colors.primary600};
 `
 
 const Description = styled.section`
@@ -54,6 +55,7 @@ export default function PrintCard({ print, index }) {
   const imageData = getImage(frontmatter.mainImage)
   return (
     <Wrapper
+      data-sal="slide-up"
       to={urlLocaleFormatting(frontmatter.locale, "/" + frontmatter.path)}
       onClick={() => {
         window.scrollTo(0, 0)

@@ -2,8 +2,6 @@ import React from "react"
 import { graphql } from "gatsby"
 import { createGlobalStyle } from "styled-components"
 
-import "../index.css"
-
 import SEO from "../components/common/Seo"
 
 import Navigation from "../components/common/Navigation"
@@ -45,9 +43,9 @@ export const imageQuery = graphql`
     footImage1: file(relativePath: { eq: "footImage.png" }) {
       childImageSharp {
         gatsbyImageData(
-          maxWidth: 1800
+          width: 1800
           quality: 80
-          layout: FLUID
+          layout: CONSTRAINED
           placeholder: BLURRED
         )
       }
