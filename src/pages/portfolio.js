@@ -38,7 +38,7 @@ export default function Portfolio(props) {
         : true
       : false
   )
-  // TODO!!!!! Move everything back once gatsby bug fixed! __________________________________
+
   return (
     <div>
       <SEO
@@ -98,7 +98,7 @@ export default function Portfolio(props) {
         />
       </Wrapper>
       <ImageView
-        filteredImages={props.data.images.edges}
+        filteredImages={filteredImages}
         selectedImage={selectedImage}
         setSelectedImage={setSelectedImage}
       />

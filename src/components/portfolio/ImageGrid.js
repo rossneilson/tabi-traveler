@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import ReactDOM from "react-dom"
 import styled from "styled-components"
 import { GatsbyImage as Img, getImage } from "gatsby-plugin-image"
 
@@ -25,7 +24,6 @@ const Thumbnail = styled.section`
   transition: all 1s;
   cursor: pointer;
   grid-column: ${props => (props.landscape ? "span 2" : "span 1")};
-  display: ${props => (props.visible ? "block" : "none")};
 
   &:hover {
     opacity: 0.7;
@@ -47,38 +45,62 @@ const ThumbnailImage = styled(Img)`
   width: 100%;
   height: 100%;
 `
-
-export default function Grid({ images, filter, setSelectedImage, drawerOpen }) {
-  const [thumbnails, setThumbnails] = useState([])
-
+export default function Grid({
+  images,
+  filter,
+  setSelectedImage,
+  filteredImages,
+  setFilteredImages,
+  drawerOpen,
+}) {
   useEffect(() => {
-    const tempThumbs = []
-    // setThumbnails([])
-
-    images.map((value, index) => {
-      const imageData = getImage(value.node.frontmatter.image)
-      tempThumbs.push(
-        <Thumbnail
-          key={index}
-          visible={
-            filter === "best"
-              ? value.node.frontmatter.best
-              : filter === value.node.frontmatter.location
-          }
-          onClick={() => {
-            setSelectedImage(index)
-          }}
-          landscape={value.node.frontmatter.landscape}
-        >
-          <ThumbnailImage
-            image={imageData}
-            loading={value.node.frontmatter.best ? "eager" : "lazy"}
-          />
-        </Thumbnail>
-      )
-      setThumbnails(tempThumbs)
-    })
+    setFilteredImages(
+      images
+        .filter(e =>
+          filter === "best"
+            ? e.node.frontmatter.best === true
+            : filter === e.node.frontmatter.location
+        )
+        .sort(() => {
+          return 0.5 - Math.random()
+        })
+    )
+    // if (filter === "best") {
+    //   setFilteredImages(
+    //     images
+    //       .filter(e => e.node.frontmatter.best === true)
+    //       .sort(() => {
+    //         return 0.5 - Math.random()
+    //       })
+    //   )
+    // } else {
+    //   setFilteredImages(
+    //     images
+    //       .filter(e => e.node.frontmatter.location === filter)
+    //       .sort(() => {
+    //         return 0.5 - Math.random()
+    //       })
+    //   )
+    // }
+    // -----------------
   }, [filter])
+
+  const thumbnails = []
+
+  filteredImages.map((value, index) => {
+    const imageData = getImage(value.node.frontmatter.image)
+    thumbnails.push(
+      <Thumbnail
+        key={index}
+        onClick={() => {
+          setSelectedImage(index)
+        }}
+        landscape={value.node.frontmatter.landscape}
+      >
+        <ThumbnailImage image={imageData} />
+      </Thumbnail>
+    )
+  })
 
   return <GridWrap drawerOpen={drawerOpen}>{thumbnails}</GridWrap>
 }
