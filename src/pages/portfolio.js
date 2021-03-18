@@ -30,9 +30,15 @@ export default function Portfolio(props) {
   const [filter, setFilter] = useState("best")
   const [selectedImage, setSelectedImage] = useState(null)
   const [filteredImages, setFilteredImages] = useState([])
-
-  const [drawerOpen, setDrawerOpen] = useState(false)
-
+  console.log({ selectedImage })
+  const [drawerOpen, setDrawerOpen] = useState(
+    typeof window !== `undefined`
+      ? typeof window.orientation !== "undefined"
+        ? false
+        : true
+      : false
+  )
+  // TODO!!!!! Move everything back once gatsby bug fixed! __________________________________
   return (
     <div>
       <SEO
@@ -92,11 +98,14 @@ export default function Portfolio(props) {
         />
       </Wrapper>
       <ImageView
-        filteredImages={filteredImages}
+        filteredImages={props.data.images.edges}
         selectedImage={selectedImage}
         setSelectedImage={setSelectedImage}
       />
-      <SignUp language={props.pageContext.intl.language} />
+      <SignUp
+        style={{ zIndex: 99999 }}
+        language={props.pageContext.intl.language}
+      />
     </div>
   )
 }

@@ -21,7 +21,7 @@
     "animejs": "^3.2.0",
     "babel-plugin-styled-components": "^1.10.7",
     "front-matter": "^4.0.2",
-    "gatsby": "^3.0.3",
+    "gatsby": "^3.1.0",
     "gatsby-plugin-google-analytics": "^3.0.0",
     "gatsby-plugin-image": "^1.0.0",
     "gatsby-plugin-intl": "^0.3.3",

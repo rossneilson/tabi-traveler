@@ -90,6 +90,7 @@ export default function AboutSection({}) {
       <FujiImage>
         <StaticImage
           src="../../img/fuji.jpg"
+          alt="Mount fuji picture"
           width={1800}
           layout="constrained"
         />
@@ -100,7 +101,6 @@ export default function AboutSection({}) {
           <svg
             style={{ transform: "translateY(10px)", marginRight: "4px" }}
             xmlns="http://www.w3.org/2000/svg"
-            className="icon icon-tabler icon-tabler-movie"
             width="48"
             height="48"
             viewBox="0 0 24 24"
@@ -132,6 +132,7 @@ export default function AboutSection({}) {
         <ProfileImage>
           <StaticImage
             src="../../img/footerImage.jpg"
+            alt="Profile image"
             width={300}
             layout="constrained"
           />

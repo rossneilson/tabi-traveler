@@ -138,7 +138,12 @@ export default function Contact(props) {
   return (
     <Wrapper>
       <Image>
-        <StaticImage width={1800} quality={80} src="../../img/footImage.png" />
+        <StaticImage
+          width={1800}
+          quality={80}
+          src="../../img/footImage.png"
+          alt="Mountain range background"
+        />
       </Image>
       <ContactCard>
         <Title>{intl.formatMessage({ id: "contact.title" })}</Title>

@@ -9,9 +9,11 @@ const FilterMap = loadable(() => import("./FilterMap"))
 
 const Wrapper = styled.section`
   width: ${props => (props.open ? "30%" : "0%")};
+  height: 100%;
   transition: 1s;
   position: fixed;
-
+  background-color: white;
+  /* z-index: -1; */
   @media (pointer: coarse) {
     width: ${props => (props.open ? "50%" : "0%")};
   }
@@ -69,6 +71,7 @@ export default function FilterDrawer({
           <SelectedFilter filter={filter} setFilter={setFilter} />
 
           <FilterMap filter={filter} setFilter={setFilter} />
+          <h3>Use the map to filter countries</h3>
         </div>
       ) : (
         <div />

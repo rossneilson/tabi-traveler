@@ -18,6 +18,7 @@ const Container = styled.section`
   padding: 2%;
   flex-flow: wrap;
   justify-content: center;
+  z-index: 2;
 `
 
 const Img = styled.img`
@@ -31,7 +32,7 @@ const Img = styled.img`
 const Title = styled.h2`
   width: 40%;
   min-width: 350px;
-  color: ${props => props.theme.colors.primary};
+  color: ${props => props.theme.colors.primary600};
   font-weight: 900;
   @media (pointer: coarse) {
     text-align: center;
