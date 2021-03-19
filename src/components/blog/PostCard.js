@@ -9,20 +9,21 @@ const Wrapper = styled(Link)`
   width: 100%;
   z-index: 999;
   max-width: ${props => (props.isfullpage ? "null" : "380px")};
-  overflow: hidden;
-  transition: all 1s;
+  overflow: visible;
+  transition: all 0.3s;
   background-color: white;
-  color: #5065a3;
+  color: ${props => props.theme.colors.primary600};
   cursor: pointer;
   border-radius: 5px;
-  margin: 0% 2.5% 0% 2.5%;
+  margin: 0% 2.5% 2.5% 2.5%;
   box-shadow: 0px 0px 15px 1px #0000003c;
   &:hover {
-    opacity: 0.7;
-    transform: translateY(-15px);
+    box-shadow: 0px 0px 20px 9px #0000003c;
+    transform: translateY(-5px);
   }
   &:focus {
-    opacity: 0.7;
+    box-shadow: 0px 0px 20px 9px #0000003c;
+    transform: translateY(-5px);
   }
   @media (pointer: coarse) {
     margin: 0% 2.5% 5% 2.5%;
@@ -39,7 +40,7 @@ const Wrapper = styled(Link)`
   }
 `
 const Title = styled.h2`
-  color: #5065a3;
+  color: ${props => props.theme.colors.primary600};
   margin-bottom: 5px;
 `
 
@@ -68,7 +69,7 @@ const Category = styled.p`
 
 const Description = styled.section`
   padding: 20px;
-  color: #5065a3;
+  color: ${props => props.theme.colors.primary500};
 `
 
 const Extra = styled.section`
@@ -79,7 +80,7 @@ const Extra = styled.section`
 
 const OpenFab = styled.section`
   float: right;
-  background-color: #699bbf;
+  background-color: ${props => props.theme.colors.secondary};
   width: 70px;
   height: 70px;
   border-radius: 50%;
@@ -87,7 +88,7 @@ const OpenFab = styled.section`
   align-items: center;
   justify-content: center;
   box-shadow: 0px 8px 20px -6px #000000ab;
-  margin-top: ${props => (props.titleLength > 30 ? "-35px" : "0px")};
+  margin-top: ${props => (props.titleLength > 30 ? "0px" : "0px")};
   @media (pointer: coarse) {
     margin-top: 0px;
     margin-bottom: 15px;
@@ -110,6 +111,7 @@ export default function PostCard({ post, index, isfullpage }) {
 
   return (
     <Wrapper
+      data-sal="slide-up"
       isfullpage={isfullpage}
       to={urlLocaleFormatting(frontmatter.locale, "/" + frontmatter.path)}
       onClick={() => {

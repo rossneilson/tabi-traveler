@@ -1,4 +1,5 @@
 import React from "react"
+import { useIntl } from "gatsby-plugin-intl"
 import {
   ComposableMap,
   Geographies,
@@ -16,6 +17,8 @@ const geoUrl =
 const highlighted = countries.highlighted
 
 export default function FilterMap({ filter, setFilter }) {
+  const intl = useIntl()
+
   return (
     <ComposableMap height={900} projection="geoMercator">
       <Sphere stroke="#DDD" />
@@ -59,7 +62,7 @@ export default function FilterMap({ filter, setFilter }) {
           }}
         >
           <text x="-8" textAnchor="end" alignmentBaseline="middle" fill="#F53">
-            {"Click highlighted countries to filter"}
+            {intl.formatMessage({ id: "portfolio.click" })}
           </text>
         </Annotation>
       </ZoomableGroup>

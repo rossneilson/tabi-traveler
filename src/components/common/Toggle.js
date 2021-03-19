@@ -19,7 +19,7 @@ const SubMenu = styled.ul`
   z-index: 999999999;
   margin-left: -0.5rem;
   @media (pointer: coarse) {
-    background-color: #8698da;
+    background-color: ${props => props.theme.colors.primary500};
     margin-left: 0.1rem;
   }
 `

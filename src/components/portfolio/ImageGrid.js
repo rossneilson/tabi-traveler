@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { GatsbyImage as Img, getImage } from "gatsby-plugin-image"
 
@@ -12,6 +12,7 @@ const GridWrap = styled.section`
   transition: all 1s;
   grid-auto-flow: dense;
   margin-left: ${props => (props.drawerOpen ? "30%" : "0%")};
+  background-color: white;
   @media (pointer: coarse) {
     margin-left: ${props => (props.drawerOpen ? "50%" : "0%")};
     grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
@@ -44,7 +45,6 @@ const ThumbnailImage = styled(Img)`
   width: 100%;
   height: 100%;
 `
-
 export default function Grid({
   images,
   filter,
@@ -54,23 +54,35 @@ export default function Grid({
   drawerOpen,
 }) {
   useEffect(() => {
-    if (filter === "best") {
-      setFilteredImages(
-        images
-          .filter(e => e.node.frontmatter.best === true)
-          .sort(() => {
-            return 0.5 - Math.random()
-          })
-      )
-    } else {
-      setFilteredImages(
-        images
-          .filter(e => e.node.frontmatter.location === filter)
-          .sort(() => {
-            return 0.5 - Math.random()
-          })
-      )
-    }
+    setFilteredImages(
+      images
+        .filter(e =>
+          filter === "best"
+            ? e.node.frontmatter.best === true
+            : filter === e.node.frontmatter.location
+        )
+        .sort(() => {
+          return 0.5 - Math.random()
+        })
+    )
+    // if (filter === "best") {
+    //   setFilteredImages(
+    //     images
+    //       .filter(e => e.node.frontmatter.best === true)
+    //       .sort(() => {
+    //         return 0.5 - Math.random()
+    //       })
+    //   )
+    // } else {
+    //   setFilteredImages(
+    //     images
+    //       .filter(e => e.node.frontmatter.location === filter)
+    //       .sort(() => {
+    //         return 0.5 - Math.random()
+    //       })
+    //   )
+    // }
+    // -----------------
   }, [filter])
 
   const thumbnails = []

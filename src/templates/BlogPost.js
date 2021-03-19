@@ -5,8 +5,6 @@ import { GatsbyImage as Img, getImage } from "gatsby-plugin-image"
 import { navigate } from "@reach/router"
 import { FormattedMessage } from "gatsby-plugin-intl"
 
-import "../index.css"
-
 import Navigation from "../components/common/Navigation"
 import Footer from "../components/blog/Footer"
 import Toggle from "../components/common/Toggle"
@@ -109,7 +107,7 @@ const FormattedDate = styled.h3`
   color: white;
   margin-left: 25%;
   margin-right: 25%;
-  font-size: 1rem;
+  font-size: ${props => props.theme.fontSizes.m};
   @media (pointer: coarse) {
     margin-left: 10%;
     margin-right: 10%;
@@ -118,7 +116,7 @@ const FormattedDate = styled.h3`
 
 const Markdown = styled.section`
   z-index: 999999999 !important;
-  font-size: medium;
+  font-size: ${props => props.theme.fontSizes.s};
   color: black;
   line-height: 1.7;
   background-color: white;
@@ -261,14 +259,18 @@ export const query = graphql`
         SEO
         image {
           childImageSharp {
-            gatsbyImageData(maxWidth: 3000, layout: FLUID, placeholder: BLURRED)
+            gatsbyImageData(
+              width: 3000
+              layout: CONSTRAINED
+              placeholder: BLURRED
+            )
           }
         }
       }
     }
     image: file(relativePath: { eq: "footerImage.jpg" }) {
       childImageSharp {
-        gatsbyImageData(maxWidth: 300, layout: FLUID, placeholder: BLURRED)
+        gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
       }
     }
   }

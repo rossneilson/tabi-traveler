@@ -61,7 +61,7 @@ const CTA = styled(Link)`
 export default function Footer(props) {
   const imageData = getImage(props.image)
   return (
-    <Wrapper>
+    <Wrapper data-sal="slide-up">
       <Image image={imageData} />
       <Description>
         <h3>

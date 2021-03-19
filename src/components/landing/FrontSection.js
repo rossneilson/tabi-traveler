@@ -67,7 +67,7 @@ const Navigation = styled.section`
 `
 const Title = styled.h1`
   margin-top: 60px;
-  color: #8698da;
+  color: ${props => props.theme.colors.primary};
   @media ${device.mobileS} {
     margin-top: 50px;
     font-size: 180% !important;
@@ -83,7 +83,7 @@ const Title = styled.h1`
 
 const Desc = styled.h2`
   font-size: 130%;
-  color: #8698da;
+  color: ${props => props.theme.colors.primary};
   @media ${device.mobileS} {
     margin-top: 10px;
   }
@@ -91,17 +91,20 @@ const Desc = styled.h2`
 
 const PageButton = styled(Link)`
   padding: 20px;
-  color: #acb8e4;
-  font-size: 130%;
+  color: ${props => props.theme.colors.primary400};
+  font-size: 160%;
   text-align: right;
   transition: 1s;
   background-image: none;
   text-shadow: none;
   &:hover {
-    color: #5065a3;
+    color: ${props => props.theme.colors.primary600};
   }
   &:focus {
-    color: #5065a3;
+    color: ${props => props.theme.colors.primary600};
+  }
+  @media (pointer: coarse) {
+    font-size: 130%;
   }
 `
 
@@ -125,7 +128,7 @@ export default function FrontSection({ language }) {
     <div style={{ height: "100vh" }}>
       <Main style={{ backgroundPositionY: offset / 1.6 }}>
         <Frame>
-          <Navigation>
+          <Navigation data-sal="slide-right">
             <Title>
               <FormattedMessage id="main.title" />
             </Title>

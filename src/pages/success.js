@@ -3,8 +3,6 @@ import { graphql } from "gatsby"
 import styled, { createGlobalStyle } from "styled-components"
 import { FormattedMessage } from "gatsby-plugin-intl"
 
-import "../index.css"
-
 import Navigation from "../components/common/Navigation"
 import Toggle from "../components/common/Toggle"
 import SignUp from "../components/contact/SignUp"
@@ -16,7 +14,7 @@ const About = styled.section`
   margin: auto;
   max-width: 580px;
   padding: 40px;
-  font-size: 150%;
+  font-size: ${props => props.theme.fontSizes.m};
   text-align: center;
   line-height: 2;
 `
@@ -45,7 +43,6 @@ export default function ContactPage(props) {
         link1={"portfolio"}
         link2={"blog"}
       />
-      <SignUp language={props.pageContext.intl.language} />
       <About>
         <FormattedMessage id="store.successMessage" />
         <br />
@@ -54,6 +51,8 @@ export default function ContactPage(props) {
       <Container>
         <Image src={Welcome} />
       </Container>
+      <SignUp language={props.pageContext.intl.language} />
+
       <Contact footImage1={props.data.footImage1} />
     </div>
   )
@@ -64,9 +63,9 @@ export const imageQuery = graphql`
     footImage1: file(relativePath: { eq: "footImage.png" }) {
       childImageSharp {
         gatsbyImageData(
-          maxWidth: 1800
+          width: 1800
           quality: 80
-          layout: FLUID
+          layout: CONSTRAINED
           placeholder: BLURRED
         )
       }

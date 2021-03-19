@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { FormattedMessage } from "gatsby-plugin-intl"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image"
 
 import { device } from "../../utils/device"
 
@@ -10,14 +10,14 @@ const Wrap = styled.section`
   height: 105vh;
   position: relative;
   background-size: cover;
-  font-size: 110%;
+  font-size: ${props => props.theme.fontSizes.s};
   @media ${device.laptop} {
     padding: 4% 0% 4% 0%;
     min-height: 100vh;
     height: auto;
   }
 `
-const FujiImage = styled(GatsbyImage)`
+const FujiImage = styled.section`
   width: 70%;
   height: 70%;
   float: right;
@@ -30,7 +30,7 @@ const FujiImage = styled(GatsbyImage)`
     margin-top: none;
   }
 `
-const ProfileImage = styled(GatsbyImage)`
+const ProfileImage = styled.section`
   float: right;
   width: 150px !important;
   @media (pointer: coarse) {
@@ -39,7 +39,7 @@ const ProfileImage = styled(GatsbyImage)`
 `
 const About = styled.section`
   background: white;
-  color: #5065a3;
+  color: ${props => props.theme.colors.primary700};
   box-shadow: 0px 0px 9px 1px #000000a1;
   text-align: left;
   margin-top: 5%;
@@ -62,9 +62,9 @@ const Title = styled.p`
 const CTA = styled.button`
   text-align: center;
   padding: 12px;
-  background: #f79a60;
+  background-color: ${props => props.theme.colors.secondary};
   font-weight: 500;
-  color: #001658 !important;
+  color: ${props => props.theme.colors.primary800} !important;
   margin-left: 5%;
   width: 30%;
   min-width: 200px;
@@ -75,25 +75,32 @@ const CTA = styled.button`
   cursor: pointer;
   z-index: 99999;
   &:hover {
-    background: #5065a3;
+    background: ${props => props.theme.colors.primary600};
+    color: ${props => props.theme.colors.secondary} !important;
   }
   &:focus {
-    background: #5065a3;
+    background: ${props => props.theme.colors.primary600};
+    color: ${props => props.theme.colors.secondary} !important;
   }
 `
 
-export default function AboutSection({ fuji, aboutImage }) {
-  const fujiImage = getImage(fuji)
-  const aboutImageData = getImage(aboutImage)
+export default function AboutSection({}) {
   return (
     <Wrap>
-      <FujiImage image={fujiImage} />
+      <FujiImage>
+        <StaticImage
+          src="../../img/fuji.jpg"
+          alt="Mount fuji picture"
+          width={1800}
+          layout="constrained"
+        />
+      </FujiImage>
+
       <About>
         <Title style={{ fontSize: "200%" }}>
           <svg
             style={{ transform: "translateY(10px)", marginRight: "4px" }}
             xmlns="http://www.w3.org/2000/svg"
-            className="icon icon-tabler icon-tabler-movie"
             width="48"
             height="48"
             viewBox="0 0 24 24"
@@ -122,7 +129,15 @@ export default function AboutSection({ fuji, aboutImage }) {
             marginBottom: "30px",
           }}
         />
-        <ProfileImage image={aboutImageData} />
+        <ProfileImage>
+          <StaticImage
+            src="../../img/footerImage.jpg"
+            alt="Profile image"
+            width={300}
+            layout="constrained"
+          />
+        </ProfileImage>
+
         <p>
           <FormattedMessage id="about.1" />
         </p>
@@ -131,9 +146,6 @@ export default function AboutSection({ fuji, aboutImage }) {
         </p>
         <p>
           <FormattedMessage id="about.3" />
-        </p>
-        <p>
-          <FormattedMessage id="about.4" />
         </p>
         <p style={{ marginTop: "30px", marginBottom: "20px" }}>
           <FormattedMessage id="about.5" />

@@ -19,7 +19,7 @@ const Radio = styled.label`
   display: block;
   margin-bottom: 10px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: ${props => props.theme.fontSizes.r};
 `
 
 const Input = styled.input`

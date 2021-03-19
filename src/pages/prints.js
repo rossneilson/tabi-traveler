@@ -3,8 +3,6 @@ import { graphql } from "gatsby"
 import styled, { createGlobalStyle } from "styled-components"
 // import Anime, { anime } from "react-anime"
 
-import "../index.css"
-
 import SEO from "../components/common/Seo"
 
 import Navigation from "../components/common/Navigation"
@@ -14,7 +12,7 @@ import SignUp from "../components/contact/SignUp"
 import Contact from "../components/contact/Contact"
 
 const Intro = styled.section`
-  font-size: medium;
+  font-size: ${props => props.theme.fontSizes.m};
   line-height: 1.7;
   padding: 2%;
   border-radius: 10px;
@@ -27,7 +25,7 @@ const Intro = styled.section`
 `
 
 const FAQ = styled.section`
-  font-size: medium;
+  font-size: ${props => props.theme.fontSizes.s};
   line-height: 1.7;
   background-color: white;
   padding: 2%;
@@ -111,8 +109,8 @@ export const printsQuery = graphql`
             mainImage {
               childImageSharp {
                 gatsbyImageData(
-                  maxWidth: 500
-                  layout: FLUID
+                  width: 500
+                  layout: CONSTRAINED
                   placeholder: BLURRED
                 )
               }
@@ -154,9 +152,9 @@ export const printsQuery = graphql`
     footImage1: file(relativePath: { eq: "footImage.png" }) {
       childImageSharp {
         gatsbyImageData(
-          maxWidth: 1800
+          width: 1800
           quality: 80
-          layout: FLUID
+          layout: CONSTRAINED
           placeholder: BLURRED
         )
       }

@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 import { useIntl } from "gatsby-plugin-intl"
-import { GatsbyImage as Img, getImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image"
 
 const Wrapper = styled.section`
   display: flex;
@@ -30,7 +30,7 @@ const ContactCard = styled.section`
 const Title = styled.h2`
   margin: auto;
   margin-bottom: 20px;
-  color: #5065a3;
+  color: ${props => props.theme.colors.primary600};
 `
 
 const Form = styled.form`
@@ -44,7 +44,7 @@ const StyledInput = styled.input`
   height: 38px;
   padding: 8px 12px;
   margin: 5% 0%;
-  font-size: 18px;
+  font-size: ${props => props.theme.fontSizes.m};
   line-height: 1.42857143;
   font-weight: 500;
   width: 100%;
@@ -52,7 +52,10 @@ const StyledInput = styled.input`
   border-width: 1px 1px 4px;
   border-color: #000 #000 #6f81b3;
   border-radius: 10px;
-  background-color: ${props => (props.error ? "#ff7777" : "#d4e0ef")};
+  background-color: ${props =>
+    props.error
+      ? props.theme.colors.warning
+      : props.theme.colors.grayBackground};
   color: black;
 `
 
@@ -62,16 +65,10 @@ const Icons = styled.section`
 
 const Link = styled.a`
   margin: 10px;
-  color: #f79a60;
   background-image: none;
-  &:hover {
-    color: #5065a3;
-  }
-  &:focus {
-    color: #5065a3;
-  }
 `
-const Image = styled(Img)`
+
+const Image = styled.section`
   width: 100%;
   height: 100%;
   opacity: 0.8;
@@ -79,11 +76,11 @@ const Image = styled(Img)`
 
 const StyledButton = styled.button`
   transition: 0.2s;
-  background-color: #f79a60;
-  color: #01658;
+  background-color: ${props => props.theme.colors.secondary};
+  color: black;
   height: 40px;
   justify-content: space-around;
-  font-size: large;
+  font-size: ${props => props.theme.fontSizes.m};
   font-weight: 500;
   min-width: 30%;
   border: none;
@@ -91,10 +88,10 @@ const StyledButton = styled.button`
   border-radius: 5px;
   margin: auto;
   &:hover {
-    background-color: #5065a3;
+    background-color: ${props => props.theme.colors.primary};
   }
   &:focus {
-    background-color: #5065a3;
+    background-color: ${props => props.theme.colors.primary};
   }
 `
 
@@ -137,11 +134,17 @@ export default function Contact(props) {
         .catch(error => alert(error))
     }
   }
-  const imageData = getImage(props.footImage1)
 
   return (
     <Wrapper>
-      <Image image={imageData} />
+      <Image>
+        <StaticImage
+          width={1800}
+          quality={80}
+          src="../../img/footImage.png"
+          alt="Mountain range background"
+        />
+      </Image>
       <ContactCard>
         <Title>{intl.formatMessage({ id: "contact.title" })}</Title>
         <form name="contact" netlify-honeypot="bot-field" hidden>

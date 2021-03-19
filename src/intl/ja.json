@@ -20,6 +20,12 @@
     "5": "中小企業向けにフリーランスでの写真撮影も承ります。",
     "contact": "連絡する"
   },
+  "portfolio": {
+    "reset": "Reset",
+    "selected": "Current Selection: ",
+    "filter": "Country Filter",
+    "click": "Click highlighted countries to filter"
+  },
   "blog": {
     "back": "ブログに戻る",
     "authorDesc": "私たちはスコットランド人と日本人の学生カップルです。 旅先での新たな景色と文化を写真を通してシェアしています。",

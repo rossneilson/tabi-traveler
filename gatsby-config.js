@@ -1,6 +1,9 @@
 const path = require(`path`)
 
 module.exports = {
+  flags: {
+    DEV_SSR: true,
+  },
   siteMetadata: {
     en: {
       title: `Tabi Traveler`,
@@ -114,6 +117,9 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-139306598-2",
+        anonymize: true,
+        respectDNT: true,
+        storage: "none",
       },
     },
     {
@@ -154,5 +160,6 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-scroll-reveal`,
   ],
 }

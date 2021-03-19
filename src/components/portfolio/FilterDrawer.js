@@ -3,15 +3,17 @@ import loadable from "@loadable/component"
 import styled from "styled-components"
 
 import Toggle from "../common/Toggle"
-import SelectedFilter from "./SelectedFilter"
+import FilterControl from "./FilterControl"
 
 const FilterMap = loadable(() => import("./FilterMap"))
 
 const Wrapper = styled.section`
   width: ${props => (props.open ? "30%" : "0%")};
+  height: 100%;
   transition: 1s;
   position: fixed;
-
+  background-color: white;
+  /* z-index: -1; */
   @media (pointer: coarse) {
     width: ${props => (props.open ? "50%" : "0%")};
   }
@@ -63,10 +65,9 @@ export default function FilterDrawer({
             </CloseIcon>
           </DrawerHeader>
 
-          <Divider style={{ marginBottom: "250px" }} />
+          <Divider style={{ marginBottom: "200px" }} />
           <Divider />
-
-          <SelectedFilter filter={filter} setFilter={setFilter} />
+          <FilterControl filter={filter} setFilter={setFilter} />
 
           <FilterMap filter={filter} setFilter={setFilter} />
         </div>

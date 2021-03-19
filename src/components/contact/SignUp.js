@@ -14,10 +14,11 @@ const recaptchaRef = React.createRef()
 const Container = styled.section`
   display: flex;
   align-items: center;
-  background-color: #ffcd73d1;
+  background-color: ${props => props.theme.colors.secondary200};
   padding: 2%;
   flex-flow: wrap;
   justify-content: center;
+  z-index: 2;
 `
 
 const Img = styled.img`
@@ -31,7 +32,7 @@ const Img = styled.img`
 const Title = styled.h2`
   width: 40%;
   min-width: 350px;
-  color: #687aad;
+  color: ${props => props.theme.colors.primary600};
   font-weight: 900;
   @media (pointer: coarse) {
     text-align: center;
@@ -55,7 +56,7 @@ const StyledInput = styled.input`
   height: 38px;
   padding: 8px 12px;
   margin-bottom: 10px;
-  font-size: 14px;
+  font-size: ${props => props.theme.fontSizes.s};
   line-height: 1.42857143;
   font-weight: 500;
   width: 250px;
@@ -63,18 +64,18 @@ const StyledInput = styled.input`
   border-width: 1px 1px 4px;
   border-color: #000 #000 #6f81b3;
   border-radius: 10px;
-  background-color: #fff;
+  background-color: white;
   color: black;
   margin: 10px;
 `
 
 const StyledButton = styled.button`
   transition: 0.2s;
-  background-color: #425faf;
+  background-color: ${props => props.theme.colors.primary600};
   color: white;
   height: 40px;
   justify-content: space-around;
-  font-size: large;
+  font-size: ${props => props.theme.fontSizes.m};
   font-weight: 500;
   min-width: 30%;
   border: none;
@@ -82,10 +83,10 @@ const StyledButton = styled.button`
   border-radius: 5px;
   margin: auto;
   &:hover {
-    background-color: #5065a3;
+    background-color: ${props => props.theme.colors.primary700};
   }
   &:focus {
-    background-color: #5065a3;
+    background-color: ${props => props.theme.colors.primary700};
   }
 `
 

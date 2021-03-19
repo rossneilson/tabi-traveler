@@ -10,8 +10,8 @@ const FlexWrap = styled.section`
   margin: auto;
   margin-bottom: 50px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
-  height: 400px;
   width: 100%;
   padding: 10px;
   @media (pointer: coarse) {
@@ -21,7 +21,7 @@ const FlexWrap = styled.section`
 `
 
 const Heading = styled.h1`
-  color: #6f81b3;
+  color: ${props => props.theme.colors.primary600};
   margin-left: 4%;
 `
 
