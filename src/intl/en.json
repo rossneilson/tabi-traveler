@@ -20,6 +20,12 @@
     "5": "We are also available for freelance photography work for small businesses",
     "contact": "Contact us"
   },
+  "portfolio": {
+    "reset": "Reset",
+    "selected": "Current Selection: ",
+    "filter": "Country Filter",
+    "click": "Click highlighted countries to filter"
+  },
   "blog": {
     "back": "Back to Blog",
     "authorDesc": "We are a young couple exploring the world through our photography and sharing it as we go",

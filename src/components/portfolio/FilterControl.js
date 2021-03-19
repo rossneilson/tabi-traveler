@@ -1,5 +1,7 @@
 import React from "react"
+import { FormattedMessage } from "gatsby-plugin-intl"
 import styled from "styled-components"
+
 import ScotlandFlag from "../../img/gb-sct.svg"
 import JapanFlag from "../../img/jp.svg"
 import ItalyFlag from "../../img/it.svg"
@@ -46,10 +48,10 @@ const ResetButton = styled.button`
   display: ${props => (props.filter === "best" ? "" : "")};
   color: white;
   font-size: ${props => props.theme.fontSizes.s};
-  width: 25%;
+  width: 35%;
   border: none;
   cursor: pointer;
-  margin: 5px 5%;
+  margin: 5px auto;
   border-radius: 5px;
   &:disabled {
     background-color: ${props => props.theme.colors.grayBackground};
@@ -72,7 +74,9 @@ const ResetButton = styled.button`
 export default function SelectedFilter({ filter, setFilter }) {
   return (
     <FlexContainer>
-      <FilterTitle>Country Filter</FilterTitle>
+      <FilterTitle>
+        <FormattedMessage id="portfolio.filter" />
+      </FilterTitle>
 
       <ResetButton
         filter={filter}
@@ -82,9 +86,11 @@ export default function SelectedFilter({ filter, setFilter }) {
         }}
         disabled={filter === "best" ? "true" : null}
       >
-        Reset
+        <FormattedMessage id="portfolio.reset" />
       </ResetButton>
-      <SelectedTitle>Current selection: </SelectedTitle>
+      <SelectedTitle>
+        <FormattedMessage id="portfolio.selected" />
+      </SelectedTitle>
       {filter === "best" ? (
         <Favourite>
           <svg
