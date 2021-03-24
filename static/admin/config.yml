@@ -1,9 +1,14 @@
 backend:
   name: git-gateway
-  branch: master
+  # branch: master
+local_backend: true
 publish_mode: editorial_workflow
 media_folder: src/img
-public_folder: /static
+public_folder: ./../../img
+i18n:
+  structure: multiple_files
+  locales: [en, ja]
+  default_locale: en
 collections:
   - name: "portfolio"
     label: "Portfolio"
@@ -22,55 +27,60 @@ collections:
     folder: "src/markdown/blog" 
     create: true 
     identifier_field: title
+    i18n: true
     fields: 
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Location", name: "location", widget: "string"}
-      - {label: "Category", name: "category", widget: "string"}
-      - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Image", name: "image", widget: "image"}
-      - {label: "Path", name: "path", widget: "string", hint: "blog/same-as-title"}
-      - {label: "Locale", name: "locale", widget: "select", options: ["en", "ja"]}
-      - {label: "Description", name: "SEO", widget: "string"}
-      - {label: "Content", name: "body", widget: "markdown"}
+      - {label: "Title", name: "title", widget: "string", i18n: true}
+      - {label: "Location", name: "location", widget: "string", i18n: true}
+      - {label: "Category", name: "category", widget: "string", i18n: true}
+      - {label: "Date", name: "date", widget: "datetime", i18n: duplicate}
+      - {label: "Image", name: "image", widget: "image", i18n: true}
+      - {label: "Path", name: "path", widget: "string", hint: "blog/same-as-title", i18n: duplicate}
+      - {label: "Locale", name: "locale", widget: "select", options: ["en", "ja"], i18n: true}
+      - {label: "Description", name: "SEO", widget: "string", i18n: true}
+      - {label: "Content", name: "body", widget: "markdown", i18n: true}
   - name: "store"
     label: "Store"
     folder: "src/markdown/store" 
     create: true 
     identifier_field: title
+    i18n: true
     fields: 
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "desc", widget: "string"}
-      - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Main image", name: "main", widget: "image"}
+      - {label: "Title", name: "title", widget: "string", i18n: true}
+      - {label: "Description", name: "desc", widget: "string", i18n: true}
+      - {label: "Date", name: "date", widget: "datetime", i18n: duplicate}
+      - {label: "Main image", name: "main", widget: "image", i18n: true}
       - label: "Images"
         name: "images"
         widget: "list"
         summary: '{{fields.image}}'
-        field: {label: Image, name: image, widget: image}
+        i18n: true
+        field: {label: Image, name: image, widget: image, i18n: true}
       - label: "Products"
         name: "products"
         widget: "list"
         summary: '{{fields.title}}'
+        i18n: true
         fields: 
-          - {label: "SKU", name: "sku", widget: "string"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Type", name: "type", widget: "string"}
-          - {label: "Size", name: "size", widget: "string"}
-          - {label: "Price", name: "price", widget: "number"}
-      - {label: "Full image", name: "fullImage", widget: "string", hint: "https://drive.google.com/uc?id=<DRIVE_LINK_IMAGE_ID>"}
-      - {label: "Path", name: "path", widget: "string", hint: "prints/same-as-title"}
-      - {label: "Locale", name: "locale", widget: "select", options: ["en", "ja"]}
-      - {label: "Content", name: "body", widget: "markdown"}
+          - {label: "SKU", name: "sku", widget: "string", i18n: true}
+          - {label: "Title", name: "title", widget: "string", i18n: true}
+          - {label: "Type", name: "type", widget: "string", i18n: true}
+          - {label: "Size", name: "size", widget: "string", i18n: true}
+          - {label: "Price", name: "price", widget: "number", i18n: true}
+      - {label: "Full image", name: "fullImage", widget: "string", hint: "https://drive.google.com/uc?id=<DRIVE_LINK_IMAGE_ID>", i18n: duplicate}
+      - {label: "Path", name: "path", widget: "string", hint: "prints/same-as-title", i18n: duplicate}
+      - {label: "Locale", name: "locale", widget: "select", options: ["en", "ja"], i18n: true}
+      - {label: "Content", name: "body", widget: "markdown", i18n: true}
   - name: "general"
     label: "General"
     folder: "src/markdown/general" 
     create: true 
     identifier_field: page
+    i18n: true
     fields: 
-      - {label: "Page", name: "page", widget: "string"}
-      - {label: "Type", name: "type", widget: "string"}
-      - {label: "Locale", name: "locale", widget: "select", options: ["en", "ja"]}
-      - {label: "Content", name: "body", widget: "markdown"}
+      - {label: "Page", name: "page", widget: "string", i18n: duplicate}
+      - {label: "Type", name: "type", widget: "string", i18n: duplicate}
+      - {label: "Locale", name: "locale", widget: "select", options: ["en", "ja"], i18n: true}
+      - {label: "Content", name: "body", widget: "markdown", i18n: true}
 
   - name: "map"
     label: "map"
