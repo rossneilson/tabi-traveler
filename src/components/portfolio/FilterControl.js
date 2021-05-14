@@ -82,7 +82,6 @@ export default function SelectedFilter({ filter, setFilter }) {
         filter={filter}
         onClick={() => {
           setFilter("best")
-          console.log("PRESS")
         }}
         disabled={filter === "best" ? "true" : null}
       >

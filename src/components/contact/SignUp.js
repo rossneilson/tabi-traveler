@@ -19,6 +19,7 @@ const Container = styled.section`
   flex-flow: wrap;
   justify-content: center;
   z-index: 2;
+  position: ${props => props.position};
 `
 
 const Img = styled.img`
@@ -90,7 +91,13 @@ const StyledButton = styled.button`
   }
 `
 
-function CustomForm({ status, message, onValidated, language }) {
+function CustomForm({
+  status,
+  message,
+  onValidated,
+  language,
+  position = "auto",
+}) {
   const intl = useIntl()
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
@@ -111,7 +118,7 @@ function CustomForm({ status, message, onValidated, language }) {
   }
 
   return (
-    <Container>
+    <Container position={position}>
       <Img src={Illustration} alt={"newsletter illustration"} />
       <Title>{intl.formatMessage({ id: "signup.title" })}</Title>
       <FormContainer>
@@ -174,7 +181,7 @@ function CustomForm({ status, message, onValidated, language }) {
   )
 }
 
-export default function SignUp({ language }) {
+export default function SignUp({ language, position }) {
   const url =
     "https://tabitraveler.us2.list-manage.com/subscribe/post?u=ec0ef14f775282cd407b2dff5&amp;id=eb2930ef2d"
 
@@ -187,6 +194,7 @@ export default function SignUp({ language }) {
           message={message}
           onValidated={formData => subscribe(formData)}
           language={language}
+          position={position}
         />
       )}
     />

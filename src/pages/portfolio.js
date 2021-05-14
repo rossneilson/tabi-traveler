@@ -102,10 +102,7 @@ export default function Portfolio(props) {
         selectedImage={selectedImage}
         setSelectedImage={setSelectedImage}
       />
-      <SignUp
-        style={{ zIndex: 99999 }}
-        language={props.pageContext.intl.language}
-      />
+      <SignUp language={props.pageContext.intl.language} position="absolute" />
     </div>
   )
 }
