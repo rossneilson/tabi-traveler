@@ -114,15 +114,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "UA-139306598-2",
-        anonymize: true,
-        respectDNT: true,
-        storage: "none",
-      },
-    },
-    {
       resolve: `gatsby-plugin-styled-components`,
     },
     `gatsby-plugin-react-helmet`,
