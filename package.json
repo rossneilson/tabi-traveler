@@ -59,7 +59,7 @@
     "react-simple-maps": "^2.1.2",
     "react-transition-group": "^4.4.1",
     "react-typography": "^0.16.19",
-    "sharp": "^0.27.2",
+    "sharp": "^0.30.5",
     "stripe": "^8.69.0",
     "styled-components": "^5.1.0",
     "typography": "^0.16.19",
