@@ -70,13 +70,14 @@ export default function PurchasePanel({
   }, [selected])
 
   const handleBuy = async event => {
-    createCheckout(
-      getCountryCode(country),
-      selected,
-      frontmatter,
-      fileAbsolutePath,
-      language
-    )
+    // createCheckout(
+    //   getCountryCode(country),
+    //   selected,
+    //   frontmatter,
+    //   fileAbsolutePath,
+    //   language
+    // )
+    alert('Sorry, the store has closed, send me an email.')
   }
 
   return (
